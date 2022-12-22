@@ -7,13 +7,19 @@ import { productUrl as url } from "../utils/constant";
 import {
     GET_PRODUCTS_BEGIN,
     GET_PRODUCTS_ERROR,
-    GET_PRODUCTS_SUCCESS
+    GET_PRODUCTS_SUCCESS,
+    GET_CAT_BEGIN,
+    GET_CAT_SUCCESS,
+    GET_CAT_ERROR,
 } from "../_actions"
 
 const initialState = {
     products_loading: false,
     products_error: false,
     products: [],
+    category: [],
+    cat_loading: false,
+    cat_error: false,
 }
 
 const ProductsContext = React.createContext()
@@ -26,16 +32,28 @@ export const ProductsProvider = ({ children }) => {
         try {
           const response = await axios.get(url)
           const products = response.data.products
-          console.log(products)
           dispatch({type: GET_PRODUCTS_SUCCESS, payload: products})
         } catch (error) {
           dispatch({type: GET_PRODUCTS_ERROR})
         } 
     }
 
+    const fetchCategories = async (url) => {
+        dispatch({type: GET_CAT_BEGIN})
+        try {
+          const response = await axios.get(`${url}/categories`)
+          const category = response.data
+          dispatch({type: GET_CAT_SUCCESS, payload: category})
+        } catch (error) {
+          dispatch({type: GET_CAT_ERROR})
+        } 
+      }
+  
+
 
     useEffect(() => {
         fetchProducts(url)
+        fetchCategories(url)
     }, [])
 
     return (

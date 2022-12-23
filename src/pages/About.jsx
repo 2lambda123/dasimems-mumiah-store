@@ -1,16 +1,28 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { Layout } from "antd";
+const { Content } = Layout;
 
 function About(props) {
   return (
-    <div>
+    <>
       <Helmet>
         <title>About Us | Mumiah Stores</title>
       </Helmet>
-      <div>
-        <h1>Hello About us</h1>
-      </div>
-    </div>
+      <Layout className="page-100">
+        <Content>
+          <div
+            className="glassmorphism"
+            style={{
+              padding: 24,
+              minHeight: 380,
+            }}
+          >
+            <h1>Hello World</h1>
+          </div>
+        </Content>
+      </Layout>
+    </>
   );
 }
 

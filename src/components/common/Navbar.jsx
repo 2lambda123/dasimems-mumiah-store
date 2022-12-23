@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Row, Col } from "antd";
+import React, { useEffect, useState } from "react";
+import {Row, Col } from "antd";
 import { images, pageLinks } from "../../utils/constant";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router";
 import { FiSearch } from "react-icons/fi";
 import { FaBars } from "react-icons/fa";
@@ -11,8 +11,9 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import Modal from "./Modal";
 function Navbar(props) {
   const location = useLocation();
-  const [navOpened, setNavOpened] = useState(false);
-  const [navPosition, setNavPosition] = useState("-500px");
+  const [navOpened, setNavOpened] = useState(false)
+  const [navPosition, setNavPosition] = useState("-500px")
+  const navigate = useNavigate()
 
   const changeNavState = () => {
     setNavOpened((prevState) => !prevState);
@@ -24,7 +25,12 @@ function Navbar(props) {
         setNavPosition("00px");
       }, 40);
     }
-  };
+  }
+  useEffect(()=>{
+
+    setNavOpened(false)
+    
+  }, [navigate])
   return (
     <>
       <Row className="nav-bar align-center" justify="center">

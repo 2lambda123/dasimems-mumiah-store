@@ -4,7 +4,7 @@ import { useProductsContext } from "../contexts/products_context";
 import { formatPrice } from "../utils/helpers";
 import { Link } from "react-router-dom";
 import { productUrl as url } from "../utils/constant";
-import { Loading, Error } from "../components";
+import { Loading, Error, SingleAddToCart } from "../components";
 
 function SingleProducts(props) {
   const { id } = useParams();
@@ -43,6 +43,8 @@ function SingleProducts(props) {
       <h3>{product?.name}</h3>
       <p>{formatPrice(product?.price.amount)}</p>
       <h2>{product?.description}</h2>
+      <hr />
+      {product?.stock > 0 && <SingleAddToCart product={product} />}
     </div>
   );
 }

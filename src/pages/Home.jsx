@@ -12,7 +12,6 @@ function Home(props) {
   const newList = shuffle(products);
 
   return (
-
     <>
 
       <Navbar />

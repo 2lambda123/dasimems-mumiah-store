@@ -1,7 +1,14 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { useProductsContext } from "../contexts/products_context";
+import { Link } from "react-router-dom";
+import { Product } from "../components";
 
 function Home(props) {
+  const { products } = useProductsContext();
+  const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
+  const newList = shuffle(products);
+
   return (
     <div>
       <Helmet>
@@ -9,6 +16,9 @@ function Home(props) {
       </Helmet>
       <div>
         <h1>Hello Home</h1>
+        {newList.slice(0, 8).map((product) => {
+          return <Product key={product.id} {...product} />;
+        })}
       </div>
     </div>
   );

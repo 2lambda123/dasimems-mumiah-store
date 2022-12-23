@@ -1,0 +1,21 @@
+$colors: (
+    "hero": #E3FFE6,
+    "textColor": black,
+    "cartStat": #0EA5E9
+);
+
+$measurements: (
+    "headerHeight": 80px,
+    "paddingVertical": 100px
+);
+
+@function getColor($key){
+
+    @return map-get($colors, $key );
+
+};
+
+@function getMeasurement($key){
+
+    @return map-get($measurements, $key );
+};

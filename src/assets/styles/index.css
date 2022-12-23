@@ -176,6 +176,68 @@ body .mobile-nav .mobile-nav-links li:not(:first-child) {
 body .mobile-nav .mobile-nav-links li a {
   color: rgba(0, 0, 0, 0.7);
 }
+body .main-body {
+  min-height: 100vh;
+  height: 100%;
+}
+body .footer {
+  padding: 100px 0px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 70px;
+}
+body .footer .footer-content {
+  margin-bottom: 30px;
+}
+body .footer .footer-content .footer-image {
+  max-height: 35px;
+}
+body .footer .footer-content .footer-content-title {
+  font-size: 1.1rem;
+  font-family: poppins-semibold;
+}
+body .footer .footer-content .social-links {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 20px;
+}
+body .footer .footer-content .social-links li:not(:first-child) {
+  margin-top: 20px;
+}
+body .footer .footer-content .social-links li a {
+  color: rgba(0, 0, 0, 0.7);
+}
+body .footer .footer-content .social-links li a .social-link-image {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  position: relative;
+}
+body .footer .footer-content .social-links li a .social-link-image img {
+  width: 70px;
+  height: 70px;
+}
+body .footer .footer-content .social-links li a img {
+  max-width: 15px;
+  max-height: 15px;
+}
+body .footer .footer-content .social-links li a .social-link-text {
+  margin-left: 10px;
+}
+body .footer .footer-content .footer-links {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 20px;
+}
+body .footer .footer-content .footer-links li:not(:first-child) {
+  margin-top: 20px;
+}
+body .footer .footer-content .footer-links li a {
+  color: rgba(0, 0, 0, 0.7);
+}
 @media only screen and (max-width: 900px) {
   body .nav-bar .mobile-open-btn-link {
     display: block;
@@ -185,5 +247,27 @@ body .mobile-nav .mobile-nav-links li a {
   }
   body .nav-bar .nav-bar-side-links .side-link:not(:first-child) {
     margin-left: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  body .footer .social-footer-content {
+    display: flex;
+    align-items: center;
+  }
+  body .footer .social-footer-content .social-links {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 0px;
+  }
+  body .footer .social-footer-content .social-links li:not(:first-child) {
+    margin-top: 0px;
+    margin-left: 10px;
+  }
+  body .footer .social-footer-content .social-links li a .social-link-image img {
+    width: 100px;
+    height: 100px;
+  }
+  body .footer .social-footer-content .social-links li a .social-link-text {
+    display: none;
   }
 }/*# sourceMappingURL=index.css.map */

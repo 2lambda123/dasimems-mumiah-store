@@ -1,5 +1,6 @@
 
 import LogoImage from "../assets/images/logo.png"
+import FacebookLogo from "../assets/images/Facebook.svg"
 
 export const routeName = {
     home: "/",
@@ -31,6 +32,19 @@ export const pageLinks = [
         label: "Contact",
         link: routeName.contact,
         id: 4,
+    }
+]
+
+export const icons = {
+    facebook: ""
+}
+
+export const socialLinks = [
+    {
+        label: "Facebook",
+        icon: FacebookLogo,
+        link: "https://facebook.com",
+        id: 1
     }
 ]
 

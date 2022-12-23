@@ -8,6 +8,8 @@ body{
     ===== NAV BAR STYLES =====
     *********************/
 
+
+
     .nav-bar{
         width: 100%;
         height: getMeasurement("headerHeight");
@@ -155,6 +157,95 @@ body{
 
     }
 
+    .main-body{
+        min-height: 100vh;
+        height: 100%;
+    }
+
+    .footer{
+        padding: getMeasurement("paddingVertical") 0px;
+        border-top: 1px solid rgba(0, 0, 0, .2);
+        padding-bottom: 70px;
+
+        .footer-content{
+            margin-bottom: 30px;
+
+            .footer-image{
+                max-height: 35px;
+            }
+
+            .footer-content-title{
+                font-size: 1.1rem;
+                font-family: poppins-semibold;
+            }
+
+            .social-links{
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+                margin-top: 20px;
+
+                li{
+
+
+                    &:not(:first-child){
+                        margin-top: 20px;
+                    }
+
+                    a{
+                        color: rgba(0, 0, 0, .7);
+
+                        .social-link-image{
+                            border-radius: 50%;
+                            -webkit-border-radius: 50%;
+                            -moz-border-radius: 50%;
+                            -ms-border-radius: 50%;
+                            -o-border-radius: 50%;
+                            // overflow: hidden;
+                            position: relative;
+                            // border: 1px solid red;
+
+                            img{
+                                width: 70px;
+                                height: 70px;
+                            }
+                        }
+
+                        
+
+                        img{
+                            max-width: 15px;
+                            max-height: 15px;
+                        }
+
+                        .social-link-text{
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+
+            .footer-links{
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+                margin-top: 20px;
+
+                li{
+
+
+                    &:not(:first-child){
+                        margin-top: 20px;
+                    }
+
+                    a{
+                        color: rgba(0, 0, 0, .7);
+                    }
+                }
+            }
+        }
+    }
+
     @media only screen and (max-width: 900px){
 
         .nav-bar{
@@ -176,6 +267,47 @@ body{
                     }
                 }
             }
+        }
+    }
+
+    @media only screen and (max-width: 767px){
+        .footer{
+
+            .social-footer-content{
+                display: flex;
+                align-items: center;
+
+                .social-links{
+                    display: flex;
+                    margin-left: 30px;
+                    margin-top: 0px;
+
+                    li{
+
+                        &:not(:first-child){
+                            margin-top: 0px;
+                            margin-left: 10px;
+                        }
+                        
+                        a{
+
+                            .social-link-image{
+
+                                img{
+                                    width: 100px;
+                                    height: 100px;
+                                }
+                            }
+                            
+                            .social-link-text{
+                                display: none;
+
+                            }
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 import { useProductsContext } from "../contexts/products_context";
 import { Link } from "react-router-dom";
 import { Product } from "../components";
-import Navbar from "../components/common/Navbar";
 
 function Home(props) {
   const { products } = useProductsContext();
@@ -11,11 +10,7 @@ function Home(props) {
   const newList = shuffle(products);
 
   return (
-
     <>
-
-      <Navbar />
-    
       <div>
         <Helmet>
           <title>Home | Mumiah Stores</title>
@@ -27,7 +22,6 @@ function Home(props) {
           })}
         </div>
       </div>
-    
     </>
   );
 }

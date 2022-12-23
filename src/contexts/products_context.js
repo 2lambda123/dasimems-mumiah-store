@@ -5,18 +5,21 @@ import reducer from "../reducers/product_reducer"
 import { productUrl as url } from "../utils/constant";
 
 import {
-    GET_PRODUCTS_BEGIN,
-    GET_PRODUCTS_ERROR,
-    GET_PRODUCTS_SUCCESS,
-    GET_CAT_BEGIN,
-    GET_CAT_SUCCESS,
-    GET_CAT_ERROR,
-    GET_SINGLE_PRODUCT_BEGIN,
-    GET_SINGLE_PRODUCT_SUCCESS,
-    GET_SINGLE_PRODUCT_ERROR,
+  SIDEBAR_OPEN,
+  SIDEBAR_CLOSE,
+  GET_PRODUCTS_BEGIN,
+  GET_PRODUCTS_ERROR,
+  GET_PRODUCTS_SUCCESS,
+  GET_CAT_BEGIN,
+  GET_CAT_SUCCESS,
+  GET_CAT_ERROR,
+  GET_SINGLE_PRODUCT_BEGIN,
+  GET_SINGLE_PRODUCT_SUCCESS,
+  GET_SINGLE_PRODUCT_ERROR,
 } from "../_actions"
 
 const initialState = {
+    isSidebarOpen: false,
     products_loading: false,
     products_error: false,
     products: [],
@@ -31,7 +34,15 @@ const initialState = {
 const ProductsContext = React.createContext()
 
 export const ProductsProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  const openSidebar = () => {
+    dispatch({type: SIDEBAR_OPEN})
+  }
+  
+  const closeSidebar = () => {
+    dispatch({type: SIDEBAR_CLOSE})
+  }
 
     const fetchProducts = async (url) => {
         dispatch({type: GET_PRODUCTS_BEGIN})
@@ -72,7 +83,7 @@ export const ProductsProvider = ({ children }) => {
     }, [])
 
     return (
-        <ProductsContext.Provider value={{ ...state, fetchSingleProduct }}>
+        <ProductsContext.Provider value={{ ...state, openSidebar, closeSidebar, fetchSingleProduct }}>
             {children}
         </ProductsContext.Provider>
     )

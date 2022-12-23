@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Product } from "../components";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
+import { Row } from "antd";
 
 function Home(props) {
   const { products } = useProductsContext();
@@ -17,6 +18,10 @@ function Home(props) {
       <Navbar />
 
       <main className="main-body">
+
+        <Row justify="center" className="banner align-center">
+
+        </Row>
 
         <div>
           <Helmet>

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {Row, Col } from "antd";
 import { images, pageLinks } from "../../utils/constant";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router";
 import {FiSearch} from "react-icons/fi"
 import { FaBars } from "react-icons/fa"
@@ -13,6 +13,7 @@ function Navbar(props) {
   const location = useLocation();
   const [navOpened, setNavOpened] = useState(false)
   const [navPosition, setNavPosition] = useState("-500px")
+  const navigate = useNavigate()
 
   const changeNavState = ()=>{
     setNavOpened(prevState => !prevState)
@@ -29,6 +30,11 @@ function Navbar(props) {
       }, 40)
     }
   }
+  useEffect(()=>{
+
+    setNavOpened(false)
+    
+  }, [navigate])
   return (
 
     <>

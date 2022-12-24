@@ -250,7 +250,7 @@ function Navbar(props) {
 
               </button>
 
-              <button className="side-link" onClick={()=>{
+              <button className="side-link desktop-side-link" onClick={()=>{
                 setCartPop(prevState => !prevState)
               }}>
                 <AiOutlineShoppingCart />
@@ -337,6 +337,17 @@ function Navbar(props) {
                     
 
                 </div>}
+              </button>
+
+              <button className="side-link mobile-side-link" onClick={() => {
+                navigate("/")
+              }}>
+                <AiOutlineShoppingCart />
+
+                <span className="cart-stats flex-container align-center justify-center">
+                  3
+                </span>
+
               </button>
             </div>
           </Row>

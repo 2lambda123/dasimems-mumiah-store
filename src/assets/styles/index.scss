@@ -73,11 +73,11 @@ body{
         }
 
         .pop-up{
-            min-width: 300px;
+            min-width: 250px;
             width: auto;
             height: auto;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
-            padding: 30px;
+            padding: 20px;
             border-radius: 20px;
             -webkit-border-radius: 20px;
             -moz-border-radius: 20px;
@@ -402,6 +402,10 @@ body{
                     font-size: 0.7rem;
 
                 }
+            }
+
+            .mobile-side-link{
+                display: none;
             }
         }
     }
@@ -829,6 +833,27 @@ body{
                     width: 100%;
                     margin-top: 15px;
                     margin-bottom: 0px;
+                }
+            }
+
+        }
+    }
+
+    @media only screen and (max-width: 500px){
+        .nav-bar{
+
+            .cart-pop-up{
+                display: none;
+            }
+
+            .nav-bar-side-links{
+
+                .desktop-side-link{
+                    display: none;
+                }
+
+                .mobile-side-link{
+                    display: block;
                 }
             }
 

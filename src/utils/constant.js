@@ -2,6 +2,7 @@ import { AiOutlineTwitter, AiFillFacebook, AiOutlineInstagram } from "react-icon
 import { ImLocation2, ImPhone } from "react-icons/im"
 import { BiMailSend } from "react-icons/bi"
 import LogoImage from "../assets/images/logo.png"
+import LogoImageTwo from "../assets/images/mumia_footer_logo.png"
 
 export const routeName = {
     home: "/",
@@ -83,7 +84,8 @@ export const footerContact = [
 ]
 
 export const images = {
-    logo: LogoImage
+    logo: LogoImage,
+    logoTwo: LogoImageTwo
 }
 
 export const baseUrl = "https://mumiah.shop/api/v1"

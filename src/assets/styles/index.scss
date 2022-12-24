@@ -243,6 +243,10 @@ body{
         .footer-content{
             margin-bottom: 30px;
 
+            .py-4{
+                color: rgba(255, 255, 255, .8);
+            }
+
             .footer-image{
                 max-height: 35px;
             }
@@ -313,6 +317,10 @@ body{
 
                     a{
                         color: rgba(255, 255, 255, .8);
+
+                        .text{
+                            margin-left: 10px;
+                        }
                     }
                 }
             }

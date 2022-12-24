@@ -16,10 +16,6 @@
   src: url("../fonts/Poppins/Poppins-SemiBold.ttf");
 }
 @font-face {
-  font-family: poppins-extrabold;
-  src: url("../fonts/Poppins/Poppins-ExtraBold.ttf");
-}
-@font-face {
   font-family: poppins-medium;
   src: url("../fonts/Poppins/Poppins-Medium.ttf");
 }
@@ -29,10 +25,6 @@
 }
 html {
   font-size: 14px;
-}
-
-h1 {
-  font-family: poppins-bold;
 }
 
 a {
@@ -75,16 +67,9 @@ a {
   padding: 15px 25px;
 }
 
-.section {
-	padding: 5em 0;
-	position: relative; 
-}
-
 body {
   font-family: poppins;
-}
-
- /********************
+  /********************
   ===== NAV BAR STYLES =====
   *********************/
   /********************
@@ -254,8 +239,6 @@ body .main-body .banner .banner-container .banner-main-content .banner-content .
 body .main-body .banner .banner-container .banner-main-content .banner-content .banner-call-to-action .icon {
   margin-left: 10px;
 }
-
-/* Footer */
 body .footer {
   padding: 70px 0px;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
@@ -265,6 +248,9 @@ body .footer {
 }
 body .footer .footer-content {
   margin-bottom: 30px;
+}
+body .footer .footer-content .py-4 {
+  color: rgba(255, 255, 255, 0.8);
 }
 body .footer .footer-content .footer-image {
   max-height: 35px;
@@ -315,6 +301,9 @@ body .footer .footer-content .footer-links li:not(:first-child) {
 }
 body .footer .footer-content .footer-links li a {
   color: rgba(255, 255, 255, 0.8);
+}
+body .footer .footer-content .footer-links li a .text {
+  margin-left: 10px;
 }
 @media only screen and (max-width: 900px) {
   body .nav-bar .mobile-open-btn-link {

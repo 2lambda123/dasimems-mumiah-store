@@ -1,92 +1,108 @@
-import { Col, Row } from 'antd'
-import React from 'react'
-import { images, socialLinks } from '../../utils/constant'
-import {Link} from "react-router-dom"
+import { Col, Row } from "antd";
+import React from "react";
+import { images, socialLinks } from "../../utils/constant";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <>
-
-    <Row justify="center" className="footer">
-
+      <Row justify="center" className="footer">
         <Col span={22}>
+          <Row justify="space-between">
+            <Col
+              span={6}
+              lg={{ span: 6 }}
+              md={{ span: 7 }}
+              sm={{ span: 24 }}
+              xs={{ span: 24 }}
+              className="footer-content social-footer-content"
+            >
+              <img
+                className="footer-image"
+                alt="mumiah logo"
+                src={images.logo}
+              />
 
-            <Row justify="space-between">
+              <p className="py-4">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae
+                nesciunt aspernatur vero est numquam accusamus consectetur qui
+                laboriosam ad sunt.
+              </p>
 
-                <Col span={6} lg={{span: 6}} md={{span: 7}} sm={{span: 24}} xs={{span: 24}} className="footer-content social-footer-content">
+              <ul className="social-links">
+                {socialLinks.map((linkDetails, index) => {
+                  var { link, label, icon } = linkDetails;
 
-                    <img className="footer-image" alt="mumiah logo" src={images.logo} />
+                  return (
+                    <li key={index}>
+                      <a
+                        href={link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex-container align-center"
+                      >
+                        <span className="social-link-image flex-container">
+                          {icon}
+                        </span>
 
-                    <ul className="social-links">
+                        <span className="social-link-text">{label}</span>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </Col>
 
-                        {socialLinks.map((linkDetails, index) => {
+            <Col
+              span={6}
+              lg={{ span: 6 }}
+              md={{ span: 7 }}
+              sm={{ span: 11 }}
+              xs={{ span: 24 }}
+              className="footer-content"
+            >
+              <h2 className="footer-content-title">Quick Access</h2>
 
-                            var {link, label, icon} = linkDetails;
+              <ul className="footer-links">
+                <li>
+                  <Link to="">Link Name</Link>
+                </li>
+                <li>
+                  <Link to="">Link Name</Link>
+                </li>
+                <li>
+                  <Link to="">Link Name</Link>
+                </li>
+              </ul>
+            </Col>
 
-                            return(
-                                
-                                <li key={index}><a href={link} target="_blank" rel="noreferrer" className="flex-container align-center">
+            <Col
+              span={6}
+              lg={{ span: 6 }}
+              md={{ span: 7 }}
+              sm={{ span: 11 }}
+              xs={{ span: 24 }}
+              className="footer-content"
+            >
+              <h2 className="footer-content-title">Have a Question</h2>
 
-                                    <span className="social-link-image flex-container">
-                                        <img src={icon} alt={`${label} icon`} />
-                                        
-                                    </span>
-
-
-                                    <span className="social-link-text">
-
-                                        {label}
-
-                                    </span>
-
-                                </a></li>
-                            )
-
-                        })}
-
-                        
-                    </ul>
-                </Col>
-
-                <Col span={6} lg={{span: 6}} md={{span: 7}} sm={{span: 11}} xs={{span: 24}} className="footer-content">
-
-                    <h2 className="footer-content-title">Getting started</h2>
-
-                    <ul className="footer-links">
-                        <li><Link to="">Link Name</Link></li>
-                        <li><Link to="">Link Name</Link></li>
-                        <li><Link to="">Link Name</Link></li>
-                        <li><Link to="">Link Name</Link></li>
-                        <li><Link to="">Link Name</Link></li>
-                        <li><Link to="">Link Name</Link></li>
-                    </ul>
-                    
-                </Col>
-
-
-                <Col span={6} lg={{span: 6}} md={{span: 7}} sm={{span: 11}} xs={{span: 24}} className="footer-content">
-
-                    <h2 className="footer-content-title">Getting started</h2>
-
-                    <ul className="footer-links">
-                        <li><Link to="">Link Name</Link></li>
-                        <li><Link to="">Link Name</Link></li>
-                        <li><Link to="">Link Name</Link></li>
-                        <li><Link to="">Link Name</Link></li>
-                        <li><Link to="">Link Name</Link></li>
-                        <li><Link to="">Link Name</Link></li>
-                    </ul>
-
-                </Col>
-
-            </Row>
-
+              <ul className="footer-links">
+                <li>
+                  <Link to="">Link Name</Link>
+                </li>
+                <li>
+                  <Link to="">Link Name</Link>
+                </li>
+                <li>
+                  <Link to="">Link Name</Link>
+                </li>
+              </ul>
+            </Col>
+          </Row>
         </Col>
-
-    </Row>
-    
+      </Row>
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

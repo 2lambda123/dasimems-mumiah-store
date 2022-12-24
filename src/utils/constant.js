@@ -1,6 +1,7 @@
-
+import { AiOutlineTwitter, AiFillFacebook, AiOutlineInstagram } from "react-icons/ai"
+import { ImLocation2, ImPhone } from "react-icons/im"
+import { BiMailSend } from "react-icons/bi"
 import LogoImage from "../assets/images/logo.png"
-import FacebookLogo from "../assets/images/Facebook.svg"
 
 export const routeName = {
     home: "/",
@@ -41,10 +42,43 @@ export const icons = {
 
 export const socialLinks = [
     {
-        label: "Facebook",
-        icon: FacebookLogo,
-        link: "https://facebook.com",
-        id: 1
+        id: 1,
+        icon: <AiOutlineTwitter />,
+        link: '/',
+        label: "Twitter"
+    },
+    {
+        id: 2,
+        icon: <AiFillFacebook />,
+        link: "/",
+        label: "Facebook"
+    },
+    {
+        id: 3,
+        icon: <AiOutlineInstagram />,
+        link: '/',
+        label: "Instagram"
+    },
+]
+
+export const footerContact = [
+    {
+      id: 1,
+      icon: <ImLocation2 />,
+      url: "/",
+      text: "203 Fake St. Mountain View, San Francisco, California, USA"
+    },
+    {
+      id: 2,
+      icon: <ImPhone />,
+      url: "/",
+      text: "+234 819238441"
+    },
+    {
+      id: 3,
+      icon: <BiMailSend />,
+      url: "/",
+      text: "info@mumiah.shop"
     }
 ]
 

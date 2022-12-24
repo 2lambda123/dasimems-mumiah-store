@@ -15,7 +15,7 @@ const Footer = () => {
               md={{ span: 7 }}
               sm={{ span: 24 }}
               xs={{ span: 24 }}
-              className="footer-content social-footer-content"
+              className="footer-content wrap social-footer-content"
             >
               <img
                 className="footer-image"

@@ -57,6 +57,10 @@ a{
     justify-content: flex-end;
 }
 
+.column{
+    flex-direction: column;
+}
+
 .justify-start{
     justify-content: flex-start;
 }
@@ -69,6 +73,10 @@ a{
     align-items: flex-start;
 }
 
+.wrap{
+    flex-wrap: wrap;
+
+}
 
 .button{
     padding: 15px 25px;

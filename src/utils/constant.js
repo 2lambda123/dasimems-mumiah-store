@@ -1,6 +1,9 @@
 import { AiOutlineTwitter, AiFillFacebook, AiOutlineInstagram } from "react-icons/ai"
 import { ImLocation2, ImPhone } from "react-icons/im"
 import { BiMailSend } from "react-icons/bi"
+import { IoIosHelpBuoy } from "react-icons/io"
+import { FiHeart } from "react-icons/fi"
+import { HiOutlineUser, HiOutlineClipboardList } from "react-icons/hi"
 import LogoImage from "../assets/images/logo.png"
 import LogoImageTwo from "../assets/images/mumia_footer_logo.png"
 
@@ -80,6 +83,67 @@ export const footerContact = [
       icon: <BiMailSend />,
       url: "/",
       text: "info@mumiah.shop"
+    }
+]
+
+export const accountLinks = [
+    {
+        label: "My Account",
+        id: 1,
+        link: "/",
+        icon: <HiOutlineUser />
+    },
+
+
+    {
+        label: "My Order",
+        id: 2,
+        link: "/",
+        icon: <HiOutlineClipboardList />
+    },
+
+
+    {
+        label: "Wishlist",
+        id: 3,
+        link: "/",
+        icon: <FiHeart />
+    },
+
+    {
+        label: "Help",
+        id: 4,
+        link: "/",
+        icon: <IoIosHelpBuoy />
+    }
+]
+
+export const cartProducts = [
+    {
+        name: "Rey Nylon Backpack",
+        quantity: 2,
+        type: "natural",
+        size: "XL",
+        price: "74",
+        image: "",
+    },
+
+    {
+        name: "Round Buckle 1\" Belt",
+        quantity: 1,
+        type: "natural",
+        size: "SM",
+        price: "68",
+        image: "",
+    },
+
+    {
+        name: "Waffle Knit Beanie",
+        quantity: 3,
+        type: "natural",
+        size: "XL",
+        price: "132",
+        image: "",
     }
 ]
 

@@ -3,8 +3,6 @@ import { Helmet } from "react-helmet";
 import { useProductsContext } from "../contexts/products_context";
 import { Link } from "react-router-dom";
 import { Product } from "../components";
-import Navbar from "../components/common/Navbar";
-import Footer from "../components/common/Footer";
 import { Col, Row, Button } from "antd";
 import {FiSearch} from "react-icons/fi"
 import FadeAnimation from "../components/common/FadeAnimation";
@@ -16,15 +14,15 @@ function Home(props) {
 
   return (
     <>
-
-      <Navbar />
+      <Helmet>
+        <title>Home | Mumiah Stores</title>
+      </Helmet>
 
       <main className="main-body">
 
         <Row justify="center" className="banner align-center">
 
           <Col span={22} className="banner-container">
-
             <FadeAnimation>
 
               <Row justify="space-between" className="banner-main-content align-center">
@@ -58,22 +56,18 @@ function Home(props) {
 
         </Row>
 
+
         <div>
-          <Helmet>
-            <title>Home | Mumiah Stores</title>
-          </Helmet>
+        
           <div>
             <h1>Hello Home</h1>
             {newList.slice(0, 8).map((product) => {
               return <Product key={product.id} {...product} />;
             })}
+
           </div>
         </div>
       </main>
-
-      <Footer />
-    
-    
     </>
   );
 }

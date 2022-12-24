@@ -16,6 +16,10 @@
   src: url("../fonts/Poppins/Poppins-SemiBold.ttf");
 }
 @font-face {
+  font-family: poppins-extrabold;
+  src: url("../fonts/Poppins/Poppins-ExtraBold.ttf");
+}
+@font-face {
   font-family: poppins-medium;
   src: url("../fonts/Poppins/Poppins-Medium.ttf");
 }
@@ -25,6 +29,10 @@
 }
 html {
   font-size: 14px;
+}
+
+h1 {
+  font-family: poppins-bold;
 }
 
 a {
@@ -67,9 +75,16 @@ a {
   padding: 15px 25px;
 }
 
+.section {
+	padding: 5em 0;
+	position: relative; 
+}
+
 body {
   font-family: poppins;
-  /********************
+}
+
+ /********************
   ===== NAV BAR STYLES =====
   *********************/
   /********************
@@ -239,6 +254,8 @@ body .main-body .banner .banner-container .banner-main-content .banner-content .
 body .main-body .banner .banner-container .banner-main-content .banner-content .banner-call-to-action .icon {
   margin-left: 10px;
 }
+
+/* Footer */
 body .footer {
   padding: 70px 0px;
   border-top: 1px solid rgba(0, 0, 0, 0.2);

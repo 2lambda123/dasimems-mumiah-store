@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import { Navbar } from './components';
+import { Footer, Navbar } from './components';
 import { Home, About, Error, SingleProducts, Contact } from "./pages"
 
 function App(props) {
@@ -14,6 +14,7 @@ function App(props) {
        <Route path='/products/:id' element={<SingleProducts />} />
        <Route path='*' element={<Error />}  />
      </Routes>
+     <Footer />
    </Router>
   );
 }

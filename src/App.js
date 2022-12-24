@@ -7,14 +7,17 @@ function App(props) {
   return (
    <Router>
      <Navbar />
-     <Routes>
-       <Route path='/' element={<Home />} />
-       <Route path='/about' element={<About />} />
-       <Route path='/contact' element={<Contact />} />
-       <Route path='/products' element={<Product />} />
-       <Route path='/products/:id' element={<SingleProducts />} />
-       <Route path='*' element={<Error />}  />
-     </Routes>
+
+      <main className="main-body">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/products' element={<Product />} />
+          <Route path='/products/:id' element={<SingleProducts />} />
+          <Route path='*' element={<Error />}  />
+        </Routes>
+     </main>
      <Footer />
    </Router>
   );

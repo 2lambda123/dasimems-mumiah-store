@@ -83,7 +83,9 @@ body {
   /********************
   ===== MAIN BODY STYLES =====
   *********************/
-
+  /********************
+  ===== FOOTER STYLES =====
+  *********************/
 }
 body .nav-bar {
   width: 100%;
@@ -438,7 +440,13 @@ body .main-body {
   min-height: 100vh;
   height: 100%;
   /********************
+  ===== HOMEPAGE =====
+  *********************/
+  /********************
   ===== BANNER/HERO SECTION STYLES =====
+  *********************/
+  /********************
+  ===== CONTACT =====
   *********************/
 }
 body .main-body .banner {
@@ -482,11 +490,86 @@ body .main-body .banner .banner-container .banner-main-content .banner-content .
 body .main-body .banner .banner-container .banner-main-content .banner-content .banner-call-to-action .icon {
   margin-left: 10px;
 }
-
-
-  /********************
-  ===== FOOTER STYLES =====
-  *********************/
+body .main-body .contact-banner {
+  padding: 50px 0px;
+  padding-top: 130px;
+}
+body .main-body .contact-banner .contact-title {
+  font-size: 3.3rem;
+  font-family: poppins-semibold;
+}
+body .main-body .contact-content {
+  margin-bottom: 70px;
+}
+body .main-body .contact-content .contact-content-details .details-container {
+  margin-bottom: 50px;
+}
+body .main-body .contact-content .contact-content-details .details-container p {
+  font-size: 1.1rem;
+  padding: 0px;
+  margin: 0px;
+}
+body .main-body .contact-content .contact-content-details .details-container p.title {
+  font-family: poppins-semibold;
+  font-size: 1.2rem;
+}
+body .main-body .contact-content .contact-content-details .details-container p.value {
+  margin-top: 5px;
+  color: rgba(0, 0, 0, 0.8);
+}
+body .main-body .contact-content .contact-content-details .details-container:not(:first-child) {
+  margin-top: 50px;
+}
+body .main-body .contact-content .contact-content-details .form-content:not(:first-child) {
+  margin-top: 25px;
+}
+body .main-body .contact-content .contact-content-details .form-content label {
+  font-family: poppins-semibold;
+}
+body .main-body .contact-content .contact-content-details .form-content textarea,
+body .main-body .contact-content .contact-content-details .form-content input {
+  margin-top: 8px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: transparent;
+  padding: 0px 15px;
+  font-family: poppins;
+}
+body .main-body .contact-content .contact-content-details .form-content textarea:focus,
+body .main-body .contact-content .contact-content-details .form-content input:focus {
+  border: 2px solid rgba(0, 0, 0, 0.4);
+}
+body .main-body .contact-content .contact-content-details .form-content .form-err {
+  margin: 0px;
+  padding: 0px;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: rgb(255, 40, 20);
+}
+body .main-body .contact-content .contact-content-details .form-content .submit-btn {
+  width: auto;
+  height: auto;
+  background: #172133;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+}
+body .main-body .contact-content .contact-content-details .form-content input {
+  height: 50px;
+}
+body .main-body .contact-content .contact-content-details .form-content textarea {
+  height: 150px;
+  padding: 15px;
+}
 body .footer {
   padding: 70px 0px;
   border-top: 1px solid rgba(0, 0, 0, 0.2);

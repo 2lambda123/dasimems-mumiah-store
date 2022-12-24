@@ -14,6 +14,12 @@ export const routeName = {
     contact: "/contact"
 }
 
+export const contacts = {
+    address: "203 Fake St. Mountain View, San Francisco, California, USA",
+    mobileNumber: "+234 819238441",
+    email: "info@mumiah.shop"
+}
+
 export const pageLinks = [
     {
         label: "Home",
@@ -70,19 +76,19 @@ export const footerContact = [
       id: 1,
       icon: <ImLocation2 />,
       url: "/",
-      text: "203 Fake St. Mountain View, San Francisco, California, USA"
+      text: contacts.address
     },
     {
       id: 2,
       icon: <ImPhone />,
       url: "/",
-      text: "+234 819238441"
+      text: contacts.mobileNumber
     },
     {
       id: 3,
       icon: <BiMailSend />,
       url: "/",
-      text: "info@mumiah.shop"
+      text: contacts.email
     }
 ]
 

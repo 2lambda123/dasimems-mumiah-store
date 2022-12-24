@@ -476,6 +476,10 @@ body{
         min-height: 100vh;
         height: 100%;
 
+         /********************
+        ===== HOMEPAGE =====
+        *********************/
+
         /********************
         ===== BANNER/HERO SECTION STYLES =====
         *********************/
@@ -534,6 +538,116 @@ body{
                 }
             }
         }
+
+         /********************
+        ===== CONTACT =====
+        *********************/
+
+        .contact-banner{
+            padding: 50px 0px;
+            padding-top: calc(getMeasurement("headerHeight") + 50px);
+
+            .contact-title{
+                font-size: 3.3rem;
+                font-family: poppins-semibold;
+            }
+        }
+
+        .contact-content{
+            margin-bottom: 70px;
+
+            .contact-content-details{
+
+                .details-container{
+                    margin-bottom: 50px;
+
+                    p{
+                        font-size: 1.1rem;
+                        padding: 0px;
+                        margin: 0px;
+
+                        &.title{
+                            font-family: poppins-semibold;
+                            font-size: 1.2rem;
+                        }
+
+                        &.value{
+                            margin-top: 5px;
+                            color: rgba(0, 0, 0, .8);
+                        }
+
+                    }
+                    &:not(:first-child){
+                        margin-top: 50px;
+                    }
+                }
+
+                .form-content{
+
+                    &:not(:first-child){
+                        margin-top: 25px;
+                    }
+                    label{
+                        font-family: poppins-semibold;
+                        
+                    }
+
+                    textarea,
+                    input{
+                        margin-top: 8px;
+                        border-radius: 15px;
+                        -webkit-border-radius: 15px;
+                        -moz-border-radius: 15px;
+                        -ms-border-radius: 15px;
+                        -o-border-radius: 15px;
+                        outline: none;
+                        border: 1px solid rgba(0, 0, 0, .2);
+                        background: transparent;
+                        padding: 0px 15px;
+                        font-family: poppins;
+                        
+                        &:focus{
+                            border: 2px solid rgba(0, 0, 0, .4);
+
+                        }
+
+                    }
+
+                    .form-err{
+                        margin: 0px;
+                        padding: 0px;
+                        margin-top: 5px;
+                        font-size: 0.9rem;
+                        color: rgba(255, 40, 20);
+                    }
+
+                    .submit-btn{
+                        width: auto;
+                        height: auto;
+                        background: #172133;
+                        color: white;
+                        padding: 15px 25px;
+                        border-radius: 100px;
+                        -webkit-border-radius: 100px;
+                        -moz-border-radius: 100px;
+                        -ms-border-radius: 100px;
+                        -o-border-radius: 100px;
+                    }
+
+                    input{
+                        height: 50px;
+                    }
+
+                    textarea{
+                        height: 150px;
+                        padding: 15px;
+
+                    }
+                }
+            }
+
+        }
+
     }
 
     

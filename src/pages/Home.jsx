@@ -18,7 +18,6 @@ function Home(props) {
         <title>Home | Mumiah Stores</title>
       </Helmet>
 
-      <main className="main-body">
         <Row justify="center" className="banner align-center">
           <Col span={22} className="banner-container">
             <FadeAnimation>
@@ -56,7 +55,6 @@ function Home(props) {
             })}
           </div>
         </div>
-      </main>
     </>
   );
 }

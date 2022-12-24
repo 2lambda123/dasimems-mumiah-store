@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { formatPrice } from "../../utils/helpers";
 
-function Product({ image, name, price, id }) {
+function ProductCard({ image, name, price, id }) {
   return (
     <div>
       <Link to={`/products/${id}`} className="container">
@@ -10,11 +10,11 @@ function Product({ image, name, price, id }) {
           <img width={"200px"} src={image} alt={name} />
 
           <h5>{name}</h5>
-          <p>{formatPrice(price)}</p>
+          <p>{formatPrice(price.amount)}</p>
         </div>
       </Link>
     </div>
   );
 }
 
-export default Product;
+export default ProductCard;

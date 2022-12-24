@@ -1,15 +1,19 @@
 import Loading from "./Loading"
 import Error from "./Error"
-import Product from "./products/Product"
+import ProductCard from "./products/ProductCard"
 import SingleAddToCart from "./products/SingleAddToCart"
 import Navbar from "./common/Navbar"
 import Footer from "./common/Footer"
+import Sort from "./products/Sort"
+import ProductList from "./products/ProductList"
 
 export {
   Loading,
   Error,
-  Product,
+  ProductCard,
   SingleAddToCart,
   Navbar,
-  Footer
+  Footer,
+  Sort,
+  ProductList
 }

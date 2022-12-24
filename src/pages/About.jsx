@@ -8,7 +8,12 @@ import aboutImg from "../assets/images/hero-right-3.png";
 function About(props) {
   return (
     <>
-      <main className="section">
+      <main
+        style={{
+          padding: "5em 0",
+          position: "relative",
+        }}
+      >
         <div>
           <Helmet>
             <title>About Us | Mumiah Stores</title>

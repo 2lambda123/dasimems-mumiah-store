@@ -75,9 +75,7 @@ body {
   /********************
   ===== MAIN BODY STYLES =====
   *********************/
-  /********************
-  ===== FOOTER STYLES =====
-  *********************/
+
 }
 body .nav-bar {
   width: 100%;
@@ -239,6 +237,11 @@ body .main-body .banner .banner-container .banner-main-content .banner-content .
 body .main-body .banner .banner-container .banner-main-content .banner-content .banner-call-to-action .icon {
   margin-left: 10px;
 }
+
+
+  /********************
+  ===== FOOTER STYLES =====
+  *********************/
 body .footer {
   padding: 70px 0px;
   border-top: 1px solid rgba(0, 0, 0, 0.2);

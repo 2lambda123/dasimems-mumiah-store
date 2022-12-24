@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import { Product } from "../components";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
-import { Row } from "antd";
+import { Col, Row, Button } from "antd";
+import {FiSearch} from "react-icons/fi"
+import FadeAnimation from "../components/common/FadeAnimation";
 
 function Home(props) {
   const { products } = useProductsContext();
@@ -20,6 +22,39 @@ function Home(props) {
       <main className="main-body">
 
         <Row justify="center" className="banner align-center">
+
+          <Col span={22} className="banner-container">
+
+            <FadeAnimation>
+
+              <Row justify="space-between" className="banner-main-content align-center">
+                
+                <Col span={15} className="banner-content">
+                  <p className="banner-subtitle">In this season, find the best 🔥</p>
+
+                  <h1 className="banner-title">Exclusive collection for everyone</h1>
+
+                  <Button className="banner-call-to-action">
+
+                    <span className="text">
+
+                      Explore Now
+
+                    </span>
+
+                    <span className="icon">
+                      <FiSearch />
+                    </span>
+                    
+                  </Button>
+                </Col>
+
+              </Row>
+              
+            </FadeAnimation>
+
+
+          </Col>
 
         </Row>
 

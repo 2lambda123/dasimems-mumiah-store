@@ -7,6 +7,7 @@ import { Col, Row, Button } from "antd";
 import { FiSearch } from "react-icons/fi";
 import FadeAnimation from "../components/common/FadeAnimation";
 import { routeName } from "../utils/constant";
+import BannerImage from "../assets/images/hero-right-3.png"
 
 function Home(props) {
   const { products } = useProductsContext();
@@ -32,6 +33,9 @@ function Home(props) {
                 justify="space-between"
                 className="banner-main-content align-center"
               >
+
+                <img src={BannerImage} alt="mumia banner" className="banner-image" />
+
                 <Col span={15} className="banner-content">
                   <p className="banner-subtitle">
                     In this season, find the best 🔥
@@ -51,6 +55,7 @@ function Home(props) {
                     </span>
                   </Button>
                 </Col>
+                
               </Row>
             </FadeAnimation>
           </Col>

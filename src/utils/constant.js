@@ -4,6 +4,9 @@ import { BiMailSend } from "react-icons/bi"
 import { IoIosHelpBuoy } from "react-icons/io"
 import { FiHeart } from "react-icons/fi"
 import { HiOutlineUser, HiOutlineClipboardList } from "react-icons/hi"
+import BannerImageTwo from "../assets/images/hero-right-2.png"
+import BannerImageOne from "../assets/images/hero-right.png"
+import BannerImageThree from "../assets/images/hero-right-3.png"
 import LogoImage from "../assets/images/logo.png"
 import LogoImageTwo from "../assets/images/mumia_footer_logo.png"
 
@@ -20,6 +23,14 @@ export const contacts = {
     mobileNumber: "+234 819238441",
     email: "info@mumiah.shop"
 }
+
+export const heroContent = [
+    {
+        subtitle: "In this season, find the best",
+        title: "Exclusive collection for everyone",
+        img: BannerImageOne
+    }
+]
 
 export const pageLinks = [
     {

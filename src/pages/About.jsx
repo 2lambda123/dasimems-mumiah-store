@@ -2,8 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import aboutImg from "../assets/images/hero-right-3.png";
-// import { Layout } from "antd";
-// const { Content } = Layout;
 
 function About(props) {
   return (

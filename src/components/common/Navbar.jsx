@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import {Row, Col, Button } from "antd";
-import { accountLinks, cartProducts, images, pageLinks } from "../../utils/constant";
+import { accountLinks, cartProducts, images, pageLinks, routeName } from "../../utils/constant";
 import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router";
 import { FiSearch } from "react-icons/fi";
@@ -340,7 +340,7 @@ function Navbar(props) {
               </button>
 
               <button className="side-link mobile-side-link" onClick={() => {
-                navigate("/")
+                navigate(routeName.cart)
               }}>
                 <AiOutlineShoppingCart />
 

@@ -1,16 +1,18 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useProductsContext } from "../contexts/products_context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ProductCard } from "../components";
 import { Col, Row, Button } from "antd";
 import { FiSearch } from "react-icons/fi";
 import FadeAnimation from "../components/common/FadeAnimation";
+import { routeName } from "../utils/constant";
 
 function Home(props) {
   const { products } = useProductsContext();
   const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
   const newList = shuffle(products);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -20,6 +22,11 @@ function Home(props) {
 
         <Row justify="center" className="banner align-center">
           <Col span={22} className="banner-container">
+
+          <div className="ellipse ellipse-one"></div>
+          <div className="ellipse ellipse-two"></div>
+          <div className="ellipse ellipse-three"></div>
+          <div className="ellipse ellipse-four"></div>
             <FadeAnimation>
               <Row
                 justify="space-between"
@@ -34,7 +41,9 @@ function Home(props) {
                     Exclusive collection for everyone
                   </h1>
 
-                  <Button className="banner-call-to-action">
+                  <Button className="banner-call-to-action" onClick={()=>{
+                    navigate(routeName.products)
+                  }}>
                     <span className="text">Explore Now</span>
 
                     <span className="icon">

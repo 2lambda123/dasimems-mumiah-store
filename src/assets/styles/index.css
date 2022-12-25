@@ -462,6 +462,47 @@ body .main-body .banner {
 body .main-body .banner .banner-container {
   position: relative;
 }
+body .main-body .banner .banner-container .ellipse {
+  position: absolute;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: grey;
+}
+body .main-body .banner .banner-container .ellipse-one {
+  width: 15px;
+  height: 15px;
+  bottom: -20px;
+  background: #FF6650;
+}
+body .main-body .banner .banner-container .ellipse-two {
+  width: 15px;
+  height: 15px;
+  bottom: -40px;
+  left: 10%;
+  background: #43B97F;
+}
+body .main-body .banner .banner-container .ellipse-three {
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #C280D2;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+body .main-body .banner .banner-container .ellipse-four {
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  right: 10%;
+  background: #43B97F;
+}
 body .main-body .banner .banner-container .banner-main-content {
   padding-top: 80px;
 }

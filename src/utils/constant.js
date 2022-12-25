@@ -11,7 +11,8 @@ export const routeName = {
     home: "/",
     about: "/about",
     products: "/products",
-    contact: "/contact"
+    contact: "/contact",
+    cart: "/cart"
 }
 
 export const contacts = {

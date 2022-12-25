@@ -1,7 +1,7 @@
 import { Button, Col, Row } from "antd";
 import React, { useState, useCallback } from "react";
 import { Helmet } from "react-helmet"
-import { contacts, routeName } from "../utils/constant";
+import { contacts} from "../utils/constant";
 
 function Contact(props) {
 

@@ -38,27 +38,34 @@ const FadeAnimation = ({children}) => {
       animationChildren.forEach((element, index)=>{
 
         element.style.opacity = "0";
+        element.style.transition = "none";
         
 
         if (element.classList.contains("active-animation")) {
 
           element.classList.remove("active-animation")
           
+
         }
 
-        if (index === count){
+        // if (index === count){
 
-          element.style.transition = "0.5s ease all";
-          element.classList.add("active-animation")
-          element.style.opacity = "1";
+        //   element.style.transition = "0.5s ease all";
+        //   element.classList.add("active-animation")
+        //   element.style.opacity = "1";
           
           
           
-        }else{
+        // }else{
 
-          element.style.transition = "none";
-        }
+        //   element.style.transition = "none";
+        // }
+        
       })
+
+      animationChildren[count].style.transition = "0.5s ease all";
+      animationChildren[count].classList.add("active-animation")
+      animationChildren[count].style.opacity = "1";
 
       if(count < (animationChildren.length - 1)){
 

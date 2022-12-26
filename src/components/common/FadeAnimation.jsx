@@ -39,6 +39,7 @@ const FadeAnimation = ({children}) => {
 
         element.style.opacity = "0";
         element.style.transition = "none";
+        element.style.zIndex = "0";
         
 
         if (element.classList.contains("active-animation")) {
@@ -47,24 +48,12 @@ const FadeAnimation = ({children}) => {
           
 
         }
-
-        // if (index === count){
-
-        //   element.style.transition = "0.5s ease all";
-        //   element.classList.add("active-animation")
-        //   element.style.opacity = "1";
-          
-          
-          
-        // }else{
-
-        //   element.style.transition = "none";
-        // }
         
       })
 
       animationChildren[count].style.transition = "0.5s ease all";
       animationChildren[count].classList.add("active-animation")
+      animationChildren[count].style.zIndex = "9";
       animationChildren[count].style.opacity = "1";
 
       if(count < (animationChildren.length - 1)){

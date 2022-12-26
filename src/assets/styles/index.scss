@@ -660,6 +660,60 @@ body{
             }
         }
 
+        /********************
+        ===== BUYING STEPS SECTION STYLES =====
+        *********************/
+
+        .buying-steps{
+            padding: getMeasurement("paddingVerticalTwo") 0px;
+            border-top: 1px solid rgba(0, 0, 0, .1);
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+            .buying-steps-content{
+
+                .buying-steps-inner-content{
+
+                    .step-card{
+                        text-align: center;
+
+                        .step-image{
+                            max-width: 100px;
+                        }
+
+                        .step-card-tag,
+                        .step-card-title,
+                        .step-card-subtitle{
+                            margin-top: 15px;
+                        }
+
+                        .step-card-tag{
+                            display: inline-flex;
+                            padding: 5px 15px;
+                            background: rgba(0, 0, 0, .1);
+                            border-radius: 50px;
+                            -webkit-border-radius: 50px;
+                            -moz-border-radius: 50px;
+                            -ms-border-radius: 50px;
+                            -o-border-radius: 50px;
+                            font-size: 0.8rem;
+                            margin-top: 25px;
+                        }
+
+                        .step-card-title{
+                            font-size: 1rem;
+                            font-family: poppins-semibold;
+                        }
+
+                        .step-card-subtitle{
+                            color: rgba(0, 0, 0, .7);
+                        }
+                        
+                    }
+
+                }
+            }
+        }
+
          /********************
         ===== CONTACT =====
         *********************/

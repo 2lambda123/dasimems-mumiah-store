@@ -6,7 +6,8 @@ $colors: (
 
 $measurements: (
     "headerHeight": 80px,
-    "paddingVertical": 70px
+    "paddingVertical": 70px,
+    "paddingVerticalTwo": 100px
 );
 
 @function getColor($key){

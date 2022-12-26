@@ -453,6 +453,9 @@ body .main-body {
   ===== BANNER/HERO SECTION STYLES =====
   *********************/
   /********************
+  ===== BUYING STEPS SECTION STYLES =====
+  *********************/
+  /********************
   ===== CONTACT =====
   *********************/
 }
@@ -591,6 +594,41 @@ body .main-body .banner .banner-container .active-animation .banner-image {
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
+}
+body .main-body .buying-steps {
+  padding: 100px 0px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+body .main-body .buying-steps .buying-steps-content .buying-steps-inner-content .step-card {
+  text-align: center;
+}
+body .main-body .buying-steps .buying-steps-content .buying-steps-inner-content .step-card .step-image {
+  max-width: 100px;
+}
+body .main-body .buying-steps .buying-steps-content .buying-steps-inner-content .step-card .step-card-tag,
+body .main-body .buying-steps .buying-steps-content .buying-steps-inner-content .step-card .step-card-title,
+body .main-body .buying-steps .buying-steps-content .buying-steps-inner-content .step-card .step-card-subtitle {
+  margin-top: 15px;
+}
+body .main-body .buying-steps .buying-steps-content .buying-steps-inner-content .step-card .step-card-tag {
+  display: inline-flex;
+  padding: 5px 15px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  font-size: 0.8rem;
+  margin-top: 25px;
+}
+body .main-body .buying-steps .buying-steps-content .buying-steps-inner-content .step-card .step-card-title {
+  font-size: 1rem;
+  font-family: poppins-semibold;
+}
+body .main-body .buying-steps .buying-steps-content .buying-steps-inner-content .step-card .step-card-subtitle {
+  color: rgba(0, 0, 0, 0.7);
 }
 body .main-body .contact-banner {
   padding: 50px 0px;

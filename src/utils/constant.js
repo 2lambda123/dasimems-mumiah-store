@@ -7,6 +7,10 @@ import { HiOutlineUser, HiOutlineClipboardList } from "react-icons/hi"
 import BannerImageTwo from "../assets/images/hero-right-2.png"
 import BannerImageOne from "../assets/images/hero-right.png"
 import BannerImageThree from "../assets/images/hero-right-3.png"
+import StepOneImage from "../assets/images/HIW1img.png"
+import StepTwoImage from "../assets/images/HIW2img.png"
+import StepThreeImage from "../assets/images/HIW3img.png"
+import StepFourImage from "../assets/images/HIW4img.png"
 import LogoImage from "../assets/images/logo.png"
 import LogoImageTwo from "../assets/images/mumia_footer_logo.png"
 
@@ -23,6 +27,40 @@ export const contacts = {
     mobileNumber: "+234 819238441",
     email: "info@mumiah.shop"
 }
+
+export const buyingSteps = [
+    {
+        title: "Filter and discover",
+        subtitle: "Smart filtering and suggestion make it easy to find",
+        image: StepOneImage,
+        colorScheme: "#FEE2E2",
+        textColor: "#991B1B"
+    },
+
+    {
+        title: "Add to bag",
+        subtitle: "Easily select the correct items and add them to the cart",
+        image: StepTwoImage,
+        colorScheme: "#E0E7FF",
+        textColor: "#3739AF"
+    },
+
+    {
+        title: "Fast shipping",
+        subtitle: "The carrier will confirm and ship quickly to you",
+        image: StepThreeImage,
+        colorScheme: "#FEF9C3",
+        textColor: "#854D0E"
+    },
+
+    {
+        title: "Enjoy the product",
+        subtitle: "Have fun and enjoy your 5-star quality products",
+        image: StepFourImage,
+        colorScheme: "#F3E8FF",
+        textColor: "#6B21B3"
+    }
+]
 
 export const heroContent = [
     {

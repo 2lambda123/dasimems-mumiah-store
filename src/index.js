@@ -4,6 +4,12 @@ import "antd/dist/antd"
 
 import App from './App';
 
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
+
 import "./assets/styles/index.css";
 
 import { ProductsProvider } from "./contexts/products_context"

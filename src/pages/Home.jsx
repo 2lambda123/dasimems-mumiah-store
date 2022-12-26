@@ -6,7 +6,7 @@ import { ProductCard } from "../components";
 import { Col, Row, Button } from "antd";
 import { FiSearch } from "react-icons/fi";
 import FadeAnimation from "../components/common/FadeAnimation";
-import { routeName } from "../utils/constant";
+import { heroContent, routeName } from "../utils/constant";
 import BannerImage from "../assets/images/hero-right-3.png"
 
 function Home(props) {
@@ -29,34 +29,43 @@ function Home(props) {
           <div className="ellipse ellipse-three"></div>
           <div className="ellipse ellipse-four"></div>
             <FadeAnimation>
-              <Row
-                justify="space-between"
-                className="banner-main-content align-center"
-              >
 
-                <img src={BannerImage} alt="mumia banner" className="banner-image" />
+              {heroContent.map((content, index)=>{
+                var {image, subtitle, title}  = content;
+                return(
 
-                <Col span={15} className="banner-content">
-                  <p className="banner-subtitle">
-                    In this season, find the best 🔥
-                  </p>
+                  <Row
+                    key={index}
+                    justify="space-between"
+                    className="banner-main-content align-center"
+                  >
 
-                  <h1 className="banner-title">
-                    Exclusive collection for everyone
-                  </h1>
+                    <img src={image} alt="mumia banner" className="banner-image" />
 
-                  <Button className="banner-call-to-action" onClick={()=>{
-                    navigate(routeName.products)
-                  }}>
-                    <span className="text">Explore Now</span>
+                    <Col span={15} className="banner-content">
+                      <p className="banner-subtitle">
+                        {subtitle} 🔥
+                      </p>
 
-                    <span className="icon">
-                      <FiSearch />
-                    </span>
-                  </Button>
-                </Col>
-                
-              </Row>
+                      <h1 className="banner-title">
+                        {title}
+                      </h1>
+
+                      <Button className="banner-call-to-action" onClick={()=>{
+                        navigate(routeName.products)
+                      }}>
+                        <span className="text">Explore Now</span>
+
+                        <span className="icon">
+                          <FiSearch />
+                        </span>
+                      </Button>
+                    </Col>
+
+                  </Row>
+                  
+                )
+              })}
             </FadeAnimation>
           </Col>
         </Row>

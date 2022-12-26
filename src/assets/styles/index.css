@@ -481,18 +481,18 @@ body .main-body .banner .banner-container .ellipse {
 body .main-body .banner .banner-container .ellipse-one {
   width: 15px;
   height: 15px;
-  bottom: -20px;
+  bottom: 15%;
   background: #FF6650;
 }
 body .main-body .banner .banner-container .ellipse-two {
   width: 15px;
   height: 15px;
-  bottom: -40px;
-  left: 10%;
+  bottom: 10%;
+  left: 15%;
   background: #43B97F;
 }
 body .main-body .banner .banner-container .ellipse-three {
-  top: -50px;
+  top: calc(80px + 13%);
   left: 50%;
   transform: translateX(-50%);
   background: #C280D2;
@@ -504,7 +504,7 @@ body .main-body .banner .banner-container .ellipse-three {
 body .main-body .banner .banner-container .ellipse-four {
   width: 20px;
   height: 20px;
-  top: 0px;
+  top: calc(80px + 21%);
   right: 10%;
   background: #43B97F;
 }
@@ -512,11 +512,26 @@ body .main-body .banner .banner-container .banner-main-content {
   padding-top: 80px;
   position: relative;
   height: 100%;
+  transition: 0.5s ease all;
+  -webkit-transition: 0.5s ease all;
+  -moz-transition: 0.5s ease all;
+  -ms-transition: 0.5s ease all;
+  -o-transition: 0.5s ease all;
 }
 body .main-body .banner .banner-container .banner-main-content .banner-content .banner-subtitle {
   font-family: poppins-medium;
   font-size: 1.5rem;
   color: rgba(0, 0, 0, 0.8);
+}
+body .main-body .banner .banner-container .banner-main-content .banner-content .banner-title,
+body .main-body .banner .banner-container .banner-main-content .banner-content .banner-call-to-action {
+  width: 100%;
+  margin-left: -20%;
+  transition: 0.5s ease all;
+  -webkit-transition: 0.8s ease all;
+  -moz-transition: 0.8s ease all;
+  -ms-transition: 0.8s ease all;
+  -o-transition: 0.8s ease all;
 }
 body .main-body .banner .banner-container .banner-main-content .banner-content .banner-title {
   margin-top: 30px;
@@ -541,13 +556,41 @@ body .main-body .banner .banner-container .banner-main-content .banner-content .
 body .main-body .banner .banner-container .banner-main-content .banner-content .banner-call-to-action .icon {
   margin-left: 10px;
 }
-body .main-body .banner .banner-container .banner-image {
+body .main-body .banner .banner-container .banner-main-content .banner-image {
   position: absolute;
   z-index: 9;
   max-height: 620px;
   max-width: 700px;
   bottom: 0px;
   right: 0px;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transition: 0.5s ease all;
+  -webkit-transition: 0.5s ease all;
+  -moz-transition: 0.5s ease all;
+  -ms-transition: 0.5s ease all;
+  -o-transition: 0.5s ease all;
+}
+body .main-body .banner .banner-container .active-animation {
+  transition: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+}
+body .main-body .banner .banner-container .active-animation .banner-content .banner-title,
+body .main-body .banner .banner-container .active-animation .banner-content .banner-call-to-action {
+  margin-left: 0px;
+}
+body .main-body .banner .banner-container .active-animation .banner-image {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
 }
 body .main-body .contact-banner {
   padding: 50px 0px;

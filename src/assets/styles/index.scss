@@ -520,20 +520,20 @@ body{
                 .ellipse-one{
                     width: 15px;
                     height: 15px;
-                    bottom: -20px;
+                    bottom: 15%;
                     background: #FF6650;
                 }
 
                 .ellipse-two{
                     width: 15px;
                     height: 15px;
-                    bottom: -40px;
-                    left: 10%;
+                    bottom: 10%;
+                    left: 15%;
                     background: #43B97F;
                 }
 
                 .ellipse-three{
-                    top: -50px;
+                    top: calc(getMeasurement("headerHeight") + 13%);
                     left: 50%;
                     transform: translateX(-50%);
                     background: #C280D2;
@@ -546,7 +546,7 @@ body{
                 .ellipse-four{
                     width: 20px;
                     height: 20px;
-                    top: 0px;
+                    top: calc(getMeasurement("headerHeight") + 21%);
                     right: 10%;
                     background: #43B97F;
                 }
@@ -556,7 +556,11 @@ body{
                     padding-top: calc(getMeasurement("headerHeight") + 0px);
                     position: relative;
                     height: 100%;
-
+                    transition: 0.5s ease all;
+                    -webkit-transition: 0.5s ease all;
+                    -moz-transition: 0.5s ease all;
+                    -ms-transition: 0.5s ease all;
+                    -o-transition: 0.5s ease all;
 
                     .banner-content{
 
@@ -564,6 +568,17 @@ body{
                             font-family: poppins-medium;
                             font-size: 1.5rem;
                             color: rgba(0, 0, 0, .8);
+                        }
+
+                        .banner-title,
+                        .banner-call-to-action{
+                            width: 100%;
+                            margin-left: -20%;
+                            transition: 0.5s ease all;
+                            -webkit-transition: 0.8s ease all;
+                            -moz-transition: 0.8s ease all;
+                            -ms-transition: 0.8s ease all;
+                            -o-transition: 0.8s ease all;
                         }
 
                         .banner-title{
@@ -594,18 +609,53 @@ body{
 
 
                     }
+                    
+                    .banner-image{
+                        position: absolute;
+                        z-index: 9;
+                        max-height: 620px;
+                        max-width: 700px;
+                        bottom: 0px;
+                        right: 0px;
+                        transform: scale(1.1);
+                        -webkit-transform: scale(1.1);
+                        -moz-transform: scale(1.1);
+                        -ms-transform: scale(1.1);
+                        -o-transform: scale(1.1);
+                        transition: 0.5s ease all;
+                        -webkit-transition: 0.5s ease all;
+                        -moz-transition: 0.5s ease all;
+                        -ms-transition: 0.5s ease all;
+                        -o-transition: 0.5s ease all;
+}
 
                     
                 }
 
-                .banner-image{
-                    position: absolute;
-                    z-index: 9;
-                    max-height: 620px;
-                    max-width: 700px;
-                    bottom: 0px;
-                    right: 0px;
+                .active-animation{
+                    transition: none;
+                    -webkit-transition: none;
+                    -moz-transition: none;
+                    -ms-transition: none;
+                    -o-transition: none;
 
+
+                    .banner-content{
+                        
+                        .banner-title,
+                        .banner-call-to-action{
+                            margin-left: 0px;
+                        }
+                    }
+
+                    .banner-image{
+                        transform: scale(1);
+                        -webkit-transform: scale(1);
+                        -moz-transform: scale(1);
+                        -ms-transform: scale(1);
+                        -o-transform: scale(1);
+                    }
+                    
                 }
             }
         }

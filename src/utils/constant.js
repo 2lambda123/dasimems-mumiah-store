@@ -28,7 +28,19 @@ export const heroContent = [
     {
         subtitle: "In this season, find the best",
         title: "Exclusive collection for everyone",
-        img: BannerImageOne
+        image: BannerImageOne
+    },
+
+    {
+        subtitle: "In this season, find the best",
+        title: "Exclusive collection for everyone",
+        image: BannerImageTwo
+    },
+
+    {
+        subtitle: "In this season, find the best",
+        title: "Exclusive collection for everyone",
+        image: BannerImageThree
     }
 ]
 

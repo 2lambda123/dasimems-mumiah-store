@@ -107,13 +107,13 @@ function Home(props) {
           <Col span={22} className="advertisement-container">
             <Row justify="space-between" className="advertisement-inner-content align-center">
 
-              <Col span={11} order={1} className="advertisement-image">
+              <Col span={11} order={1} lg={{span: 11, order: 1}} md={{span: 11, order: 1}} xs={{span: 24, order: 2}} className="advertisement-image">
 
                 <img src={images.promoOne} alt="" />
 
               </Col>
 
-              <Col span={11} order={2} className="advertisement-details">
+              <Col span={11} order={2} lg={{span: 11, order: 1}} md={{span: 11, order: 1}} xs={{span: 24, order: 1}} className="advertisement-details">
 
                 <img src={images.logo} alt="mumiah logo" className="advertisement-logo" />
 
@@ -139,13 +139,13 @@ function Home(props) {
         <Col span={22} className="advertisement-container">
           <Row justify="space-between" className="advertisement-inner-content align-center">
 
-            <Col span={11} order={2} className="advertisement-image">
+            <Col span={11} order={2} lg={{span: 11, order: 2}} md={{span: 11, order: 2}} xs={{span: 24, order: 2}} className="advertisement-image">
 
               <img src={images.promoTwo} alt="" />
 
             </Col>
 
-            <Col span={11} order={1} className="advertisement-details">
+            <Col span={11} order={1} lg={{span: 11, order: 1}} md={{span: 11, order: 1}} xs={{span: 24, order: 1}} className="advertisement-details">
 
               <h1 className="advertisement-title">
                 Don't miss out on special offers

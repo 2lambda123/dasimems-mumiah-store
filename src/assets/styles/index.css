@@ -730,9 +730,14 @@ body .main-body .advertisement .advertisement-container .advertisement-inner-con
 }
 body .main-body .advertisement .advertisement-container .advertisement-inner-content .advertisement-details .advertisement-title {
   max-width: 370px;
-  font-size: 3.5rem;
+  font-size: clamp(1.5rem, 11vw, 3.5rem);
   margin-top: 40px;
   font-family: poppins-semibold;
+}
+@media only screen and (max-width: 965px) {
+  body .main-body .advertisement .advertisement-container .advertisement-inner-content .advertisement-details .advertisement-title {
+    max-width: unset;
+  }
 }
 body .main-body .advertisement .advertisement-container .advertisement-inner-content .advertisement-details .advertisement-subtitle {
   color: rgba(0, 0, 0, 0.7);
@@ -797,11 +802,6 @@ body .main-body .advertisement-two .advertisement-container .advertisement-inner
 body .main-body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-image {
   position: relative;
   height: 100%;
-}
-body .main-body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-image img {
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
 }
 body .main-body .contact-banner {
   padding: 50px 0px;
@@ -996,6 +996,33 @@ body .footer .footer-content .footer-links li a .text {
     width: 100%;
     margin-top: 15px;
     margin-bottom: 0px;
+  }
+  body .advertisement .advertisement-container .advertisement-inner-content,
+body .advertisement-two .advertisement-container .advertisement-inner-content {
+    height: auto !important;
+    padding: 30px 0px;
+    padding-bottom: 0px;
+  }
+  body .advertisement .advertisement-container .advertisement-inner-content .advertisement-details,
+body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-details {
+    padding: 0px 30px;
+  }
+  body .advertisement .advertisement-container .advertisement-inner-content .advertisement-details .advertisement-title,
+body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-details .advertisement-title {
+    max-width: unset;
+  }
+  body .advertisement .advertisement-container .advertisement-inner-content .advertisement-image,
+body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-image {
+    position: relative;
+    height: 100%;
+    margin-top: 30px;
+  }
+  body .advertisement .advertisement-container .advertisement-inner-content .advertisement-image img,
+body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-image img {
+    width: 100%;
+    max-width: 500px;
+    position: relative !important;
+    bottom: unset;
   }
 }
 @media only screen and (max-width: 500px) {

@@ -13,7 +13,17 @@ import { useProductsContext } from "./products_context"
 const initialState = {
     filtered_products: [],
     all_products: [],
-    sort: 'price-lowest'
+    sort: 'price-lowest',
+    filters:{
+      text: '',
+      company: 'all',
+      category: 'all',
+      size: 'all',
+      min_price: 0,
+      max_price: 0,
+      price: 0,
+      shipping: false,
+    }
 }
   
 const FilterContext = React.createContext()

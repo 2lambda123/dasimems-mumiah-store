@@ -1,6 +1,11 @@
 import { Col, Row } from "antd";
 import React from "react";
-import { footerContact, images, pageLinks, socialLinks } from "../../utils/constant";
+import {
+  footerContact,
+  images,
+  pageLinks,
+  socialLinks,
+} from "../../utils/constant";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -64,15 +69,13 @@ const Footer = () => {
               <h2 className="footer-content-title">Quick Access</h2>
 
               <ul className="footer-links">
-
                 {pageLinks.map((linkDetails, index) => {
-                    var {link, label} = linkDetails;
-                    return(
-
+                  var { link, label } = linkDetails;
+                  return (
                     <li key={index}>
-                        <Link to={link}>{label}</Link>
+                      <Link to={link}>{label}</Link>
                     </li>
-                    )
+                  );
                 })}
               </ul>
             </Col>
@@ -88,20 +91,17 @@ const Footer = () => {
               <h2 className="footer-content-title">Have a Question</h2>
 
               <ul className="footer-links">
-
-                {footerContact.map((contact, index)=>{
-                    var {text, icon, url} = contact;
-                    return(
-                    <li>
-                        <a href={url} rel="noreferrer" target="_blank">
-                            <span className="icon">{icon}</span>
-                            <span className="text">{text}</span>
-                        </a>
+                {footerContact.map((contact, index) => {
+                  var { text, icon, url } = contact;
+                  return (
+                    <li key={index}>
+                      <a href={url} rel="noreferrer" target="_blank">
+                        <span className="icon">{icon}</span>
+                        <span className="text">{text}</span>
+                      </a>
                     </li>
-
-                    )
+                  );
                 })}
-                
               </ul>
             </Col>
           </Row>

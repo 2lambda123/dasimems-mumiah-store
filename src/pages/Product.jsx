@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductList, Sort } from "../components";
+import { Filter, ProductList, Sort } from "../components";
 
 function Product(props) {
   return (
@@ -11,6 +11,7 @@ function Product(props) {
       }}
     >
       <Sort />
+      <Filter />
       <ProductList />
     </div>
   );

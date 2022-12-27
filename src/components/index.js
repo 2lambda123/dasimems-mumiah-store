@@ -6,6 +6,7 @@ import Navbar from "./common/Navbar"
 import Footer from "./common/Footer"
 import Sort from "./products/Sort"
 import ProductList from "./products/ProductList"
+import Filter from "./products/Filter"
 
 export {
   Loading,
@@ -15,5 +16,6 @@ export {
   Navbar,
   Footer,
   Sort,
-  ProductList
+  ProductList, 
+  Filter
 }

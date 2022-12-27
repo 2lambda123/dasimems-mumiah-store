@@ -714,6 +714,229 @@ body{
             }
         }
 
+        /********************
+        ===== ADVERTISEMENT SECTION STYLES =====
+        *********************/
+
+        .advertisement{
+            padding: getMeasurement("paddingVerticalThree") 0px;
+
+            .advertisement-container{
+                border-radius: 20px;
+                -webkit-border-radius: 20px;
+                -moz-border-radius: 20px;
+                -ms-border-radius: 20px;
+                -o-border-radius: 20px;
+                background: #FEFCE8;
+
+                .advertisement-inner-content {
+                    height: 500px;
+
+                    .advertisement-details{
+                        // padding: 100px 0px;
+
+                        .advertisement-list{
+                            list-style: none;
+                            margin: 0px;
+                            padding: 0px;
+
+                            li{
+
+                                .count{
+                                    background: rgba(0, 0, 0, .1);
+                                    display: inline-flex;
+                                    margin: 0px;
+                                    padding: 0px;
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 50%;
+                                    -webkit-border-radius: 50%;
+                                    -moz-border-radius: 50%;
+                                    -ms-border-radius: 50%;
+                                    -o-border-radius: 50%;
+                                }
+
+                                .first-count{
+                                    background: #F3E8FF;
+                                    color: #6B4DC4;
+                                }
+
+                                .second-count{
+                                    background: #DBEAFE;
+                                    color: #4F58B4;
+                                }
+
+                                .third-count{
+                                    background: #FEE2E2;
+                                    color: #B3471B;
+                                }
+
+                                &:not(:first-child){
+                                    margin-top: 20px;
+                                }
+                            }
+                        }
+
+                        .advertisement-input{
+                            width: 100%;
+                            height: 40px;
+                            max-width: 400px;
+                            margin-top: 30px;
+                            position: relative;
+
+                            input{
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 50px;
+                                -webkit-border-radius: 50px;
+                                -moz-border-radius: 50px;
+                                -ms-border-radius: 50px;
+                                -o-border-radius: 50px;
+                                background: white;
+                                outline: none;
+                                border: 1px solid rgba(0, 0, 0,  .2);
+                                padding: 0px 15px;
+                                padding-right: 45px;
+                            }
+
+                            button{
+                                width: 35px;
+                                height: 35px;
+                                background: #172133;
+                                color: white;
+                                //display: inline-flex;
+                                //align-items: center;
+                                //justify-content: center;
+                                font-size: 1rem;
+                                border-radius: 50%;
+                                -webkit-border-radius: 50%;
+                                -moz-border-radius: 50%;
+                                -ms-border-radius: 50%;
+                                -o-border-radius: 50%;
+                                position: absolute;
+                                top: 50%;
+                                right: 4px;
+                                transform: translateY(-50%);
+                                -webkit-transform: translateY(-50%);
+                                -moz-transform: translateY(-50%);
+                                -ms-transform: translateY(-50%);
+                                -o-transform: translateY(-50%);
+
+
+
+                                .icon{
+                                    margin: 0px;
+                                    padding: 0px;
+                                }
+                            }
+                        }
+    
+                        .advertisement-logo{
+                            max-height: 40px;
+                        }
+    
+                        .advertisement-title{
+                            max-width: 370px;
+                            font-size: 3.5rem;
+                            margin-top: 40px;
+                            font-family: poppins-semibold;
+    
+                        }
+    
+                        .advertisement-subtitle{
+                            color: rgba(0, 0, 0, .7);
+                            font-size: 1.05rem;
+                            margin-top: 30px;
+                            max-width: 440px;
+                            font-family: poppins-medium;
+                        }
+    
+                        .advertisement-call-to-action{
+                            display: inline-flex;
+                            background: #172133;
+                            color: white;
+                            border-radius: 50px;
+                            -webkit-border-radius: 50px;
+                            -moz-border-radius: 50px;
+                            -ms-border-radius: 50px;
+                            -o-border-radius: 50px;
+                            padding: 15px 25px;
+                            margin-top: 20px;
+    
+                        }
+                    }
+    
+                    .advertisement-image{
+                        position: relative;
+                        height: 100%;
+                        // overflow: hidden;
+    
+                        img{
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0px;
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+        .advertisement-two{
+            border-top: 1px solid rgba(0, 0, 0,  .2);
+            border-bottom: 1px solid rgba(0, 0, 0,  .2);
+
+            .advertisement-container{
+                background: #F8FAFC;
+
+                .advertisement-inner-content {
+                    height: 600px;
+
+                    .advertisement-details{
+                        padding-left: 50px;
+    
+                        .advertisement-title{
+                            max-width: unset;
+                            font-size: 3rem;
+                            
+                        }
+                        
+                        .advertisement-subtitle{
+                            max-width: unset;
+                        }
+    
+                        .advertisement-call-to-action{
+                            display: inline-flex;
+                            background: #172133;
+                            color: white;
+                            border-radius: 50px;
+                            -webkit-border-radius: 50px;
+                            -moz-border-radius: 50px;
+                            -ms-border-radius: 50px;
+                            -o-border-radius: 50px;
+                            padding: 15px 25px;
+                            margin-top: 20px;
+    
+                        }
+                    }
+    
+                    .advertisement-image{
+                        position: relative;
+                        height: 100%;
+                        // overflow: hidden;
+    
+                        img{
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0px;
+                        }
+                    }
+                }
+            }
+
+        }
+
          /********************
         ===== CONTACT =====
         *********************/

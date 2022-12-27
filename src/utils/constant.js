@@ -13,6 +13,8 @@ import StepThreeImage from "../assets/images/HIW3img.png"
 import StepFourImage from "../assets/images/HIW4img.png"
 import LogoImage from "../assets/images/logo.png"
 import LogoImageTwo from "../assets/images/mumia_footer_logo.png"
+import PromoOne from "../assets/images/promo2.png"
+import PromoTwo from "../assets/images/promo3.png"
 
 export const routeName = {
     home: "/",
@@ -217,7 +219,9 @@ export const cartProducts = [
 
 export const images = {
     logo: LogoImage,
-    logoTwo: LogoImageTwo
+    logoTwo: LogoImageTwo,
+    promoOne: PromoOne,
+    promoTwo: PromoTwo
 }
 
 export const baseUrl = "https://mumiah.shop/api/v1"

@@ -6,8 +6,8 @@ import { ProductCard } from "../components";
 import { Col, Row, Button } from "antd";
 import { FiSearch } from "react-icons/fi";
 import FadeAnimation from "../components/common/FadeAnimation";
-import { heroContent, routeName, buyingSteps } from "../utils/constant";
-import BannerImage from "../assets/images/hero-right-3.png"
+import { heroContent, routeName, buyingSteps, images } from "../utils/constant";
+import { FaArrowRight } from "react-icons/fa";
 
 function Home(props) {
   const { products } = useProductsContext();
@@ -102,6 +102,84 @@ function Home(props) {
           </Col>
 
         </Row>
+
+        <Row justify="center" className="advertisement">
+          <Col span={22} className="advertisement-container">
+            <Row justify="space-between" className="advertisement-inner-content align-center">
+
+              <Col span={11} order={1} className="advertisement-image">
+
+                <img src={images.promoOne} alt="" />
+
+              </Col>
+
+              <Col span={11} order={2} className="advertisement-details">
+
+                <img src={images.logo} alt="mumiah logo" className="advertisement-logo" />
+
+                <h1 className="advertisement-title">
+                  Special offer in kids products
+                </h1>
+
+                <p className="advertisement-subtitle">
+                  Fashion is a form of self-expression and autonomy at a particular period and place.
+                </p>
+
+                <Link to="" className="button advertisement-call-to-action">
+                  Discover More
+                </Link>
+
+              </Col>
+
+            </Row>
+          </Col>
+        </Row>
+
+      <Row justify="center" className="advertisement advertisement-two">
+        <Col span={22} className="advertisement-container">
+          <Row justify="space-between" className="advertisement-inner-content align-center">
+
+            <Col span={11} order={2} className="advertisement-image">
+
+              <img src={images.promoTwo} alt="" />
+
+            </Col>
+
+            <Col span={11} order={1} className="advertisement-details">
+
+              <h1 className="advertisement-title">
+                Don't miss out on special offers
+              </h1>
+
+              <p className="advertisement-subtitle">
+                Register to receive news about the latest, savings combos, discount codes...
+              </p>
+
+              <ul className="advertisement-list">
+                <li> <span className="count align-center justify-center first-count">01</span> Savings Combos</li>
+                <li> <span className="count align-center justify-center second-count">02</span> Freeship</li>
+                <li> <span className="count align-center justify-center third-count">03</span> Premium Magazine</li>
+
+              </ul>
+
+              <div className="advertisement-input">
+
+                <input type="email" placeholder="Enter your email" className="advertisement-input-box" />
+                <Button className="advertisement-input-btn flex-container align-center justify-center">
+                  <span className="icon">
+
+                    <FaArrowRight />
+
+                  </span>
+                </Button>
+
+              </div>
+
+            </Col>
+
+          </Row>
+        </Col>
+      </Row>
         <div>
           <div>
             <h1>Hello Home</h1>
@@ -115,3 +193,4 @@ function Home(props) {
 }
 
 export default Home;
+

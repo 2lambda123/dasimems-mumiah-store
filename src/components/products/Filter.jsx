@@ -1,27 +1,18 @@
-import React from "react";
-import { useFilterContext } from "../../contexts/filter_context";
-import { getUniqueValues, formatPrice } from "../../utils/helpers";
+import React from 'react';
+import { useFilterContext } from '../../contexts/filter_context';
+import { getUniqueValues, formatPrice } from '../../utils/helpers';
 
 function Filter(props) {
   const {
-    filters: {
-      text,
-      category,
-      company,
-      size,
-      min_price,
-      price,
-      max_price,
-      shipping,
-    },
+    filters: { text, category, brand, size, min_price, price, max_price, shipping },
     updateFilters,
     clearFilters,
-    all_products,
+    all_products
   } = useFilterContext();
 
-  const categories = getUniqueValues(all_products, "category");
-  const companies = getUniqueValues(all_products, "company");
-  const sizes = getUniqueValues(all_products, "sizes");
+  const categories = getUniqueValues(all_products, 'category');
+  const brands = getUniqueValues(all_products, 'brand');
+  const sizes = getUniqueValues(all_products, 'sizes');
 
   return (
     <div className="container">
@@ -49,10 +40,7 @@ function Filter(props) {
                   onClick={updateFilters}
                   type="button"
                   name="category"
-                  className={`${
-                    category === c?.toLowerCase() ? "active" : null
-                  }`}
-                >
+                  className={`${category === c?.toLowerCase() ? 'active' : null}`}>
                   {c}
                 </button>
               );
@@ -60,6 +48,20 @@ function Filter(props) {
           </div>
         </div>
         {/* End Categories */}
+        {/* Brand */}
+        <div className="form-control">
+          <h5>Brands</h5>
+          <select onChange={updateFilters} name="brand" value={brand}>
+            {brands.map((c, index) => {
+              return (
+                <option key={index} value={c}>
+                  {c}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        {/* End of brand */}
       </form>
     </div>
   );

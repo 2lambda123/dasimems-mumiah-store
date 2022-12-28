@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { formatPrice } from "../../utils/helpers";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { formatPrice } from '../../utils/helpers';
 
 function ProductCard({ image, name, price, id, className }) {
   return (

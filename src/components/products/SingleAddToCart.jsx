@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import AmountBtn from "../common/AmountBtn";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import AmountBtn from '../common/AmountBtn';
 
 function SingleAddToCart({ product }) {
   const { id, stock, size } = product;

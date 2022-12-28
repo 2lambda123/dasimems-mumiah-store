@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 const Modal = ({ modalOpened, children, style }) => {
   const [modalOpacity, setModalOpacity] = useState(0);
-  const [modalDisplay, setModalDisplay] = useState("none");
+  const [modalDisplay, setModalDisplay] = useState('none');
 
   useEffect(() => {
     if (modalOpened) {
-      setModalDisplay("block");
+      setModalDisplay('block');
 
       setTimeout(() => {
         setModalOpacity(1);
@@ -15,7 +15,7 @@ const Modal = ({ modalOpened, children, style }) => {
       setModalOpacity(0);
 
       setTimeout(() => {
-        setModalDisplay("none");
+        setModalDisplay('none');
       }, 1000);
     }
   }, [modalOpened]);
@@ -25,18 +25,17 @@ const Modal = ({ modalOpened, children, style }) => {
         className="modal-container"
         style={{
           ...style,
-          background: "rgba(0, 0, 0, .3)",
-          width: "100vw",
-          height: "100vh",
-          position: "fixed",
+          background: 'rgba(0, 0, 0, .3)',
+          width: '100vw',
+          height: '100vh',
+          position: 'fixed',
           zIndex: 9999,
-          top: "0px",
-          left: "0px",
-          transition: "0.5s ease all",
+          top: '0px',
+          left: '0px',
+          transition: '0.5s ease all',
           opacity: modalOpacity,
-          display: modalDisplay,
-        }}
-      >
+          display: modalDisplay
+        }}>
         {children}
       </div>
     </>

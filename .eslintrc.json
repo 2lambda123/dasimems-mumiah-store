@@ -1,0 +1,36 @@
+{
+    "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+    "plugins": ["prettier", "react"],
+    "parser": "babel-eslint",
+    "rules": {
+      "no-console": ["error", { "allow": ["warn"] }],
+      "eqeqeq": "off",
+      "curly": "error",
+      "quotes": ["error", "double"],
+      "react/jsx-uses-vars": "error",
+      "react/jsx-uses-react": "error",
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    },
+    
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2022,
+      "sourceType": "module"
+    },
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true
+    },
+    "globals": {
+      "document": false
+    }
+  }
+  

@@ -1,5 +1,5 @@
-import React from "react";
-import { useFilterContext } from "../../contexts/filter_context";
+import React from 'react';
+import { useFilterContext } from '../../contexts/filter_context';
 
 function Sort(props) {
   const { filtered_products: products, sort, updateSort } = useFilterContext();

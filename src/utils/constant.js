@@ -15,6 +15,9 @@ import LogoImage from "../assets/images/logo.png"
 import LogoImageTwo from "../assets/images/mumia_footer_logo.png"
 import PromoOne from "../assets/images/promo2.png"
 import PromoTwo from "../assets/images/promo3.png"
+import CatImageOne from "../assets/images/collections/1.png"
+import CatImageTwo from "../assets/images/collections/5.png"
+import CatImageThree from "../assets/images/collections/4.png"
 
 export const routeName = {
     home: "/",
@@ -214,6 +217,41 @@ export const cartProducts = [
         size: "XL",
         price: "132",
         image: "",
+    }
+]
+
+export const categories = [
+
+    {
+        smallText: "Explore new arrivals",
+        bigText: "Shop the latest from top brands",
+        image: CatImageOne,
+        colorScheme: "#F5F3E0",
+        link: ""
+    },
+
+     {
+        smallText: "Digital gift cards",
+        bigText: "Give the gift of choice",
+        image: CatImageTwo,
+        colorScheme: "#F4E9E9",
+        link: ""
+    },
+
+     {
+        smallText: "Sales Collection",
+        bigText: "Up to 80% off retail",
+        image: CatImageThree,
+        colorScheme: "#EFF6FF",
+        link: ""
+    },
+
+     {
+        smallText: "Sales Collection",
+        bigText: "Up to 80% off retail",
+        image: CatImageThree,
+        colorScheme: "#EFF6FF",
+        link: ""
     }
 ]
 

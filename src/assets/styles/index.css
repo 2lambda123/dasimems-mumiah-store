@@ -75,6 +75,44 @@ a {
   padding: 15px 25px;
 }
 
+.slide-card {
+  width: 32%;
+  min-width: 32%;
+}
+.slide-card:not(:first-child) {
+  margin-left: 20px;
+}
+@media only screen and (max-width: 1206px) {
+  .slide-card {
+    width: 40%;
+    min-width: 40%;
+  }
+}
+@media only screen and (max-width: 906px) {
+  .slide-card {
+    width: 45%;
+    min-width: 45%;
+  }
+}
+@media only screen and (max-width: 799px) {
+  .slide-card {
+    width: 50%;
+    min-width: 50%;
+  }
+}
+@media only screen and (max-width: 719px) {
+  .slide-card {
+    width: 55%;
+    min-width: 55%;
+  }
+}
+@media only screen and (max-width: 659px) {
+  .slide-card {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
 body {
   font-family: poppins;
   /********************
@@ -82,6 +120,9 @@ body {
   *********************/
   /********************
   ===== MAIN BODY STYLES =====
+  *********************/
+  /********************
+  ===== SLIDER ANIMATION STYLES =====
   *********************/
   /********************
   ===== FOOTER STYLES =====
@@ -443,6 +484,11 @@ body .anim-container {
   height: 100%;
   width: 100%;
 }
+body .slider-animation {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+}
 body .main-body {
   min-height: 100vh;
   height: 100%;
@@ -457,6 +503,12 @@ body .main-body {
   *********************/
   /********************
   ===== ADVERTISEMENT SECTION STYLES =====
+  *********************/
+  /********************
+  ===== CATEGORY SECTION STYLE =====
+  *********************/
+  /********************
+  ===== PRODUCTS SECTION STYLE =====
   *********************/
   /********************
   ===== CONTACT =====
@@ -802,6 +854,57 @@ body .main-body .advertisement-two .advertisement-container .advertisement-inner
 body .main-body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-image {
   position: relative;
   height: 100%;
+}
+body .main-body .categories {
+  padding: 150px 0px;
+}
+body .main-body .categories .categories-container .categories-title {
+  font-size: 2.5rem;
+  font-family: poppins-semibold;
+}
+body .main-body .categories .categories-container .categories-title .light {
+  color: rgba(0, 0, 0, 0.5);
+}
+body .main-body .categories .categories-container .categories-content {
+  margin-top: 50px;
+}
+body .main-body .categories .categories-container .categories-content .category-card {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  padding: 30px;
+}
+body .main-body .categories .categories-container .categories-content .category-card .category-card-details .category-card-details-subtitle {
+  font-family: poppins-medium;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+body .main-body .categories .categories-container .categories-content .category-card .category-card-details .category-card-details-title {
+  font-size: 1.3rem;
+  font-family: poppins-semibold;
+}
+body .main-body .categories .categories-container .categories-content .category-card .category-card-details .category-card-details-link {
+  padding: 15px 25px;
+  display: inline-flex;
+  background: white;
+  border-radius: 100px;
+  margin-top: 30px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  color: black;
+}
+body .main-body .categories .categories-container .categories-content .category-card .category-card-image {
+  margin-left: 15px;
+}
+body .main-body .categories .categories-container .categories-content .category-card .category-card-image img {
+  max-width: 120px;
+}
+body .main-body .products {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 body .main-body .contact-banner {
   padding: 50px 0px;

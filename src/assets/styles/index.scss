@@ -480,6 +480,16 @@ body{
         width: 100%;
     }
 
+    /********************
+    ===== SLIDER ANIMATION STYLES =====
+    *********************/
+
+    .slider-animation{
+        width: 100%;
+        height: auto;
+        overflow-x: hidden;
+    }
+
 
     .main-body{
         min-height: 100vh;
@@ -627,7 +637,7 @@ body{
                         -moz-transition: 0.5s ease all;
                         -ms-transition: 0.5s ease all;
                         -o-transition: 0.5s ease all;
-}
+                    }
 
                     
                 }
@@ -933,6 +943,90 @@ body{
                     }
                 }
             }
+
+        }
+
+        
+         /********************
+        ===== CATEGORY SECTION STYLE =====
+        *********************/
+
+        .categories{
+            padding: getMeasurement("paddingVerticalThree") 0px;
+
+            .categories-container{
+
+                .categories-title{
+                    font-size: 2.5rem;
+                    font-family: poppins-semibold;
+
+                    .light{
+                        color: rgba(0, 0, 0, .5);
+
+                    }
+                }
+
+                .categories-content{
+                    margin-top: 50px;
+
+                    .category-card{
+                        border-radius: 20px;
+                        -webkit-border-radius: 20px;
+                        -moz-border-radius: 20px;
+                        -ms-border-radius: 20px;
+                        -o-border-radius: 20px;
+                        padding: 30px;
+
+                        .category-card-details{
+
+                            .category-card-details-subtitle{
+                                font-family: poppins-medium;
+                                font-size: 1rem;
+                                color: rgba(0, 0, 0, .7);
+
+                            }
+
+                            .category-card-details-title{
+                                font-size: 1.3rem;
+                                font-family: poppins-semibold;
+
+                            }
+
+                            .category-card-details-link{
+                                padding: 15px 25px;
+                                display: inline-flex;
+                                background: white;
+                                border-radius: 100px;
+                                margin-top: 30px;
+                                -webkit-border-radius: 100px;
+                                -moz-border-radius: 100px;
+                                -ms-border-radius: 100px;
+                                -o-border-radius: 100px;
+                                color: black;
+                            }
+
+                        }
+
+                        .category-card-image{
+                            margin-left: 15px;
+
+                            img{
+                                max-width: 120px;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+
+        }
+
+        /********************
+        ===== PRODUCTS SECTION STYLE =====
+        *********************/
+
+        .products{
+            border-top: 1px solid rgba(0, 0, 0, .1);
 
         }
 

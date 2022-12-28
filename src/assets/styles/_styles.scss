@@ -81,3 +81,47 @@ a{
 .button{
     padding: 15px 25px;
 }
+
+.slide-card{
+    width: 32%;
+    min-width: 32%;
+    
+    &:not(:first-child){
+        margin-left: 20px;
+    }
+    
+    @media only screen and (max-width: 1206px){
+        width: 40%;
+        min-width: 40%;
+
+
+    }
+
+    @media only screen and (max-width: 906px){
+        width: 45%;
+        min-width: 45%;
+
+
+    }
+
+    @media only screen and (max-width: 799px){
+        width: 50%;
+        min-width: 50%;
+
+
+    }
+
+    @media only screen and (max-width: 719px){
+        width: 55%;
+        min-width: 55%;
+
+
+    }
+
+     @media only screen and (max-width: 659px){
+        width: 100%;
+        min-width: 100%;
+
+
+    }
+}

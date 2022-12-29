@@ -65,25 +65,16 @@ function Filter(props) {
         {/* Sizes */}
         <div className="form-control">
           <h5>Sizes</h5>
-          <div className="container">
-            {sizes.map((s, index) => {
-              return (
-                <div className="form-control">
-                  <label key={index} htmlFor="sizes">
-                    {s}
-                  </label>
-                  <input
-                    key={index}
-                    type="checkbox"
-                    name="sizes"
-                    id="sizes"
-                    checked={s[0]}
-                    onChange={updateFilters}
-                  />
-                </div>
-              );
-            })}
-          </div>
+          <ul className="container">
+            {sizes.map((s, index) => (
+              <li key={index}>
+                <label>
+                  <input name="sizes" onChange={updateFilters} type="checkbox" value={s} />
+                  {s}
+                </label>
+              </li>
+            ))}
+          </ul>
         </div>
         {/* End of sizes */}
       </form>

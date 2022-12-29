@@ -18,7 +18,7 @@ const initialState = {
       text: '',
       company: 'all',
       category: 'all',
-      size: 'all',
+      sizes: [],
       min_price: 0,
       max_price: 0,
       price: 0,
@@ -54,6 +54,7 @@ const FilterContext = React.createContext()
       if(name === "category") {
         value = e.target.textContent
       }
+    
      
       dispatch({type: UPDATE_FILTERS, payload: {name, value}})
     }

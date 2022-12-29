@@ -9,7 +9,7 @@ import {
 
 const filter_reducer = (state, action) => {
     if(action.type === LOAD_PRODUCTS) {
-      let maxPrice = action.payload.map((p) => p.price.amount )
+      let maxPrice = action.payload.map((p) => p.price )
       maxPrice = Math.max(...maxPrice)
       return {
         ...state, 
@@ -27,17 +27,17 @@ const filter_reducer = (state, action) => {
       let tempProducts = [...filtered_products];
       if(sort === 'price-lowest') {
         tempProducts = tempProducts.sort((a, b) => {
-          if (a.price.amount < b.price.amount) {
+          if (a.price < b.price) {
             return -1
           }
-          if (a.price.amount > b.price.amount) {
+          if (a.price > b.price) {
             return 1
           }
           return 0
         })
       }
       if(sort === 'price-highest') {
-        tempProducts = tempProducts.sort((a, b) => b.price.amount - a.price.amount)
+        tempProducts = tempProducts.sort((a, b) => b.price - a.price)
       }
       if(sort === 'name-a') {
         tempProducts = tempProducts.sort((a, b) => {

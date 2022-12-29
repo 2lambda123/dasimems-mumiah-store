@@ -62,6 +62,30 @@ function Filter(props) {
           </select>
         </div>
         {/* End of brand */}
+        {/* Sizes */}
+        <div className="form-control">
+          <h5>Sizes</h5>
+          <div className="container">
+            {sizes.map((s, index) => {
+              return (
+                <div className="form-control">
+                  <label key={index} htmlFor="sizes">
+                    {s}
+                  </label>
+                  <input
+                    key={index}
+                    type="checkbox"
+                    name="sizes"
+                    id="sizes"
+                    checked={s[0]}
+                    onChange={updateFilters}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        {/* End of sizes */}
       </form>
     </div>
   );

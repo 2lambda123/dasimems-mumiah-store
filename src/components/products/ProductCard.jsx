@@ -4,7 +4,6 @@ import { formatPrice } from '../../utils/helpers';
 
 function ProductCard({ image, name, price, id, className }) {
   return (
-    <div>
       <Link to={`/products/${id}`} className={" " + className}>
         <div className="">
           <img width={"200px"} src={image} alt={name} />
@@ -13,7 +12,6 @@ function ProductCard({ image, name, price, id, className }) {
           <p>{formatPrice(price.amount)}</p>
         </div>
       </Link>
-    </div>
   );
 }
 

@@ -906,6 +906,9 @@ body .main-body .categories .categories-container .categories-content .category-
 body .main-body .products {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+body .main-body .products .categories-container .categories-content .category-card {
+  border: 1px solid red;
+}
 body .main-body .contact-banner {
   padding: 50px 0px;
   padding-top: 130px;

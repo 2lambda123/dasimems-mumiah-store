@@ -11,6 +11,7 @@ function ProductCard({ image, name, price, id, className }) {
         <Link to={`/products/${id}`} className="img-prod">
           <img className="img-fluid" src={image} alt={name} />
         </Link>
+        
         <div className="text py-3 pb-4 px-3">
           <h3>
             <a href="#">{name}</a>

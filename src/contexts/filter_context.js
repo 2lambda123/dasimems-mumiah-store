@@ -18,7 +18,7 @@ const initialState = {
       text: '',
       company: 'all',
       category: 'all',
-      size: 'all',
+      sizes: [],
       min_price: 0,
       max_price: 0,
       price: 0,
@@ -54,12 +54,17 @@ const FilterContext = React.createContext()
       if(name === "category") {
         value = e.target.textContent
       }
-     
+      if(name === 'price') {
+        value = Number(value)
+      }
+      if(name === 'shipping') {
+        value = e.target.checked
+      }
       dispatch({type: UPDATE_FILTERS, payload: {name, value}})
     }
   
     const clearFilters = () => {
-  
+      dispatch({type: CLEAR_FILTERS})
     }
   
   

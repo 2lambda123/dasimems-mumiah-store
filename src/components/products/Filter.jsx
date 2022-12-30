@@ -77,7 +77,36 @@ function Filter(props) {
           </ul>
         </div>
         {/* End of sizes */}
+        {/* Price */}
+        <div className="form-control">
+          <h5>Price</h5>
+          <p>{formatPrice(price)}</p>
+          <input
+            type="range"
+            name="price"
+            onChange={updateFilters}
+            min={min_price}
+            max={max_price}
+            value={price}
+          />
+        </div>
+        {/* End Price */}
+        {/* Shipping */}
+        <div className="form-control">
+          <label htmlFor="shipping">Free shipping</label>
+          <input
+            type="checkbox"
+            name="shipping"
+            id="shipping"
+            onChange={updateFilters}
+            checked={shipping}
+          />
+        </div>
+        {/* End of shipping */}
       </form>
+      <button type="button" className="clear-btn" onClick={clearFilters}>
+        Clear Filters
+      </button>
     </div>
   );
 }

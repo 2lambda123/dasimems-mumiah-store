@@ -6,7 +6,7 @@ import { ProductCard } from '../components';
 import { Col, Row, Button } from 'antd';
 import { FiSearch } from 'react-icons/fi';
 import FadeAnimation from '../components/common/FadeAnimation';
-import SliderAnimation from "../components/common/SliderAnimation";
+import SliderAnimation from '../components/common/SliderAnimation';
 import { heroContent, routeName, buyingSteps, images, categories } from '../utils/constant';
 import { FaArrowRight } from 'react-icons/fa';
 
@@ -50,55 +50,52 @@ function Home(props) {
                       }}>
                       <span className="text">Explore Now</span>
 
-                        <span className="icon">
-                          <FiSearch />
-                        </span>
-                      </Button>
-                    </Col>
+                      <span className="icon">
+                        <FiSearch />
+                      </span>
+                    </Button>
+                  </Col>
+                </Row>
+              );
+            })}
+          </FadeAnimation>
+        </Col>
+      </Row>
 
-                  </Row>
-                  
-                )
-              })}
-            </FadeAnimation>
-          </Col>
-        </Row>
+      <Row justify="center" className="categories">
+        <Col span={22} className="categories-container">
+          <h2 className="categories-title">
+            Discover more. <span className="light"> Good things are waiting for you</span>
+          </h2>
 
-        <Row justify="center" className="categories">
-
-          <Col span={22} className="categories-container">
-
-            <h2 className="categories-title">Discover more. <span className="light"> Good things are waiting for you</span></h2>
-
-            <SliderAnimation className="categories-content">
-            {categories.map((cat , index) => {
+          <SliderAnimation className="categories-content">
+            {categories.map((cat, index) => {
               var { image, colorScheme, smallText, bigText, link } = cat;
 
-                return(
-                  <div key={index} className="flex-container category-card align-center slide-card space-between" style={{ background: colorScheme }}>
+              return (
+                <div
+                  key={index}
+                  className="flex-container category-card align-center slide-card space-between"
+                  style={{ background: colorScheme }}>
+                  <div className="category-card-details">
+                    <p className="category-card-details-subtitle">{smallText}</p>
 
-                    <div className="category-card-details">
-                      <p className="category-card-details-subtitle">
-                        {smallText}
-                      </p>
+                    <h1 className="category-card-details-title">{bigText}</h1>
 
-                      <h1 className="category-card-details-title">{bigText}</h1>
+                    <Link className="category-card-details-link" to={link}>
+                      Show me all
+                    </Link>
+                  </div>
 
-                      <Link className="category-card-details-link" to={link}>Show me all</Link>
-                    </div>
-
-                    <div className="category-card-image">
-                      <img src={image} alt={smallText} />
-                    </div>
-
+                  <div className="category-card-image">
+                    <img src={image} alt={smallText} />
+                  </div>
                 </div>
-              )
+              );
             })}
-            </SliderAnimation>
-              
-
-          </Col>
-        </Row>
+          </SliderAnimation>
+        </Col>
+      </Row>
 
       <Row justify="center" className="buying-steps">
         <Col span={22} className="buying-steps-content">
@@ -164,72 +161,88 @@ function Home(props) {
         </Col>
       </Row>
 
-        <Row justify="center" className="products categories">
-
-          <Col span={22} className="categories-container">
-
-            <h2 className="product-title categories-title">Latest Products</h2>
+      <Row justify="center" className="products categories">
+        <Col span={22} className="categories-container">
+          <h2 className="product-title categories-title">Latest Products</h2>
 
           <SliderAnimation className="categories-content">
+            <div className="container">
+              <div className="row">
+                {newList.slice(0, 8).map((product) => {
+                  return (
+                    <ProductCard
+                      className="flex-container category-card align-center slide-card space-between"
+                      key={product.id}
+                      {...product}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </SliderAnimation>
+        </Col>
+      </Row>
 
-              {newList.slice(0, 8).map((product) => {
-                return <ProductCard className="flex-container category-card align-center slide-card space-between" key={product.id} {...product} />;
-              })}
+      <Row justify="center" className="advertisement advertisement-two">
+        <Col span={22} className="advertisement-container">
+          <Row justify="space-between" className="advertisement-inner-content align-center">
+            <Col
+              span={11}
+              order={2}
+              lg={{ span: 11, order: 2 }}
+              md={{ span: 11, order: 2 }}
+              xs={{ span: 24, order: 2 }}
+              className="advertisement-image">
+              <img src={images.promoTwo} alt="" />
+            </Col>
 
-            </SliderAnimation>
+            <Col
+              span={11}
+              order={1}
+              lg={{ span: 11, order: 1 }}
+              md={{ span: 11, order: 1 }}
+              xs={{ span: 24, order: 1 }}
+              className="advertisement-details">
+              <h1 className="advertisement-title">Don't miss out on special offers</h1>
 
+              <p className="advertisement-subtitle">
+                Register to receive news about the latest, savings combos, discount codes...
+              </p>
 
+              <ul className="advertisement-list">
+                <li>
+                  {' '}
+                  <span className="count align-center justify-center first-count">01</span> Savings
+                  Combos
+                </li>
+                <li>
+                  {' '}
+                  <span className="count align-center justify-center second-count">02</span>{' '}
+                  Freeship
+                </li>
+                <li>
+                  {' '}
+                  <span className="count align-center justify-center third-count">03</span> Premium
+                  Magazine
+                </li>
+              </ul>
 
-          </Col>
-          
-        </Row>
-
-        <Row justify="center" className="advertisement advertisement-two">
-          <Col span={22} className="advertisement-container">
-            <Row justify="space-between" className="advertisement-inner-content align-center">
-
-              <Col span={11} order={2} lg={{span: 11, order: 2}} md={{span: 11, order: 2}} xs={{span: 24, order: 2}} className="advertisement-image">
-
-                <img src={images.promoTwo} alt="" />
-
-              </Col>
-
-              <Col span={11} order={1} lg={{span: 11, order: 1}} md={{span: 11, order: 1}} xs={{span: 24, order: 1}} className="advertisement-details">
-
-                <h1 className="advertisement-title">
-                  Don't miss out on special offers
-                </h1>
-
-                <p className="advertisement-subtitle">
-                  Register to receive news about the latest, savings combos, discount codes...
-                </p>
-
-                <ul className="advertisement-list">
-                  <li> <span className="count align-center justify-center first-count">01</span> Savings Combos</li>
-                  <li> <span className="count align-center justify-center second-count">02</span> Freeship</li>
-                  <li> <span className="count align-center justify-center third-count">03</span> Premium Magazine</li>
-
-                </ul>
-
-                <div className="advertisement-input">
-
-                  <input type="email" placeholder="Enter your email" className="advertisement-input-box" />
-                  <Button className="advertisement-input-btn flex-container align-center justify-center">
-                    <span className="icon">
-
-                      <FaArrowRight />
-
-                    </span>
-                  </Button>
-
-                </div>
-
-              </Col>
-
-            </Row>
-          </Col>
-        </Row>
-        
+              <div className="advertisement-input">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="advertisement-input-box"
+                />
+                <Button className="advertisement-input-btn flex-container align-center justify-center">
+                  <span className="icon">
+                    <FaArrowRight />
+                  </span>
+                </Button>
+              </div>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     </>
   );
 }

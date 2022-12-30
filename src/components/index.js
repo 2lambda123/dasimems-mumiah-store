@@ -7,6 +7,7 @@ import Footer from "./common/Footer"
 import Sort from "./products/Sort"
 import ProductList from "./products/ProductList"
 import Filter from "./products/Filter"
+import FeaturedProducts from "./home/FeaturedProducts"
 
 export {
   Loading,
@@ -17,5 +18,6 @@ export {
   Footer,
   Sort,
   ProductList, 
-  Filter
+  Filter,
+  FeaturedProducts
 }

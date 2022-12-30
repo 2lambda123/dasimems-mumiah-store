@@ -169,13 +169,7 @@ function Home(props) {
             <div className="container">
               <div className="row">
                 {newList.slice(0, 8).map((product) => {
-                  return (
-                    <ProductCard
-                      className="flex-container category-card align-center slide-card space-between"
-                      key={product.id}
-                      {...product}
-                    />
-                  );
+                  return <ProductCard key={product.id} {...product} />;
                 })}
               </div>
             </div>

@@ -16,7 +16,7 @@ const initialState = {
     sort: 'price-lowest',
     filters:{
       text: '',
-      company: 'all',
+      brand: 'all',
       category: 'all',
       sizes: [],
       min_price: 0,

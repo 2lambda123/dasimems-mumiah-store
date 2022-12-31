@@ -690,6 +690,7 @@ body{
                         justify-content: center;
                         align-items: center;
                         height: auto;
+                        // overflow: hidden;
 
                         .banner-content{
                             padding-top: 50px;
@@ -705,6 +706,7 @@ body{
 
                         .banner-image{
                             order: 2;
+                            width: 100%;
                             max-width: 500px;
                             position: relative;
                             transform: unset;
@@ -1271,6 +1273,19 @@ body{
             height: 100%;
             display: block; 
         }
+
+         /********************
+         ===== SINGLE PRODUCT PAGE =====
+        *********************/
+
+        .single-product-items{
+            padding-top: calc(getMeasurement("headerHeight") + 40px);
+            
+            .single-product-breadcrumb{
+    
+            }
+        }
+
         
 
          /********************

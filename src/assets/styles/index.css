@@ -515,6 +515,9 @@ body .main-body {
   ===== PRODUCTS SECTION STYLE =====
   *********************/
   /********************
+   ===== SINGLE PRODUCT PAGE =====
+  *********************/
+  /********************
   ===== CONTACT =====
   *********************/
 }
@@ -686,6 +689,7 @@ body .main-body .banner .banner-container .active-animation .banner-image {
   }
   body .main-body .banner .banner-container .banner-main-content .banner-image {
     order: 2;
+    width: 100%;
     max-width: 500px;
     position: relative;
     transform: unset;
@@ -1112,6 +1116,9 @@ body .main-body .prod-img-bg {
   box-shadow: inset 0px 0px 101px 21px rgba(0, 0, 0, 0.09);
   height: 100%;
   display: block;
+}
+body .main-body .single-product-items {
+  padding-top: 120px;
 }
 body .main-body .contact-banner {
   padding: 50px 0px;

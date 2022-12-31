@@ -1,7 +1,7 @@
-import { Button, Col, Row } from 'antd';
-import React, { useState, useCallback } from 'react';
-import { Helmet } from 'react-helmet';
-import { contacts } from '../utils/constant';
+import { Button, Col, Row } from 'antd'
+import React, { useState, useCallback } from 'react'
+import { Helmet } from 'react-helmet'
+import { contacts } from '../utils/constant'
 
 function Contact(props) {
   const [contactForm, setContactForm] = useState({
@@ -10,39 +10,39 @@ function Contact(props) {
     email: '',
     emailErr: '',
     message: '',
-    messageErr: ''
-  });
+    messageErr: '',
+  })
 
   const submitMessage = useCallback(() => {
-    var { name, email, message } = contactForm;
+    var { name, email, message } = contactForm
 
     if (message.trim() === '') {
       setContactForm((prevState) => {
         return {
           ...prevState,
-          messageErr: 'Please input your email'
-        };
-      });
+          messageErr: 'Please input your email',
+        }
+      })
     }
 
     if (email.trim() === '') {
       setContactForm((prevState) => {
         return {
           ...prevState,
-          emailErr: 'Please input your email'
-        };
-      });
+          emailErr: 'Please input your email',
+        }
+      })
     }
 
     if (name.trim() === '') {
       setContactForm((prevState) => {
         return {
           ...prevState,
-          nameErr: 'Please input your email'
-        };
-      });
+          nameErr: 'Please input your email',
+        }
+      })
     }
-  }, [contactForm]);
+  }, [contactForm])
 
   return (
     <>
@@ -62,7 +62,8 @@ function Contact(props) {
               lg={{ span: 11 }}
               md={{ span: 11 }}
               xs={{ span: 24 }}
-              className="contact-content-details">
+              className="contact-content-details"
+            >
               <div className="details-container">
                 <p className="title flex-container">
                   <span className="icon">🗺</span>
@@ -93,7 +94,8 @@ function Contact(props) {
               lg={{ span: 11 }}
               md={{ span: 11 }}
               xs={{ span: 24 }}
-              className="contact-content-details">
+              className="contact-content-details"
+            >
               <div className="form-content flex-container column ">
                 <label htmlFor="name">Full Name</label>
 
@@ -107,13 +109,15 @@ function Contact(props) {
                       return {
                         ...prevState,
                         name: e.target.value,
-                        nameErr: ''
-                      };
-                    });
+                        nameErr: '',
+                      }
+                    })
                   }}
                 />
 
-                {contactForm.nameErr !== '' && <p className="form-err">{contactForm.nameErr}</p>}
+                {contactForm.nameErr !== '' && (
+                  <p className="form-err">{contactForm.nameErr}</p>
+                )}
               </div>
 
               <div className="form-content flex-container column ">
@@ -129,13 +133,15 @@ function Contact(props) {
                       return {
                         ...prevState,
                         email: e.target.value,
-                        emailErr: ''
-                      };
-                    });
+                        emailErr: '',
+                      }
+                    })
                   }}
                 />
 
-                {contactForm.emailErr !== '' && <p className="form-err">{contactForm.emailErr}</p>}
+                {contactForm.emailErr !== '' && (
+                  <p className="form-err">{contactForm.emailErr}</p>
+                )}
               </div>
 
               <div className="form-content flex-container column ">
@@ -150,9 +156,9 @@ function Contact(props) {
                       return {
                         ...prevState,
                         message: e.target.value,
-                        messageErr: ''
-                      };
-                    });
+                        messageErr: '',
+                      }
+                    })
                   }}
                 />
 
@@ -171,7 +177,7 @@ function Contact(props) {
         </Col>
       </Row>
     </>
-  );
+  )
 }
 
-export default Contact;
+export default Contact

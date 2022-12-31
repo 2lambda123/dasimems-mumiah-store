@@ -1,28 +1,58 @@
 import React from 'react'
-import { categories } from '../../utils/constant';
-import SliderAnimation from '../common/SliderAnimation';
-import {Row, Col} from "antd"
-import { Link } from 'react-router-dom';
+import { categories } from '../../utils/constant'
+import { Row, Col, Button } from 'antd'
+import { Link } from 'react-router-dom'
+import SliderAnimation from '../common/SliderAnimation'
+import { useState } from 'react'
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
 const Categories = () => {
+  var [slideRef, setSliderRef] = useState('')
+
+  const nextSlide = () => {
+    slideRef.slickNext()
+    console.log('next')
+  }
+
+  const prevSlide = () => {
+    slideRef.slickPrev()
+  }
+
   return (
     <Row justify="center" className="categories">
-        <Col span={22} className="categories-container">
-          <h2 className="categories-title">
-            Discover more. <span className="light"> Good things are waiting for you</span>
-          </h2>
+      <Col span={22} className="categories-container">
+        <h2 className="categories-title">
+          Discover more.{' '}
+          <span className="light"> Good things are waiting for you</span>
+        </h2>
 
-          <SliderAnimation className="categories-content">
-            {categories.map((cat, index) => {
-              var { image, colorScheme, smallText, bigText, link } = cat;
+        <div className="slide-btn-container flex-container align-center">
+          <Button className="slide-btn" onClick={prevSlide}>
+            <FaAngleLeft />
+          </Button>
 
-              return (
+          <Button className="slide-btn" onClick={nextSlide}>
+            <FaAngleRight />
+          </Button>
+        </div>
+
+        <SliderAnimation
+          setSliderRef={setSliderRef}
+          className="categories-content"
+        >
+          {categories.map((cat, index) => {
+            var { image, colorScheme, smallText, bigText, link } = cat
+
+            return (
+              <div key={index} className="">
                 <div
-                  key={index}
-                  className="flex-container category-card align-center slide-card space-between"
-                  style={{ background: colorScheme }}>
+                  className="category-card flex-container align-center space-between"
+                  style={{ background: colorScheme }}
+                >
                   <div className="category-card-details">
-                    <p className="category-card-details-subtitle">{smallText}</p>
+                    <p className="category-card-details-subtitle">
+                      {smallText}
+                    </p>
 
                     <h1 className="category-card-details-title">{bigText}</h1>
 
@@ -35,11 +65,12 @@ const Categories = () => {
                     <img src={image} alt={smallText} />
                   </div>
                 </div>
-              );
-            })}
-          </SliderAnimation>
-        </Col>
-      </Row>
+              </div>
+            )
+          })}
+        </SliderAnimation>
+      </Col>
+    </Row>
   )
 }
 

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-const FadeAnimation = ({ children }) => {
+const FadeAnimation = ({ children, className }) => {
   const animationContainer = useRef('');
 
   useEffect(() => {
@@ -31,6 +31,7 @@ const FadeAnimation = ({ children }) => {
       animationChildren.forEach((element, index) => {
         element.style.opacity = '0';
         element.style.transition = 'none';
+        element.style.position = 'absolute';
         element.style.zIndex = '0';
 
         if (element.classList.contains('active-animation')) {
@@ -42,6 +43,7 @@ const FadeAnimation = ({ children }) => {
       animationChildren[count].classList.add('active-animation');
       animationChildren[count].style.zIndex = '9';
       animationChildren[count].style.opacity = '1';
+      animationChildren[count].style.position = 'relative';
 
       if (count < animationChildren.length - 1) {
         presentCount = count;
@@ -49,9 +51,11 @@ const FadeAnimation = ({ children }) => {
         presentCount = -1;
       }
     }, 5000);
+
+    return;
   }, [children, animationContainer]);
   return (
-    <div ref={animationContainer} className="anim-container">
+    <div ref={animationContainer} className={"anim-container " + className}>
       {children}
     </div>
   );

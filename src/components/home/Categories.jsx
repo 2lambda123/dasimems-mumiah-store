@@ -1,28 +1,28 @@
-import React from 'react'
-import { categories } from '../../utils/constant'
-import { Row, Col, Button } from 'antd'
-import { Link } from 'react-router-dom'
-import SliderAnimation from '../common/SliderAnimation'
-import { useState } from 'react'
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
+import React from "react";
+import { categories } from "../../utils/constant";
+import { Row, Col, Button } from "antd";
+import { Link } from "react-router-dom";
+import SliderAnimation from "../common/SliderAnimation";
+import { useState } from "react";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const Categories = () => {
-  var [slideRef, setSliderRef] = useState('')
+  var [slideRef, setSliderRef] = useState("");
 
   const nextSlide = () => {
-    slideRef.slickNext()
-    console.log('next')
-  }
+    slideRef.slickNext();
+    console.log("next");
+  };
 
   const prevSlide = () => {
-    slideRef.slickPrev()
-  }
+    slideRef.slickPrev();
+  };
 
   return (
     <Row justify="center" className="categories">
       <Col span={22} className="categories-container">
         <h2 className="categories-title">
-          Discover more.{' '}
+          Discover more.{" "}
           <span className="light"> Good things are waiting for you</span>
         </h2>
 
@@ -41,7 +41,7 @@ const Categories = () => {
           className="categories-content"
         >
           {categories.map((cat, index) => {
-            var { image, colorScheme, smallText, bigText, link } = cat
+            var { image, colorScheme, smallText, bigText, link } = cat;
 
             return (
               <div key={index} className="">
@@ -66,12 +66,12 @@ const Categories = () => {
                   </div>
                 </div>
               </div>
-            )
+            );
           })}
         </SliderAnimation>
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default Categories
+export default Categories;

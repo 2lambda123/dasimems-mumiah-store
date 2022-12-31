@@ -1,9 +1,15 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { AdvertisementOne, AdvertisementTwo, Categories, Hero, Products, Steps } from '../components';
+import React from "react";
+import { Helmet } from "react-helmet";
+import {
+  AdvertisementOne,
+  AdvertisementTwo,
+  Categories,
+  Hero,
+  Products,
+  Steps,
+} from "../components";
 
 function Home(props) {
-
   return (
     <>
       <Helmet>
@@ -21,8 +27,6 @@ function Home(props) {
       <Products />
 
       <AdvertisementTwo />
-
-      
     </>
   );
 }

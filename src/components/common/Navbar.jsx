@@ -1,23 +1,29 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Row, Col, Button } from 'antd';
-import { accountLinks, cartProducts, images, pageLinks, routeName } from '../../utils/constant';
-import { Link, useNavigate } from 'react-router-dom';
-import { useLocation } from 'react-router';
-import { FiSearch } from 'react-icons/fi';
-import { FaBars } from 'react-icons/fa';
-import { /* RiLightbulbFlashLine, */ RiLogoutCircleLine } from 'react-icons/ri';
-import { BiUser } from 'react-icons/bi';
-import { MdClose } from 'react-icons/md';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
-import Modal from './Modal';
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { Row, Col, Button } from "antd";
+import {
+  accountLinks,
+  cartProducts,
+  images,
+  pageLinks,
+  routeName,
+} from "../../utils/constant";
+import { Link, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router";
+import { FiSearch } from "react-icons/fi";
+import { FaBars } from "react-icons/fa";
+import { RiLogoutCircleLine } from "react-icons/ri";
+import { BiUser } from "react-icons/bi";
+import { MdClose } from "react-icons/md";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import Modal from "./Modal";
 function Navbar(props) {
   const location = useLocation();
   const [navOpened, setNavOpened] = useState(false);
-  const [navPosition, setNavPosition] = useState('-500px');
+  const [navPosition, setNavPosition] = useState("-500px");
   const navigate = useNavigate();
   const [searchOpened, setSearchOpened] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
-  const searchRef = useRef('');
+  const [searchValue, setSearchValue] = useState("");
+  const searchRef = useRef("");
   const [accountPop, setAccountPop] = useState(false);
   const [cartPop, setCartPop] = useState(false);
 
@@ -25,16 +31,16 @@ function Navbar(props) {
     setNavOpened((prevState) => !prevState);
 
     if (navOpened) {
-      setNavPosition('-500px');
+      setNavPosition("-500px");
     } else {
       setTimeout(() => {
-        setNavPosition('00px');
+        setNavPosition("00px");
       }, 40);
     }
   };
 
   const search = useCallback(() => {
-    if (searchValue.trim() !== '') {
+    if (searchValue.trim() !== "") {
     }
   }, [searchValue]);
 
@@ -83,7 +89,8 @@ function Navbar(props) {
                 <button
                   onClick={() => {
                     setSearchOpened(false);
-                  }}>
+                  }}
+                >
                   <MdClose />
                 </button>
               </div>
@@ -96,8 +103,11 @@ function Navbar(props) {
                   return (
                     <li key={index}>
                       <Link
-                        className={location?.pathname === 'link' ? 'link active' : 'link'}
-                        to={link}>
+                        className={
+                          location?.pathname === "link" ? "link active" : "link"
+                        }
+                        to={link}
+                      >
                         {label}
                       </Link>
                     </li>
@@ -112,7 +122,8 @@ function Navbar(props) {
                   className="side-link search-open-btn"
                   onClick={() => {
                     setSearchOpened(true);
-                  }}>
+                  }}
+                >
                   <FiSearch />
                 </button>
               )}
@@ -121,7 +132,8 @@ function Navbar(props) {
                 className="side-link"
                 onClick={() => {
                   setAccountPop((prevState) => !prevState);
-                }}>
+                }}
+              >
                 <BiUser />
 
                 {accountPop && (
@@ -206,10 +218,13 @@ function Navbar(props) {
                 className="side-link desktop-side-link"
                 onClick={() => {
                   setCartPop((prevState) => !prevState);
-                }}>
+                }}
+              >
                 <AiOutlineShoppingCart />
 
-                <span className="cart-stats flex-container align-center justify-center">3</span>
+                <span className="cart-stats flex-container align-center justify-center">
+                  3
+                </span>
 
                 {cartPop && (
                   <div className="pop-up cart-pop-up">
@@ -257,11 +272,17 @@ function Navbar(props) {
                       </div>
 
                       <div className="cart-bottom-action flex-container space-between align-center">
-                        <Link to="" className="button cart-bottom-action-button cart-btn">
+                        <Link
+                          to=""
+                          className="button cart-bottom-action-button cart-btn"
+                        >
                           View Cart
                         </Link>
 
-                        <Link to="" className="button cart-bottom-action-button checkout-btn">
+                        <Link
+                          to=""
+                          className="button cart-bottom-action-button checkout-btn"
+                        >
                           Checkout
                         </Link>
                       </div>
@@ -274,10 +295,13 @@ function Navbar(props) {
                 className="side-link mobile-side-link"
                 onClick={() => {
                   navigate(routeName.cart);
-                }}>
+                }}
+              >
                 <AiOutlineShoppingCart />
 
-                <span className="cart-stats flex-container align-center justify-center">3</span>
+                <span className="cart-stats flex-container align-center justify-center">
+                  3
+                </span>
               </button>
             </div>
           </Row>

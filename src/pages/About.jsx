@@ -1,16 +1,17 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
-import aboutImg from '../assets/images/hero-right-3.png';
+import React from "react";
+import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
+import aboutImg from "../assets/images/hero-right-3.png";
 
 function About(props) {
   return (
     <>
       <main
         style={{
-          padding: '5em 0',
-          position: 'relative'
-        }}>
+          padding: "5em 0",
+          position: "relative",
+        }}
+      >
         <div>
           <Helmet>
             <title>About Us | Mumiah Stores</title>
@@ -26,19 +27,22 @@ function About(props) {
                 <div
                   className="mt-3"
                   style={{
-                    lineHeight: '2.2rem',
-                    fontSize: '1.2rem'
-                  }}>
+                    lineHeight: "2.2rem",
+                    fontSize: "1.2rem",
+                  }}
+                >
                   <p>
-                    But nothing the copy said could convince her and so it didn’t take long until a
-                    few insidious Copy Writers ambushed her, made her drunk with Longe and Parole
-                    and dragged her into their agency, where they abused her for their. But nothing
-                    the copy said could convince her and so it didn’t take long until a few
-                    insidious Copy Writers ambushed her.
+                    But nothing the copy said could convince her and so it
+                    didn’t take long until a few insidious Copy Writers ambushed
+                    her, made her drunk with Longe and Parole and dragged her
+                    into their agency, where they abused her for their. But
+                    nothing the copy said could convince her and so it didn’t
+                    take long until a few insidious Copy Writers ambushed her.
                   </p>
                   <p>
-                    But nothing the copy said could convince her and so it didn’t take long until a
-                    few insidious Copy Writers ambushed her.
+                    But nothing the copy said could convince her and so it
+                    didn’t take long until a few insidious Copy Writers ambushed
+                    her.
                   </p>
 
                   <p>
@@ -50,7 +54,7 @@ function About(props) {
               </div>
               {/* image */}
               <div className="col-lg-6">
-                <img width={'100%'} src={aboutImg} alt="about" />
+                <img width={"100%"} src={aboutImg} alt="about" />
               </div>
             </div>
           </div>

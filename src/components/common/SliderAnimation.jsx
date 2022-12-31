@@ -1,5 +1,5 @@
-import React from 'react'
-import Slider from 'react-slick'
+import React from "react";
+import Slider from "react-slick";
 
 const SliderAnimation = ({ children, className, setSliderRef, ...props }) => {
   var settings = {
@@ -25,18 +25,18 @@ const SliderAnimation = ({ children, className, setSliderRef, ...props }) => {
         },
       },
     ],
-  }
+  };
   return (
     <>
       <Slider
         ref={(c) => setSliderRef(c)}
         {...settings}
-        className={'slider-animation flex-container ' + className}
+        className={"slider-animation flex-container " + className}
       >
         {children}
       </Slider>
     </>
-  )
-}
+  );
+};
 
-export default SliderAnimation
+export default SliderAnimation;

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { formatPrice } from '../../utils/helpers';
-import { AiOutlinePlus } from 'react-icons/ai';
-import { FaShoppingCart } from 'react-icons/fa';
+import React from "react";
+import { Link } from "react-router-dom";
+import { formatPrice } from "../../utils/helpers";
+import { AiOutlinePlus } from "react-icons/ai";
+import { FaShoppingCart } from "react-icons/fa";
 
 function ProductCard({ image, name, price, id, className }) {
   return (
@@ -11,7 +11,7 @@ function ProductCard({ image, name, price, id, className }) {
         <Link to={`/products/${id}`} className="img-prod">
           <img className="img-fluid" src={image} alt={name} />
         </Link>
-        
+
         <div className="text py-3 pb-4 px-3">
           <h3>
             <a href="#">{name}</a>

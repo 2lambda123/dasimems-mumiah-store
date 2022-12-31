@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { useProductsContext } from '../contexts/products_context';
-import { formatPrice } from '../utils/helpers';
-import { Link } from 'react-router-dom';
-import { productUrl as url } from '../utils/constant';
-import { Loading, Error, SingleAddToCart } from '../components';
+import React, { useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useProductsContext } from "../contexts/products_context";
+import { formatPrice } from "../utils/helpers";
+import { Link } from "react-router-dom";
+import { productUrl as url } from "../utils/constant";
+import { Loading, Error, SingleAddToCart } from "../components";
 
 function SingleProducts(props) {
   const { id } = useParams();
@@ -13,7 +13,7 @@ function SingleProducts(props) {
     single_product_loading: loading,
     single_product_error: error,
     single_product,
-    fetchSingleProduct
+    fetchSingleProduct,
   } = useProductsContext();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function SingleProducts(props) {
   useEffect(() => {
     if (error) {
       setTimeout(() => {
-        navigate.push('/');
+        navigate.push("/");
       }, 3000);
     }
   }, [error]);
@@ -41,7 +41,7 @@ function SingleProducts(props) {
     <div className="container">
       <h1>Single Products</h1>
       <h3>{product?.name}</h3>
-      <p>{formatPrice(product?.price.amount)}</p>
+      <p>{formatPrice(product?.price)}</p>
       <h2>{product?.description}</h2>
       <hr />
       {product?.stock > 0 && <SingleAddToCart product={product} />}

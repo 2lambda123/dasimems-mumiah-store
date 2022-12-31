@@ -14,6 +14,8 @@ import AdvertisementOne from "./home/AdvertisementOne"
 import Categories from "./home/Categories"
 import Steps from "./home/Steps"
 import Products from "./home/Products"
+import FadeAnimation from "./common/FadeAnimation"
+import SliderAnimation from "./common/SliderAnimation"
 
 export {
   Loading,
@@ -31,5 +33,7 @@ export {
   AdvertisementTwo,
   Categories,
   Steps,
-  Products
+  Products,
+  FadeAnimation,
+  SliderAnimation
 }

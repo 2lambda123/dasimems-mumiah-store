@@ -1,6 +1,6 @@
-import React from 'react';
-import { useFilterContext } from '../../contexts/filter_context';
-import ProductCard from './ProductCard';
+import React from "react";
+import { useFilterContext } from "../../contexts/filter_context";
+import ProductCard from "./ProductCard";
 
 function ProductList(props) {
   const { filtered_products: products } = useFilterContext();

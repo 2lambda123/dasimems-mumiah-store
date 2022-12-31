@@ -14,7 +14,7 @@ function SingleProducts(props) {
     single_product_loading: loading,
     single_product_error: error,
     single_product,
-    fetchSingleProduct
+    fetchSingleProduct,
   } = useProductsContext();
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function SingleProducts(props) {
   useEffect(() => {
     if (error) {
       setTimeout(() => {
-        navigate.push('/');
+        navigate.push("/");
       }, 3000);
     }
   }, [error]);

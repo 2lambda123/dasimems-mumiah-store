@@ -57,6 +57,9 @@ const FilterContext = React.createContext()
       if(name === 'price') {
         value = Number(value)
       }
+      if(name === 'sizes') {
+        value = e.target.checked
+      }
       if(name === 'shipping') {
         value = e.target.checked
       }

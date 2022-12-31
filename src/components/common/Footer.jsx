@@ -1,7 +1,12 @@
-import { Col, Row } from 'antd';
-import React from 'react';
-import { footerContact, images, pageLinks, socialLinks } from '../../utils/constant';
-import { Link } from 'react-router-dom';
+import { Col, Row } from "antd";
+import React from "react";
+import {
+  footerContact,
+  images,
+  pageLinks,
+  socialLinks,
+} from "../../utils/constant";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -15,12 +20,18 @@ const Footer = () => {
               md={{ span: 7 }}
               sm={{ span: 24 }}
               xs={{ span: 24 }}
-              className="footer-content wrap social-footer-content">
-              <img className="footer-image" alt="mumiah logo" src={images.logoTwo} />
+              className="footer-content wrap social-footer-content"
+            >
+              <img
+                className="footer-image"
+                alt="mumiah logo"
+                src={images.logoTwo}
+              />
 
               <p className="py-4">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae nesciunt aspernatur
-                vero est numquam accusamus consectetur qui laboriosam ad sunt.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae
+                nesciunt aspernatur vero est numquam accusamus consectetur qui
+                laboriosam ad sunt.
               </p>
 
               <ul className="social-links">
@@ -33,8 +44,11 @@ const Footer = () => {
                         href={link}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex-container align-center">
-                        <span className="social-link-image flex-container">{icon}</span>
+                        className="flex-container align-center"
+                      >
+                        <span className="social-link-image flex-container">
+                          {icon}
+                        </span>
 
                         <span className="social-link-text">{label}</span>
                       </a>
@@ -50,7 +64,8 @@ const Footer = () => {
               md={{ span: 7 }}
               sm={{ span: 11 }}
               xs={{ span: 24 }}
-              className="footer-content">
+              className="footer-content"
+            >
               <h2 className="footer-content-title">Quick Access</h2>
 
               <ul className="footer-links">
@@ -71,7 +86,8 @@ const Footer = () => {
               md={{ span: 7 }}
               sm={{ span: 11 }}
               xs={{ span: 24 }}
-              className="footer-content">
+              className="footer-content"
+            >
               <h2 className="footer-content-title">Have a Question</h2>
 
               <ul className="footer-links">

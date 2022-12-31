@@ -7,7 +7,6 @@ import Footer from "./common/Footer"
 import Sort from "./products/Sort"
 import ProductList from "./products/ProductList"
 import Filter from "./products/Filter"
-import FeaturedProducts from "./home/FeaturedProducts"
 import Hero from "./home/Hero"
 import AdvertisementTwo from "./home/AdvertisementTwo"
 import AdvertisementOne from "./home/AdvertisementOne"
@@ -27,7 +26,6 @@ export {
   Sort,
   ProductList, 
   Filter,
-  FeaturedProducts,
   Hero,
   AdvertisementOne,
   AdvertisementTwo,

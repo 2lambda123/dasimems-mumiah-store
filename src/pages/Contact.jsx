@@ -1,48 +1,48 @@
-import { Button, Col, Row } from 'antd'
-import React, { useState, useCallback } from 'react'
-import { Helmet } from 'react-helmet'
-import { contacts } from '../utils/constant'
+import { Button, Col, Row } from "antd";
+import React, { useState, useCallback } from "react";
+import { Helmet } from "react-helmet";
+import { contacts } from "../utils/constant";
 
 function Contact(props) {
   const [contactForm, setContactForm] = useState({
-    name: '',
-    nameErr: '',
-    email: '',
-    emailErr: '',
-    message: '',
-    messageErr: '',
-  })
+    name: "",
+    nameErr: "",
+    email: "",
+    emailErr: "",
+    message: "",
+    messageErr: "",
+  });
 
   const submitMessage = useCallback(() => {
-    var { name, email, message } = contactForm
+    var { name, email, message } = contactForm;
 
-    if (message.trim() === '') {
+    if (message.trim() === "") {
       setContactForm((prevState) => {
         return {
           ...prevState,
-          messageErr: 'Please input your email',
-        }
-      })
+          messageErr: "Please input your email",
+        };
+      });
     }
 
-    if (email.trim() === '') {
+    if (email.trim() === "") {
       setContactForm((prevState) => {
         return {
           ...prevState,
-          emailErr: 'Please input your email',
-        }
-      })
+          emailErr: "Please input your email",
+        };
+      });
     }
 
-    if (name.trim() === '') {
+    if (name.trim() === "") {
       setContactForm((prevState) => {
         return {
           ...prevState,
-          nameErr: 'Please input your email',
-        }
-      })
+          nameErr: "Please input your email",
+        };
+      });
     }
-  }, [contactForm])
+  }, [contactForm]);
 
   return (
     <>
@@ -109,13 +109,13 @@ function Contact(props) {
                       return {
                         ...prevState,
                         name: e.target.value,
-                        nameErr: '',
-                      }
-                    })
+                        nameErr: "",
+                      };
+                    });
                   }}
                 />
 
-                {contactForm.nameErr !== '' && (
+                {contactForm.nameErr !== "" && (
                   <p className="form-err">{contactForm.nameErr}</p>
                 )}
               </div>
@@ -133,13 +133,13 @@ function Contact(props) {
                       return {
                         ...prevState,
                         email: e.target.value,
-                        emailErr: '',
-                      }
-                    })
+                        emailErr: "",
+                      };
+                    });
                   }}
                 />
 
-                {contactForm.emailErr !== '' && (
+                {contactForm.emailErr !== "" && (
                   <p className="form-err">{contactForm.emailErr}</p>
                 )}
               </div>
@@ -156,13 +156,13 @@ function Contact(props) {
                       return {
                         ...prevState,
                         message: e.target.value,
-                        messageErr: '',
-                      }
-                    })
+                        messageErr: "",
+                      };
+                    });
                   }}
                 />
 
-                {contactForm.messageErr !== '' && (
+                {contactForm.messageErr !== "" && (
                   <p className="form-err">{contactForm.messageErr}</p>
                 )}
               </div>
@@ -177,7 +177,7 @@ function Contact(props) {
         </Col>
       </Row>
     </>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

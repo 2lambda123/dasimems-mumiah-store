@@ -1,18 +1,27 @@
-import React from 'react';
-import { useFilterContext } from '../../contexts/filter_context';
-import { getUniqueValues, formatPrice } from '../../utils/helpers';
+import React from "react";
+import { useFilterContext } from "../../contexts/filter_context";
+import { getUniqueValues, formatPrice } from "../../utils/helpers";
 
 function Filter(props) {
   const {
-    filters: { text, category, brand, size, min_price, price, max_price, shipping },
+    filters: {
+      text,
+      category,
+      brand,
+      size,
+      min_price,
+      price,
+      max_price,
+      shipping,
+    },
     updateFilters,
     clearFilters,
-    all_products
+    all_products,
   } = useFilterContext();
 
-  const categories = getUniqueValues(all_products, 'category');
-  const brands = getUniqueValues(all_products, 'brand');
-  const sizes = getUniqueValues(all_products, 'sizes');
+  const categories = getUniqueValues(all_products, "category");
+  const brands = getUniqueValues(all_products, "brand");
+  const sizes = getUniqueValues(all_products, "sizes");
 
   return (
     <div className="container">
@@ -40,7 +49,10 @@ function Filter(props) {
                   onClick={updateFilters}
                   type="button"
                   name="category"
-                  className={`${category === c?.toLowerCase() ? 'active' : null}`}>
+                  className={`${
+                    category === c?.toLowerCase() ? "active" : null
+                  }`}
+                >
                   {c}
                 </button>
               );
@@ -69,7 +81,12 @@ function Filter(props) {
             {sizes.map((s, index) => (
               <li key={index}>
                 <label>
-                  <input name="sizes" onChange={updateFilters} type="checkbox" value={s} />
+                  <input
+                    name="sizes"
+                    onChange={updateFilters}
+                    type="checkbox"
+                    value={s}
+                  />
                   {s}
                 </label>
               </li>

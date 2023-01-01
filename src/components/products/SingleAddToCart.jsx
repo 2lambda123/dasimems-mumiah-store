@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaCheck } from "react-icons/fa";
+import { FaCheck, FaHeart } from "react-icons/fa";
+import { BsHeart } from "react-icons/bs";
 
 import AmountBtn from "../common/AmountBtn";
 import { useCartContext } from "../../contexts/cart_context";
+import { Button } from "antd";
 
 function SingleAddToCart({ product }) {
   const { addToCart } = useCartContext();
@@ -33,17 +35,17 @@ function SingleAddToCart({ product }) {
   };
 
   return (
-    <div>
-      <div className="container">
-        <span>Sizes: </span>
-        <div>
+    <>
+      <div className="product-size">
+        <p className="title">Sizes: </p>
+        <div className="size-button-content">
           {sizes.map((size, index) => {
             return (
               <button
                 className={`${
                   sizeMain === size
-                    ? " btn btn-primary px-3 my-2 mx-2"
-                    : "px-3 my-2 mx-2"
+                    ? " active-btn size-btn"
+                    : "size-btn"
                 }`}
                 key={index}
                 onClick={() => setSizeMain(size)}
@@ -54,16 +56,25 @@ function SingleAddToCart({ product }) {
           })}
         </div>
       </div>
-      <div></div>
+
       <AmountBtn decrease={decrease} increase={increase} amount={amount} />
+
+      
+
+
       <Link
-        className="btn btn-primary my-2"
+        className="button add-to-cart-button"
         to="/cart"
         onClick={() => addToCart(id, sizeMain, amount, product)}
       >
         Add to cart
       </Link>
-    </div>
+
+      
+      <Button className="add-to-favorite">
+        <BsHeart />
+      </Button>
+    </>
   );
 }
 

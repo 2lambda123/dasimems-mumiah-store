@@ -6,7 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 
 function ProductCard({ image, name, price, id, className }) {
   return (
-    <div key={id} className="col-sm-12 col-md-6 col-lg-3 d-flex">
+    <div key={id} className="col-sm-12 col-md-12 col-lg-12 d-flex">
       <div className="product">
         <Link to={`/products/${id}`} className="img-prod">
           <img className="img-fluid" src={image} alt={name} />

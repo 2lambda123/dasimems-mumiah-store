@@ -7,6 +7,8 @@ import Footer from "./common/Footer"
 import Sort from "./products/Sort"
 import ProductList from "./products/ProductList"
 import Filter from "./products/Filter"
+import ProductDetails from "./products/ProductDetails"
+import ProductContent from "./products/ProductContent"
 import Hero from "./home/Hero"
 import AdvertisementTwo from "./home/AdvertisementTwo"
 import AdvertisementOne from "./home/AdvertisementOne"
@@ -14,6 +16,7 @@ import Categories from "./home/Categories"
 import Steps from "./home/Steps"
 import Products from "./home/Products"
 import FadeAnimation from "./common/FadeAnimation"
+import ProductListing from "./common/ProductListing"
 import SliderAnimation from "./common/SliderAnimation"
 
 export {
@@ -33,5 +36,8 @@ export {
   Steps,
   Products,
   FadeAnimation,
-  SliderAnimation
+  SliderAnimation,
+  ProductDetails,
+  ProductListing,
+  ProductContent
 }

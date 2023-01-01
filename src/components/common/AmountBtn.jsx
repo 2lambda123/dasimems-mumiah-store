@@ -1,11 +1,12 @@
 import React from "react";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 function AmountBtn({ increase, decrease, amount }) {
   return (
-    <div className="container">
-      <button onClick={decrease}> decrease </button>
-      <p>{amount}</p>
-      <button onClick={increase}> increase</button>
+    <div className="quantity-box flex-container align-center">
+      <button onClick={decrease}> <FaMinus /> </button>
+      <p className="quantity-input">{amount}</p>
+      <button onClick={increase}> <FaPlus /></button>
     </div>
   );
 }

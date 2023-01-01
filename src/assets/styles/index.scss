@@ -1282,7 +1282,242 @@ body{
             padding-top: calc(getMeasurement("headerHeight") + 40px);
             
             .single-product-breadcrumb{
+                font-size: 1rem;
+
+                a{
+                    font-family: poppins-medium;
+                    color: black;
+                }
     
+            }
+
+            .product-content{
+                margin-top: 30px;
+
+                .single-product-image{
+                    border-radius: 10px;
+                    background: rgba(0, 0, 0, .05);
+                    margin-bottom: 20px;
+
+                    img{
+                        max-width: 100%;
+                        max-height: 100%;
+                        max-height: 100%;
+                    }
+                }
+
+                .single-product-details{
+
+                    p{
+                        margin: 0px;
+                        padding: 0px;
+                        color: rgba(0, 0, 0, .7);
+                    }
+
+                    .single-product-title{
+                        font-size: 1.7rem;
+                    }
+
+                    .reviews{
+                        margin: 20px 0px;
+
+                    }
+
+                    .price{
+
+                        .original-price{
+                            font-family: poppins-medium;
+                            font-size: 1.8rem;
+                        }
+
+                        .discounted-price{
+                            color: rgba(0, 0, 0, .5);
+                            margin-left: 10px;
+
+                        }
+
+                    }
+                    
+                    .single-product-description{
+                        margin: 20px 0px;
+
+                    }
+
+                    .single-product-actions{
+
+                        .quantity-container{
+                            flex: 1;
+
+                            .product-size{
+                                width: 100%;
+
+
+                                .title{
+                                    font-weight: bold
+                                }
+                                
+                                .size-button-content{
+                                    margin: 10px 0px;
+                                    margin-bottom: 20px;
+
+                                    .size-btn{
+                                        padding: 7px 15px;
+                                        border-radius: 5px;
+                                        border: 1px solid #172133;
+                                        outline: none;
+                                        -webkit-border-radius: 5px;
+                                        -moz-border-radius: 5px;
+                                        -ms-border-radius: 5px;
+                                        -o-border-radius: 5px;
+                                        background: transparent;
+
+                                        
+                                        &:not(:first-child){
+                                            margin-left: 10px;
+                                        }
+                                    }
+
+                                    .active-btn{
+                                        background: #172133;
+                                        color: white;
+
+                                    }
+
+                                }
+                            }
+
+                            .quantity-box{
+                                width: 150px;
+                                height: 40px;
+                                border: 1px solid rgba(0, 0, 0, .2);
+                                border-radius: 50px;
+                                margin-bottom: 20px;
+
+                                @media only screen and (max-width: 350px){
+                                    width: 100%;
+
+                                }
+                                
+                                &:hover{
+                                    border: 1px solid rgba(0, 0, 0, 1);
+
+                                }
+
+                                button{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 40px;
+                                    height: 100%;
+                                    outline: none;
+                                    border: none;
+                                    background: transparent;
+                                    color: rgba(0, 0, 0, .5);
+
+                                    &:hover{
+                                        color: black;
+                                    }
+
+
+                                }
+
+                                .quantity-input{
+                                    flex: 1;
+                                    text-align: center;
+                                }
+                            }
+
+                            .add-to-cart-button{
+                                padding: 0px 20px;
+                                height: 40px;
+                                background: #172133;
+                                color: white;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 50px;
+                                -webkit-border-radius: 50px;
+                                -moz-border-radius: 50px;
+                                -ms-border-radius: 50px;
+                                -o-border-radius: 50px;
+                            } 
+
+                            .add-to-favorite{
+                                background: none;
+                                padding: 0px;
+                                width: 40px;
+                                height: 40px;
+                                border: 40px;
+                                border-radius: 50%;
+                                -webkit-border-radius: 50%;
+                                -moz-border-radius: 50%;
+                                -ms-border-radius: 50%;
+                                -o-border-radius: 50%;
+                                border: 1px solid #172133;
+
+                                &:hover{
+                                    color: #172133;
+                                }
+                            }
+
+                        }
+
+                    }
+
+                    .extra-details-container{
+                        margin-top: 50px;
+                        padding: 40px 0px;
+                        border-top: 1px solid rgba(0, 0, 0, .2);
+
+                        .extra-details{
+
+                            &:not(:first-child){
+                                margin-top: 10px;
+                            }
+                            
+                            .title{
+                                width: 150px;
+                                font-family: poppins-semibold;
+
+                            }
+
+                            .value{
+
+                                .inner-value{
+                                    font-family: poppins-medium;
+                                    &:not(:first-child){
+                                        margin-left: 10px;
+                                    }
+                                }
+
+                            }
+
+                        }
+                    }
+
+                }
+            }
+
+            .full-details{
+                margin: 30px 0px;
+
+                .details-divider{
+                    font-family: poppins-medium;
+                    font-size: 1.3rem;
+                }
+
+            }
+
+            .related-products{
+
+                .related-product-container{
+                    h2{
+                        text-align: center;
+                        font-family: poppins-medium;
+                        font-size: 1.3rem;
+                        margin-bottom: 30px;
+                    }
+                }
             }
         }
 

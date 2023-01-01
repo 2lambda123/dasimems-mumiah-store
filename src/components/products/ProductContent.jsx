@@ -1,10 +1,10 @@
-import { Col, Row } from 'antd'
-import React from 'react'
-import { formatPrice } from '../../utils/helpers'
-import SingleAddToCart from './SingleAddToCart'
+import { Col, Row } from "antd";
+import React from "react";
+import { formatPrice } from "../../utils/helpers";
+import SingleAddToCart from "./SingleAddToCart";
 
 const ProductContent = ({ details }) => {
-  const product = details
+  const product = details;
   return (
     <Row justify="center" className="product-content">
       <Col span={22} className="">
@@ -26,17 +26,23 @@ const ProductContent = ({ details }) => {
             xs={{ span: 24 }}
             className="single-product-details"
           >
-            <h1 className="single-product-title">{product?.name}</h1>
-            <p className="single-product-subtitle">Brand : {product?.brand}</p>
+            <h1 className="single-product-title text-uppercase text-2xl">
+              {product?.name}
+            </h1>
+            <p className="single-product-subtitle">
+              Brand: <span className="text-uppercase">{product?.brand}</span>
+            </p>
 
-            <p className="reviews">(139 reviews)</p>
-
-            <div className="price flex-container align-end">
+            <div className="price flex-container py-3 align-end">
               <p className="original-price">{formatPrice(product?.price)}</p>
-              <del className="discounted-price">$75.0</del>
+              {/* <del className="discounted-price">$75.0</del> */}
             </div>
 
-            <p className="single-product-description">{product?.description}</p>
+            <p className="single-product-description">
+              {product?.description.length <= 180
+                ? product?.description
+                : `${product?.description.substring(0, 180)}..`}{" "}
+            </p>
 
             <div className="single-product-actions  flex-container">
               <div className="quantity-container flex-container wrap space-between">
@@ -58,7 +64,7 @@ const ProductContent = ({ details }) => {
                       <span className="inner-value" key={index}>
                         {size}
                       </span>
-                    )
+                    );
                   })}
                 </p>
               </div>
@@ -67,7 +73,7 @@ const ProductContent = ({ details }) => {
         </Row>
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default ProductContent
+export default ProductContent;

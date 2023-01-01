@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaCheck, FaHeart } from "react-icons/fa";
 import { BsHeart } from "react-icons/bs";
 
 import AmountBtn from "../common/AmountBtn";
@@ -43,9 +42,7 @@ function SingleAddToCart({ product }) {
             return (
               <button
                 className={`${
-                  sizeMain === size
-                    ? " active-btn size-btn"
-                    : "size-btn"
+                  sizeMain === size ? " active-btn size-btn" : "size-btn"
                 }`}
                 key={index}
                 onClick={() => setSizeMain(size)}
@@ -59,9 +56,6 @@ function SingleAddToCart({ product }) {
 
       <AmountBtn decrease={decrease} increase={increase} amount={amount} />
 
-      
-
-
       <Link
         className="button add-to-cart-button"
         to="/cart"
@@ -70,7 +64,6 @@ function SingleAddToCart({ product }) {
         Add to cart
       </Link>
 
-      
       <Button className="add-to-favorite">
         <BsHeart />
       </Button>

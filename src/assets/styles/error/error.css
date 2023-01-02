@@ -1,0 +1,32 @@
+.page-error{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: white;
+    flex-direction: column;
+    z-index: 9999;
+
+}
+
+.page-error .page-error-anim{
+    max-width: 500px;
+    width: 80%;
+}
+
+.page-error .error-title{
+    font-weight: bold;
+    margin-top: -15px;
+
+
+}
+
+.page-error .error-link{
+    margin-top: 10px;
+    font-size: 1.4rem;
+    text-decoration: underline;
+}

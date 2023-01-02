@@ -27,6 +27,7 @@
 .loader-container .content h2:nth-child(1) {
 	color: transparent;
 	-webkit-text-stroke: 2px #172133;
+	text-stroke: 2px #172133;
 }
 
 .loader-container .content h2:nth-child(2) {

@@ -1,11 +1,27 @@
 import React from "react";
+import "../assets/styles/loader/loader.css"
+import { Player } from "@lottiefiles/react-lottie-player";
+import Loader from "../assets/lotties/loader.json"
 
-function Loading(props) {
-  return (
-    <div>
-      <h1>Loading.....</h1>
-    </div>
-  );
+const Loading = () => {
+
+    return(
+
+        <>
+
+            <section className="loader-container inner-loader">
+                <Player
+                  src={Loader}
+                  className="loader-animation"
+                  autoplay
+                  loop
+                />
+            </section>
+        
+        </>
+
+    )
+
 }
 
-export default Loading;
+export default Loading

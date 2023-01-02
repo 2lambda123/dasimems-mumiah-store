@@ -26,7 +26,7 @@ const initialState = {
     category: [],
     cat_loading: true,
     cat_error: false,
-    single_product_loading: false,
+    single_product_loading: true,
     single_product_error: false,
     single_product: {},
 }

@@ -11,6 +11,15 @@
     z-index: 99999;
 }
 
+.inner-loader{
+	position: relative;
+}
+
+.loader-animation{
+	max-width: 150px;
+	width: 80%;
+}
+
 .loader-container .content {
 	position: relative;
 }

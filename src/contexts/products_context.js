@@ -20,11 +20,11 @@ import {
 
 const initialState = {
     isSidebarOpen: false,
-    products_loading: false,
+    products_loading: true,
     products_error: false,
     products: [],
     category: [],
-    cat_loading: false,
+    cat_loading: true,
     cat_error: false,
     single_product_loading: false,
     single_product_error: false,

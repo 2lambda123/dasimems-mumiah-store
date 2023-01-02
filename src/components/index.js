@@ -1,4 +1,5 @@
 import Loading from "./Loading"
+import Loader from "./Loader"
 import Error from "./Error"
 import ProductCard from "./products/ProductCard"
 import SingleAddToCart from "./products/SingleAddToCart"
@@ -39,5 +40,6 @@ export {
   SliderAnimation,
   ProductDetails,
   ProductListing,
-  ProductContent
+  ProductContent,
+  Loader
 }

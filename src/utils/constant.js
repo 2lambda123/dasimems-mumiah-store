@@ -18,6 +18,9 @@ import PromoTwo from "../assets/images/promo3.png"
 import CatImageOne from "../assets/images/collections/1.png"
 import CatImageTwo from "../assets/images/collections/5.png"
 import CatImageThree from "../assets/images/collections/4.png"
+import CollectionOne from "../assets/images/collections/product_collection_1.jpg"
+import CollectionTwo from "../assets/images/collections/product_collection_2.jpg"
+import CollectionThree from "../assets/images/collections/product_collection_3.jpg"
 
 export const routeName = {
     home: "/",
@@ -66,6 +69,8 @@ export const buyingSteps = [
         textColor: "#6B21B3"
     }
 ]
+
+export const productImages = [CollectionOne, CollectionTwo, CollectionThree]
 
 export const heroContent = [
     {

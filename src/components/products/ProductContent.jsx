@@ -2,6 +2,8 @@ import { Col, Row } from "antd";
 import React from "react";
 import { formatPrice } from "../../utils/helpers";
 import SingleAddToCart from "./SingleAddToCart";
+import ProductShowCase from "./ProductShowCase";
+import { productImages } from "../../utils/constant";
 
 const ProductContent = ({ details }) => {
   const product = details;
@@ -14,9 +16,11 @@ const ProductContent = ({ details }) => {
             lg={{ span: 11 }}
             md={{ span: 11 }}
             xs={{ span: 24 }}
-            className="single-product-image flex-content align-center justify-center"
+            className="single-product-image flex-content align-start justify-center"
           >
-            <img src={product?.image} alt={product?.name} />
+            {/* <img src={product?.image} alt={product?.name} /> */}
+
+            <ProductShowCase images={productImages} />
           </Col>
 
           <Col

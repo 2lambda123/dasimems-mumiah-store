@@ -10,6 +10,7 @@ import ProductList from "./products/ProductList"
 import Filter from "./products/Filter"
 import ProductDetails from "./products/ProductDetails"
 import ProductContent from "./products/ProductContent"
+import ProductShowCase from "./products/ProductShowCase"
 import Hero from "./home/Hero"
 import AdvertisementTwo from "./home/AdvertisementTwo"
 import AdvertisementOne from "./home/AdvertisementOne"
@@ -41,5 +42,6 @@ export {
   ProductDetails,
   ProductListing,
   ProductContent,
-  Loader
+  Loader,
+  ProductShowCase
 }

@@ -4,6 +4,7 @@ import Error from "./Error";
 import SingleProducts from "./SingleProducts";
 import Contact from "./Contact";
 import Product from "./Product";
+import CartPage from "./CartPage";
 
 export {
     Home,
@@ -11,5 +12,6 @@ export {
     Error,
     SingleProducts,
     Contact,
-    Product
+    Product,
+    CartPage
 }

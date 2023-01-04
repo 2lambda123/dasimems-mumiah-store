@@ -1,19 +1,19 @@
 import React from "react";
-import { useCartContext } from "../../contexts/cart_context";
-import { formatPrice } from "../../utils/helpers";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
-function CartAmountBtn(props) {
-  const { removeItem, toggleAmount } = useCartContext();
-  const increase = () => {
-    // toggleAmount(id, "inc");
-  };
-  const decrease = () => {
-    // toggleAmount(id, "dec");
-  };
+function CartAmountBtn({ increase, decrease, amount }) {
   return (
-    <div>
-      <h1>Cart Amount</h1>
-    </div>
+    <td class="quantity__item">
+      <div class="quantity">
+        <button type="button" className="amount-btn" onClick={decrease}>
+          <FaMinus />
+        </button>
+        <h3 className="amount">{amount}</h3>
+        <button type="button" className="amount-btn" onClick={increase}>
+          <FaPlus />
+        </button>
+      </div>
+    </td>
   );
 }
 

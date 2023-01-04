@@ -68,25 +68,26 @@
               width: 175px;
   
               .quantity {
-  
-                .pro-qty-2 {
-                  width: 80px;
-  
-                  input {
-                    width: 50px;
-                    border: none;
-                    text-align: center;
-                    color: #0d0d0d;
-                    font-size: 16px;
-                  }
-  
-                  .qtybtn {
-                    font-size: 16px;
-                    color: #888888;
-                    width: 10px;
-                    cursor: pointer;
-                  }
+                display: grid;
+                width: 140px;
+                justify-items: center;
+                grid-template-columns: repeat(3, 1fr);
+                align-items: center;
+
+                h3{
+                    margin-bottom: 0;
                 }
+                button {
+                    background: transparent;
+                    border-color: transparent;
+                    cursor: pointer;
+                    padding: 1rem 0;
+                    width: 2rem;
+                    height: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  }
               }
             }
   

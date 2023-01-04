@@ -1,8 +1,12 @@
 /*---------------------
   Shopping Cart
 -----------------------*/
+section .shopping-cart {
+  margin-bottom: 5rem;
+}
+
 .shopping__cart__table {
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
   margin-top: 2rem;
 }
 .shopping__cart__table table {
@@ -79,15 +83,35 @@
   font-weight: 700;
   width: 140px;
 }
-.shopping__cart__table table tbody tr td.cart__close i {
-  font-size: 18px;
-  color: #0d0d0d;
-  height: 40px;
-  width: 40px;
-  background: #f3f2ee;
-  border-radius: 50%;
-  line-height: 40px;
+.shopping__cart__table table tbody tr td.cart__close .clear-icon {
+  font-size: 22px;
   text-align: center;
+  cursor: pointer;
+}
+
+.continue__btn.update__btn {
+  text-align: right;
+}
+.continue__btn.update__btn button {
+  color: #e1e1e1;
+  background: #0d0d0d;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid #e1e1e1;
+  padding: 14px 35px;
+  display: inline-block;
+}
+.continue__btn a {
+  color: #0d0d0d;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid #e1e1e1;
+  padding: 14px 35px;
+  display: inline-block;
 }
 
 @media only screen and (max-width: 767px) {

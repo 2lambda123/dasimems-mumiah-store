@@ -16,7 +16,7 @@ function CartPage(props) {
     );
   }
   return (
-    <section className="shopping-cart spad">
+    <section className="shopping-cart spad my-5">
       <div className="container">
         <CartContent />
       </div>

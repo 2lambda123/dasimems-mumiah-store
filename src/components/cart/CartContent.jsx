@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CartColumn from "./CartColumn";
 import { useCartContext } from "../../contexts/cart_context";
 import CartItem from "./CartItem";
@@ -19,6 +20,21 @@ function CartContent(props) {
                 })}
               </tbody>
             </table>
+          </div>
+
+          <div className="row">
+            <div className="col-lg-6 col-md-6 col-sm-6">
+              <div className="continue__btn">
+                <Link to="/products">Continue Shopping</Link>
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-6 col-sm-6">
+              <div className="continue__btn update__btn">
+                <button type="button" onClick={clearCart}>
+                  Clear Cart
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

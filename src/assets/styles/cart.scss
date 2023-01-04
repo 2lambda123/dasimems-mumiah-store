@@ -38,16 +38,22 @@
               .product__cart__item__pic {
                 float: left;
                 margin-right: 30px;
+
+                img {
+                    max-width: 100%;
+                    width: 50%;
+                }
+                
               }
   
               .product__cart__item__text {
-                overflow: hidden;
+                // overflow: hidden;
                 padding-top: 21px;
   
                 h6 {
                   color: #0d0d0d;
                   font-size: 15px;
-                  font-weight: 600;
+                  font-weight: 500;
                   margin-bottom: 10px;
                 }
   

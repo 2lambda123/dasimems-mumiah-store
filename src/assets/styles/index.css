@@ -496,6 +496,7 @@ body .slider-animation {
 body .main-body {
   min-height: 100vh;
   height: 100%;
+  padding-top: 80px;
   /********************
   ===== HOMEPAGE =====
   *********************/

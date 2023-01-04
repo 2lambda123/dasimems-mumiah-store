@@ -21,6 +21,12 @@ import FadeAnimation from "./common/FadeAnimation"
 import ProductListing from "./common/ProductListing"
 import SliderAnimation from "./common/SliderAnimation"
 
+import CartColumn from "./cart/CartColumn"
+import CartAmountBtn from "./cart/CartAmountBtn"
+import CartContent from "./cart/CartContent"
+import CartItem from "./cart/CartItem"
+import CartTotals from "./cart/CartTotals"
+
 export {
   Loading,
   Error,
@@ -43,5 +49,10 @@ export {
   ProductListing,
   ProductContent,
   Loader,
-  ProductShowCase
+  ProductShowCase,
+  CartColumn,
+  CartAmountBtn,
+  CartContent,
+  CartItem,
+  CartTotals
 }

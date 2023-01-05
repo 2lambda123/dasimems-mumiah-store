@@ -2,13 +2,14 @@ import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useProductsContext } from "../contexts/products_context";
 import { Link } from "react-router-dom";
-import { productUrl as url } from "../utils/constant";
+import { routeName, productUrl as url } from "../utils/constant";
 import {
   Loading,
   Error,
   ProductDetails,
   ProductListing,
   ProductContent,
+  BreadCrumb,
 } from "../components";
 import { Row, Col, Breadcrumb } from "antd";
 import { useState } from "react";
@@ -54,6 +55,25 @@ function SingleProducts(props) {
     }
   }, [error]);
 
+  var breadCrumbData = [
+    {
+      label: "Home",
+      link: routeName.home,
+      type: "link"
+    },
+
+    {
+      label: "Products",
+      link: routeName.products,
+      type: "link"
+    },
+
+    {
+      label: product?.name,
+      type: "text"
+    }
+  ]
+
   if (loading) {
     return <Loading />;
   }
@@ -63,23 +83,7 @@ function SingleProducts(props) {
 
   return (
     <div className="single-product-items">
-      <Row justify="center" className="single-product-breadcrumb">
-        <Col span="22">
-          <Breadcrumb separator=">">
-            <Breadcrumb.Item>
-              <Link to="">Home</Link>
-            </Breadcrumb.Item>
-
-            <Breadcrumb.Item>
-              <Link to="">Products</Link>
-            </Breadcrumb.Item>
-
-            <Breadcrumb.Item>
-              <p>{product?.name}</p>
-            </Breadcrumb.Item>
-          </Breadcrumb>
-        </Col>
-      </Row>
+      <BreadCrumb data={breadCrumbData} title="Product Details" />
 
       <ProductContent details={product} />
 

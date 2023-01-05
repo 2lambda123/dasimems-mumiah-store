@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom';
 
 const MobileLinks = ({changeNavState, navPosition, navOpened}) => {
 
-    console.log(changeNavState, navPosition, navOpened)
-
   return (
     <>
     

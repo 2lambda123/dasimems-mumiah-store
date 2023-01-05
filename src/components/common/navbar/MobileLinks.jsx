@@ -1,10 +1,12 @@
-import { Modal } from 'antd';
+import Modal from "../Modal"
 import React from 'react'
 import { images, pageLinks } from '../../../utils/constant';
 import { MdClose } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 const MobileLinks = ({changeNavState, navPosition, navOpened}) => {
+
+    console.log(changeNavState, navPosition, navOpened)
 
   return (
     <>

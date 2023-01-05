@@ -104,7 +104,7 @@ const ProductShowCase = ({ images }) => {
           <Slider ref={(slider) => (imageSlideRef = slider)} {...settings}>
             {images.map((image, index) => {
               return (
-                <div key={index} className="">
+                <div key={index} className="image-slide-container">
                   <img src={image} alt="" />
                 </div>
               )

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import CartColumn from "./CartColumn";
 import { useCartContext } from "../../contexts/cart_context";
 import CartItem from "./CartItem";
+import CartTotals from "./CartTotals";
 
 function CartContent(props) {
   const { cart, clearCart } = useCartContext();
@@ -37,6 +38,7 @@ function CartContent(props) {
             </div>
           </div>
         </div>
+        <CartTotals />
       </div>
     </>
   );

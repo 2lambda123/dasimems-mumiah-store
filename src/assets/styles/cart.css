@@ -26,14 +26,13 @@ section .shopping-cart {
   border-bottom: 1px solid #f2f2f2;
 }
 .shopping__cart__table table tbody tr td {
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding-bottom: 0px;
+  padding-top: 10px;
 }
 .shopping__cart__table table tbody tr td.product__cart__item {
-  width: 400px;
+  width: 250px;
 }
 .shopping__cart__table table tbody tr td.product__cart__item .product__cart__item__pic {
-  float: left;
   margin-right: 30px;
 }
 .shopping__cart__table table tbody tr td.product__cart__item .product__cart__item__pic img {
@@ -41,6 +40,7 @@ section .shopping-cart {
   width: 50%;
 }
 .shopping__cart__table table tbody tr td.product__cart__item .product__cart__item__text {
+  overflow: hidden;
   padding-top: 21px;
 }
 .shopping__cart__table table tbody tr td.product__cart__item .product__cart__item__text h6 {
@@ -112,6 +112,40 @@ section .shopping-cart {
   border: 1px solid #e1e1e1;
   padding: 14px 35px;
   display: inline-block;
+}
+
+.cart__total {
+  background: #f3f2ee;
+  padding: 35px 40px 40px;
+  margin: 5rem 0;
+}
+.cart__total h6 {
+  color: #0d0d0d;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.cart__total ul {
+  margin-bottom: 25px;
+}
+.cart__total ul li {
+  list-style: none;
+  font-size: 16px;
+  color: #444444;
+  line-height: 40px;
+  overflow: hidden;
+}
+.cart__total ul li span {
+  font-weight: 700;
+  color: #444444;
+  float: right;
+}
+.cart__total .btn-total {
+  display: block;
+  padding: 12px 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  background-color: #0d0d0d;
+  color: #e1e1e1;
 }
 
 @media only screen and (max-width: 767px) {

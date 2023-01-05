@@ -120,7 +120,7 @@ a {
   }
 }
 
-
+body {
   /********************
   ===== NAV BAR STYLES =====
   *********************/
@@ -133,7 +133,7 @@ a {
   /********************
   ===== FOOTER STYLES =====
   *********************/
-
+}
 body .nav-bar {
   width: 100%;
   height: 80px;
@@ -517,6 +517,9 @@ body .main-body {
   *********************/
   /********************
   ===== PRODUCTS SECTION STYLE =====
+  *********************/
+  /********************
+   ===== PRODUCT PAGE =====
   *********************/
   /********************
    ===== SINGLE PRODUCT PAGE =====
@@ -1119,6 +1122,150 @@ body .main-body .prod-img-bg {
   box-shadow: inset 0px 0px 101px 21px rgba(0, 0, 0, 0.09);
   height: 100%;
   display: block;
+}
+body .main-body .product-header {
+  padding: 20px 0px;
+  background: rgba(0, 0, 0, 0.05);
+}
+body .main-body .product-header .product-header-container .product-header-content .product-header-stats {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+body .main-body .product-header .product-header-container .product-header-content .product-header-actions .product-header-button {
+  margin-right: 30px;
+  border: none;
+  outline: none;
+}
+body .main-body .product-header .product-header-container .product-header-content .product-header-actions .product-header-button .icon {
+  margin-left: 5px;
+}
+body .main-body .product-header .product-header-container .product-header-content .product-header-actions .product-filter-form form select {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  outline: none;
+}
+body .main-body .product-header .product-header-container .product-header-content .product-header-actions .product-filter-form form select:focus {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+body .main-body .product-list {
+  margin-top: 30px;
+}
+body .main-body .product-list .product-list-container .product-list-content .transitioned {
+  transition: 0.5s ease all;
+  -webkit-transition: 0.5s ease all;
+  -moz-transition: 0.5s ease all;
+  -ms-transition: 0.5s ease all;
+  -o-transition: 0.5s ease all;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container {
+  width: 28%;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container {
+  width: 100%;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container .clear-btn {
+  padding: 5px 10px;
+  background: #172133;
+  border: 2px solid #172133;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-bottom: 10px;
+  color: white;
+  margin-top: 20px;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container .clear-btn:hover {
+  background: transparent;
+  color: #172133;
+  transition: 0.5s ease all;
+  -webkit-transition: 0.5s ease all;
+  -moz-transition: 0.5s ease all;
+  -ms-transition: 0.5s ease all;
+  -o-transition: 0.5s ease all;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form {
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  padding: 20px;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form:not(:first-child) {
+  border-top: none;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form h5 {
+  margin-bottom: 10px;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form .search-input {
+  height: 40px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  width: 100%;
+  padding: 0px 10px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form .select-btn {
+  padding: 5px 10px;
+  background: white;
+  border: 2px solid #172133;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-bottom: 10px;
+  color: #172133;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form .select-btn:not(:last-child) {
+  margin-right: 10px;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form .brand-select {
+  width: 100%;
+  height: 40px;
+  padding: 0px 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form .filter-price {
+  width: 100%;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form .shipping {
+  margin-left: 10px;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form .filter-sizes-container {
+  list-style: none;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form .filter-sizes-container .filter-sizes {
+  margin-right: 5px;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form .active-btn {
+  background: #172133;
+  color: white;
+}
+body .main-body .product-list .product-list-container .product-list-content .main-product-list {
+  width: 70%;
+}
+body .main-body .product-list .product-list-container .product-list-content .nonactive-filter-container {
+  margin-left: -35%;
+}
+body .main-body .product-list .product-list-container .product-list-content .nonactive-product-list {
+  width: 100%;
 }
 body .main-body .single-product-items .single-product-breadcrumb {
   font-size: 1rem;

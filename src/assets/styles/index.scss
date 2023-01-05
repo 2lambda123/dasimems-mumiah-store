@@ -1276,6 +1276,214 @@ body{
         }
 
          /********************
+         ===== PRODUCT PAGE =====
+        *********************/
+        .product-header{
+            padding: 20px 0px;
+            background: rgba(0, 0, 0,  .05);
+
+
+            .product-header-container{
+
+                .product-header-content{
+
+                    .product-header-stats{
+
+                        font-size: 1.3rem;
+                        font-weight: 500;
+                    }
+
+                    .product-header-actions{
+
+                        .product-header-button{
+                            margin-right: 30px;
+                            border: none;
+                            outline: none;
+
+                            .icon{
+                                margin-left: 5px;
+                            }
+                        }
+
+                        .product-filter-form{
+
+                            form{
+
+                                select{
+                                    margin-left: 10px;
+                                    padding: 5px 10px;
+                                    border: 1px solid rgba(0, 0, 0, .1);
+                                    border-radius: 5px;
+                                    -webkit-border-radius: 5px;
+                                    -moz-border-radius: 5px;
+                                    -ms-border-radius: 5px;
+                                    -o-border-radius: 5px;
+                                    outline: none;
+
+                                    &:focus{
+                                        border: 2px solid rgba(0, 0, 0,  .2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .product-list{
+            margin-top: 30px;
+
+            .product-list-container{
+
+                .product-list-content{
+
+                    .transitioned{
+                        transition: 0.5s ease all;
+                        -webkit-transition: 0.5s ease all;
+                        -moz-transition: 0.5s ease all;
+                        -ms-transition: 0.5s ease all;
+                        -o-transition: 0.5s ease all;
+                    }
+
+                    .product-filter-container{
+                        width: 28%;
+
+                        .filter-container{
+                            width: 100%;
+
+                            .clear-btn{
+                                padding: 5px 10px;
+                                background: #172133;
+                                border: 2px solid #172133;
+                                border-radius: 5px;
+                                -webkit-border-radius: 5px;
+                                -moz-border-radius: 5px;
+                                -ms-border-radius: 5px;
+                                -o-border-radius: 5px;
+                                margin-bottom: 10px;
+                                color: white;
+                                margin-top: 20px;
+
+                                &:hover{
+                                    background: transparent;
+                                    color: #172133;
+                                    transition: 0.5s ease all;
+                                    -webkit-transition: 0.5s ease all;
+                                    -moz-transition: 0.5s ease all;
+                                    -ms-transition: 0.5s ease all;
+                                    -o-transition: 0.5s ease all;
+}
+
+
+                            }
+
+                            form{
+
+                                .filter-container-form{
+                                    border-radius: 0px;
+                                    -webkit-border-radius: 0px;
+                                    -moz-border-radius: 0px;
+                                    -ms-border-radius: 0px;
+                                    -o-border-radius: 0px;
+                                    padding: 20px;
+
+                                    &:not(:first-child){
+                                        border-top: none;
+                                    }
+
+                                    h5{
+                                        margin-bottom: 10px;
+                                    }
+
+                                    .search-input{
+                                        height: 40px;
+                                        border-radius: 5px;
+                                        -webkit-border-radius: 5px;
+                                        -moz-border-radius: 5px;
+                                        -ms-border-radius: 5px;
+                                        -o-border-radius: 5px;
+                                        width: 100%;
+                                        padding: 0px 10px;
+                                        outline: none;
+                                        border: 1px solid rgba(0, 0, 0, .2);
+                                    }
+
+                                    .select-btn{
+                                        padding: 5px 10px;
+                                        background: white;
+                                        border: 2px solid #172133;
+                                        border-radius: 5px;
+                                        -webkit-border-radius: 5px;
+                                        -moz-border-radius: 5px;
+                                        -ms-border-radius: 5px;
+                                        -o-border-radius: 5px;
+                                        margin-bottom: 10px;
+                                        color: #172133;
+
+
+                                        &:not(:last-child){
+                                            margin-right: 10px;
+                                        }
+                                    }
+
+                                    .brand-select{
+                                        width: 100%;
+                                        height: 40px;
+                                        padding: 0px 10px;
+                                        border-radius: 5px;
+                                        -webkit-border-radius: 5px;
+                                        -moz-border-radius: 5px;
+                                        -ms-border-radius: 5px;
+                                        -o-border-radius: 5px;
+                                    }
+
+                                    .filter-price{
+                                        width: 100%;
+                                    }
+
+                                    .shipping{
+                                        margin-left: 10px;
+
+                                    }
+
+                                    .filter-sizes-container{
+                                        list-style: none;
+
+                                        .filter-sizes{
+                                            margin-right: 5px;
+                                        }
+                                    }
+
+                                    .active-btn{
+                                        background: #172133;
+                                        color: white;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                    .main-product-list{
+                        width: 70%;
+                    }
+
+                    .nonactive-filter-container{
+                        margin-left: -35%;
+                    }
+
+                    .nonactive-product-list{
+                        width: 100%;
+                    }
+
+                }
+            }
+        }
+
+
+         /********************
          ===== SINGLE PRODUCT PAGE =====
         *********************/
 

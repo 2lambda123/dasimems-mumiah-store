@@ -24,10 +24,10 @@ function Filter(props) {
   const sizes = getUniqueValues(all_products, "sizes");
 
   return (
-    <div className="container">
+    <div className="container filter-container">
       <form onSubmit={(e) => e.preventDefault()}>
         {/* Search input */}
-        <div className="form-control">
+        <div className="form-control filter-container-form">
           <input
             type="text"
             name="text"
@@ -39,7 +39,7 @@ function Filter(props) {
         </div>
         {/* End Search input */}
         {/* Categories */}
-        <div className="form-control">
+        <div className="form-control filter-container-form">
           <h5>Categories</h5>
           <div>
             {categories.map((c, index) => {
@@ -49,8 +49,8 @@ function Filter(props) {
                   onClick={updateFilters}
                   type="button"
                   name="category"
-                  className={`${
-                    category === c?.toLowerCase() ? "active" : null
+                  className={`select-btn ${
+                    category.toLowerCase() === c?.toLowerCase() ? "active-btn" : ""
                   }`}
                 >
                   {c}
@@ -61,9 +61,9 @@ function Filter(props) {
         </div>
         {/* End Categories */}
         {/* Brand */}
-        <div className="form-control">
+        <div className="form-control filter-container-form">
           <h5>Brands</h5>
-          <select onChange={updateFilters} name="brand" value={brand}>
+          <select className="brand-select" onChange={updateFilters} name="brand" value={brand}>
             {brands.map((c, index) => {
               return (
                 <option key={index} value={c}>
@@ -75,14 +75,15 @@ function Filter(props) {
         </div>
         {/* End of brand */}
         {/* Sizes */}
-        <div className="form-control">
+        <div className="form-control filter-container-form">
           <h5>Sizes</h5>
           <ul className="container">
             {sizes.map((s, index) => (
-              <li key={index}>
+              <li key={index} className="filter-sizes-container">
                 <label>
                   <input
                     name="sizes"
+                    className="filter-sizes"
                     onChange={updateFilters}
                     type="checkbox"
                     value={s}
@@ -95,12 +96,13 @@ function Filter(props) {
         </div>
         {/* End of sizes */}
         {/* Price */}
-        <div className="form-control">
+        <div className="form-control filter-container-form">
           <h5>Price</h5>
           <p>{formatPrice(price)}</p>
           <input
             type="range"
             name="price"
+            className="filter-price"
             onChange={updateFilters}
             min={min_price}
             max={max_price}
@@ -109,12 +111,13 @@ function Filter(props) {
         </div>
         {/* End Price */}
         {/* Shipping */}
-        <div className="form-control">
+        <div className="form-control filter-container-form flex-container align-center">
           <label htmlFor="shipping">Free shipping</label>
           <input
             type="checkbox"
             name="shipping"
             id="shipping"
+            className="shipping"
             onChange={updateFilters}
             checked={shipping}
           />

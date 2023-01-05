@@ -27,6 +27,8 @@ import CartContent from "./cart/CartContent"
 import CartItem from "./cart/CartItem"
 import CartTotals from "./cart/CartTotals"
 import BreadCrumb from "./common/BreadCrumb"
+import ProductHeader from "./products/Header"
+import ProductFilterButton from "./products/ProductFilterButton"
 
 export {
   Loading,
@@ -56,5 +58,7 @@ export {
   CartContent,
   CartItem,
   CartTotals,
-  BreadCrumb
+  BreadCrumb,
+  ProductHeader,
+  ProductFilterButton
 }

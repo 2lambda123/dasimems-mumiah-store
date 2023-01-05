@@ -2,10 +2,9 @@ import React from "react";
 import { useFilterContext } from "../../contexts/filter_context";
 
 function Sort(props) {
-  const { filtered_products: products, sort, updateSort } = useFilterContext();
+  const { sort, updateSort } = useFilterContext();
   return (
-    <div>
-      <p>{products.length} products found</p>
+    <div className="product-filter-form">
       <form>
         <label htmlFor="sort">Sort By</label>
         <select name="sort" id="sort" value={sort} onChange={updateSort}>

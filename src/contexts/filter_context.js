@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useReducer } from 'react'
+import React, { useEffect, useContext, useReducer, useCallback } from 'react'
 import reducer from "../reducers/filter_reducer"
 import {
     LOAD_PRODUCTS,
@@ -7,6 +7,8 @@ import {
     UPDATE_FILTERS,
     FILTER_PRODUCTS,
     CLEAR_FILTERS,
+    OPEN_FILTER_OPTION,
+    CLOSE_FILTER_OPTION,
 } from "../_actions"
 import { useProductsContext } from "./products_context"
 
@@ -14,6 +16,7 @@ const initialState = {
     filtered_products: [],
     all_products: [],
     sort: 'price-lowest',
+    filterOptionState: true,
     filters:{
       text: '',
       brand: 'all',
@@ -69,6 +72,19 @@ const FilterContext = React.createContext()
     const clearFilters = () => {
       dispatch({type: CLEAR_FILTERS})
     }
+
+    const filterOptions = useCallback(() =>{
+
+      if(state.filterOptionState){
+
+        dispatch({type: CLOSE_FILTER_OPTION})
+      }else{
+
+        dispatch({type: OPEN_FILTER_OPTION})
+      }
+
+
+    }, [state.filterOptionState])
   
   
     return (
@@ -77,7 +93,8 @@ const FilterContext = React.createContext()
           ...state, 
           updateSort,
           updateFilters,
-          clearFilters
+          clearFilters,
+          filterOptions
       }}>
         {children}
       </FilterContext.Provider>

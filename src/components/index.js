@@ -26,6 +26,7 @@ import CartAmountBtn from "./cart/CartAmountBtn"
 import CartContent from "./cart/CartContent"
 import CartItem from "./cart/CartItem"
 import CartTotals from "./cart/CartTotals"
+import BreadCrumb from "./common/BreadCrumb"
 
 export {
   Loading,
@@ -54,5 +55,6 @@ export {
   CartAmountBtn,
   CartContent,
   CartItem,
-  CartTotals
+  CartTotals,
+  BreadCrumb
 }

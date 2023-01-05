@@ -15,7 +15,7 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 import { BiUser } from "react-icons/bi";
 import { MdClose } from "react-icons/md";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import Modal from "./Modal";
+import MobileLinks from "./navbar/MobileLinks";
 function Navbar(props) {
   const location = useLocation();
   const [navOpened, setNavOpened] = useState(false);
@@ -34,7 +34,7 @@ function Navbar(props) {
       setNavPosition("-500px");
     } else {
       setTimeout(() => {
-        setNavPosition("00px");
+        setNavPosition("0px");
       }, 40);
     }
   };
@@ -308,36 +308,9 @@ function Navbar(props) {
         </Col>
       </Row>
 
-      <Modal modalOpened={navOpened}>
-        <div className="mobile-nav" style={{ left: navPosition }}>
-          <div className="mobile-nav-header flex-container align-start space-between">
-            <img src={images.logo} alt="mumiah logo" />
 
-            <button className="close-mobile-nav-btn" onClick={changeNavState}>
-              <MdClose />
-            </button>
-          </div>
-
-          <p className="mobile-nav-description">
-            Discover the most outstanding wears at Mumiah fashion
-          </p>
-
-          <div className="mode-change"></div>
-
-          <ul className="mobile-nav-links">
-            {pageLinks.map((linkDetails, index) => {
-              var { label, link } = linkDetails;
-              return (
-                <li key={index}>
-                  <Link onClick={changeNavState} to={link}>
-                    {label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </Modal>
+        <MobileLinks changeNavState={changeNavState} navPosition={navPosition} />
+     
     </>
   );
 }

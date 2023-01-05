@@ -305,7 +305,7 @@ function Navbar(props) {
                 <AiOutlineShoppingCart />
 
                 <span className="cart-stats flex-container align-center justify-center">
-                  3
+                  {total_items}
                 </span>
               </button>
             </div>

@@ -16,7 +16,12 @@ import { BiUser } from "react-icons/bi";
 import { MdClose } from "react-icons/md";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import MobileLinks from "./navbar/MobileLinks";
+
+import { useCartContext } from "../../contexts/cart_context";
+
 function Navbar(props) {
+  const { total_items } = useCartContext();
+
   const location = useLocation();
   const [navOpened, setNavOpened] = useState(false);
   const [navPosition, setNavPosition] = useState("-500px");
@@ -223,7 +228,7 @@ function Navbar(props) {
                 <AiOutlineShoppingCart />
 
                 <span className="cart-stats flex-container align-center justify-center">
-                  3
+                  {total_items}
                 </span>
 
                 {cartPop && (
@@ -300,7 +305,7 @@ function Navbar(props) {
                 <AiOutlineShoppingCart />
 
                 <span className="cart-stats flex-container align-center justify-center">
-                  3
+                  {total_items}
                 </span>
               </button>
             </div>

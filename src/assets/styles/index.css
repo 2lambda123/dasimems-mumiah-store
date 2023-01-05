@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap%27");
 * {
   padding: 0px;
   margin: 0px;
@@ -118,7 +119,7 @@ a {
 }
 
 body {
-  font-family: poppins;
+  font-family: Montserrat;
   /********************
   ===== NAV BAR STYLES =====
   *********************/
@@ -228,7 +229,7 @@ body .nav-bar .pop-up .account-pop-up-header .account-details h2 {
   margin: 0px;
   padding: 0px;
   text-align: left;
-  font-family: poppins-semibold;
+  font-weight: 600;
 }
 body .nav-bar .pop-up .account-pop-up-header .account-details p {
   padding: 0px;
@@ -242,7 +243,7 @@ body .nav-bar .pop-up .account-pop-up-link {
 }
 body .nav-bar .pop-up .account-pop-up-link li a {
   color: #3b3e44;
-  font-family: poppins-medium;
+  font-weight: 500;
 }
 body .nav-bar .pop-up .account-pop-up-link li a .icon {
   font-size: 1.5rem;
@@ -291,7 +292,7 @@ body .nav-bar .pop-up .cart-pop-up-top::-webkit-scrollbar-thumb {
 }
 body .nav-bar .pop-up .cart-pop-up-top h2 {
   font-size: 1.3rem;
-  font-family: poppins-semibold;
+  font-weight: 600;
 }
 body .nav-bar .pop-up .cart-pop-up-top .cart-item {
   padding: 20px 0px;
@@ -312,7 +313,7 @@ body .nav-bar .pop-up .cart-pop-up-top .cart-item .cart-item-details {
 }
 body .nav-bar .pop-up .cart-pop-up-top .cart-item .cart-item-details .details-content h3 {
   font-size: 1.1rem;
-  font-family: poppins-semibold;
+  font-weight: 600;
 }
 body .nav-bar .pop-up .cart-pop-up-top .cart-item .cart-item-details .details-content .quality .divider {
   color: rgba(0, 0, 0, 0.2);
@@ -350,7 +351,7 @@ body .nav-bar .pop-up .cart-pop-up-bottom {
 }
 body .nav-bar .pop-up .cart-pop-up-bottom .cart-bottom-header h3,
 body .nav-bar .pop-up .cart-pop-up-bottom .cart-bottom-header h2 {
-  font-family: poppins-semibold;
+  font-weight: 600;
 }
 body .nav-bar .pop-up .cart-pop-up-bottom .cart-bottom-header h3 {
   font-size: 1.1rem;
@@ -399,7 +400,7 @@ body .nav-bar .nav-bar-links li a {
   color: black;
   font-weight: 550;
   font-size: 1rem;
-  font-family: poppins-medium;
+  font-weight: 400;
   padding: 10px 25px;
   border-radius: 100px;
   -webkit-border-radius: 100px;
@@ -585,7 +586,7 @@ body .main-body .banner .banner-container .banner-main-content {
   -o-transition: 0.5s ease all;
 }
 body .main-body .banner .banner-container .banner-main-content .banner-content .banner-subtitle {
-  font-family: poppins-medium;
+  font-weight: 500;
   font-size: 1.5rem;
   color: rgba(0, 0, 0, 0.8);
 }
@@ -602,7 +603,6 @@ body .main-body .banner .banner-container .banner-main-content .banner-content .
 body .main-body .banner .banner-container .banner-main-content .banner-content .banner-title {
   margin-top: 30px;
   font-size: 4rem;
-  font-family: poppins;
   font-weight: 600;
 }
 @media only screen and (max-width: 500px) {
@@ -727,7 +727,7 @@ body .main-body .buying-steps .buying-steps-content .buying-steps-inner-content 
 }
 body .main-body .buying-steps .buying-steps-content .buying-steps-inner-content .step-card .step-card-title {
   font-size: 1rem;
-  font-family: poppins-semibold;
+  font-weight: 600;
 }
 body .main-body .buying-steps .buying-steps-content .buying-steps-inner-content .step-card .step-card-subtitle {
   color: rgba(0, 0, 0, 0.7);
@@ -831,7 +831,7 @@ body .main-body .advertisement .advertisement-container .advertisement-inner-con
   max-width: 370px;
   font-size: clamp(1.5rem, 11vw, 3.5rem);
   margin-top: 40px;
-  font-family: poppins-semibold;
+  font-weight: 600;
 }
 @media only screen and (max-width: 965px) {
   body .main-body .advertisement .advertisement-container .advertisement-inner-content .advertisement-details .advertisement-title {
@@ -843,7 +843,7 @@ body .main-body .advertisement .advertisement-container .advertisement-inner-con
   font-size: 1.05rem;
   margin-top: 30px;
   max-width: 440px;
-  font-family: poppins-medium;
+  font-weight: 500;
 }
 body .main-body .advertisement .advertisement-container .advertisement-inner-content .advertisement-details .advertisement-call-to-action {
   display: inline-flex;
@@ -941,7 +941,7 @@ body .main-body .categories .categories-container .slide-btn-container .slide-bt
 }
 body .main-body .categories .categories-container .categories-title {
   font-size: 2.5rem;
-  font-family: poppins-semibold;
+  font-weight: 600;
   max-width: calc(100% - 130px);
 }
 @media only screen and (max-width: 900px) {
@@ -979,13 +979,13 @@ body .main-body .categories .categories-container .categories-content .category-
   }
 }
 body .main-body .categories .categories-container .categories-content .category-card .category-card-details .category-card-details-subtitle {
-  font-family: poppins-medium;
+  font-weight: 600;
   font-size: 1rem;
   color: rgba(0, 0, 0, 0.7);
 }
 body .main-body .categories .categories-container .categories-content .category-card .category-card-details .category-card-details-title {
   font-size: 1.3rem;
-  font-family: poppins-semibold;
+  font-weight: 600;
 }
 body .main-body .categories .categories-container .categories-content .category-card .category-card-details .category-card-details-link {
   padding: 12px 16px;
@@ -1125,7 +1125,7 @@ body .main-body .single-product-items .single-product-breadcrumb {
   font-size: 1rem;
 }
 body .main-body .single-product-items .single-product-breadcrumb a {
-  font-family: poppins-medium;
+  font-weight: 600;
   color: black;
 }
 body .main-body .single-product-items .product-content {
@@ -1226,7 +1226,7 @@ body .main-body .single-product-items .product-content .single-product-details .
   margin: 20px 0px;
 }
 body .main-body .single-product-items .product-content .single-product-details .price .original-price {
-  font-family: poppins-medium;
+  font-weight: 600;
   font-size: 1.8rem;
 }
 body .main-body .single-product-items .product-content .single-product-details .price .discounted-price {
@@ -1340,10 +1340,10 @@ body .main-body .single-product-items .product-content .single-product-details .
 }
 body .main-body .single-product-items .product-content .single-product-details .extra-details-container .extra-details .title {
   width: 150px;
-  font-family: poppins-semibold;
+  font-weight: 600;
 }
 body .main-body .single-product-items .product-content .single-product-details .extra-details-container .extra-details .value .inner-value {
-  font-family: poppins-medium;
+  font-weight: 600;
 }
 body .main-body .single-product-items .product-content .single-product-details .extra-details-container .extra-details .value .inner-value:not(:first-child) {
   margin-left: 10px;
@@ -1352,12 +1352,12 @@ body .main-body .single-product-items .full-details {
   margin: 30px 0px;
 }
 body .main-body .single-product-items .full-details .details-divider {
-  font-family: poppins-medium;
+  font-weight: 500;
   font-size: 1.3rem;
 }
 body .main-body .single-product-items .related-products .related-product-container h2 {
   text-align: center;
-  font-family: poppins-medium;
+  font-weight: 600;
   font-size: 1.3rem;
   margin-bottom: 30px;
 }
@@ -1367,7 +1367,7 @@ body .main-body .contact-banner {
 }
 body .main-body .contact-banner .contact-title {
   font-size: 3.3rem;
-  font-family: poppins-semibold;
+  font-weight: 600;
 }
 body .main-body .contact-content {
   margin-bottom: 70px;
@@ -1381,7 +1381,7 @@ body .main-body .contact-content .contact-content-details .details-container p {
   margin: 0px;
 }
 body .main-body .contact-content .contact-content-details .details-container p.title {
-  font-family: poppins-semibold;
+  font-weight: 600;
   font-size: 1.2rem;
 }
 body .main-body .contact-content .contact-content-details .details-container p.value {
@@ -1395,7 +1395,7 @@ body .main-body .contact-content .contact-content-details .form-content:not(:fir
   margin-top: 25px;
 }
 body .main-body .contact-content .contact-content-details .form-content label {
-  font-family: poppins-semibold;
+  font-weight: 600;
 }
 body .main-body .contact-content .contact-content-details .form-content textarea,
 body .main-body .contact-content .contact-content-details .form-content input {
@@ -1409,7 +1409,7 @@ body .main-body .contact-content .contact-content-details .form-content input {
   border: 1px solid rgba(0, 0, 0, 0.2);
   background: transparent;
   padding: 0px 15px;
-  font-family: poppins;
+  font-family: Montserrat;
 }
 body .main-body .contact-content .contact-content-details .form-content textarea:focus,
 body .main-body .contact-content .contact-content-details .form-content input:focus {
@@ -1459,7 +1459,7 @@ body .footer .footer-content .footer-image {
 }
 body .footer .footer-content .footer-content-title {
   font-size: 1.1rem;
-  font-family: poppins-semibold;
+  font-weight: 600;
 }
 body .footer .footer-content .social-links {
   list-style: none;

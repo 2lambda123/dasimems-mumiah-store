@@ -27,7 +27,9 @@ export const routeName = {
     about: "/about",
     products: "/products",
     contact: "/contact",
-    cart: "/cart"
+    cart: "/cart",
+    login: "/login",
+    signUp: "/register",
 }
 
 export const contacts = {

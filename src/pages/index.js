@@ -5,6 +5,8 @@ import SingleProducts from "./SingleProducts";
 import Contact from "./Contact";
 import Product from "./Product";
 import CartPage from "./CartPage";
+import Login from "./Login";
+import SignUp from "./SignUp";
 
 export {
     Home,
@@ -13,5 +15,7 @@ export {
     SingleProducts,
     Contact,
     Product,
-    CartPage
+    CartPage,
+    Login,
+    SignUp
 }

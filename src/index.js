@@ -1,31 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import "antd/dist/antd"
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import "./assets/styles/index.css";
-import "./assets/styles/cart.css";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import 'antd/dist/antd'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import './assets/styles/index.css'
+import './assets/styles/cart.css'
 
-import App from './App';
+import App from './App'
 
 // Bootstrap CSS
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css'
 // Bootstrap Bundle JS
-import "bootstrap/dist/js/bootstrap.bundle.min";
+import 'bootstrap/dist/js/bootstrap.bundle.min'
 
+import { ProductsProvider } from './contexts/products_context'
+import { FilterProvider } from './contexts/filter_context'
+import { CartProvider } from './contexts/cart_context'
+import { FormProvider } from './contexts/form_context'
 
-
-import { ProductsProvider } from "./contexts/products_context"
-import { FilterProvider } from './contexts/filter_context';
-import { CartProvider } from './contexts/cart_context';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <ProductsProvider>
-    <FilterProvider>
-      <CartProvider>
-        <App />
-      </CartProvider>
-    </FilterProvider>
-  </ProductsProvider>
-);
+  <FormProvider>
+    <ProductsProvider>
+      <FilterProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </FilterProvider>
+    </ProductsProvider>
+  </FormProvider>,
+)

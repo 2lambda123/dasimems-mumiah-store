@@ -1338,6 +1338,7 @@ body{
             .product-list-container{
 
                 .product-list-content{
+                    // position: relative;
 
                     .transitioned{
                         transition: 0.5s ease all;
@@ -1349,9 +1350,24 @@ body{
 
                     .product-filter-container{
                         width: 28%;
+                        position: sticky;
+                        top: getMeasurement("headerHeight");
 
                         .filter-container{
                             width: 100%;
+                            position: relative;
+
+                            .close-filter-btn{
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                                border: none;
+                                font-size: 1.5rem;
+                                background: transparent;
+                                outline: none;
+                                
+
+                            }
 
                             .clear-btn{
                                 padding: 5px 10px;
@@ -1476,6 +1492,34 @@ body{
 
                     .nonactive-product-list{
                         width: 100%;
+                    }
+
+                    @media only screen and (max-width: 900px){
+                        .main-product-list{
+                            width: 100%;
+                        }
+
+                        .product-filter-container{
+                            background: white;
+                            width: 100vw;
+                            height: 100vh;
+                            overflow-y: scroll;
+                            position: fixed;
+                            top: 100%;
+                            left: 0px;
+                            z-index: 9999;
+                            padding: 20px 0px;
+                            
+                            
+                        }
+                        
+                        .nonactive-filter-container{
+                            margin-left: 0px;
+                            left: 0px;
+                            top: 0px;
+
+                        }
+
                     }
 
                 }
@@ -1837,6 +1881,57 @@ body{
                 }
             }
         }
+
+        /********************
+        ===== LOGIN PAGE =====
+        *********************/
+
+        .login{
+            
+            .login-container{
+                padding: 50px 0px;
+
+                .login-content{
+                    width: 100%;
+                    max-width: 900px;
+                    height: auto;
+                    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
+                    background: #172133;
+
+                    .login-form{
+                        padding: 50px 40px;
+                        background: white;
+
+                        .login-extra{
+                            margin-top: 20px;
+
+                            a{
+                                color: black;
+                            }
+                        }
+                    }
+
+                    .login-banner{
+                        color: white;
+                        padding: 30px 0px;
+
+                        .form-banner-link{
+                            color: white;
+                            border: 2px solid white;
+
+                            &:hover{
+                                color: #172133;
+                                background: white;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+        
 
         
 

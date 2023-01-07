@@ -1,6 +1,7 @@
 import React from "react";
 import { useFilterContext } from "../../contexts/filter_context";
 import { getUniqueValues, formatPrice } from "../../utils/helpers";
+import {AiFillCloseCircle} from "react-icons/ai"
 
 function Filter(props) {
   const {
@@ -25,6 +26,11 @@ function Filter(props) {
 
   return (
     <div className="container filter-container">
+
+      <button className="close-filter-btn">
+        <AiFillCloseCircle />
+      </button>
+
       <form onSubmit={(e) => e.preventDefault()}>
         {/* Search input */}
         <div className="form-control filter-container-form">

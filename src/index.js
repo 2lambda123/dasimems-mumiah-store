@@ -1,10 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import 'antd/dist/antd'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import './assets/styles/index.css'
-import './assets/styles/cart.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import "antd/dist/antd"
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import "./assets/styles/index.css";
+import "./assets/styles/cart.css";
+import "./assets/styles/auth.css"
 
 import App from './App'
 
@@ -18,15 +19,21 @@ import { FilterProvider } from './contexts/filter_context'
 import { CartProvider } from './contexts/cart_context'
 import { FormProvider } from './contexts/form_context'
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+
+import { ProductsProvider } from "./contexts/products_context"
+import { FilterProvider } from './contexts/filter_context';
+import { CartProvider } from './contexts/cart_context';
+import { UserProvider } from './contexts/user_context';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <FormProvider>
-    <ProductsProvider>
-      <FilterProvider>
-        <CartProvider>
-          <App />
-        </CartProvider>
-      </FilterProvider>
-    </ProductsProvider>
-  </FormProvider>,
-)
+  <ProductsProvider>
+    <FilterProvider>
+      <CartProvider>
+       <UserProvider>
+        <App />
+       </UserProvider>
+      </CartProvider>
+    </FilterProvider>
+  </ProductsProvider>
+);

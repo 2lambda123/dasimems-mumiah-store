@@ -8,7 +8,9 @@ import {
   SingleProducts, 
   Contact, 
   Product, 
-  CartPage, 
+  CartPage,
+  Login,
+ , Register
   Login,
   SignUp
 } from "./pages"
@@ -40,6 +42,8 @@ function App(props) {
             <Route path={routeName.products} element={<Product />} />
             <Route path={`${routeName.products}/:id`} element={<SingleProducts />} />
             <Route path='/cart' element={<CartPage />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
             <Route path='*' element={<Error />}  />
           </Routes>
         </main>

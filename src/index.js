@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./assets/styles/index.css";
 import "./assets/styles/cart.css";
+import "./assets/styles/auth.css"
 
 import App from './App';
 

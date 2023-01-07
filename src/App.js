@@ -8,7 +8,9 @@ import {
   SingleProducts, 
   Contact, 
   Product, 
-  CartPage 
+  CartPage,
+  Login,
+  Register
 } from "./pages"
 import { useProductsContext } from './contexts/products_context';
 
@@ -35,6 +37,8 @@ function App(props) {
             <Route path='/products' element={<Product />} />
             <Route path='/products/:id' element={<SingleProducts />} />
             <Route path='/cart' element={<CartPage />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
             <Route path='*' element={<Error />}  />
           </Routes>
         </main>

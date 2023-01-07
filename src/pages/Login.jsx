@@ -6,10 +6,11 @@ import useFormContext from '../contexts/form_context'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
-  const { email, password } = useFormContext()
+  const { email, password, setFormDetails } = useFormContext()
 
-  const changeValue = (e) => {
-    console.log(e)
+  const changeValue = (details) => {
+    console.log(details)
+    setFormDetails(details)
   }
 
   var formData = {
@@ -17,7 +18,7 @@ const Login = () => {
       {
         label: 'Email',
         value: email,
-        onChange: changeValue,
+        // onChange: changeValue,
         placeholder: 'Email',
         type: 'email',
         name: 'email',
@@ -30,7 +31,7 @@ const Login = () => {
       {
         label: 'Password',
         value: password,
-        onChange: changeValue,
+        // onChange: changeValue,
         placeholder: 'Password',
         type: 'password',
         name: 'password',
@@ -42,6 +43,7 @@ const Login = () => {
     ],
     formTitle: 'Sign In',
     formTopContent: '',
+    onFormChange: changeValue
   }
 
   return (

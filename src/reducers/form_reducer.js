@@ -1,4 +1,4 @@
-import { FORM_EMAIL, FORM_NAME, FORM_PASSWORD, FORM_PHONE_NUMBER } from "../_actions";
+import { FORM_EMAIL, FORM_NAME, FORM_PASSWORD, FORM_PHONE_NUMBER, SET_FORM_DETAILS } from "../_actions";
 
 
 const form_reducer =  (state, action) =>{
@@ -17,6 +17,12 @@ const form_reducer =  (state, action) =>{
 
         case FORM_PHONE_NUMBER:
             return {...state, phoneNumber: payload}
+
+        case SET_FORM_DETAILS:
+
+            if(!payload || typeof(payload) !== "object") return;
+
+            return {...state, ...payload}
 
         default:
             return state;

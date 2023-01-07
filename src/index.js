@@ -18,22 +18,19 @@ import { ProductsProvider } from './contexts/products_context'
 import { FilterProvider } from './contexts/filter_context'
 import { CartProvider } from './contexts/cart_context'
 import { FormProvider } from './contexts/form_context'
-
-
-import { ProductsProvider } from "./contexts/products_context"
-import { FilterProvider } from './contexts/filter_context';
-import { CartProvider } from './contexts/cart_context';
 import { UserProvider } from './contexts/user_context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ProductsProvider>
-    <FilterProvider>
-      <CartProvider>
-       <UserProvider>
-        <App />
-       </UserProvider>
-      </CartProvider>
-    </FilterProvider>
-  </ProductsProvider>
+  <FormProvider>
+    <ProductsProvider>
+      <FilterProvider>
+        <CartProvider>
+        <UserProvider>
+          <App />
+        </UserProvider>
+        </CartProvider>
+      </FilterProvider>
+    </ProductsProvider>
+  </FormProvider>
 );

@@ -10,9 +10,7 @@ import {
   Product, 
   CartPage,
   Login,
- , Register
-  Login,
-  SignUp
+  Register
 } from "./pages"
 import { useProductsContext } from './contexts/products_context';
 import { routeName } from './utils/constant';
@@ -36,14 +34,12 @@ function App(props) {
           <Routes>
             <Route path={routeName.home} element={<Home />} />
             <Route path={routeName.about} element={<About />} />
-            <Route path={routeName.login} element={<Login />} />
-            <Route path={routeName.signUp} element={<SignUp />} />
             <Route path={routeName.contact} element={<Contact />} />
             <Route path={routeName.products} element={<Product />} />
             <Route path={`${routeName.products}/:id`} element={<SingleProducts />} />
             <Route path='/cart' element={<CartPage />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
+            <Route path={routeName.login} element={<Login />} />
+            <Route path={routeName.signUp} element={<Register />} />
             <Route path='*' element={<Error />}  />
           </Routes>
         </main>

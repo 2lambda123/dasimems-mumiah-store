@@ -1,7 +1,10 @@
-import React from 'react'
-import FormInputField from './FormInputField'
+import React, { useState } from 'react'
+import FormInputField from './FormInputField';
+import { useEffect } from 'react';
 
 const Form = ({ data }) => {
+
+    const [formState, setFormState] = useState({})
 //   var data = {
 //     inputs: [
 //       {
@@ -17,14 +20,27 @@ const Form = ({ data }) => {
 //       },
 //     ],
 //     formTitle: '',  
-//     formTopContent: ""
+//     formTopContent: "",
+//     onFormChange: ()={}
 //   }
-  var { formTitle, inputs, formTopContent } = data || {}
+  var { formTitle, inputs, formTopContent, onFormChange } = data || {}
+
+  if(!onFormChange){
+    onFormChange = ()=>{
+
+    }
+  }
+
+  useEffect(()=>{
+
+    onFormChange(formState);
+
+  }, [formState, onFormChange])
 
   return (
     <div className="form-container">
-      <h2 className="form-title">{formTitle}</h2>
       {formTopContent}
+      <h2 className="form-title">{formTitle}</h2>
 
       <div className="form-container-content">
         {inputs?.map((input, index) => {
@@ -40,11 +56,24 @@ const Form = ({ data }) => {
             className,
             reverse
           } = input
+
+          if(!onChange){
+            onChange= () => {
+
+            }
+          }
+
+          if(name){
+            setFormState(prevState => ({...prevState, [name]: value}))
+          }
           return (
             <FormInputField
               label={label}
               value={value}
-              onValueChange={onChange}
+              onValueChange={(e)=>{
+                onChange(e);
+                setFormState(prevState => ({...prevState, [name]: e.target.value}));
+            }}
               placeholder={placeholder}
               type={type}
               name={name}

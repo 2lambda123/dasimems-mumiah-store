@@ -26,16 +26,7 @@ export const UserProvider = ({ children }) => {
         dispatch({type: USER_INPUT, payload: {name, value} })
     }
 
-    // const validateState = () => {
-    //     return state.password === state.password_confirmation
-    //     && state.accept_terms
-    //     && state.password.length >= 8
-    //     && state.name
-    //     && state.email
-    // }
-
     const onSubmit = (e) => {
-        // e.preventDefault()
         alert(`Hello ${state.name} you have successfully registered`)
     }
 
@@ -44,7 +35,6 @@ export const UserProvider = ({ children }) => {
             value={{
                 ...state, 
                 onChange, 
-                
                 onSubmit
         }}>
             {children}   

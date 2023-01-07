@@ -122,6 +122,11 @@ function Register(props) {
                 {" "}
                 Accept terms and conditions{" "}
               </label>
+              {errors.accept_terms && (
+                <p style={{ color: "red", fontSize: 12 }}>
+                  {errors.accept_terms.message}
+                </p>
+              )}
             </div>
           </div>
         </div>

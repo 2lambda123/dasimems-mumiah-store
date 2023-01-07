@@ -19,13 +19,16 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import { ProductsProvider } from "./contexts/products_context"
 import { FilterProvider } from './contexts/filter_context';
 import { CartProvider } from './contexts/cart_context';
+import { UserProvider } from './contexts/user_context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ProductsProvider>
     <FilterProvider>
       <CartProvider>
+       <UserProvider>
         <App />
+       </UserProvider>
       </CartProvider>
     </FilterProvider>
   </ProductsProvider>

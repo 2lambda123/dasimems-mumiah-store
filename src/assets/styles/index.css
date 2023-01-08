@@ -1839,25 +1839,36 @@ body .main-body .account .account-container .account-header-nav li a.active {
 body .main-body .account .account-container .account-contents {
   padding-top: 30px;
 }
-body .main-body .account .account-container .account-contents .password {
-  max-width: 600px;
-}
-body .main-body .account .account-container .account-contents .password .password-title {
+body .main-body .account .account-container .account-contents .title {
   font-weight: 600;
   margin-top: 20px;
   margin-bottom: 40px;
   font-size: 2rem;
 }
-body .main-body .account .account-container .account-contents .password .password-form input {
-  background: transparent;
-}
-body .main-body .account .account-container .account-contents .password .password-form .update-password-btn {
+body .main-body .account .account-container .account-contents .action-btn {
   background: #172133;
   color: white;
   font-weight: 600;
   width: auto;
   height: auto;
   padding: 15px 25px;
+}
+body .main-body .account .account-container .account-contents .billing,
+body .main-body .account .account-container .account-contents .password {
+  max-width: 600px;
+}
+body .main-body .account .account-container .account-contents .password .password-form input {
+  background: transparent;
+}
+body .main-body .account .account-container .account-contents .billing .description {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+body .main-body .account .account-container .account-contents .billing .description:not(:first-child) {
+  margin-top: 30px;
+}
+body .main-body .account .account-container .account-contents .billing .action-btn {
+  margin-top: 40px;
 }
 body .main-body .contact-banner {
   padding: 50px 0px;

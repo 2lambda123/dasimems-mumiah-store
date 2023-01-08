@@ -2144,15 +2144,30 @@ body{
                 .account-contents{
                     padding-top: 30px;
 
+                    .title{
+                        font-weight: 600;
+                        margin-top: 20px;
+                        margin-bottom: 40px;
+                        font-size: 2rem;
+                    }
+
+                    .action-btn{
+                        background: #172133;
+                        color: white;
+                        font-weight: 600;
+                        width: auto;
+                        height: auto;
+                        padding: 15px 25px;
+                    }
+
+                    .billing,
                     .password{
                         max-width: 600px;
 
-                        .password-title{
-                            font-weight: 600;
-                            margin-top: 20px;
-                            margin-bottom: 40px;
-                            font-size: 2rem;
-                        }
+                    }
+
+                    .password{
+
 
                         .password-form{
 
@@ -2160,14 +2175,23 @@ body{
                                 background: transparent;
                             }
 
-                            .update-password-btn{
-                                background: #172133;
-                                color: white;
-                                font-weight: 600;
-                                width: auto;
-                                height: auto;
-                                padding: 15px 25px;
+                            
+                        }
+                    }
+
+                    .billing{
+
+                        .description{
+                            font-weight: 500;
+                            font-size: 1.1rem;
+
+                            &:not(:first-child){
+                                margin-top: 30px;
                             }
+                        }
+
+                        .action-btn{
+                            margin-top: 40px;
                         }
                     }
                 }

@@ -5,7 +5,7 @@ const Password = () => {
   return (
     <div className='password'>
 
-        <h3 className='password-title'>Update your Password</h3>
+        <h3 className='title'>Update your Password</h3>
 
         <div className='password-form'>
 
@@ -24,7 +24,7 @@ const Password = () => {
                 
             />
 
-            <SubmitBtn text="Update Password" className="update-password-btn"/>
+            <SubmitBtn text="Update Password" className="action-btn"/>
 
         </div>
 

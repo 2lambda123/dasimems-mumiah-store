@@ -199,7 +199,7 @@ export const accountLinks = [
     {
         label: "My Account",
         id: 1,
-        link: "/",
+        link: `${routeName.account}`,
         icon: <HiOutlineUser />
     },
 
@@ -207,7 +207,7 @@ export const accountLinks = [
     {
         label: "My Order",
         id: 2,
-        link: "/",
+        link: `${routeName.account}/orders`,
         icon: <HiOutlineClipboardList />
     },
 
@@ -215,7 +215,7 @@ export const accountLinks = [
     {
         label: "Wishlist",
         id: 3,
-        link: "/",
+        link: `${routeName.account}/saved`,
         icon: <FiHeart />
     },
 

@@ -1,19 +1,17 @@
-import { Button } from 'antd'
-import React from 'react'
+import { Button } from "antd";
+import React from "react";
 
-const SubmitBtn = ({text, loading, className, action, ...props}) => {
-    if(!action){
-
-        action = ()=>{
-            
-        }
-
-    }
+const SubmitBtn = ({ text, loading, className, onClick, ...props }) => {
   return (
-    <Button {...props} loading={loading? loading: false} className={`submit-form-btn ${className}`} onClick={action}>
-        {text? text : "Submit"}
+    <Button
+      {...props}
+      loading={loading ? loading : false}
+      className={`submit-form-btn ${className}`}
+      onClick={onClick}
+    >
+      {text}
     </Button>
-  )
-}
+  );
+};
 
-export default SubmitBtn
+export default SubmitBtn;

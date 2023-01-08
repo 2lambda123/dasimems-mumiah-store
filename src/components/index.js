@@ -1,16 +1,20 @@
 import Loading from "./Loading"
 import Loader from "./Loader"
 import Error from "./Error"
+
 import ProductCard from "./products/ProductCard"
 import SingleAddToCart from "./products/SingleAddToCart"
+
 import Navbar from "./common/Navbar"
 import Footer from "./common/Footer"
+
 import Sort from "./products/Sort"
 import ProductList from "./products/ProductList"
 import Filter from "./products/Filter"
 import ProductDetails from "./products/ProductDetails"
 import ProductContent from "./products/ProductContent"
 import ProductShowCase from "./products/ProductShowCase"
+
 import Hero from "./home/Hero"
 import AdvertisementTwo from "./home/AdvertisementTwo"
 import AdvertisementOne from "./home/AdvertisementOne"
@@ -29,10 +33,10 @@ import CartTotals from "./cart/CartTotals"
 import BreadCrumb from "./common/BreadCrumb"
 import ProductHeader from "./products/Header"
 import ProductFilterButton from "./products/ProductFilterButton"
+
 import FormInputField from "./form/FormInputField"
 import SubmitBtn from "./form/SubmitBtn"
 import DisplayBanner from "./form/DisplayBanner"
-import Form from "./form/Form"
 
 export {
   Loading,
@@ -68,6 +72,5 @@ export {
   FormInputField,
   SubmitBtn,
   DisplayBanner,
-  Form
 
 }

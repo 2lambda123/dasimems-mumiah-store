@@ -1,51 +1,10 @@
-import { Col, Row } from 'antd'
-import React from 'react'
-import { DisplayBanner, Form, FormInputField, SubmitBtn } from '../components'
-import { routeName } from '../utils/constant'
-import useFormContext from '../contexts/form_context'
-import { Link } from 'react-router-dom'
+import { Col, Row } from "antd";
+import React from "react";
+import { DisplayBanner, FormInputField, SubmitBtn } from "../components";
+import { routeName } from "../utils/constant";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-  const { email, password, setFormDetails } = useFormContext()
-
-  const changeValue = (details) => {
-    console.log(details)
-    setFormDetails(details)
-  }
-
-  var formData = {
-    inputs: [
-      {
-        label: 'Email',
-        value: email,
-        // onChange: changeValue,
-        placeholder: 'Email',
-        type: 'email',
-        name: 'email',
-        row: false,
-        required: false,
-        className: '',
-        reverse: false,
-      },
-
-      {
-        label: 'Password',
-        value: password,
-        // onChange: changeValue,
-        placeholder: 'Password',
-        type: 'password',
-        name: 'password',
-        row: false,
-        required: false,
-        className: '',
-        reverse: false,
-      },
-    ],
-    formTitle: 'Sign In',
-    formTopContent: '',
-    onFormChange: changeValue
-  }
-
   return (
     <>
       <Row justify="center" className="login">
@@ -62,7 +21,13 @@ const Login = () => {
               xs={{ span: 24, order: 2 }}
               className="login-form"
             >
-              <Form data={formData} />
+              <FormInputField placeholder="Email" label="Email" type="email" />
+
+              <FormInputField
+                placeholder="Password"
+                label="Password"
+                type="password"
+              />
 
               <SubmitBtn />
 
@@ -87,7 +52,7 @@ const Login = () => {
               className="login-banner flex-container column align-center jusitfy-center"
             >
               <DisplayBanner
-                link={{ linkLabel: 'Register', link: routeName.signUp }}
+                link={{ linkLabel: "Register", link: routeName.signUp }}
                 title="Welcome to login"
                 text="Don't have an account?"
               />
@@ -96,7 +61,7 @@ const Login = () => {
         </Col>
       </Row>
     </>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

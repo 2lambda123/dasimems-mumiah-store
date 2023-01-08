@@ -12,7 +12,7 @@ const Account = () => {
 
           <h1 className="title">Account</h1>
 
-          <p className='subtitle flex-container align-center justify-start'>
+          <p className='subtitle'>
             <span className='bold'>Enrico Cole,</span>
             <span className='light'>ciseco@gmail.com</span>
             <span className='dot'>.</span>

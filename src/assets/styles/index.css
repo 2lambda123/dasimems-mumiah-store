@@ -1812,16 +1812,31 @@ body .main-body .account .account-container .subtitle span.dot {
   margin-top: -6px;
 }
 body .main-body .account .account-container .account-header-nav {
+  width: 100%;
   list-style: none;
   margin: 0px;
   padding: 0px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 20px;
+  overflow-x: scroll;
+  scrollbar-color: rgba(0, 0, 0, 0.2);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+body .main-body .account .account-container .account-header-nav::-webkit-scrollbar {
+  height: 0px;
+}
+body .main-body .account .account-container .account-header-nav::-webkit-scrollbar-track {
+  background: white;
+}
+body .main-body .account .account-container .account-header-nav::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
 }
 body .main-body .account .account-container .account-header-nav li {
   margin: 0px;
   padding: 0px;
+  flex-shrink: 0;
 }
 body .main-body .account .account-container .account-header-nav li:not(:first-child) {
   margin-left: 45px;
@@ -1857,7 +1872,7 @@ body .main-body .account .account-container .account-contents .billing,
 body .main-body .account .account-container .account-contents .password {
   max-width: 600px;
 }
-body .main-body .account .account-container .account-contents .password .password-form input {
+body .main-body .account .account-container .account-contents input {
   background: transparent;
 }
 body .main-body .account .account-container .account-contents .billing .description {
@@ -1869,6 +1884,64 @@ body .main-body .account .account-container .account-contents .billing .descript
 }
 body .main-body .account .account-container .account-contents .billing .action-btn {
   margin-top: 40px;
+}
+body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container {
+  min-width: 140px;
+  width: 140px;
+}
+body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image {
+  width: 100%;
+  height: 140px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image .overlay {
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+}
+body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image .overlay input {
+  display: none;
+}
+body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image .overlay label {
+  color: white;
+  cursor: pointer;
+}
+body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image .overlay label span {
+  display: inline-flex;
+  margin: 0px;
+  padding: 0px;
+}
+body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image .overlay label .icon {
+  font-size: 2.5rem;
+}
+body .main-body .account .account-container .account-contents .account .account-information .account-profile-details-form {
+  flex: 1;
+  margin-left: 40px;
+}
+body .main-body .account .account-container .account-contents .account .account-information .account-profile-details-form .action-btn {
+  margin-top: 30px;
+}
+@media only screen and (max-width: 740px) {
+  body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container {
+    width: 100%;
+  }
+  body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image {
+    width: 140px;
+  }
+  body .main-body .account .account-container .account-contents .account .account-information .account-profile-details-form {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
 }
 body .main-body .contact-banner {
   padding: 50px 0px;

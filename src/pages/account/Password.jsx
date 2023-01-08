@@ -11,16 +11,19 @@ const Password = () => {
 
             <FormInputField
                 label="Current password"
+                type="password"
                 
             />
 
             <FormInputField
                 label="New password"
+                type="password"
                 
             />
 
             <FormInputField
                 label="Confirm password"
+                type="password"
                 
             />
 

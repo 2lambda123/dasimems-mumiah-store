@@ -1,19 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useUserContext } from "../contexts/user_context";
 import { useForm } from "react-hook-form";
+import { Col, Row } from "antd";
+import { DisplayBanner, FormInputField, SubmitBtn } from "../components";
+import { routeName } from "../utils/constant";
 import logo from "../assets/images/logo-light.png";
 
 function Register(props) {
-  const {
-    email,
-    name,
-    password,
-    password_confirmation,
-    accept_terms,
-    onChange,
-    onSubmit,
-  } = useUserContext();
+  const { password, accept_terms, onChange, onSubmit } = useUserContext();
 
   // handle form events
   const {
@@ -25,127 +19,140 @@ function Register(props) {
   });
 
   return (
-    <div className="container py-5">
-      <form>
-        <div className="form-outline mb-4">
-          <label className="form-label">Full Name</label>
-          <input
-            {...register("name", {
-              required: "Your name is required",
-            })}
-            type="text"
-            className="form-control"
-            onChange={onChange}
-            value={name}
-          />
-          {errors.name && (
-            <p style={{ color: "red", fontSize: 12 }}>{errors.name.message}</p>
-          )}
-        </div>
-
-        <div className="form-outline mb-4">
-          <label className="form-label">Email address</label>
-          <input
-            {...register("email", {
-              required: "Your email is required",
-            })}
-            type="email"
-            className="form-control"
-            onChange={onChange}
-            value={email}
-          />
-          {errors.email && (
-            <p style={{ color: "red", fontSize: 12 }}>{errors.email.message}</p>
-          )}
-        </div>
-
-        <div className="form-outline mb-4">
-          <label className="form-label">Password</label>
-          <input
-            {...register("password", {
-              required: "Password is required",
-              minLength: {
-                value: 8,
-                message: "Minimum Required length is 8",
-              },
-              maxLength: {
-                value: 20,
-                message: "Maximum Required length is 20",
-              },
-            })}
-            type="password"
-            className="form-control"
-            onChange={onChange}
-            value={password}
-          />
-          {errors.password && (
-            <p style={{ color: "red", fontSize: 12 }}>
-              {errors.password.message}
-            </p>
-          )}
-        </div>
-
-        <div className="form-outline mb-4">
-          <label className="form-label">Password</label>
-          <input
-            {...register("password_confirmation", {
-              required: "confirm password is required",
-              validate: (value) =>
-                value === password || "The passwords do not match",
-            })}
-            type="password"
-            className="form-control"
-            onChange={onChange}
-            value={password_confirmation}
-          />
-          {errors.password_confirmation && (
-            <p style={{ color: "red", fontSize: 12 }}>
-              {errors.password_confirmation.message}
-            </p>
-          )}
-        </div>
-
-        <div className="row mb-4">
-          <div className="col d-flex justify-content-center">
-            <div className="form-check">
-              <input
-                {...register("accept_terms", {
-                  required: "This feild is required",
-                })}
-                className="form-check-input"
-                type="checkbox"
-                id="accept_terms"
-                onChange={onChange}
-                checked={accept_terms}
-              />
-              <label className="form-check-label">
-                {" "}
-                Accept terms and conditions{" "}
-              </label>
-              {errors.accept_terms && (
-                <p style={{ color: "red", fontSize: 12 }}>
-                  {errors.accept_terms.message}
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-
-        <button
-          type="button"
-          onClick={handleSubmit(onSubmit)}
-          className="btn btn-primary btn-block mb-4"
+    <>
+      <Row justify="center" className="login">
+        <Col
+          span={22}
+          className="login-container flex-container align-center justify-center"
         >
-          Sign in
-        </button>
+          <Row justify="space-between" className="login-content align-center">
+            <Col
+              span={12}
+              order={1}
+              lg={{ span: 12, order: 1 }}
+              md={{ span: 12, order: 1 }}
+              xs={{ span: 24, order: 2 }}
+              className="login-form"
+            >
+              <form>
+                <FormInputField
+                  {...register("name", {
+                    required: "Your name is required",
+                  })}
+                  placeholder="Full Name"
+                  label="Full Name"
+                  type="text"
+                  onChange={onChange}
+                  errors={
+                    errors.name && (
+                      <p style={{ color: "red", fontSize: 12 }}>
+                        {errors.name.message}
+                      </p>
+                    )
+                  }
+                />
+                <FormInputField
+                  {...register("email", {
+                    required: "Your email is required",
+                  })}
+                  placeholder="Email address"
+                  label="Email address"
+                  type="email"
+                  onChange={onChange}
+                  errors={
+                    errors.email && (
+                      <p style={{ color: "red", fontSize: 12 }}>
+                        {errors.email.message}
+                      </p>
+                    )
+                  }
+                />
 
-        <div className="text-center">
-          <p>
-            Already have an account? <Link to="/">Login</Link>
-          </p>
-        </div>
-      </form>
-    </div>
+                <FormInputField
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 8,
+                      message: "Minimum Required length is 8",
+                    },
+                    maxLength: {
+                      value: 20,
+                      message: "Maximum Required length is 20",
+                    },
+                  })}
+                  placeholder="Password"
+                  label="Password"
+                  type="password"
+                  onChange={onChange}
+                  errors={
+                    errors.password && (
+                      <p style={{ color: "red", fontSize: 12 }}>
+                        {errors.password.message}
+                      </p>
+                    )
+                  }
+                />
+
+                <FormInputField
+                  {...register("password_confirmation", {
+                    required: "confirm password is required",
+                    validate: (value) =>
+                      value === password || "The passwords do not match",
+                  })}
+                  placeholder="Confirm password"
+                  label="Confirm password"
+                  type="password"
+                  onChange={onChange}
+                  errors={
+                    errors.password_confirmation && (
+                      <p style={{ color: "red", fontSize: 12 }}>
+                        {errors.password_confirmation.message}
+                      </p>
+                    )
+                  }
+                />
+
+                <FormInputField
+                  {...register("accept_terms", {
+                    required: "This feild is required",
+                  })}
+                  onChange={onChange}
+                  checked={accept_terms}
+                  label="Accept our terms and conditions"
+                  type="checkbox"
+                  reversed
+                  row
+                  errors={
+                    errors.accept_terms && (
+                      <p style={{ color: "red", fontSize: 12 }}>
+                        {errors.accept_terms.message}
+                      </p>
+                    )
+                  }
+                />
+
+                <SubmitBtn text="Register" onClick={handleSubmit(onSubmit)} />
+              </form>
+            </Col>
+
+            <Col
+              span={12}
+              order={2}
+              lg={{ span: 12, order: 2 }}
+              md={{ span: 12, order: 2 }}
+              xs={{ span: 24, order: 1 }}
+              className="login-banner flex-container column align-center jusitfy-center"
+            >
+              <DisplayBanner
+                link={{ linkLabel: "Login", link: routeName.login }}
+                title="Welcome to Mumiah"
+                text="Already have an account?"
+              />
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </>
   );
 }
 

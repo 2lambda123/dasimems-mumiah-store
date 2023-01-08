@@ -77,7 +77,13 @@ const Login = () => {
               xs={{ span: 24, order: 2 }}
               className="login-form"
             >
-              <Form data={formData} />
+              <FormInputField placeholder="Email" label="Email" type="email" />
+
+              <FormInputField
+                placeholder="Password"
+                label="Password"
+                type="password"
+              />
 
               <SubmitBtn action={loginUser} loading={loading} text="Login" className="login-submit" />
 
@@ -102,7 +108,7 @@ const Login = () => {
               className="login-banner flex-container column align-center justify-center"
             >
               <DisplayBanner
-                link={{ linkLabel: 'Register', link: routeName.signUp }}
+                link={{ linkLabel: "Register", link: routeName.signUp }}
                 title="Welcome to Mumiah"
                 text="Don't have an account?"
               />
@@ -111,7 +117,7 @@ const Login = () => {
         </Col>
       </Row>
     </>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

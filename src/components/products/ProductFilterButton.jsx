@@ -9,9 +9,14 @@ const ProductFilterButton = () => {
 
     <button onClick={filterOptions} className="product-header-button">
 
-        <span className="text">
+        <span className="text desktop">
         
             {filterOptionState? "Hide": "Show"} Filters
+        </span>
+
+        <span className="text mobile">
+        
+            {filterOptionState? "Show": "Hide"} Filters
         </span>
 
         <span className="icon">

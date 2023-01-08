@@ -1236,6 +1236,17 @@ body .main-body .product-header .product-header-container .product-header-conten
   border: none;
   outline: none;
 }
+body .main-body .product-header .product-header-container .product-header-content .product-header-actions .product-header-button .mobile {
+  display: none;
+}
+@media only screen and (max-width: 900px) {
+  body .main-body .product-header .product-header-container .product-header-content .product-header-actions .product-header-button .mobile {
+    display: inline;
+  }
+  body .main-body .product-header .product-header-container .product-header-content .product-header-actions .product-header-button .desktop {
+    display: none;
+  }
+}
 body .main-body .product-header .product-header-container .product-header-content .product-header-actions .product-header-button .icon {
   margin-left: 5px;
 }
@@ -1269,18 +1280,19 @@ body .main-body .product-list .product-list-container .product-list-content .pro
   position: sticky;
   top: 80px;
 }
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container .close-filter-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  border: none;
+  font-size: 1.6rem;
+  background: transparent;
+  outline: none;
+  display: none;
+}
 body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container {
   width: 100%;
   position: relative;
-}
-body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container .close-filter-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border: none;
-  font-size: 1.5rem;
-  background: transparent;
-  outline: none;
 }
 body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container .clear-btn {
   padding: 5px 10px;
@@ -1393,7 +1405,10 @@ body .main-body .product-list .product-list-container .product-list-content .non
     top: 100%;
     left: 0px;
     z-index: 9999;
-    padding: 20px 0px;
+    padding: 50px 0px;
+  }
+  body .main-body .product-list .product-list-container .product-list-content .product-filter-container .close-filter-btn {
+    display: block;
   }
   body .main-body .product-list .product-list-container .product-list-content .nonactive-filter-container {
     margin-left: 0px;

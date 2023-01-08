@@ -19,7 +19,7 @@ const Header = () => {
 
                     <p className='product-header-stats'>Products ({products.length})</p>
 
-                    <div className="product-header-actions flex-container align-center">
+                    <div className="product-header-actions flex-container align-center wrap">
 
                         <ProductFilterButton />
 

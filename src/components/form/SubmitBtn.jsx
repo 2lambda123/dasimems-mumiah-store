@@ -14,7 +14,7 @@ const SubmitBtn = ({text, loading, className, action, ...props}) => {
       {...props}
       loading={loading ? loading : false}
       className={`submit-form-btn ${className}`}
-      onClick={onClick}
+      onClick={action}
     >
       {text}
     </Button>

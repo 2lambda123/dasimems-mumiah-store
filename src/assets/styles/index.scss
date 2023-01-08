@@ -573,9 +573,10 @@ body{
         .banner{
             background: getColor("hero");
             width: 100%;
-            height: 100vh;
-            min-height: 650px;
-            max-height: 770px;
+            height: 661px;
+            min-height: 661px;
+            max-height: 661px;
+            overflow: hidden;
 
             .banner-container{
                 position: relative;
@@ -642,7 +643,7 @@ body{
 
                         .banner-subtitle{
                             font-weight: 600;
-                            font-size: 1.5rem;
+                            font-size: clamp(1.1rem, 1vw, 1.5rem);
                             color: rgba(0, 0, 0, .8);
                         }
 
@@ -659,7 +660,7 @@ body{
 
                         .banner-title{
                             margin-top: 24px;
-                            font-size: clamp(1.5rem, 5vw, 4rem);
+                            font-size: clamp(2rem, 5vw, 4rem);
                             font-weight: 700;
                             color: #172133;
                         }
@@ -675,8 +676,13 @@ body{
                             height: auto;
                             background: #172133;
                             color: white;
-                            margin-top: 40px;
+                            margin-top: 30px;
                             font-size: 1.2rem;
+
+                            @media only screen and (max-width: 500px){
+                                
+                                padding: 10px 20px;
+                            }
 
                             .icon{
                                 margin-left: 10px;
@@ -740,6 +746,7 @@ body{
             @media only screen and (max-width: 1000px){
                 max-height: unset;
                 height: auto;
+                min-height: 100px;
 
                 .banner-container{
                     height: auto;

@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <>
       <Row justify="center" className="footer">
-        <Col span={22}>
+        <Col span={21}>
           <Row justify="space-between">
             <Col
               span={6}

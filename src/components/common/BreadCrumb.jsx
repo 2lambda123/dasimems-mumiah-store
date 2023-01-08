@@ -7,7 +7,7 @@ const BreadCrumb = ({data, title}) => {
   return (
     <>
         {Array.isArray(data) && <Row justify="center" className="single-product-breadcrumb">
-            <Col span="22">
+            <Col span="21">
             <h2 className="breadcrumb-title">{title}</h2>
             <Breadcrumb separator={<span className="separator"><FaAngleRight /></span>}>
 

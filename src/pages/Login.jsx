@@ -23,7 +23,7 @@ const Login = () => {
     <>
       <Row justify="center" className="login">
         <Col
-          span={22}
+          span={21}
           className="login-container flex-container align-center justify-center"
         >
           <Row justify="space-between" className="login-content align-center">

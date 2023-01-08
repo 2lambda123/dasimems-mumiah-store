@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 const AdvertisementTwo = () => {
   return (
     <Row justify="center" className="advertisement advertisement-two">
-      <Col span={22} className="advertisement-container">
+      <Col span={21} className="advertisement-container">
         <Row
           justify="space-between"
           className="advertisement-inner-content align-center"

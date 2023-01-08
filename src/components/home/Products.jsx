@@ -14,7 +14,7 @@ const Products = () => {
       className="products categories">
 
       <Col 
-        span={22} 
+        span={21} 
         className="categories-container">
 
         <h2 className="product-title categories-title">Latest Products</h2>

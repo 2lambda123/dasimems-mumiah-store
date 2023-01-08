@@ -9,7 +9,7 @@ const Hero = () => {
   const navigate = useNavigate();
   return (
     <Row justify="center" className="banner align-center">
-      <Col span={22} className="banner-container">
+      <Col span={21} className="banner-container">
         <div className="ellipse ellipse-one"></div>
         <div className="ellipse ellipse-two"></div>
         <div className="ellipse ellipse-three"></div>

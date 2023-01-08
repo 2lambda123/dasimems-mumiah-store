@@ -6,7 +6,7 @@ import { Row, Col } from "antd";
 const AdvertisementOne = () => {
   return (
     <Row justify="center" className="advertisement">
-      <Col span={22} className="advertisement-container">
+      <Col span={21} className="advertisement-container">
         <Row
           justify="space-between"
           className="advertisement-inner-content align-center"

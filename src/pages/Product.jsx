@@ -11,7 +11,7 @@ function Product(props) {
       <ProductHeader />
 
       <Row justify="center" className="product-list">
-        <Col span={22} className="product-list-container">
+        <Col span={21} className="product-list-container">
 
           <Row justify="space-between" className="product-list-content">
 

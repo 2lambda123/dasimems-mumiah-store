@@ -91,7 +91,7 @@ function SingleProducts(props) {
 
       {similarProduct.length > 0 && (
         <Row justify="center" className="related-products">
-          <Col span={22} className="related-product-container">
+          <Col span={21} className="related-product-container">
             <h2>Related Products</h2>
             <ProductListing data={similarProduct.slice(0, 8)} />
           </Col>

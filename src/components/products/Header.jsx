@@ -13,7 +13,7 @@ const Header = () => {
         <Row justify="center" className="product-header">
 
 
-            <Col span={22} className="product-header-container">
+            <Col span={21} className="product-header-container">
 
                 <Row justify="space-between" className='product-header-content align-center'>
 

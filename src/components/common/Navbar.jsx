@@ -46,7 +46,7 @@ function Navbar(props) {
   return (
     <>
       <Row className="nav-bar align-center" justify="center">
-        <Col span={22}>
+        <Col span={21}>
           <Row justify="space-between" className="nav-bar-content align-center">
             <button className="mobile-open-btn-link" onClick={changeNavState}>
               <FaBars />

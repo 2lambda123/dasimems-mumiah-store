@@ -20,7 +20,7 @@ const Categories = () => {
 
   return (
     <Row justify="center" className="categories">
-      <Col span={22} className="categories-container">
+      <Col span={21} className="categories-container">
         <h2 className="categories-title">
           Discover more.{" "}
           <span className="light"> Good things are waiting for you</span>

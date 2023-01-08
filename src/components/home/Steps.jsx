@@ -5,7 +5,7 @@ import { buyingSteps } from "../../utils/constant";
 const Steps = () => {
   return (
     <Row justify="center" className="buying-steps">
-      <Col span={22} className="buying-steps-content">
+      <Col span={21} className="buying-steps-content">
         <Row justify="space-between" className="buying-steps-inner-content">
           {buyingSteps.map((step, index) => {
             var { image, title, subtitle, textColor, colorScheme } = step;

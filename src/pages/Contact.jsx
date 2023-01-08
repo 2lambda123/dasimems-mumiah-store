@@ -55,7 +55,7 @@ function Contact(props) {
       </Row>
 
       <Row justify="center" className="contact-content">
-        <Col span={22}>
+        <Col span={21}>
           <Row justify="space-between">
             <Col
               span={11}

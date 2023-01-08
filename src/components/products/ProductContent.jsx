@@ -9,7 +9,7 @@ const ProductContent = ({ details }) => {
   const product = details;
   return (
     <Row justify="center" className="product-content">
-      <Col span={22} className="">
+      <Col span={21} className="">
         <Row justify="space-between">
           <Col
             span={11}

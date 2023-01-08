@@ -7,6 +7,12 @@ import Product from "./Product";
 import CartPage from "./CartPage";
 import Login from "./Login";
 import Register from "./Register";
+import Account from "./Account";
+import Wishlist from "./account/Wishlist";
+import Orders from "./account/Orders";
+import Password from "./account/Password";
+import Billing from "./account/Billing";
+import AccountDetails from "./account/Details";
 
 export {
     Home,
@@ -17,5 +23,12 @@ export {
     Product,
     CartPage,
     Login,
-    Register
+    Register,
+    Account,
+    Wishlist,
+    Orders,
+    Password,
+    Billing,
+    AccountDetails
+
 }

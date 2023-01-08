@@ -30,7 +30,36 @@ export const routeName = {
     cart: "/cart",
     login: "/login",
     signUp: "/register",
+    account: "/account",
 }
+
+
+export const accountHeaderLinks = [
+    {
+        label: "Account info",
+        link: `${routeName.account}`
+    },
+
+    {
+        label: "Wishlist",
+        link: `${routeName.account}/saved`
+    },
+
+    {
+        label: "My order",
+        link: `${routeName.account}/orders`
+    },
+
+    {
+        label: "Change password",
+        link: `${routeName.account}/password`
+    },
+
+    {
+        label: "Change billing",
+        link: `${routeName.account}/billing`
+    },
+]
 
 export const contacts = {
     address: "203 Fake St. Mountain View, San Francisco, California, USA",

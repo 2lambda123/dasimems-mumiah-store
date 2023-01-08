@@ -1,6 +1,6 @@
-import { Col, Row, message } from 'antd'
+import { Col, Row } from 'antd'
 import React from 'react'
-import { DisplayBanner, Form, FormInputField, SubmitBtn } from '../components'
+import { DisplayBanner, FormInputField, SubmitBtn } from '../components'
 import { routeName } from '../utils/constant'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'

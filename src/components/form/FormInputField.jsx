@@ -16,21 +16,25 @@ const FormInputField = React.forwardRef(
     ref
   ) => {
     return (
-      <div
-        className={`form-field ${row ? "row-field" : null} ${
-          reversed ? "reversed-field" : null
-        }`}
-      >
-        <label>{label}</label>
-        <input
-          ref={ref}
-          type={type}
-          placeholder={placeholder}
-          onChange={onChange}
-          {...props}
-        />
+
+      <>
+        <div
+          className={`form-field ${row ? "row-field" : null} ${
+            reversed ? "reversed-field" : null
+          }`}
+        >
+          <label>{label}</label>
+          <input
+            ref={ref}
+            type={type}
+            placeholder={placeholder}
+            onChange={onChange}
+            {...props}
+          />
+        </div>
         {errors}
-      </div>
+      
+      </>
     );
   }
 );

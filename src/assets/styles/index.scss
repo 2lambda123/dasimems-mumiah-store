@@ -2062,6 +2062,119 @@ body{
 
         }
 
+
+        /********************
+        ===== ACCOUNT PAGE =====
+        *********************/
+
+        .account{
+            
+            .account-container{
+                padding: 60px 0px;
+
+                .title{
+                    font-weight: 600;
+                    font-size: clamp(1.5rem, 5vw, 2.8rem);
+                }
+
+                .subtitle{
+                    font-weight: 500;
+                    color: rgba(0, 0, 0,  .7);
+                    font-size: 1.2rem;
+                    margin-top: 15px;
+
+                    span{
+                        display: inline-flex;
+                        // border: 1px solid red;
+                        align-items: center;
+                        justify-content: center;
+                        height: auto;
+
+                        &:not(:first-child){
+                            margin-left: 5px;
+                        }
+
+                        &.bold{
+                            color: black;
+                            font-weight: 700;
+                        }
+
+                        &.dot{
+                            color: black;
+                            font-weight: 900;
+                            margin-top: -6px;
+
+                        }
+                    }
+
+
+                }
+
+                .account-header-nav{
+                    list-style: none;
+                    margin: 0px;
+                    padding: 0px;
+                    border-top: 1px solid rgba(0, 0, 0,  .1);
+                    border-bottom: 1px solid rgba(0, 0, 0,  .1);
+                    margin-top: 20px;
+
+                    li{
+                        margin: 0px;
+                        padding: 0px;
+
+                        &:not(:first-child){
+                            margin-left: 45px;
+                        }
+
+                        a{
+                            display: inline-flex;
+                            padding: 30px 0px;
+                            color: rgba(0, 0, 0,  .7);
+                            font-weight: 500;
+
+                            &.active{
+
+                                border-bottom: 3px solid #172133;
+                                color: rgba(0, 0, 0,  1);
+                            }
+                        }
+                    }
+                }
+
+                .account-contents{
+                    padding-top: 30px;
+
+                    .password{
+                        max-width: 600px;
+
+                        .password-title{
+                            font-weight: 600;
+                            margin-top: 20px;
+                            margin-bottom: 40px;
+                            font-size: 2rem;
+                        }
+
+                        .password-form{
+
+                            input{
+                                background: transparent;
+                            }
+
+                            .update-password-btn{
+                                background: #172133;
+                                color: white;
+                                font-weight: 600;
+                                width: auto;
+                                height: auto;
+                                padding: 15px 25px;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
         
 
         

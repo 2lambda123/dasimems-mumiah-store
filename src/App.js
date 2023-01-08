@@ -10,7 +10,13 @@ import {
   Product, 
   CartPage,
   Login,
-  Register
+  Register,
+  Account,
+  AccountDetails,
+  Wishlist,
+  Orders,
+  Password,
+  Billing
 } from "./pages"
 import { useProductsContext } from './contexts/products_context';
 import { routeName } from './utils/constant';
@@ -37,9 +43,18 @@ function App(props) {
             <Route path={routeName.contact} element={<Contact />} />
             <Route path={routeName.products} element={<Product />} />
             <Route path={`${routeName.products}/:id`} element={<SingleProducts />} />
-            <Route path='/cart' element={<CartPage />} />
+            <Route path={routeName.cart}element={<CartPage />} />
             <Route path={routeName.login} element={<Login />} />
             <Route path={routeName.signUp} element={<Register />} />
+            <Route path={routeName.account} element={<Account />}>
+
+              <Route index element={<AccountDetails />} />
+              <Route path={`${routeName.account}/saved`} element={<Wishlist />} />
+              <Route path={`${routeName.account}/orders`} element={<Orders />} />
+              <Route path={`${routeName.account}/password`} element={<Password />} />
+              <Route path={`${routeName.account}/billing`} element={<Billing />} />
+
+            </Route>
             <Route path='*' element={<Error />}  />
           </Routes>
         </main>

@@ -667,6 +667,9 @@ body .main-body {
   ===== LOGIN PAGE =====
   *********************/
   /********************
+  ===== ACCOUNT PAGE =====
+  *********************/
+  /********************
   ===== CONTACT =====
   *********************/
 }
@@ -1776,6 +1779,85 @@ body .main-body .login .login-container .login-content .login-banner .form-banne
 body .main-body .login .login-container .login-content .login-banner .form-banner-link:hover {
   color: #172133;
   background: white;
+}
+body .main-body .account .account-container {
+  padding: 60px 0px;
+}
+body .main-body .account .account-container .title {
+  font-weight: 600;
+  font-size: clamp(1.5rem, 5vw, 2.8rem);
+}
+body .main-body .account .account-container .subtitle {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+body .main-body .account .account-container .subtitle span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+body .main-body .account .account-container .subtitle span:not(:first-child) {
+  margin-left: 5px;
+}
+body .main-body .account .account-container .subtitle span.bold {
+  color: black;
+  font-weight: 700;
+}
+body .main-body .account .account-container .subtitle span.dot {
+  color: black;
+  font-weight: 900;
+  margin-top: -6px;
+}
+body .main-body .account .account-container .account-header-nav {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+body .main-body .account .account-container .account-header-nav li {
+  margin: 0px;
+  padding: 0px;
+}
+body .main-body .account .account-container .account-header-nav li:not(:first-child) {
+  margin-left: 45px;
+}
+body .main-body .account .account-container .account-header-nav li a {
+  display: inline-flex;
+  padding: 30px 0px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+}
+body .main-body .account .account-container .account-header-nav li a.active {
+  border-bottom: 3px solid #172133;
+  color: rgb(0, 0, 0);
+}
+body .main-body .account .account-container .account-contents {
+  padding-top: 30px;
+}
+body .main-body .account .account-container .account-contents .password {
+  max-width: 600px;
+}
+body .main-body .account .account-container .account-contents .password .password-title {
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+body .main-body .account .account-container .account-contents .password .password-form input {
+  background: transparent;
+}
+body .main-body .account .account-container .account-contents .password .password-form .update-password-btn {
+  background: #172133;
+  color: white;
+  font-weight: 600;
+  width: auto;
+  height: auto;
+  padding: 15px 25px;
 }
 body .main-body .contact-banner {
   padding: 50px 0px;

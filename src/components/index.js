@@ -37,6 +37,7 @@ import ProductFilterButton from "./products/ProductFilterButton"
 import FormInputField from "./form/FormInputField"
 import SubmitBtn from "./form/SubmitBtn"
 import DisplayBanner from "./form/DisplayBanner"
+import AccountHeaderNav from "./account/HeaderNav"
 
 export {
   Loading,
@@ -72,5 +73,5 @@ export {
   FormInputField,
   SubmitBtn,
   DisplayBanner,
-
+  AccountHeaderNav
 }

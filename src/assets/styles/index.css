@@ -206,6 +206,56 @@ a {
   }
 }
 
+.cart-item {
+  padding: 20px 0px;
+}
+.cart-item .cart-item-image {
+  width: 90px;
+  height: 110px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.04);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.cart-item .cart-item-details {
+  margin-left: 15px;
+  flex: 1;
+}
+.cart-item .cart-item-details .details-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.cart-item .cart-item-details .details-content .quality .divider {
+  color: rgba(0, 0, 0, 0.8);
+}
+.cart-item .cart-item-details .details-content .quality span:not(:first-child) {
+  margin-left: 10px;
+}
+.cart-item .cart-item-details .details-content .remove-btn {
+  color: red;
+  border: none;
+  padding: 0px;
+  background: none;
+  outline: none;
+  width: auto;
+  height: auto;
+}
+.cart-item .cart-item-details .details-content .price {
+  border: 2px solid #22C55E;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 5px 10px;
+  color: #22C55E;
+}
+.cart-item:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 body {
   /********************
   ===== NAV BAR STYLES =====
@@ -1885,11 +1935,11 @@ body .main-body .account .account-container .account-contents .billing .descript
 body .main-body .account .account-container .account-contents .billing .action-btn {
   margin-top: 40px;
 }
-body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container {
+body .main-body .account .account-container .account-contents .account-information-container .account-information .account-profile-image-container {
   min-width: 140px;
   width: 140px;
 }
-body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image {
+body .main-body .account .account-container .account-contents .account-information-container .account-information .account-profile-image-container .profile-image {
   width: 100%;
   height: 140px;
   border-radius: 50%;
@@ -1901,7 +1951,7 @@ body .main-body .account .account-container .account-contents .account .account-
   overflow: hidden;
   position: relative;
 }
-body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image .overlay {
+body .main-body .account .account-container .account-contents .account-information-container .account-information .account-profile-image-container .profile-image .overlay {
   background: rgba(0, 0, 0, 0.3);
   position: absolute;
   width: 100%;
@@ -1909,39 +1959,70 @@ body .main-body .account .account-container .account-contents .account .account-
   left: 0px;
   top: 0px;
 }
-body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image .overlay input {
+body .main-body .account .account-container .account-contents .account-information-container .account-information .account-profile-image-container .profile-image .overlay input {
   display: none;
 }
-body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image .overlay label {
+body .main-body .account .account-container .account-contents .account-information-container .account-information .account-profile-image-container .profile-image .overlay label {
   color: white;
   cursor: pointer;
 }
-body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image .overlay label span {
+body .main-body .account .account-container .account-contents .account-information-container .account-information .account-profile-image-container .profile-image .overlay label span {
   display: inline-flex;
   margin: 0px;
   padding: 0px;
 }
-body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image .overlay label .icon {
+body .main-body .account .account-container .account-contents .account-information-container .account-information .account-profile-image-container .profile-image .overlay label .icon {
   font-size: 2.5rem;
 }
-body .main-body .account .account-container .account-contents .account .account-information .account-profile-details-form {
+body .main-body .account .account-container .account-contents .account-information-container .account-information .account-profile-details-form {
   flex: 1;
   margin-left: 40px;
 }
-body .main-body .account .account-container .account-contents .account .account-information .account-profile-details-form .action-btn {
+body .main-body .account .account-container .account-contents .account-information-container .account-information .account-profile-details-form .action-btn {
   margin-top: 30px;
 }
 @media only screen and (max-width: 740px) {
-  body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container {
+  body .main-body .account .account-container .account-contents .account-information-container .account-information .account-profile-image-container {
     width: 100%;
   }
-  body .main-body .account .account-container .account-contents .account .account-information .account-profile-image-container .profile-image {
+  body .main-body .account .account-container .account-contents .account-information-container .account-information .account-profile-image-container .profile-image {
     width: 140px;
   }
-  body .main-body .account .account-container .account-contents .account .account-information .account-profile-details-form {
+  body .main-body .account .account-container .account-contents .account-information-container .account-information .account-profile-details-form {
     margin-left: 0px;
     margin-top: 30px;
   }
+}
+body .main-body .account .account-container .account-contents .orders .order-contents .order-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+body .main-body .account .account-container .account-contents .orders .order-contents .order-card:not(:first-child) {
+  margin-top: 50px;
+}
+body .main-body .account .account-container .account-contents .orders .order-contents .order-card .order-card-header {
+  background: rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+body .main-body .account .account-container .account-contents .orders .order-contents .order-card .order-card-header p {
+  margin: 0px;
+  padding: 0px;
+}
+body .main-body .account .account-container .account-contents .orders .order-contents .order-card .order-card-header .order-details .order-id {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+body .main-body .account .account-container .account-contents .orders .order-contents .order-card .order-card-header .order-details-content .order-status {
+  margin-left: 10px;
+}
+body .main-body .account .account-container .account-contents .orders .order-contents .order-card .order-card-header .order-details-content .delivered {
+  color: green;
+}
+body .main-body .account .account-container .account-contents .orders .order-contents .order-card .order-card-header .order-details-content .pending {
+  color: orange;
+}
+body .main-body .account .account-container .account-contents .orders .order-contents .order-card .order-card-content .cart-item {
+  padding: 30px;
 }
 body .main-body .contact-banner {
   padding: 50px 0px;

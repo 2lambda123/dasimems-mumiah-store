@@ -2205,7 +2205,7 @@ body{
                         }
                     }
 
-                    .account{
+                    .account-information-container{
 
                         .account-information{
 
@@ -2280,6 +2280,65 @@ body{
                                     margin-top: 30px;
                                 }
                             }
+                        }
+                    }
+
+                    .orders{
+
+                        .order-contents{
+
+                            .order-card{
+                                border: 1px solid rgba(0, 0, 0,  .1);
+
+                                &:not(:first-child){
+                                    margin-top: 50px;
+                                }
+
+                                .order-card-header{
+                                    background: rgba(0, 0, 0,  .04);
+                                    border-bottom: 1px solid rgba(0, 0, 0,  .1);
+                                    padding: 30px;
+
+                                    p{
+                                        margin: 0px;
+                                        padding: 0px;
+                                    }
+
+                                    .order-details{
+                                        
+                                        .order-id{
+                                            // background: red;
+                                            font-size: 1.5rem;
+                                            font-weight: 600;
+    
+                                           
+                                        }
+                                    }
+
+
+                                     .order-details-content{
+                                        .order-status{
+                                            margin-left: 10px;
+                                        }
+
+                                        .delivered{
+                                            color: green;
+                                        }
+
+                                        .pending{
+                                            color: orange;
+                                        }
+                                    }
+                                }
+
+                                .order-card-content{
+
+                                    .cart-item{
+                                        padding: 30px;
+                                    }
+                                }
+                            }
+
                         }
                     }
                 }

@@ -227,6 +227,66 @@ export const accountLinks = [
     }
 ]
 
+export const order = [
+    {
+        orderId: "WU3746HGG12",
+        status: "Delivered",
+        date: "Aug 8, 2023",
+        products: [
+            {
+                id: "1",
+                name: "Rey Nylon Backpack",
+                amount: 2,
+                type: "natural",
+                sizes: "XL",
+                price: "74",
+                image: "",
+
+            },
+
+            {
+                id: "2",
+                name: "Rey Nylon Backpack",
+                amount: 2,
+                type: "natural",
+                sizes: "XL",
+                price: "74",
+                image: "",
+
+            }
+        ]
+    },
+
+    {
+        orderId: "WU3746HGG12",
+        status: "Pending",
+        date: "Aug 8, 2023",
+        products: [
+            {
+                id: "1",
+                name: "Rey Nylon Backpack",
+                amount: 2,
+                type: "natural",
+                sizes: "XL",
+                price: "74",
+                image: "",
+
+            },
+
+            {
+                id: "2",
+                name: "Rey Nylon Backpack",
+                amount: 2,
+                type: "natural",
+                sizes: "XL",
+                price: "74",
+                image: "",
+
+            }
+        ]
+    }
+]
+
 export const cartProducts = [
     {
         name: "Rey Nylon Backpack",

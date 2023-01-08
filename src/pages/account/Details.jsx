@@ -5,7 +5,7 @@ import { BiImageAdd } from 'react-icons/bi'
 
 const Details = () => {
   return (
-    <div className='account'>
+    <div className='account-information-container'>
 
         
         <h3 className="title">Account information</h3>

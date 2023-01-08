@@ -38,6 +38,8 @@ import FormInputField from "./form/FormInputField"
 import SubmitBtn from "./form/SubmitBtn"
 import DisplayBanner from "./form/DisplayBanner"
 import AccountHeaderNav from "./account/HeaderNav"
+import Order from "./account/order/Order"
+import OrderProductDetails from "./account/order/OrderProductDetails"
 
 export {
   Loading,
@@ -73,5 +75,8 @@ export {
   FormInputField,
   SubmitBtn,
   DisplayBanner,
-  AccountHeaderNav
+  AccountHeaderNav,
+  Order,
+  OrderProductDetails
+
 }

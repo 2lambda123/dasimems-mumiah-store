@@ -274,6 +274,22 @@ body{
                         border-bottom: 1px solid rgba(0, 0, 0, .1);
                     }
                 }
+
+                .empty-cart-container{
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+
+                    .empty-cart-anim{
+
+                        max-width: 300px;
+                    }
+
+                    p{
+                        margin-top: 20px;
+                    }
+                }
+
             }
 
             .cart-pop-up-bottom{
@@ -1901,6 +1917,22 @@ body{
                     .login-form{
                         padding: 50px 40px;
                         background: white;
+
+                        .login-submit{
+                            background: #172133;
+                            color: white;
+                            border: 2px solid #172133;
+
+                            &:not(:disabled):hover{
+                                background: transparent;
+                                color: #172133;
+                                transition: 0.5s ease all;
+                                -webkit-transition: 0.5s ease all;
+                                -moz-transition: 0.5s ease all;
+                                -ms-transition: 0.5s ease all;
+                                -o-transition: 0.5s ease all;
+}
+                        }
 
                         .login-extra{
                             margin-top: 20px;

@@ -108,7 +108,7 @@ export const pageLinks = [
     },
 
     {
-        label: "products",
+        label: "Products",
         link: routeName.products,
         id: 3,
     },

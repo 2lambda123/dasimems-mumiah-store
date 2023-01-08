@@ -28,7 +28,7 @@ const Hero = () => {
                 <Col
                   span={15}
                   lg={{ span: 15 }}
-                  md={{ span: 18 }}
+                  md={{ span: 24 }}
                   xs={{ span: 24 }}
                   className="banner-content"
                 >

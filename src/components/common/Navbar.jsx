@@ -61,7 +61,9 @@ function Navbar(props) {
             {!searchOpened && <DesktopLinks />}
 
             <div className="nav-bar-side-links flex-container align-center">
-              {!searchOpened && (
+
+              {/* for future referrence in case of search functionality */}
+              {/* {!searchOpened && (
                 <button
                   className="side-link search-open-btn"
                   onClick={() => {
@@ -70,7 +72,7 @@ function Navbar(props) {
                 >
                   <FiSearch />
                 </button>
-              )}
+              )} */}
 
               <button
                 className="side-link"

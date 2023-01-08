@@ -6,79 +6,79 @@ import { RiLogoutCircleLine } from 'react-icons/ri';
 const AccountLinks = () => {
   return (
     <div className="pop-up account-pop-up">
-                    <div className="account-pop-up-header flex-container align-center justify-start">
-                      <div className="account-image"></div>
+      <div className="account-pop-up-header flex-container align-center justify-start">
+        <div className="account-image"></div>
 
-                      <div className="account-details">
-                        <h2>Eden Smith</h2>
-                        <p>Los Angeles, CA</p>
-                      </div>
-                    </div>
+        <div className="account-details">
+          <h2>Eden Smith</h2>
+          <p>Los Angeles, CA</p>
+        </div>
+      </div>
 
-                    <ul className="account-pop-up-link">
-                      {accountLinks.slice(0, 3).map((linkDetails, index) => {
-                        var { label, icon, link } = linkDetails;
-                        return (
-                          <li key={index}>
-                            <Link to={link}>
-                              <span className="icon">{icon}</span>
+      <ul className="account-pop-up-link">
+        {accountLinks.slice(0, 3).map((linkDetails, index) => {
+          var { label, icon, link } = linkDetails;
+          return (
+            <li key={index}>
+              <Link to={link}>
+                <span className="icon">{icon}</span>
 
-                              <span className="text">{label}</span>
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
+                <span className="text">{label}</span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
 
-                    <ul className="account-pop-up-link">
-                      {/* <li className="flex-container space-between align-center">
+      <ul className="account-pop-up-link">
+        {/* <li className="flex-container space-between align-center">
 
-                      <a href="#dark">
+        <a href="#dark">
 
-                        <span className="icon">
+          <span className="icon">
 
-                          <RiLightbulbFlashLine />
+            <RiLightbulbFlashLine />
 
-                        </span>
+          </span>
 
-                        <span className="text">
+          <span className="text">
 
-                          Dark Theme
+            Dark Theme
 
-                        </span>
+          </span>
 
-                      </a>
+        </a>
 
-                      <span className="slide-button">
-                        <span className="slide-button-inner"></span>
-                      </span>
+        <span className="slide-button">
+          <span className="slide-button-inner"></span>
+        </span>
 
-                    </li> */}
+      </li> */}
 
-                      {accountLinks.slice(3).map((linkDetails, index) => {
-                        var { label, icon, link } = linkDetails;
-                        return (
-                          <li key={index}>
-                            <Link to={link}>
-                              <span className="icon">{icon}</span>
+        {accountLinks.slice(3).map((linkDetails, index) => {
+          var { label, icon, link } = linkDetails;
+          return (
+            <li key={index}>
+              <Link to={link}>
+                <span className="icon">{icon}</span>
 
-                              <span className="text">{label}</span>
-                            </Link>
-                          </li>
-                        );
-                      })}
+                <span className="text">{label}</span>
+              </Link>
+            </li>
+          );
+        })}
 
-                      <li>
-                        <a href="#logout">
-                          <span className="icon">
-                            <RiLogoutCircleLine />
-                          </span>
+        <li>
+          <a href="#logout">
+            <span className="icon">
+              <RiLogoutCircleLine />
+            </span>
 
-                          <span className="text">Logout</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+            <span className="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   )
 }
 

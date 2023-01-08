@@ -364,6 +364,46 @@ body .nav-bar .pop-up .account-pop-up-link:last-child {
 body .nav-bar .pop-up .account-pop-up-link:not(:first-child) {
   padding-top: 10px;
 }
+body .nav-bar .pop-up .account-login-links {
+  list-style: none;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+body .nav-bar .pop-up .account-login-links li {
+  margin: 0px;
+  padding: 0px;
+}
+body .nav-bar .pop-up .account-login-links li:not(:first-child) {
+  margin-top: 20px;
+}
+body .nav-bar .pop-up .account-login-links li a {
+  width: 100%;
+  display: inline-flex;
+  border: 2px solid #172133;
+  padding: 10px 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  color: #172133;
+}
+body .nav-bar .pop-up .account-login-links li a:hover {
+  color: white;
+  background: #172133;
+  transition: 0.5s ease all;
+  -webkit-transition: 0.5s ease all;
+  -moz-transition: 0.5s ease all;
+  -ms-transition: 0.5s ease all;
+  -o-transition: 0.5s ease all;
+}
+body .nav-bar .pop-up .account-login-links li a.background {
+  color: white;
+  background: #172133;
+}
 body .nav-bar .pop-up .cart-pop-up-top {
   width: 100%;
   height: calc(100% - 150px);

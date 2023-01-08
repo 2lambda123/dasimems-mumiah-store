@@ -4,7 +4,7 @@ import { images, routeName } from '../../utils/constant'
 import { FiSearch } from 'react-icons/fi'
 import { FaBars } from 'react-icons/fa'
 import { BiUser } from 'react-icons/bi'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { AiOutlineShoppingCart, AiOutlineLogin } from 'react-icons/ai'
 import MobileLinks from './navbar/MobileLinks'
 
 import { useCartContext } from '../../contexts/cart_context'
@@ -75,10 +75,14 @@ function Navbar(props) {
               <button
                 className="side-link"
                 onClick={() => {
+                  if(!localStorage.getItem("user_token")){
+                    navigate(routeName.login);
+                    return;
+                  }
                   setAccountPop((prevState) => !prevState)
                 }}
               >
-                <BiUser />
+                {localStorage.getItem("user_token")? <BiUser />: <AiOutlineLogin />}
 
                 {accountPop && <AccountLinks />}
               </button>

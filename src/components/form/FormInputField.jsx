@@ -10,6 +10,7 @@ const FormInputField = ({
   value,
   row,
   reversed,
+  inputRef,
   ...props
 }) => {
 
@@ -22,6 +23,7 @@ const FormInputField = ({
       <label htmlFor={name? name: "form-input"}>{label? label: "Form label"}</label>
 
       <input
+        ref={inputRef}
         id={name? name: "form-input"}
         type={type? type: "text"}
         value={value? value: ""}

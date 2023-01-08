@@ -9,6 +9,7 @@ const SubmitBtn = ({text, loading, className, action, ...props}) => {
         }
 
     }
+    console.log(props)
   return (
     <Button {...props} loading={loading? loading: false} className={`submit-form-btn ${className}`} onClick={action}>
         {text? text : "Submit"}

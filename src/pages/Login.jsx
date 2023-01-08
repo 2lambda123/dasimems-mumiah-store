@@ -1,15 +1,17 @@
-import { Col, Row } from 'antd'
+import { Col, Row, message } from 'antd'
 import React from 'react'
 import { DisplayBanner, Form, FormInputField, SubmitBtn } from '../components'
 import { routeName } from '../utils/constant'
 import useFormContext from '../contexts/form_context'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useCallback } from 'react'
 
 const Login = () => {
   const { email, password, setFormDetails } = useFormContext()
+  const [loading, setLoading] = useState(false);
 
   const changeValue = (details) => {
-    console.log(details)
     setFormDetails(details)
   }
 
@@ -46,6 +48,19 @@ const Login = () => {
     onFormChange: changeValue
   }
 
+  const loginUser = useCallback(() =>{
+    console.log("clicked")
+
+    if(email.trim() !== "" && password.trim() !== ""){
+      setLoading(true);
+      //code to perform login request
+    }else{
+      message.error("Please fill out all fields")
+    }
+
+  }, [email, password])
+
+
   return (
     <>
       <Row justify="center" className="login">
@@ -64,7 +79,7 @@ const Login = () => {
             >
               <Form data={formData} />
 
-              <SubmitBtn />
+              <SubmitBtn action={loginUser} loading={loading} text="Login" className="login-submit" />
 
               <Row justify="space-between" className="login-extra">
                 <FormInputField
@@ -84,11 +99,11 @@ const Login = () => {
               lg={{ span: 12, order: 2 }}
               md={{ span: 12, order: 2 }}
               xs={{ span: 24, order: 1 }}
-              className="login-banner flex-container column align-center jusitfy-center"
+              className="login-banner flex-container column align-center justify-center"
             >
               <DisplayBanner
                 link={{ linkLabel: 'Register', link: routeName.signUp }}
-                title="Welcome to login"
+                title="Welcome to Mumiah"
                 text="Don't have an account?"
               />
             </Col>

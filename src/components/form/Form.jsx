@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import FormInputField from './FormInputField';
 import { useEffect } from 'react';
+import { useRef } from 'react';
 
 const Form = ({ data }) => {
 
     const [formState, setFormState] = useState({})
+    const [updated, setUpdated] = useState(true)
+    const inputRef = useRef("");
 //   var data = {
 //     inputs: [
 //       {
@@ -33,9 +36,35 @@ const Form = ({ data }) => {
 
   useEffect(()=>{
 
-    onFormChange(formState);
+    if(!updated){
 
-  }, [formState, onFormChange])
+      onFormChange(formState);
+      setUpdated(true)
+    }
+
+  }, [formState, onFormChange, updated])
+
+  useEffect(()=>{
+    var data = {};
+
+    inputs.forEach((input)=>{
+      var {name, value} = input || {}
+
+      if(!data[name]){
+
+        data[name] = value;
+
+      }
+              
+            
+    })
+    setFormState(prevState => ({...prevState, ...data}))
+  }, [inputs])
+
+  useEffect(()=>{
+    inputRef.current.focus();
+
+  }, [])
 
   return (
     <div className="form-container">
@@ -55,7 +84,7 @@ const Form = ({ data }) => {
             required,
             className,
             reverse
-          } = input
+          } = input || {}
 
           if(!onChange){
             onChange= () => {
@@ -63,16 +92,16 @@ const Form = ({ data }) => {
             }
           }
 
-          if(name){
-            setFormState(prevState => ({...prevState, [name]: value}))
-          }
+          
           return (
             <FormInputField
+              inputRef={index === 0? inputRef: null}
               label={label}
               value={value}
               onValueChange={(e)=>{
                 onChange(e);
                 setFormState(prevState => ({...prevState, [name]: e.target.value}));
+                setUpdated(false);
             }}
               placeholder={placeholder}
               type={type}

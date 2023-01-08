@@ -1363,7 +1363,7 @@ body{
         }
 
         .product-list{
-            margin-top: 30px;
+            margin: 30px 0px;
 
             .product-list-container{
 
@@ -1380,8 +1380,26 @@ body{
 
                     .product-filter-container{
                         width: 28%;
+                        top: calc(getMeasurement("headerHeight") + 15px);
                         position: sticky;
-                        top: getMeasurement("headerHeight");
+                        height: calc(100vh - getMeasurement("headerHeight") - 30px);
+                        overflow-y: scroll;
+                        border: 1px solid rgba(0, 0, 0,  .2);
+                        scrollbar-width: thin;
+                        scrollbar-color: rgba(0, 0, 0, .3);
+
+
+                        &::-webkit-scrollbar{
+                            width: 5px;
+                        }
+
+                        &::-webkit-scrollbar-thumb{
+                            background: rgba(0, 0, 0,  .3);
+                        }
+
+                        &::-webkit-scrollbar-track{
+                            background: white;
+                        }
 
                         .close-filter-btn{
                             position: absolute;
@@ -1431,6 +1449,7 @@ body{
 
                                 .filter-container-form{
                                     border-radius: 0px;
+                                    border: none;
                                     -webkit-border-radius: 0px;
                                     -moz-border-radius: 0px;
                                     -ms-border-radius: 0px;
@@ -1438,7 +1457,7 @@ body{
                                     padding: 20px;
 
                                     &:not(:first-child){
-                                        border-top: none;
+                                        border-top: 1px solid rgba(0, 0, 0,  .2);
                                     }
 
                                     h5{

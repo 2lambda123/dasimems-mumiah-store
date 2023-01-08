@@ -1265,7 +1265,7 @@ body .main-body .product-header .product-header-container .product-header-conten
   border: 2px solid rgba(0, 0, 0, 0.2);
 }
 body .main-body .product-list {
-  margin-top: 30px;
+  margin: 30px 0px;
 }
 body .main-body .product-list .product-list-container .product-list-content .transitioned {
   transition: 0.5s ease all;
@@ -1276,9 +1276,23 @@ body .main-body .product-list .product-list-container .product-list-content .tra
 }
 body .main-body .product-list .product-list-container .product-list-content .product-filter-container {
   width: 28%;
+  top: 95px;
   position: -webkit-sticky;
   position: sticky;
-  top: 80px;
+  height: calc(100vh - 80px - 30px);
+  overflow-y: scroll;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3);
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container::-webkit-scrollbar {
+  width: 5px;
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+}
+body .main-body .product-list .product-list-container .product-list-content .product-filter-container::-webkit-scrollbar-track {
+  background: white;
 }
 body .main-body .product-list .product-list-container .product-list-content .product-filter-container .close-filter-btn {
   position: absolute;
@@ -1318,6 +1332,7 @@ body .main-body .product-list .product-list-container .product-list-content .pro
 }
 body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form {
   border-radius: 0px;
+  border: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -1325,7 +1340,7 @@ body .main-body .product-list .product-list-container .product-list-content .pro
   padding: 20px;
 }
 body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form:not(:first-child) {
-  border-top: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 body .main-body .product-list .product-list-container .product-list-content .product-filter-container .filter-container form .filter-container-form h5 {
   margin-bottom: 10px;

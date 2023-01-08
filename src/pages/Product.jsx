@@ -22,6 +22,7 @@ function Product(props) {
               <Filter />
 
             </div>
+            
             <div className={filterOptionState?"main-product-list transitioned" : "main-product-list transitioned nonactive-product-list"}>
 
               <ProductList min />

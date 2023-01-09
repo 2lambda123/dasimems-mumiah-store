@@ -169,8 +169,11 @@ a{
 }
 
 .form-banner{
+    text-align: center;
+    
     h1{
         font-weight: 500;
+        font-size: clamp(1.65rem, 5vw, 2.5rem);
 
     }
         .form-banner-link{

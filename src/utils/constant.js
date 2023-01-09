@@ -21,6 +21,7 @@ import CatImageThree from "../assets/images/collections/4.png"
 import CollectionOne from "../assets/images/collections/product_collection_1.jpg"
 import CollectionTwo from "../assets/images/collections/product_collection_2.jpg"
 import CollectionThree from "../assets/images/collections/product_collection_3.jpg"
+import ForgotPassword from "../assets/images/forgot_password.jpg"
 
 export const routeName = {
     home: "/",
@@ -31,6 +32,7 @@ export const routeName = {
     login: "/login",
     signUp: "/register",
     account: "/account",
+    forgotPassword: "/password-reset",
 }
 
 
@@ -355,7 +357,8 @@ export const images = {
     logo: LogoImage,
     logoTwo: LogoImageTwo,
     promoOne: PromoOne,
-    promoTwo: PromoTwo
+    promoTwo: PromoTwo,
+    forgotPassword: ForgotPassword
 }
 
 export const baseUrl = "https://mumiah.shop/api/v1"

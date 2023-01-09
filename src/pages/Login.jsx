@@ -53,7 +53,7 @@ const Login = () => {
                   row
                 />
 
-                <Link to="">Forgot Password?</Link>
+                <Link to={routeName.forgotPassword}>Forgot Password?</Link>
               </Row>
             </Col>
 

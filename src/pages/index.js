@@ -13,6 +13,7 @@ import Orders from "./account/Orders";
 import Password from "./account/Password";
 import Billing from "./account/Billing";
 import AccountDetails from "./account/Details";
+import ResetPassword from "./ResetPassword";
 
 export {
     Home,
@@ -29,6 +30,7 @@ export {
     Orders,
     Password,
     Billing,
-    AccountDetails
+    AccountDetails,
+    ResetPassword
 
 }

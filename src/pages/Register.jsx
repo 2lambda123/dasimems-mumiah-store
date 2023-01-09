@@ -7,7 +7,7 @@ import { routeName } from "../utils/constant";
 import logo from "../assets/images/logo-light.png";
 
 function Register(props) {
-  const { password, accept_terms, onChange, onSubmit } = useUserContext();
+  const { password, accept_terms, onChange, onRegSubmit } = useUserContext();
 
   // handle form events
   const {
@@ -131,7 +131,10 @@ function Register(props) {
                   }
                 />
 
-                <SubmitBtn text="Register" onClick={handleSubmit(onSubmit)} />
+                <SubmitBtn
+                  text="Register"
+                  onClick={handleSubmit(onRegSubmit)}
+                />
               </form>
             </Col>
 

@@ -1,7 +1,9 @@
 import React, {  useContext, useReducer, useEffect  } from 'react'
+import axios from 'axios'
 
 import reducer from '../reducers/user_reducer'
 import { USER_INPUT } from '../_actions'
+import { baseUrl } from '../utils/constant'
 
 const initialState = {
    name: '',
@@ -26,8 +28,18 @@ export const UserProvider = ({ children }) => {
         dispatch({type: USER_INPUT, payload: {name, value} })
     }
 
-    const onSubmit = (e) => {
-        alert(`Hello ${state.name} you have successfully registered`)
+    const onRegSubmit =  async(state) => {
+      axios.put(`${baseUrl}/register`, state)
+      .then((res) => {
+          if(res.status === 201) {
+            console.log("Reg successful")
+          } else {
+              console.log("error occured")
+          }
+      })
+      .catch((err) => {
+          console.log(err)
+      })
     }
 
     return (
@@ -35,7 +47,7 @@ export const UserProvider = ({ children }) => {
             value={{
                 ...state, 
                 onChange, 
-                onSubmit
+                onRegSubmit
         }}>
             {children}   
         </UserContext.Provider>

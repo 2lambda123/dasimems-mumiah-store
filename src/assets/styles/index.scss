@@ -1648,35 +1648,6 @@ body{
 
         .single-product-items{
             
-            .single-product-breadcrumb{
-                font-size: 1rem;
-                font-weight: 500;
-                background: rgba(0, 0, 0,  .05);
-                padding: 40px 0px;
-
-                .breadcrumb-title{
-                    font-size: 1.5rem;
-                    font-weight: 600;
-                }
-
-                .separator,
-                a{
-                    
-                    font-weight: 600;
-                    color: rgba(0, 0, 0, .8);
-                }
-                
-                p{
-                    padding: 0px;
-                    margin: 0px;
-                }
-                .text-breadcrumb{
-                    font-weight: normal;
-
-                    color: rgba(0, 0, 0, .5);
-                }
-    
-            }
 
             .product-content{
                 margin-top: 30px;
@@ -2106,6 +2077,18 @@ body{
                     }
 
                 }
+            }
+
+        }
+
+        /********************
+        ===== CHECKOUT PAGE =====
+        *********************/
+
+        .checkout{
+
+            .checkout-content{
+                padding: 30px 0px;
             }
 
         }

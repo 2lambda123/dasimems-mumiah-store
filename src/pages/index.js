@@ -14,6 +14,7 @@ import Password from "./account/Password";
 import Billing from "./account/Billing";
 import AccountDetails from "./account/Details";
 import ResetPassword from "./ResetPassword";
+import Checkout from "./Checkout";
 
 export {
     Home,
@@ -31,6 +32,6 @@ export {
     Password,
     Billing,
     AccountDetails,
-    ResetPassword
-
+    ResetPassword,
+    Checkout
 }

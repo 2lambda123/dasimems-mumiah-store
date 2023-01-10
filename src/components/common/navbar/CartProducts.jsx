@@ -5,6 +5,7 @@ import { useCartContext } from "../../../contexts/cart_context";
 import { formatPrice } from "../../../utils/helpers";
 import { Player } from "@lottiefiles/react-lottie-player";
 import EmptyCart from "../../../assets/lotties/empty_cart.json"
+import { routeName } from "../../../utils/constant";
 
 const CartProducts = () => {
   const { cart, removeItem, total_amount } = useCartContext();
@@ -83,9 +84,10 @@ const CartProducts = () => {
             View Cart
           </Link>
 
-          <Link to="" className="button cart-bottom-action-button checkout-btn">
+          <Link to={routeName.checkout} className="button cart-bottom-action-button checkout-btn">
             Checkout
           </Link>
+          
         </div>
       </div>
     </div>

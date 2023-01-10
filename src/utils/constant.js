@@ -29,6 +29,7 @@ export const routeName = {
     products: "/products",
     contact: "/contact",
     cart: "/cart",
+    checkout: "/checkout",
     login: "/login",
     signUp: "/register",
     account: "/account",
@@ -291,30 +292,47 @@ export const order = [
 
 export const cartProducts = [
     {
+        id: "1",
         name: "Rey Nylon Backpack",
-        quantity: 2,
+        amount: 2,
         type: "natural",
-        size: "XL",
+        sizes: "XL",
         price: "74",
         image: "",
+
     },
 
     {
-        name: "Round Buckle 1\" Belt",
-        quantity: 1,
+        id: "2",
+        name: "Rey Nylon Backpack",
+        amount: 2,
         type: "natural",
-        size: "SM",
-        price: "68",
+        sizes: "XL",
+        price: "74",
         image: "",
+
     },
 
     {
-        name: "Waffle Knit Beanie",
-        quantity: 3,
+        id: "3",
+        name: "Rey Nylon Backpack",
+        amount: 2,
         type: "natural",
-        size: "XL",
-        price: "132",
+        sizes: "XL",
+        price: "74",
         image: "",
+
+    },
+
+    {
+        id: "4",
+        name: "Rey Nylon Backpack",
+        amount: 2,
+        type: "natural",
+        sizes: "XL",
+        price: "74",
+        image: "",
+
     }
 ]
 

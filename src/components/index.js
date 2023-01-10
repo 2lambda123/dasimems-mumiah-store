@@ -41,6 +41,8 @@ import AccountHeaderNav from "./account/HeaderNav"
 import Order from "./account/order/Order"
 import OrderProductDetails from "./account/order/OrderProductDetails"
 import FormSuccess from "./form/FormSuccess"
+import CheckoutSummary from "./checkout/Summary"
+import PaymentDetails from "./checkout/PaymentDetails"
 
 export {
   Loading,
@@ -79,6 +81,8 @@ export {
   AccountHeaderNav,
   Order,
   OrderProductDetails,
-  FormSuccess
+  FormSuccess,
+  CheckoutSummary,
+  PaymentDetails
 
 }

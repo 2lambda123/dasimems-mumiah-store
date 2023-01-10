@@ -17,7 +17,8 @@ import {
   Orders,
   Password,
   Billing,
-  ResetPassword
+  ResetPassword,
+  Checkout
 } from "./pages"
 import { useProductsContext } from './contexts/products_context';
 import { routeName } from './utils/constant';
@@ -45,6 +46,7 @@ function App(props) {
             <Route path={routeName.products} element={<Product />} />
             <Route path={`${routeName.products}/:id`} element={<SingleProducts />} />
             <Route path={routeName.cart}element={<CartPage />} />
+            <Route path={routeName.checkout}element={<Checkout />} />
             <Route path={routeName.login} element={<Login />} />
             <Route path={routeName.forgotPassword} element={<ResetPassword />} />
             <Route path={routeName.signUp} element={<Register />} />

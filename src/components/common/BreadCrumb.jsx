@@ -3,13 +3,13 @@ import React from 'react'
 import { FaAngleRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
-const BreadCrumb = ({data, title}) => {
+const BreadCrumb = ({data, className, title}) => {
   return (
     <>
-        {Array.isArray(data) && <Row justify="center" className="single-product-breadcrumb">
-            <Col span="21">
-            <h2 className="breadcrumb-title">{title}</h2>
-            <Breadcrumb separator={<span className="separator"><FaAngleRight /></span>}>
+        <Row justify="center" className={`single-product-breadcrumb ${className}`}>
+            <Col span={21}>
+            {title && <h2 className="breadcrumb-title">{title}</h2>}
+            {Array.isArray(data) && <Breadcrumb separator={<span className="separator"><FaAngleRight /></span>}>
 
                 {data.map((items, index) => {
                     var {label, link, type} = items;
@@ -20,9 +20,9 @@ const BreadCrumb = ({data, title}) => {
 
                     )
                 })}
-            </Breadcrumb>
+            </Breadcrumb>}
             </Col>
-        </Row>}
+        </Row>
     
     </>
   )

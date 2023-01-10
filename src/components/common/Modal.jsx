@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Modal = ({ modalOpened, children, style }) => {
+const Modal = ({ modalOpened, children, className, style }) => {
   const [modalOpacity, setModalOpacity] = useState(0);
   const [modalDisplay, setModalDisplay] = useState("none");
 
@@ -22,7 +22,7 @@ const Modal = ({ modalOpened, children, style }) => {
   return (
     <>
       <div
-        className="modal-container"
+        className={`modal-container`}
         style={{
           ...style,
           background: "rgba(0, 0, 0, .3)",
@@ -37,7 +37,12 @@ const Modal = ({ modalOpened, children, style }) => {
           display: modalDisplay,
         }}
       >
-        {children}
+
+        <div className={`modal-content ${className? className : ""}`}>
+
+          {children}
+
+        </div>
       </div>
     </>
   );

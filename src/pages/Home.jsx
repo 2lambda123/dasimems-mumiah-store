@@ -4,6 +4,7 @@ import {
   AdvertisementOne,
   AdvertisementTwo,
   Categories,
+  FormSuccess,
   Hero,
   Products,
   Steps,
@@ -27,6 +28,7 @@ function Home(props) {
       <Products />
 
       <AdvertisementTwo />
+
     </>
   );
 }

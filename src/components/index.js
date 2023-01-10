@@ -40,6 +40,7 @@ import DisplayBanner from "./form/DisplayBanner"
 import AccountHeaderNav from "./account/HeaderNav"
 import Order from "./account/order/Order"
 import OrderProductDetails from "./account/order/OrderProductDetails"
+import FormSuccess from "./form/FormSuccess"
 
 export {
   Loading,
@@ -77,6 +78,7 @@ export {
   DisplayBanner,
   AccountHeaderNav,
   Order,
-  OrderProductDetails
+  OrderProductDetails,
+  FormSuccess
 
 }

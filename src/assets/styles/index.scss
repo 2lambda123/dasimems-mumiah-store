@@ -1988,7 +1988,7 @@ body{
                         padding: 50px 40px;
                         background: white;
 
-                        input{
+                        input:not([type="checkbox"]){
                             width: 100%;
                         }
 
@@ -2089,6 +2089,178 @@ body{
 
             .checkout-content{
                 padding: 30px 0px;
+
+                .checkout-inner-content{
+
+                    .payment-details{
+
+                        .payment-details-content{
+                            border: 1px solid rgba(0, 0, 0, .2);
+                            border-radius: 10px;
+                            -webkit-border-radius: 10px;
+                            -moz-border-radius: 10px;
+                            -ms-border-radius: 10px;
+                            -o-border-radius: 10px;
+
+                            .title{
+                                font-size: 1.4rem;
+                                font-weight: 600;
+                            }
+
+                            &:not(:first-child){
+                                margin-top: 30px;
+                            }
+
+                            .payment-details-content-header{
+                                padding: 20px;
+                                border-bottom: 1px solid rgba(0, 0, 0,  .2);
+
+                                .content-one{
+
+                                    .icon{
+                                        font-size: 2rem;
+                                        padding: 0px;
+
+                                        span{
+                                            padding: 0px;
+                                            margin: 0px;
+                                        }
+                                    }
+
+                                    .details{
+                                        margin-left: 25px;
+
+                                        h2{
+                                            font-weight: normal;
+                                            font-size: 1.1rem;
+                                            text-transform: uppercase;
+
+                                        }
+
+                                        p{
+                                            font-weight: 600;
+
+                                            span{
+
+                                                display: inline-flex;
+                                            }
+
+                                            .subtitle-two{
+                                                margin-left: 10px;
+
+                                            }
+                                        }
+
+                                    }
+
+                                    .payment-details-change-button{
+                                        background: rgba(0, 0, 0, .05);
+                                        padding: 7px 15px;
+                                        height: auto;
+                                        width: auto;
+                                        border: none;
+                                        color: black;
+                                        font-weight: 500;
+
+
+                                    }
+                                }
+                            }
+
+                            .payment-details-inner-content{
+                                padding: 20px;
+                                
+                                .inner-details-form{
+                                    margin-top: 20px;
+
+                                    label{
+                                        font-weight: 500;
+                                    }
+
+                                    input{
+                                        background: transparent;
+                                    }
+
+                                    input[type="radio"]{
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+
+                                    .half-width{
+                                        margin-top: 0px;
+                                    }
+
+                                    .inner-details-form-split{
+                                        margin-top: 20px;
+                                    }
+
+                                    .payment-details-label-icon{
+                                        width: 50px;
+                                        height: 50px;
+                                        border: 1px solid #172133;
+                                        border-radius: 10px;
+                                        -webkit-border-radius: 10px;
+                                        -moz-border-radius: 10px;
+                                        -ms-border-radius: 10px;
+                                        -o-border-radius: 10px;
+                                        font-size: 2rem;
+                                        color: #172133;
+                                    }
+
+                                    .payment-details-label-text{
+                                        margin-left: 20px;
+                                        p{
+                                            margin:0px;
+                                            padding: 0px;
+                                            font-size: 1.1rem;
+                                            font-weight: 500;
+
+                                        }
+
+                                    }
+                                }
+
+                                .inner-details-form-action{
+                                    margin-top: 25px;
+
+                                    .submit-payment-details{
+
+                                        background: #172133;
+                                        color: white;
+                                        border: 2px solid #172133;
+                                    }
+                                }
+
+                                .bank-details{
+                                    margin-top: 20px;
+                                    font-weight: 700;
+
+
+                                    .bank-details-title{
+                                        color: rgba(0, 0, 0,  .7);
+                                    }
+
+                                    .bank-details-value{
+                                        margin-left: 10px;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .order-summary{
+                        padding-left: 40px;
+                        border-left: 1px solid rgba(0, 0, 0, .2);
+
+                        @media only screen and (max-width: 991px){
+                            border-left: none;
+                            padding-left: 0px;
+                            margin-bottom: 30px;
+                        }
+                    }
+
+                }
             }
 
         }

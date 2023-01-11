@@ -33,7 +33,7 @@ const Checkout = () => {
 
             <Row justify="center" className="checkout-content">
 
-                <Col span={21}>
+                <Col span={21} className="checkout-inner-content">
 
                     <Row justify="space-between">
                         <PaymentDetails />

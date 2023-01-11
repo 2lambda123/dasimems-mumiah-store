@@ -44,7 +44,7 @@ const PaymentDetails = () => {
                     />
                 </div>
 
-                <div className='inner-details-form-action flex-container align-center space-between'>
+                <div className='inner-details-form-action flex-container align-center space-between wrap'>
                     <SubmitBtn className="submit-payment-details half-width" text="Save and next to shipping" onClick={()=>{
                         setActiveContent("address")
                     }}/>
@@ -72,7 +72,7 @@ const PaymentDetails = () => {
                         
                     />
 
-                    <div className='inner-details-form-split flex-container space-between align-center'>
+                    <div className='inner-details-form-split flex-container space-between align-center wrap'>
 
                         <FormInputField 
                             label="City"
@@ -90,7 +90,7 @@ const PaymentDetails = () => {
                     </div>
                 </div>
 
-                <div className='inner-details-form-action flex-container align-center space-between'>
+                <div className='inner-details-form-action flex-container align-center space-between  wrap'>
                     <SubmitBtn className="submit-payment-details half-width" text="Save and next to Payment" onClick={()=>{
                         setActiveContent("payment")
                     }} />
@@ -158,7 +158,7 @@ const PaymentDetails = () => {
                                 type="text"
                             />
 
-                            <div className='inner-details-form-split flex-container space-between align-center'>
+                            <div className='inner-details-form-split flex-container space-between align-center wrap'>
 
 
                                 <FormInputField 
@@ -238,7 +238,7 @@ const PaymentDetails = () => {
 
                 </div>
 
-                <div className='inner-details-form-action flex-container align-center space-between'>
+                <div className='inner-details-form-action flex-container align-center space-between  wrap'>
                     <SubmitBtn className="submit-payment-details half-width" text="Confirm Order" />
 
                     <SubmitBtn className="half-width" text="Cancel" onClick={()=>{

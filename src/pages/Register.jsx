@@ -1,22 +1,42 @@
 import React from "react";
-import { useUserContext } from "../contexts/user_context";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Col, Row } from "antd";
 import { DisplayBanner, FormInputField, SubmitBtn } from "../components";
 import { routeName } from "../utils/constant";
-import logo from "../assets/images/logo-light.png";
+import { baseUrl } from "../utils/constant";
 
 function Register(props) {
-  const { password, accept_terms, onChange, onRegSubmit } = useUserContext();
-
   // handle form events
   const {
     register,
     handleSubmit,
+    reset,
+    watch,
     formState: { errors },
   } = useForm({
     mode: "onTouched",
   });
+
+  let password;
+
+  password = watch("password", "");
+
+  // OnSubmit
+  const onRegSubmit = async (data) => {
+    axios
+      .put(`${baseUrl}/register`, data)
+      .then((res) => {
+        if (res.status === 201) {
+          console.log("Reg successful");
+        } else {
+          console.log("error occured");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -42,7 +62,6 @@ function Register(props) {
                   placeholder="Full Name"
                   label="Full Name"
                   type="text"
-                  onChange={onChange}
                   errors={
                     errors.name && (
                       <p style={{ color: "red", fontSize: 12 }}>
@@ -58,7 +77,6 @@ function Register(props) {
                   placeholder="Email address"
                   label="Email address"
                   type="email"
-                  onChange={onChange}
                   errors={
                     errors.email && (
                       <p style={{ color: "red", fontSize: 12 }}>
@@ -83,7 +101,6 @@ function Register(props) {
                   placeholder="Password"
                   label="Password"
                   type="password"
-                  onChange={onChange}
                   errors={
                     errors.password && (
                       <p style={{ color: "red", fontSize: 12 }}>
@@ -102,7 +119,6 @@ function Register(props) {
                   placeholder="Confirm password"
                   label="Confirm password"
                   type="password"
-                  onChange={onChange}
                   errors={
                     errors.password_confirmation && (
                       <p style={{ color: "red", fontSize: 12 }}>
@@ -116,8 +132,6 @@ function Register(props) {
                   {...register("accept_terms", {
                     required: "This feild is required",
                   })}
-                  onChange={onChange}
-                  checked={accept_terms}
                   label="Accept our terms and conditions"
                   type="checkbox"
                   reversed

@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 import { Col, Row } from "antd";
 import { DisplayBanner, FormInputField, SubmitBtn } from "../components";
 import { routeName } from "../utils/constant";
-import { baseUrl } from "../utils/constant";
 import { AuthData } from "../utils/helpers";
 
 function Register(props) {
@@ -17,8 +16,6 @@ function Register(props) {
   const {
     register,
     handleSubmit,
-    reset,
-    watch,
     formState: { errors },
   } = useForm({
     mode: "onTouched",

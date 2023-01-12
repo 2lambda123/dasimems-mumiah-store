@@ -1,55 +1,42 @@
-import { Col, Row } from 'antd'
-import React from 'react'
-import { BreadCrumb, CheckoutSummary, PaymentDetails } from '../components'
-import { routeName } from '../utils/constant'
+import { Col, Row } from "antd";
+import React from "react";
+import { BreadCrumb, CheckoutSummary, PaymentDetails } from "../components";
+import { routeName } from "../utils/constant";
 
 const Checkout = () => {
+  var breadCrumbData = [
+    {
+      label: "Homepage",
+      type: "link",
+      link: routeName.home,
+    },
 
-    var breadCrumbData = [
-        {
-            label: "Homepage",
-            type: "link",
-            link: routeName.home
-        },
+    {
+      label: "Cart",
+      type: "link",
+      link: routeName.cart,
+    },
 
-        {
-            label: "Cart",
-            type: "link",
-            link: routeName.cart
-        },
-
-        {
-            label: "checkout",
-
-        }
-    ]
+    {
+      label: "checkout",
+    },
+  ];
   return (
-
     <>
+      <div className="checkout">
+        <BreadCrumb title="Checkout" data={breadCrumbData} />
 
-        <div className="checkout">
-
-            <BreadCrumb title="Checkout" data={breadCrumbData} />
-
-            <Row justify="center" className="checkout-content">
-
-                <Col span={21} className="checkout-inner-content">
-
-                    <Row justify="space-between">
-                        <PaymentDetails />
-                        <CheckoutSummary />
-
-                    </Row>  
-
-
-
-                </Col>
-
+        <Row justify="center" className="checkout-content">
+          <Col span={21} className="checkout-inner-content">
+            <Row justify="space-between">
+              <PaymentDetails />
+              <CheckoutSummary />
             </Row>
-        </div>
-    
+          </Col>
+        </Row>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Checkout
+export default Checkout;

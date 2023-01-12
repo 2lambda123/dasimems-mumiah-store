@@ -1,16 +1,16 @@
-import React from 'react'
-import { formatPrice } from '../../../utils/helpers'
-import { Button } from 'antd'
-import { useCartContext } from '../../../contexts/cart_context'
-import SubmitBtn from '../../form/SubmitBtn'
-import { FaMinus, FaPlus } from 'react-icons/fa'
+import React from "react";
+import { formatPrice } from "../../../utils/helpers";
+import { Button } from "antd";
+import { useCartContext } from "../../../contexts/cart_context";
+import SubmitBtn from "../../form/SubmitBtn";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
-const OrderProductDetails = ({product, type, ...props}) => {
-  const {removeItem} = useCartContext();
+const OrderProductDetails = ({ product, type, ...props }) => {
+  const { removeItem } = useCartContext();
   return (
     <div {...props} className="cart-item flex-container" key={product?.id}>
       <div className="cart-item-image">
-        <img className="img-fluid" src={product?.image}  alt={product?.name}/>
+        <img className="img-fluid" src={product?.image} alt={product?.name} />
       </div>
 
       <div className="cart-item-details flex-container space-between column">
@@ -27,30 +27,11 @@ const OrderProductDetails = ({product, type, ...props}) => {
         </div>
 
         <div className="details-content flex-container space-between align-start">
-
-          {type === "cart"? (
-
-            <div className='cart-item-details-action flex-container align-center'>
-
-              <SubmitBtn className="cart-item-details-action-btn" text={<FaMinus />} />
-
-              <p className="product-quantity">{product?.amount}</p>
-
-              <SubmitBtn className="cart-item-details-action-btn" text={<FaPlus />} />
-
-            </div>
-
-          ): (
-            <p className="quantity">Qty {product?.amount}</p>
-          )}
-
-          {type === "cart" && <Button onClick={() => removeItem(product?.id)} className="remove-btn">
-            Remove
-          </Button>}
+          <p className="quantity">Quantity: {product?.amount}</p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OrderProductDetails
+export default OrderProductDetails;

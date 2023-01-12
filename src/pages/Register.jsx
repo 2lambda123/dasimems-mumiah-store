@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Col, Row } from "antd";
@@ -7,6 +7,8 @@ import { routeName } from "../utils/constant";
 import { baseUrl } from "../utils/constant";
 
 function Register(props) {
+  const [loading, setLoading] = useState(false);
+
   // handle form events
   const {
     register,
@@ -146,6 +148,7 @@ function Register(props) {
                 />
 
                 <SubmitBtn
+                  loading={loading}
                   text="Register"
                   onClick={handleSubmit(onRegSubmit)}
                 />

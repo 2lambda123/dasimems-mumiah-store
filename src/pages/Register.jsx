@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Col, Row } from "antd";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 import { DisplayBanner, FormInputField, SubmitBtn } from "../components";
 import { routeName } from "../utils/constant";
-import { baseUrl } from "../utils/constant";
+import { PutRequest } from "../utils/helpers";
 
 function Register(props) {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   // handle form events
@@ -26,18 +30,43 @@ function Register(props) {
 
   // OnSubmit
   const onRegSubmit = async (data) => {
-    axios
-      .put(`${baseUrl}/register`, data)
-      .then((res) => {
-        if (res.status === 201) {
-          console.log("Reg successful");
-        } else {
-          console.log("error occured");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    setLoading(true);
+
+    try {
+      const item = PutRequest("/register", data);
+
+      item
+        .then((res) => {
+          toast.success(res?.data?.message, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+          navigate("/login");
+        })
+        .catch((err) => {
+          //log error to toast
+          const errMsg = err?.response?.data?.message;
+          toast.error(errMsg, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+          setTimeout(() => setLoading(false), 1500);
+        });
+    } catch (err) {
+      setTimeout(() => setLoading(false), 1500);
+    }
   };
 
   return (

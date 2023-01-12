@@ -22,7 +22,7 @@ function CartTotals(props) {
             Total <span>{formatPrice(total_amount + shipping_fee)}</span>
           </li>
         </ul>
-        <Link to="/" className="btn-total">
+        <Link to="/checkout" className="btn-total">
           Proceed to checkout
         </Link>
       </div>

@@ -52,9 +52,9 @@ function Register(props) {
           } else {
           }
 
-          toast.success("Login In Successfully", {
+          toast.success(res?.data?.message, {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 3000,
             hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
@@ -68,7 +68,7 @@ function Register(props) {
           const errMsg = err?.response?.data?.message;
           toast.error(errMsg, {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 3000,
             hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
@@ -154,7 +154,7 @@ function Register(props) {
               className="login-banner flex-container column align-center jusitfy-center"
             >
               <DisplayBanner
-                link={{ linkLabel: "Register", link: routeName.register }}
+                link={{ linkLabel: "Register", link: routeName.signUp }}
                 title="Welcome to Mumiah"
                 text="DOn't have an account?"
               />

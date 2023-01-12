@@ -22,6 +22,7 @@ export const getUniqueValues = (data, type) => {
     return [ ...new Set(unique)]
 }
 
+// Post
 export const  AuthData = async ( url , payloads ) => {
     
     return await axios.post(`${baseUrl}${url}` , payloads, {
@@ -32,3 +33,13 @@ export const  AuthData = async ( url , payloads ) => {
 
 }
 
+// Put
+export const  PutRequest = async ( url , payloads ) => {
+    
+    return await axios.put(`${baseUrl}${url}` , payloads, {
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('user_token')}`
+        }
+    } )
+
+}

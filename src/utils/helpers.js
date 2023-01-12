@@ -1,3 +1,6 @@
+import { baseUrl } from "./constant"
+import axios from "axios"
+
 export const formatPrice = (number) => {
     return new Intl.NumberFormat("en-NG", {
         style: 'currency',
@@ -18,3 +21,14 @@ export const getUniqueValues = (data, type) => {
     }
     return [ ...new Set(unique)]
 }
+
+export const  AuthData = async ( url , payloads ) => {
+    
+    return await axios.post(`${baseUrl}${url}` , payloads, {
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('user_token')}`
+        }
+    } )
+
+}
+

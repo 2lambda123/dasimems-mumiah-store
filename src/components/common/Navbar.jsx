@@ -37,6 +37,8 @@ function Navbar(props) {
 
   useEffect(() => {
     setNavOpened(false)
+    setAccountPop(false)
+    setCartPop(false);
   }, [navigate])
 
   // useEffect(() => {

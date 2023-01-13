@@ -1,9 +1,10 @@
 import React from 'react'
-import { accountLinks } from '../../../utils/constant';
-import { Link } from 'react-router-dom';
+import { accountLinks, routeName } from '../../../utils/constant';
+import { Link, useNavigate } from 'react-router-dom';
 import { RiLogoutCircleLine } from 'react-icons/ri';
 
 const AccountLinks = () => {
+  const navigate = useNavigate();
   return (
     <div className="pop-up account-pop-up">
       <div className="account-pop-up-header flex-container align-center justify-start">
@@ -69,7 +70,31 @@ const AccountLinks = () => {
         })}
 
         <li>
-          <a href="#logout">
+          <a href="#logout" onClick={()=>{
+
+            if(localStorage.getItem("userEmail")){
+              localStorage.removeItem("userEmail")
+
+            }
+
+            if(localStorage.getItem("userName")){
+              localStorage.removeItem("userName")
+
+            }
+
+            if(localStorage.getItem("userId")){
+              localStorage.removeItem("userId")
+
+            }
+
+            if(localStorage.getItem("user_token")){
+              localStorage.removeItem("user_token")
+
+            }
+
+            navigate(routeName.login);
+
+          }}>
             <span className="icon">
               <RiLogoutCircleLine />
             </span>

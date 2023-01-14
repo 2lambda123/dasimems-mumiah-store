@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { Footer, Navbar, Loader} from './components';
 import PrivateRoute from './utils/PrivateRoute';
+import useIdle from './utils/useIdleTimer';
 import { 
   Home,
   About, 
@@ -30,6 +31,16 @@ import { routeName } from './utils/constant';
 function App(props) {
 
   const auth = localStorage.getItem('user_token');
+
+  const logout = () => {
+    if(!auth){
+      return 
+    }else { 
+      localStorage.clear();
+    window.location.pathname = "/";
+    }
+   
+  };  const {isIdle} = useIdle({onIdle: logout, idleTime: 15})
 
   const {products_loading, cat_loading} = useProductsContext();
   return (

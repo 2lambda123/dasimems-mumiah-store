@@ -66,7 +66,8 @@ function App(props) {
             />
 
             <Route path={routeName.account} element={
-              <PrivateRoute><Account /></PrivateRoute>
+              <PrivateRoute auth={auth}><Account />
+              </PrivateRoute>
             }>
               <Route index element={<AccountDetails />} />
               <Route path={`${routeName.account}/saved`} element={<Wishlist />} />

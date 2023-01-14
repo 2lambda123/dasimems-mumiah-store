@@ -5,7 +5,7 @@ import { Navigate } from 'react-router-dom'
 function PrivateRoute({ auth, children }) {
 
   if (!auth) {
-    return <Navigate to="/login" replace />
+    return <Navigate to="/products" />
   }
   return children
 }

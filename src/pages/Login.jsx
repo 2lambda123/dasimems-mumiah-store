@@ -84,11 +84,11 @@ function Register(props) {
     }
   };
 
+  const auth = localStorage.getItem("user_token");
+
   //check if token is actually present
   useEffect(() => {
-    localStorage.getItem("user_token")
-      ? navigate("/checkout")
-      : navigate("/login");
+    auth ? navigate("/checkout") : navigate("/login");
   }, []);
 
   return (

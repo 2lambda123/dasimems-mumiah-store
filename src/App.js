@@ -65,18 +65,16 @@ function App(props) {
               }
             />
 
-            
-            
-
-            <Route path={routeName.account} element={<Account />}>
-
+            <Route path={routeName.account} element={
+              <PrivateRoute><Account /></PrivateRoute>
+            }>
               <Route index element={<AccountDetails />} />
               <Route path={`${routeName.account}/saved`} element={<Wishlist />} />
               <Route path={`${routeName.account}/orders`} element={<Orders />} />
               <Route path={`${routeName.account}/password`} element={<Password />} />
               <Route path={`${routeName.account}/billing`} element={<Billing />} />
-
             </Route>
+            
             <Route path='*' element={<Error />}  />
           </Routes>
         </main>

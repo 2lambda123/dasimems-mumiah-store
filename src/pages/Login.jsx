@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -83,6 +83,13 @@ function Register(props) {
       setLoading(false);
     }
   };
+
+  //check if token is actually present
+  useEffect(() => {
+    localStorage.getItem("user_token")
+      ? navigate("/checkout")
+      : navigate("/login");
+  }, []);
 
   return (
     <>

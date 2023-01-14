@@ -5,7 +5,6 @@ import { useCartContext } from "../../contexts/cart_context";
 
 function CartTotals(props) {
   const { total_amount, shipping_fee } = useCartContext();
-  console.log(total_amount);
 
   return (
     <div className="col-lg-4">
@@ -22,8 +21,8 @@ function CartTotals(props) {
             Total <span>{formatPrice(total_amount + shipping_fee)}</span>
           </li>
         </ul>
-        <Link to="/checkout" className="btn-total">
-          Proceed to checkout
+        <Link to="/login" className="btn-total">
+          Login to make payment
         </Link>
       </div>
     </div>

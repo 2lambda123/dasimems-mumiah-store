@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { Footer, Navbar, Loader} from './components';
+import PrivateRoute from './utils/PrivateRoute';
 import { 
   Home,
   About, 
@@ -28,6 +29,8 @@ import { routeName } from './utils/constant';
 
 function App(props) {
 
+  const auth = localStorage.getItem('user_token');
+
   const {products_loading, cat_loading} = useProductsContext();
   return (
    <Router>
@@ -49,10 +52,22 @@ function App(props) {
             <Route path={routeName.products} element={<Product />} />
             <Route path={`${routeName.products}/:id`} element={<SingleProducts />} />
             <Route path={routeName.cart}element={<CartPage />} />
-            <Route path={routeName.checkout}element={<Checkout />} />
+            {/* <Route path={routeName.checkout}element={<Checkout />} /> */}
             <Route path={routeName.login} element={<Login />} />
             <Route path={routeName.forgotPassword} element={<ResetPassword />} />
             <Route path={routeName.signUp} element={<Register />} />
+
+            <Route path='/checkout'  
+              element={
+                <PrivateRoute auth={auth}>
+                  <Checkout />
+                </PrivateRoute>
+              }
+            />
+
+            
+            
+
             <Route path={routeName.account} element={<Account />}>
 
               <Route index element={<AccountDetails />} />

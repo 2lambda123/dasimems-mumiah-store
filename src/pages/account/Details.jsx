@@ -39,6 +39,9 @@ const Details = () => {
             theme: "colored",
           });
           setLoading(false);
+          setTimeout(() => {
+            window.location.reload();
+          }, 1500);
         })
         .catch((err) => {
           //log error to toast

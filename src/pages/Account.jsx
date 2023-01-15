@@ -2,20 +2,33 @@ import React, { useEffect, useState } from "react";
 import { Row, Col } from "antd";
 import { Outlet } from "react-router-dom";
 
-import { AccountHeaderNav } from "../components";
+import { AccountHeaderNav, Error, Loading } from "../components";
 import { GetData } from "../utils/helpers";
 
 const Account = () => {
   const [data, setData] = useState([]);
+  const [dataLoading, setDataLoading] = useState(true);
+  const [dataFetchErr, setDataFetchErr] = useState(false);
 
   useEffect(() => {
     const item = GetData("/account");
     item
       .then((res) => {
         setData(res?.data);
+        setDataLoading(false)
       })
-      .catch((err) => {});
+      .catch((err) => {
+        setDataFetchErr(true)
+      });
   }, []);
+
+  if(dataLoading){
+    return <Loading />
+  }
+
+  if(dataFetchErr){
+    return <Error />
+  }
 
   return (
     <>

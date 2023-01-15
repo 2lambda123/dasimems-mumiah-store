@@ -25,7 +25,6 @@ import {
   ResetPassword,
   Checkout
 } from "./pages"
-import { useProductsContext } from './contexts/products_context';
 import { routeName } from './utils/constant';
 
 function App(props) {
@@ -42,16 +41,11 @@ function App(props) {
    
   };  const {isIdle} = useIdle({onIdle: logout, idleTime: 15})
 
-  const {products_loading, cat_loading} = useProductsContext();
   return (
    <Router>
 
-    {products_loading || cat_loading? (
+    
       
-      <Loader />
-
-    ): (
-      <>
       <ToastContainer />
         <Navbar />
     
@@ -93,8 +87,6 @@ function App(props) {
           <ScrollToTop />
         </main>
         <Footer />
-      </>
-    )}
 
    </Router>
   );

@@ -43,3 +43,20 @@ export const  PutRequest = async ( url , payloads ) => {
     } )
 
 }
+
+// Get
+
+export const GetData = async  ( url ) => {
+    try {
+        
+      return await axios.get( `${baseUrl}${url}` ,  {
+        headers: {
+            'Authorization':  `Bearer ${localStorage.getItem('user_token')}`
+        }
+    }  );
+         
+    } catch ( err ) {
+        console.log(err)
+    }
+    
+}

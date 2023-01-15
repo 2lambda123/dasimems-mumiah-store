@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { Col, Row } from "antd";
@@ -142,12 +142,18 @@ function Register(props) {
                       </p>
                     )
                   }
+
                 />
+
+                <div className="login-extra flex-container align-center justify-end">
+                  <Link to={routeName.forgotPassword}>Forgot Password?</Link>
+                </div>
 
                 <SubmitBtn
                   text="Login"
                   loading={loading}
                   onClick={handleSubmit(loginUser)}
+                  className="login-submit"
                 />
               </form>
             </Col>

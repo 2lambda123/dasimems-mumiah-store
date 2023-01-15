@@ -1,7 +1,6 @@
 import { Row } from "antd";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { BiImageAdd } from "react-icons/bi";
 import { toast } from "react-toastify";
 
 import { AuthData } from "../../utils/helpers";

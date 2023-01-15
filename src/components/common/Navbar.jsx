@@ -40,6 +40,11 @@ function Navbar(props) {
     setAccountPop(false);
     setCartPop(false);
 
+    window.scrollTo({
+      top: 0,
+      left: 0
+    })
+
   }, [navigate]);
 
   // useEffect(() => {

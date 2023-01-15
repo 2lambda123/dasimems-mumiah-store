@@ -1,18 +1,21 @@
-import React from 'react'
-import { accountLinks, routeName } from '../../../utils/constant';
-import { Link, useNavigate } from 'react-router-dom';
-import { RiLogoutCircleLine } from 'react-icons/ri';
+import React from "react";
+import { accountLinks, routeName } from "../../../utils/constant";
+import { Link, useNavigate } from "react-router-dom";
+import { RiLogoutCircleLine } from "react-icons/ri";
 
 const AccountLinks = () => {
   const navigate = useNavigate();
+  const name = localStorage.getItem("userName");
+  const email = localStorage.getItem("userEmail");
+
   return (
     <div className="pop-up account-pop-up">
       <div className="account-pop-up-header flex-container align-center justify-start">
         <div className="account-image"></div>
 
         <div className="account-details">
-          <h2>Eden Smith</h2>
-          <p>Los Angeles, CA</p>
+          <h2>{name}</h2>
+          <p>{email}</p>
         </div>
       </div>
 
@@ -70,31 +73,28 @@ const AccountLinks = () => {
         })}
 
         <li>
-          <a href="#logout" onClick={()=>{
+          <a
+            href="#logout"
+            onClick={() => {
+              if (localStorage.getItem("userEmail")) {
+                localStorage.removeItem("userEmail");
+              }
 
-            if(localStorage.getItem("userEmail")){
-              localStorage.removeItem("userEmail")
+              if (localStorage.getItem("userName")) {
+                localStorage.removeItem("userName");
+              }
 
-            }
+              if (localStorage.getItem("userId")) {
+                localStorage.removeItem("userId");
+              }
 
-            if(localStorage.getItem("userName")){
-              localStorage.removeItem("userName")
+              if (localStorage.getItem("user_token")) {
+                localStorage.removeItem("user_token");
+              }
 
-            }
-
-            if(localStorage.getItem("userId")){
-              localStorage.removeItem("userId")
-
-            }
-
-            if(localStorage.getItem("user_token")){
-              localStorage.removeItem("user_token")
-
-            }
-
-            navigate(routeName.login);
-
-          }}>
+              navigate(routeName.login);
+            }}
+          >
             <span className="icon">
               <RiLogoutCircleLine />
             </span>
@@ -104,7 +104,7 @@ const AccountLinks = () => {
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default AccountLinks
+export default AccountLinks;

@@ -1,45 +1,45 @@
-import React, { useEffect, useState } from 'react'
-import { Row, Col } from 'antd'
-import { images, routeName } from '../../utils/constant'
-import { FiSearch } from 'react-icons/fi'
-import { FaBars } from 'react-icons/fa'
-import { BiUser } from 'react-icons/bi'
-import { AiOutlineShoppingCart, AiOutlineLogin } from 'react-icons/ai'
-import MobileLinks from './navbar/MobileLinks'
+import React, { useEffect, useState } from "react";
+import { Row, Col } from "antd";
+import { images, routeName } from "../../utils/constant";
+import { FiSearch } from "react-icons/fi";
+import { FaBars } from "react-icons/fa";
+import { BiUser } from "react-icons/bi";
+import { AiOutlineShoppingCart, AiOutlineLogin } from "react-icons/ai";
+import MobileLinks from "./navbar/MobileLinks";
 
-import { useCartContext } from '../../contexts/cart_context'
-import CartProducts from './navbar/CartProducts'
-import AccountLinks from './navbar/AccountLinks'
-import DesktopLinks from './navbar/DesktopLinks'
-import SearchBar from './navbar/SearchBar'
-import { useNavigate } from 'react-router-dom'
+import { useCartContext } from "../../contexts/cart_context";
+import CartProducts from "./navbar/CartProducts";
+import AccountLinks from "./navbar/AccountLinks";
+import DesktopLinks from "./navbar/DesktopLinks";
+import SearchBar from "./navbar/SearchBar";
+import { useNavigate } from "react-router-dom";
 
 function Navbar(props) {
-  const { total_items } = useCartContext()
-  const [navOpened, setNavOpened] = useState(false)
-  const [navPosition, setNavPosition] = useState('-500px')
-  const navigate = useNavigate()
-  const [searchOpened, setSearchOpened] = useState(false)
-  const [accountPop, setAccountPop] = useState(false)
-  const [cartPop, setCartPop] = useState(false)
+  const { total_items, clearCart } = useCartContext();
+  const [navOpened, setNavOpened] = useState(false);
+  const [navPosition, setNavPosition] = useState("-500px");
+  const navigate = useNavigate();
+  const [searchOpened, setSearchOpened] = useState(false);
+  const [accountPop, setAccountPop] = useState(false);
+  const [cartPop, setCartPop] = useState(false);
 
   const changeNavState = () => {
-    setNavOpened((prevState) => !prevState)
+    setNavOpened((prevState) => !prevState);
 
     if (navOpened) {
-      setNavPosition('-500px')
+      setNavPosition("-500px");
     } else {
       setTimeout(() => {
-        setNavPosition('0px')
-      }, 40)
+        setNavPosition("0px");
+      }, 40);
     }
-  }
+  };
 
   useEffect(() => {
-    setNavOpened(false)
-    setAccountPop(false)
+    setNavOpened(false);
+    setAccountPop(false);
     setCartPop(false);
-  }, [navigate])
+  }, [navigate]);
 
   // useEffect(() => {
   //   if (searchOpened) {
@@ -63,7 +63,6 @@ function Navbar(props) {
             {!searchOpened && <DesktopLinks />}
 
             <div className="nav-bar-side-links flex-container align-center">
-
               {/* for future referrence in case of search functionality */}
               {/* {!searchOpened && (
                 <button
@@ -79,14 +78,19 @@ function Navbar(props) {
               <button
                 className="side-link"
                 onClick={() => {
-                  if(!localStorage.getItem("user_token")){
+                  if (!localStorage.getItem("user_token")) {
+                    clearCart();
                     navigate(routeName.login);
                     return;
                   }
-                  setAccountPop((prevState) => !prevState)
+                  setAccountPop((prevState) => !prevState);
                 }}
               >
-                {localStorage.getItem("user_token")? <BiUser />: <AiOutlineLogin />}
+                {localStorage.getItem("user_token") ? (
+                  <BiUser />
+                ) : (
+                  <AiOutlineLogin />
+                )}
 
                 {accountPop && <AccountLinks />}
               </button>
@@ -94,7 +98,7 @@ function Navbar(props) {
               <button
                 className="side-link desktop-side-link"
                 onClick={() => {
-                  setCartPop((prevState) => !prevState)
+                  setCartPop((prevState) => !prevState);
                 }}
               >
                 <AiOutlineShoppingCart />
@@ -109,7 +113,7 @@ function Navbar(props) {
               <button
                 className="side-link mobile-side-link"
                 onClick={() => {
-                  navigate(routeName.cart)
+                  navigate(routeName.cart);
                 }}
               >
                 <AiOutlineShoppingCart />
@@ -129,7 +133,7 @@ function Navbar(props) {
         navOpened={navOpened}
       />
     </>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

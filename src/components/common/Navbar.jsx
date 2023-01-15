@@ -39,6 +39,7 @@ function Navbar(props) {
     setNavOpened(false);
     setAccountPop(false);
     setCartPop(false);
+
   }, [navigate]);
 
   // useEffect(() => {

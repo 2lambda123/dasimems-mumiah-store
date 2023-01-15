@@ -17,6 +17,7 @@ const ProductListing = ({data}) => {
                 lg={{span: 5}}
                 md={{span: 5}}
                 xs={{span: 11}}
+                className='product-card'
             >
                 <ProductCard 
                     key={product.id}

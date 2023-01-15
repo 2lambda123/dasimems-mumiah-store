@@ -17,6 +17,7 @@ const ProductListingTwo = ({data}) => {
                 lg={{span: 7}}
                 md={{span: 7}}
                 xs={{span: 11}}
+                className='product-card'
             >
                 <ProductCard 
                     key={product.id}

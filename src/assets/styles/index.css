@@ -1362,7 +1362,17 @@ body .main-body .categories .categories-container .categories-content .category-
 body .main-body .products {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-body .main-body .product {
+body .main-body .product-card {
+  margin-bottom: clamp(10px, 5vw, 20px);
+  overflow: hidden;
+  max-height: 430px;
+}
+@media only screen and (max-width: 1167px) {
+  body .main-body .product-card {
+    max-height: 400px;
+  }
+}
+body .main-body .product-card .product {
   display: block;
   width: 100%;
   margin-bottom: 30px;
@@ -1372,11 +1382,11 @@ body .main-body .product {
   transition: all 0.3s ease;
 }
 @media (max-width: 991.98px) {
-  body .main-body .product {
+  body .main-body .product-card .product {
     margin-bottom: 30px;
   }
 }
-body .main-body .product .img-prod {
+body .main-body .product-card .product .img-prod {
   position: relative;
   display: block;
   overflow: hidden;
@@ -1388,19 +1398,19 @@ body .main-body .product .img-prod {
   align-items: center;
   justify-content: center;
 }
-body .main-body .product .img-prod img {
+body .main-body .product-card .product .img-prod img {
   max-height: 100%;
   max-width: 100%;
   transition: all 0.5s ease;
 }
-body .main-body .product .product-details h3 {
+body .main-body .product-card .product .product-details h3 {
   font-size: 1.2rem;
   font-weight: 500;
 }
-body .main-body .product .product-details h3 a {
+body .main-body .product-card .product .product-details h3 a {
   color: black;
 }
-body .main-body .product .product-details .small-images-container {
+body .main-body .product-card .product .product-details .small-images-container {
   height: 0px;
   overflow: hidden;
   transition: 0.5s ease all;
@@ -1409,25 +1419,25 @@ body .main-body .product .product-details .small-images-container {
   -ms-transition: 0.5s ease all;
   -o-transition: 0.5s ease all;
 }
-body .main-body .product .product-details .small-images-container .images-content {
+body .main-body .product-card .product .product-details .small-images-container .images-content {
   padding: 10px 0px;
 }
-body .main-body .product .product-details .small-images-container .images-content .small-images {
+body .main-body .product-card .product .product-details .small-images-container .images-content .small-images {
   width: 40px;
   height: 40px;
   background: rgba(0, 0, 0, 0.05);
 }
-body .main-body .product .product-details .small-images-container .images-content .small-images:not(:first-child) {
+body .main-body .product-card .product .product-details .small-images-container .images-content .small-images:not(:first-child) {
   margin-left: 10px;
 }
-body .main-body .product .product-details .small-images-container .images-content .small-images img {
+body .main-body .product-card .product .product-details .small-images-container .images-content .small-images img {
   max-width: 100%;
   max-height: 100%;
 }
-body .main-body .product .product-details p:not([class=price]) {
+body .main-body .product-card .product .product-details p:not([class=price]) {
   color: rgba(0, 0, 0, 0.7);
 }
-body .main-body .product .product-details p.price {
+body .main-body .product-card .product .product-details p.price {
   font-weight: 500;
   transition: 0.5s ease all;
   -webkit-transition: 0.5s ease all;
@@ -1435,27 +1445,27 @@ body .main-body .product .product-details p.price {
   -ms-transition: 0.5s ease all;
   -o-transition: 0.5s ease all;
 }
-body .main-body .product .product-details p del {
+body .main-body .product-card .product .product-details p del {
   margin-left: 10px;
 }
-body .main-body .product .product-details p.discount {
+body .main-body .product-card .product .product-details p.discount {
   color: green;
   font-weight: 500;
 }
-body .main-body .product:hover .img-prod img {
+body .main-body .product-card:hover .product .img-prod img {
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
 }
-body .main-body .product:hover .product-details .small-images-container {
+body .main-body .product-card:hover .product .product-details .small-images-container {
   height: 60px;
 }
-body .main-body .product:hover .product-details h3 {
+body .main-body .product-card:hover .product .product-details h3 {
   display: none;
 }
-body .main-body .product:hover .product-details p.product-category, body .main-body .product:hover .product-details p.product-size-stat {
+body .main-body .product-card:hover .product .product-details p.product-category, body .main-body .product-card:hover .product .product-details p.product-size-stat {
   display: none;
 }
 body .main-body .product-header {

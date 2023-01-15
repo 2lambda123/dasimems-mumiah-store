@@ -43,6 +43,7 @@ import OrderProductDetails from "./account/order/OrderProductDetails"
 import FormSuccess from "./form/FormSuccess"
 import CheckoutSummary from "./checkout/Summary"
 import PaymentDetails from "./checkout/PaymentDetails"
+import ScrollToTop from "./common/ScrollToTop"
 
 export {
   Loading,
@@ -83,6 +84,7 @@ export {
   OrderProductDetails,
   FormSuccess,
   CheckoutSummary,
-  PaymentDetails
+  PaymentDetails,
+  ScrollToTop
 
 }

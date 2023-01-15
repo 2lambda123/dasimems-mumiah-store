@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Footer, Navbar, Loader} from './components';
+import { Footer, Navbar, Loader, ScrollToTop} from './components';
 import PrivateRoute from './utils/PrivateRoute';
 import useIdle from './utils/useIdleTimer';
 import { 
@@ -89,6 +89,8 @@ function App(props) {
             
             <Route path='*' element={<Error />}  />
           </Routes>
+
+          <ScrollToTop />
         </main>
         <Footer />
       </>

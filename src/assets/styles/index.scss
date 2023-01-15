@@ -561,6 +561,24 @@ body{
         min-height: 100vh;
         height: 100%;
         padding-top: getMeasurement("headerHeight");
+        position: relative;
+
+        .scroll-top-btn{
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #172133;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 7px 10px;
+            border-radius: 5px;
+            border: 2px solid #172133;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+        }
 
          /********************
         ===== HOMEPAGE =====

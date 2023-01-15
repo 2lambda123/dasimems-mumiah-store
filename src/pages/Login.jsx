@@ -49,6 +49,9 @@ function Register(props) {
           if (typeof window !== "undefined") {
             localStorage.setItem("user_token", user_token);
             navigate("/checkout");
+            setTimeout(() => {
+              window.location.reload();
+            }, 1500);
           } else {
           }
 
@@ -142,7 +145,6 @@ function Register(props) {
                       </p>
                     )
                   }
-
                 />
 
                 <div className="login-extra flex-container align-center justify-end">

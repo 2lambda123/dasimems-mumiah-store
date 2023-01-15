@@ -25,7 +25,13 @@ const ScrollToTop = () => {
     }, [])
 
   return (
-    <button ref={scrollRefBtn} className='scroll-top-btn display-none'>
+    <button ref={scrollRefBtn} onClick={()=>{
+        window.scrollTo({
+            top: 0,
+            left: 0
+        })
+
+    }} className='scroll-top-btn display-none'>
         <FaAngleUp />
     </button>
   )

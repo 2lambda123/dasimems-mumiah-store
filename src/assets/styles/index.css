@@ -874,6 +874,9 @@ body .main-body .scroll-top-btn {
   align-items: center;
   justify-content: center;
 }
+body .main-body .display-none {
+  display: none;
+}
 body .main-body .banner {
   background: #E3FFE6;
   width: 100%;

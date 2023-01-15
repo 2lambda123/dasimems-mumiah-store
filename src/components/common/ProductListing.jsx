@@ -16,8 +16,7 @@ const ProductListing = ({data}) => {
                 span={5}
                 lg={{span: 5}}
                 md={{span: 5}}
-                sm={{span: 11}}
-                xs={{span: 24}}
+                xs={{span: 11}}
             >
                 <ProductCard 
                     key={product.id}

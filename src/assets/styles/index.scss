@@ -1260,7 +1260,8 @@ body{
                 box-shadow: inset 0px 0px 101px 21px rgba(0, 0, 0, 0.09);
                 background: #fff;
                 z-index: 1;
-                height: 250px;
+                // height: 250px;
+                height: clamp(170px, 18vw, 250px);
                 display: flex;
                 align-items: center;
                 justify-content: center;

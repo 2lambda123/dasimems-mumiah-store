@@ -21,7 +21,7 @@ const PaymentDetails = () => {
         className="payment-details"
       >
         <PaymentDetailsContent
-          contentOpen={activeContent === "contact"}
+          contentOpen={true}
           icon={<FaRegUserCircle />}
           title="Contact Info"
           subtitleOne="Enrico Smith"
@@ -37,7 +37,7 @@ const PaymentDetails = () => {
             <FormInputField label="Email address" type="email" />
           </div>
 
-          <div className="inner-details-form-action flex-container align-center space-between wrap">
+          {/* <div className="inner-details-form-action flex-container align-center space-between wrap">
             <SubmitBtn
               className="submit-payment-details half-width"
               text="Save and next to shipping"
@@ -53,11 +53,11 @@ const PaymentDetails = () => {
                 setActiveContent("");
               }}
             />
-          </div>
+          </div> */}
         </PaymentDetailsContent>
 
         <PaymentDetailsContent
-          contentOpen={activeContent === "address"}
+          contentOpen={true}
           icon={<RiDirectionLine />}
           title="Shipping Address"
           subtitleOne="St. Paul's Road, Norris, SD 57560, Dakota, USA"
@@ -79,9 +79,9 @@ const PaymentDetails = () => {
           <div className="inner-details-form-action flex-container align-center space-between  wrap">
             <SubmitBtn
               className="submit-payment-details half-width"
-              text="Save and next to Payment"
+              text="Proceed to payment"
               onClick={() => {
-                setActiveContent("payment");
+
               }}
             />
 

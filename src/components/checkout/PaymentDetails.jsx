@@ -1,5 +1,5 @@
 import { Col } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PaymentDetailsContent from "./inner/PaymentDetailsContent";
 import { FaRegCreditCard, FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineCreditCard } from "react-icons/ai";
@@ -7,10 +7,19 @@ import { RiDirectionLine } from "react-icons/ri";
 import { BiWorld } from "react-icons/bi";
 import FormInputField from "../form/FormInputField";
 import SubmitBtn from "../form/SubmitBtn";
+import { GetData } from "../../utils/helpers";
 
 const PaymentDetails = () => {
-  const [paymentType, setPaymentType] = useState("card");
+  const [address, setAddress] = useState({});
   const [activeContent, setActiveContent] = useState("contact");
+
+  useEffect(()=>{
+
+    GetData("/addresses").then((res)=>{
+      setAddress(res.data);
+    })
+
+  }, [])
   return (
     <>
       <Col
@@ -32,9 +41,9 @@ const PaymentDetails = () => {
           </div>
 
           <div className="inner-details-form">
-            <FormInputField label="Your phone number" type="tel" />
+            <FormInputField value={address?.phone} label="Your phone number" type="tel" />
 
-            <FormInputField label="Email address" type="email" />
+            <FormInputField value={address?.email} label="Email address" type="email" />
           </div>
 
           {/* <div className="inner-details-form-action flex-container align-center space-between wrap">

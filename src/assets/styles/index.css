@@ -95,6 +95,37 @@ a {
   display: flex;
   flex-direction: column;
 }
+.form-field .form-input-field-input {
+  width: 100%;
+  position: relative;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.form-field .form-input-field-input .show-password-btn {
+  position: absolute;
+  top: 50%;
+  right: 3px;
+  z-index: 1;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  height: 100%;
+  width: 45px;
+  border: none;
+  background: transparent;
+  padding: 0px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.7);
+  outline: none;
+  box-shadow: none;
+}
+.form-field .form-input-field-input .show-password-btn:hover {
+  color: black;
+}
 .form-field input {
   width: 100%;
   height: 45px;
@@ -106,7 +137,6 @@ a {
   -o-border-radius: 100px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   background: rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
   padding: 0px 10px;
 }
 .form-field input[type=radio],

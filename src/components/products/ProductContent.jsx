@@ -3,7 +3,6 @@ import React from "react";
 import { formatPrice } from "../../utils/helpers";
 import SingleAddToCart from "./SingleAddToCart";
 import ProductShowCase from "./ProductShowCase";
-import { productImages } from "../../utils/constant";
 
 const ProductContent = ({ details }) => {
   const product = details;
@@ -20,7 +19,7 @@ const ProductContent = ({ details }) => {
           >
             {/* <img src={product?.image} alt={product?.name} /> */}
 
-            <ProductShowCase images={productImages} />
+            <ProductShowCase images={product.images} />
           </Col>
 
           <Col

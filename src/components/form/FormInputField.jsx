@@ -16,12 +16,23 @@ const FormInputField = React.forwardRef(
       className,
       name,
       id,
+      selectOptions,
       ...props
     },
     ref
   ) => {
 
     const [inputType, setInputType] = useState("");
+
+    if(!selectOptions){
+
+      selectOptions = [];
+
+    }
+
+    if(type === "select" && selectOptions && !Array.isArray(selectOptions)){
+      throw new Error("selectedOptions must be of type array");
+    }
 
     useEffect(()=>{
 
@@ -53,15 +64,36 @@ const FormInputField = React.forwardRef(
 
           <div className="form-input-field-input">
 
-            <input
-              id={id}
-              name={name}
-              ref={ref}
-              type={inputType}
-              placeholder={placeholder}
-              onChange={onChange}
-              {...props}
-            />
+
+
+            {type === "select"? (
+              <select
+                id={id}
+                name={name}
+                ref={ref}
+                onChange={onChange}
+                {...props}
+              >
+                <option>--- Choose ---</option>
+                {selectOptions.filter(opt => opt.value && opt.label).map((options, index) => {
+                  var {value, label} = options
+                  return(
+                    <option key={index} value={value}>{label}</option>
+                  )
+                })}
+              </select>
+            ) : 
+            (
+              <input
+                id={id}
+                name={name}
+                ref={ref}
+                type={inputType}
+                placeholder={placeholder}
+                onChange={onChange}
+                {...props}
+              />
+            )}
 
             {type === "password" && <Button onClick={setType} className="show-password-btn">{inputType === "password"? <FaEye />: <FaEyeSlash />}</Button>}
 

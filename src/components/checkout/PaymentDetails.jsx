@@ -10,18 +10,22 @@ import SubmitBtn from "../form/SubmitBtn";
 import { GetData } from "../../utils/helpers";
 import { useCallback } from "react";
 import axios from "axios";
+import { useForm } from "react-hook-form";
 
 const PaymentDetails = () => {
-  
-  const [paymentInfo, setPaymentInfo] = useState({
-    phone: "",
-    email: "",
-    country: "",
-    state: "",
-    city: "",
-    address: "",
-    optional_address: ""
-  });
+
+  const {reset, register, handleSubmit, formState: {errors}, getValues} = useForm({
+    defaultValue: {
+      phone: "",
+      email: localStorage.getItem("userEmail")? localStorage.getItem("userEmail") : "",
+      country: "",
+      state: "",
+      city: "",
+      address: "",
+      optional_address: ""
+    },
+    mode: "onChange"
+  })
   const [allAddress, setAllAddress] = useState([])
   const [activeContent, setActiveContent] = useState("contact");
   const [countryList, setCountryList] = useState([]);
@@ -30,16 +34,14 @@ const PaymentDetails = () => {
   
   const name = localStorage.getItem("userName");
 
-  const submitAddress = useCallback(()=>{
-
+  const submitAddress = useCallback((data)=>{
     setLoading(true)
 
-  }, [paymentInfo])
+
+
+  }, [])
 
   useEffect(()=>{
-
-    
-    setPaymentInfo(prevState => ({...prevState, email: localStorage.getItem("userEmail")}))
 
     GetData("/addresses").then((res)=>{
 
@@ -47,10 +49,13 @@ const PaymentDetails = () => {
 
       if(res.data.length > 0){
 
-        setPaymentInfo(res.data[0]);
+        reset(res.data[0]);
 
       }
+
     })
+
+    
 
     axios.get("https://countriesnow.space/api/v0.1/countries/states").then(res=>{
       var countries = res.data;
@@ -62,14 +67,14 @@ const PaymentDetails = () => {
 
   useEffect(()=>{
 
-    const data = countryList.filter(country => country.name === paymentInfo.country)
+    const data = countryList.filter(country => country.name === getValues("country"))
 
     if(Array.isArray(data) && data.length > 0){
 
       setStateList(data[0].states);
     }
 
-  }, [paymentInfo.country])
+  }, [])
 
   return (
     <>
@@ -85,7 +90,7 @@ const PaymentDetails = () => {
           icon={<FaRegUserCircle />}
           title="Contact Info"
           subtitleOne={name}
-          subtitleTwo={paymentInfo? paymentInfo?.phone : null}
+          subtitleTwo={getValues("phone")}
         >
           <div className="inner-details-header flex-container space-between align-center">
             <h2 className="title">Contact Information</h2>
@@ -93,33 +98,44 @@ const PaymentDetails = () => {
 
           <div className="inner-details-form">
             <FormInputField 
-              value={paymentInfo?.phone} 
+              {...register("phone", {
+                    required: "Your phone number is required",
+                    pattern: {
+                      value: /(^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$)/,
+                      message: "Invalid phone number detected"
+
+                    },
+
+                  })}
               label="Your Phone Number" 
               type="tel"
-              onChange={(e)=>{
-
-                setPaymentInfo(prevState => ({
-                  ...prevState,
-                  phone: e.target.value
-                }))
-
-
-              }}
+              errors={
+                errors.phone && (
+                  <p style={{ color: "red", fontSize: 12 }}>
+                    {errors.phone.message}
+                  </p>
+                )}
+              
             />
 
             <FormInputField 
-              value={paymentInfo?.email} 
+               {...register("email", {
+                    required: "Your email address is required",
+                    pattern: {
+                      value: /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/,
+                      message: "Invalid email detected"
+
+                    },
+
+                  })}
               label="Email address" 
-              type="email"
-              onChange={(e)=>{
-
-                setPaymentInfo(prevState => ({
-                  ...prevState,
-                  email: e.target.value
-                }))
-
-
-              }} 
+              type="email"errors={
+                errors.email && (
+                  <p style={{ color: "red", fontSize: 12 }}>
+                    {errors.email.message}
+                  </p>
+                )}
+              
             
             />
           </div>
@@ -147,75 +163,92 @@ const PaymentDetails = () => {
           contentOpen={true}
           icon={<RiDirectionLine />}
           title="Shipping Address"
-          subtitleOne={paymentInfo.address !== ""? paymentInfo.address : null}
+          subtitleOne={getValues("address")}
         >
           <div className="inner-details-form">
 
               <FormInputField
-              label="Country"
-              type="select"
-              selectOptions={countryList.map(country => ({label: country?.name, value: country?.name}))}
-              value={paymentInfo?.country}
-              onChange={(e)=>{
+                {...register("country", {
+                      required: "Please choose a country",
+                      onChange: (e) => {
 
-                setPaymentInfo(prevState => ({
-                  ...prevState,
-                  country: e.target.value
-                }))
+                        const data = countryList.filter(country => country.name === e.target.value)
+
+                        if(Array.isArray(data) && data.length > 0){
+
+                          setStateList(data[0].states);
+                        }
 
 
-              }}
+                      }
+                      
+
+                    })}
+                label="Country"
+                type="select"
+                selectOptions={countryList.map(country => ({label: country?.name, value: country?.name}))}
+                errors={
+                  errors.country && (
+                    <p style={{ color: "red", fontSize: 12 }}>
+                      {errors.country.message}
+                    </p>
+                  )}
             />
 
             <div className="inner-details-form-split flex-container space-between align-center wrap">
               <FormInputField 
+                {...register("state", {
+                        required: "Please choose a state",
+                        
+
+                      })}
                 label="State" 
-                value={paymentInfo?.state} 
                 type="select" 
                 selectOptions={stateList.map(country => ({label: country?.name, value: country?.name}))}
                 className="half-width"
-                onChange={(e)=>{
+                errors={
+                  errors.state && (
+                    <p style={{ color: "red", fontSize: 12 }}>
+                      {errors.state.message}
+                    </p>
+                  )}
+                
 
-                setPaymentInfo(prevState => ({
-                  ...prevState,
-                  state: e.target.value
-                }))
-
-
-              }} 
               />
 
-              <FormInputField 
+              <FormInputField
+                {...register("city", {
+                      required: "Please enter your city",
+                      
+
+                    })} 
                 label="City" 
-                value={paymentInfo?.city} 
                 type="text" 
                 className="half-width" 
-                onChange={(e)=>{
-
-                setPaymentInfo(prevState => ({
-                  ...prevState,
-                  city: e.target.value
-                }))
-
-
-              }}
+                errors={
+                  errors.city && (
+                    <p style={{ color: "red", fontSize: 12 }}>
+                      {errors.city.message}
+                    </p>
+                  )}
               />
 
               
             </div>
 
-            <FormInputField label="Address" 
-              value={paymentInfo?.address}
+            <FormInputField label="Address"
+              {...register("address", {
+                        required: "Please enter your address",
+                        
+
+                      })}  
               type="text"
-              onChange={(e)=>{
-
-                setPaymentInfo(prevState => ({
-                  ...prevState,
-                  address: e.target.value
-                }))
-
-
-              }}
+              errors={
+                  errors.address && (
+                    <p style={{ color: "red", fontSize: 12 }}>
+                      {errors.address.message}
+                    </p>
+                  )}
             />
 
           </div>
@@ -225,7 +258,7 @@ const PaymentDetails = () => {
               loading={loading}
               className="submit-payment-details half-width"
               text="Proceed to payment"
-              onClick={submitAddress}
+              onClick={handleSubmit(submitAddress)}
             />
 
             <SubmitBtn

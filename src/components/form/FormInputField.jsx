@@ -55,51 +55,55 @@ const FormInputField = React.forwardRef(
     return (
 
       <>
-        <div
-          className={`form-field ${row ? "row-field" : null} ${
-            reversed ? "reversed-field" : null
-          } ${className? className : ""}`}
-        >
-          <label htmlFor={id}>{label}</label>
+        <div className={`form-field-parent ${className? className: ""}`}>
+          <div
+            className={`form-field ${row ? "row-field" : null} ${
+              reversed ? "reversed-field" : null
+            }`}
+          >
+            <label htmlFor={id}>{label}</label>
 
-          <div className="form-input-field-input">
+            <div className="form-input-field-input">
 
 
 
-            {type === "select"? (
-              <select
-                id={id}
-                name={name}
-                ref={ref}
-                onChange={onChange}
-                {...props}
-              >
-                <option>--- Choose ---</option>
-                {selectOptions.filter(opt => opt.value && opt.label).map((options, index) => {
-                  var {value, label} = options
-                  return(
-                    <option key={index} value={value}>{label}</option>
-                  )
-                })}
-              </select>
-            ) : 
-            (
-              <input
-                id={id}
-                name={name}
-                ref={ref}
-                type={inputType}
-                placeholder={placeholder}
-                onChange={onChange}
-                {...props}
-              />
-            )}
+              {type === "select"? (
+                <select
+                  id={id}
+                  name={name}
+                  ref={ref}
+                  onChange={onChange}
+                  {...props}
+                >
+                  <option value="">--- Choose ---</option>
+                  {selectOptions.filter(opt => opt.value && opt.label).map((options, index) => {
+                    var {value, label} = options
+                    return(
+                      <option key={index} value={value}>{label}</option>
+                    )
+                  })}
+                </select>
+              ) : 
+              (
+                <input
+                  id={id}
+                  name={name}
+                  ref={ref}
+                  type={inputType}
+                  placeholder={placeholder}
+                  onChange={onChange}
+                  {...props}
+                />
+              )}
 
-            {type === "password" && <Button onClick={setType} className="show-password-btn">{inputType === "password"? <FaEye />: <FaEyeSlash />}</Button>}
+              {type === "password" && <Button onClick={setType} className="show-password-btn">{inputType === "password"? <FaEye />: <FaEyeSlash />}</Button>}
+
+            </div>
 
           </div>
+          {errors}
+
         </div>
-        {errors}
       
       </>
     );

@@ -20,7 +20,7 @@ function Register(props) {
     watch,
     formState: { errors },
   } = useForm({
-    mode: "onTouched",
+    mode: "onchange",
   });
 
   let password;

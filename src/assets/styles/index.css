@@ -90,6 +90,10 @@ a {
   margin-top: 20px;
 }
 
+.form-field-parent:not(:first-child) {
+  margin-top: 20px;
+}
+
 .form-field {
   width: 100%;
   display: flex;
@@ -148,12 +152,16 @@ a {
 .form-field label {
   font-weight: bold;
 }
-.form-field:not(:first-child) {
-  margin-top: 20px;
-}
 
 .row-field {
   flex-direction: row;
+}
+.row-field .form-input-field-input {
+  width: auto;
+  position: relative;
+  margin-top: 10px;
+  overflow: hidden;
+  margin-top: 0px;
 }
 .row-field input {
   margin-left: 10px;

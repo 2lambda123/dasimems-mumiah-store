@@ -89,10 +89,7 @@ section .shopping-cart {
   cursor: pointer;
 }
 
-.continue__btn.update__btn {
-  text-align: right;
-}
-.continue__btn.update__btn button {
+.cart-actions .clear-cart-btn {
   color: #e1e1e1;
   background: #0d0d0d;
   font-size: 14px;
@@ -102,8 +99,9 @@ section .shopping-cart {
   border: 1px solid #e1e1e1;
   padding: 14px 35px;
   display: inline-block;
+  text-align: center;
 }
-.continue__btn a {
+.cart-actions .continue-shopping-btn {
   color: #0d0d0d;
   font-size: 14px;
   font-weight: 700;
@@ -112,6 +110,15 @@ section .shopping-cart {
   border: 1px solid #e1e1e1;
   padding: 14px 35px;
   display: inline-block;
+  text-align: center;
+}
+@media only screen and (max-width: 500px) {
+  .cart-actions {
+    flex-direction: column;
+  }
+  .cart-actions .clear-cart-btn {
+    margin-top: 20px;
+  }
 }
 
 .cart__total {

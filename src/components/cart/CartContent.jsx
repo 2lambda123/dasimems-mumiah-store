@@ -23,20 +23,17 @@ function CartContent(props) {
             </table>
           </div>
 
-          <div className="row">
-            <div className="col-lg-6 col-md-6 col-sm-6">
-              <div className="continue__btn">
-                <Link to="/products">Continue Shopping</Link>
-              </div>
-            </div>
-            <div className="col-lg-6 col-md-6 col-sm-6">
-              <div className="continue__btn update__btn">
-                <button type="button" onClick={clearCart}>
-                  Clear Cart
-                </button>
-              </div>
-            </div>
+          <div className="cart-actions flex-container space-between wrap align-center">
+
+            <Link className="continue-shopping-btn button" to="/products">Continue Shopping</Link>
+
+            <button className="clear-cart-btn" type="button" onClick={clearCart}>
+              Clear Cart
+            </button>
+
           </div>
+
+          
         </div>
         <CartTotals />
       </div>

@@ -5,6 +5,7 @@ const PaymentDetailsContent = ({
   children,
   contentOpen,
   buttonAction,
+  buttonActionText,
   icon,
   title,
   subtitleOne,
@@ -12,11 +13,11 @@ const PaymentDetailsContent = ({
 }) => {
   const [content, setContent] = useState(false);
 
-  if (!buttonAction) {
-    buttonAction = () => {
-      setContent((prevState) => !prevState);
-    };
+ if(!buttonAction){
+  buttonAction = () => {
+    
   }
+ }
 
   useEffect(() => {
     setContent(contentOpen);
@@ -43,12 +44,12 @@ const PaymentDetailsContent = ({
           </div>
         </div>
         <div className="content-one">
-          <Button
+          {buttonActionText && <Button
             className="payment-details-change-button"
             onClick={buttonAction}
           >
-            Change
-          </Button>
+            {buttonActionText}
+          </Button>}
         </div>
       </div>
 

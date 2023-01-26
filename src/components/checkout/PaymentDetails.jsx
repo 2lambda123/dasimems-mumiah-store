@@ -1,16 +1,34 @@
 import { Col } from "antd";
 import React, { useEffect, useState } from "react";
 import PaymentDetailsContent from "./inner/PaymentDetailsContent";
-import { FaRegCreditCard, FaRegUserCircle } from "react-icons/fa";
+import { FaPlus, FaRegCreditCard, FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineCreditCard } from "react-icons/ai";
 import { RiDirectionLine } from "react-icons/ri";
 import { BiWorld } from "react-icons/bi";
 import FormInputField from "../form/FormInputField";
 import SubmitBtn from "../form/SubmitBtn";
-import { GetData } from "../../utils/helpers";
+import { AuthData, GetData } from "../../utils/helpers";
 import { useCallback } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import Modal from "../common/Modal";
+import { MdClose } from "react-icons/md";
+import { toast } from "react-toastify";
+
+  import { usePaystackPayment } from 'react-paystack';
+
+  
+
+  const onSuccess = (reference) => {
+  // Implementation for whatever you want to do with reference and after success call.
+  console.log(reference);
+  };
+
+  // you can call this function anything
+  const onClose = () => {
+  // implementation for  whatever you want to do when the Paystack dialog closed.
+  console.log('closed')
+  }
 
 const PaymentDetails = () => {
 
@@ -27,29 +45,96 @@ const PaymentDetails = () => {
     mode: "onChange"
   })
   const [allAddress, setAllAddress] = useState([])
+  const [activeAddress, setActiveAddress] = useState("");
   const [activeContent, setActiveContent] = useState("contact");
   const [countryList, setCountryList] = useState([]);
+  const [openContent, setOpenContent] = useState(true);
   const [stateList, setStateList] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [modalOpened, setModalOpened] = useState(false)
+
+  const config = {
+      reference: (new Date()).getTime().toString(),
+      email:  localStorage.getItem("userEmail"),
+      amount: 20000, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+      publicKey: 'pk_test_dsdfghuytfd2345678gvxxxxxxxxxx',
+  };
+
+  const initializePayment = usePaystackPayment(config);
   
   const name = localStorage.getItem("userName");
+
+  const proceedToPayment = useCallback(()=>{
+
+    initializePayment(onSuccess, onClose)
+
+
+
+  }, [activeAddress])
 
   const submitAddress = useCallback((data)=>{
     setLoading(true)
 
+    var newPhoneNumber = data.phone;
+
+    newPhoneNumber = data.phone.replace("+234", "234");
+    console.log(newPhoneNumber);
+    var sentData = {...data, phone: newPhoneNumber}
+
+    if(activeAddress !== ""){
+
+      proceedToPayment();
+
+    }else{
+
+      AuthData("/addresses", sentData).then((res)=>{
+        setAllAddress(prevAddress => ([...prevAddress, res.data]));
+        setActiveAddress(res.data.id);
+  
+        toast.success("Address saved successfully", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+        proceedToPayment();
+  
+      }).catch((err)=>{
+  
+        toast.error(err?.response?.data?.message? err?.response?.data?.message :"Something went wrong while saving your address", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+  
+      }).finally(()=>{
+        setLoading(false)
+      })
+    }
 
 
-  }, [])
+
+  }, [activeAddress])
 
   useEffect(()=>{
 
     GetData("/addresses").then((res)=>{
 
-      setAllAddress(res.data);
+      setAllAddress(res.data.addresses);
 
-      if(res.data.length > 0){
+      if(res.data.addresses.length > 0){
 
-        reset(res.data[0]);
+        reset(res.data.addresses[0]);
+        setActiveAddress(res.data.addresses[0].id)
 
       }
 
@@ -86,11 +171,15 @@ const PaymentDetails = () => {
         className="payment-details"
       >
         <PaymentDetailsContent
-          contentOpen={true}
+          contentOpen={openContent}
           icon={<FaRegUserCircle />}
           title="Contact Info"
           subtitleOne={name}
           subtitleTwo={getValues("phone")}
+          buttonActionText={allAddress.length > 0?"Change Address": null}
+          buttonAction={()=>{
+            setModalOpened(true)
+          }}
         >
           <div className="inner-details-header flex-container space-between align-center">
             <h2 className="title">Contact Information</h2>
@@ -160,7 +249,7 @@ const PaymentDetails = () => {
         </PaymentDetailsContent>
 
         <PaymentDetailsContent
-          contentOpen={true}
+          contentOpen={openContent}
           icon={<RiDirectionLine />}
           title="Shipping Address"
           subtitleOne={getValues("address")}
@@ -257,7 +346,7 @@ const PaymentDetails = () => {
             <SubmitBtn
               loading={loading}
               className="submit-payment-details half-width"
-              text="Proceed to payment"
+              text="Save & Proceed to payment"
               onClick={handleSubmit(submitAddress)}
             />
 
@@ -271,6 +360,70 @@ const PaymentDetails = () => {
           </div>
         </PaymentDetailsContent>
 
+        <Modal modalOpened={modalOpened} className="change-address-modal">
+          <div className="change-address-container">
+
+            <button className="cancel-change-address-container" onCLick={()=>{setModalOpened(false)}}>
+              <MdClose />
+            </button>
+
+            <h2>Choose Your preferred address</h2>
+
+            <div className="change-address-form">
+
+              {allAddress.map((address, index)=>{
+                var {address: addressName, id} = address;
+                return(
+                  <FormInputField 
+                    label={
+                    
+                    <>
+                    
+                      <p>Address {index + 1}</p>
+                      <p className="address-name">{addressName}</p>
+                      
+                    </>
+                  
+                  }
+                  type="radio"
+                  reversed
+                  row
+                  checked={activeAddress === id}
+                  name="address"
+                  onChange={()=>{
+                    reset(address);
+                    setActiveAddress(id);
+                    setModalOpened(false)
+                  }}
+
+                  />
+                )
+              })}
+
+            </div>
+
+            <div className="change-address-action flex-container align-center justify-center">
+              <button onClick={()=>{
+                setOpenContent(true)
+                setModalOpened(false)
+                setActiveAddress("")
+                reset({
+                  phone: "",
+                  email: localStorage.getItem("userEmail")? localStorage.getItem("userEmail") : "",
+                  country: "",
+                  state: "",
+                  city: "",
+                  address: "",
+                  optional_address: ""
+                })
+              }}>
+                <span className="text">Add new address </span>
+                <span className="icon"><FaPlus /> </span>
+              </button>
+            </div>
+
+          </div>
+        </Modal>
         
       </Col>
     </>

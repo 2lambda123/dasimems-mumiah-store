@@ -27,6 +27,7 @@ const Details = () => {
 
       item
         .then((res) => {
+          
           toast.success(res?.data?.message, {
             position: "top-right",
             autoClose: 3000,

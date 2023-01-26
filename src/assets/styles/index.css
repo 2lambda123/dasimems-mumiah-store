@@ -440,6 +440,51 @@ body {
   ===== FOOTER STYLES =====
   *********************/
 }
+body .change-address-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+body .change-address-modal .change-address-container {
+  background: white;
+  border-radius: 7px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-top: 3px;
+  position: relative;
+}
+body .change-address-modal .change-address-container .cancel-change-address-container {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+body .change-address-modal .change-address-container h2 {
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: 500;
+}
+body .change-address-modal .change-address-container .change-address-action {
+  margin-top: 20px;
+}
+body .change-address-modal .change-address-container .change-address-action button {
+  padding: 10px 20px;
+  background: #172133;
+  border: none;
+  color: white;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  font-size: 0.9rem;
+}
 body .nav-bar {
   width: 100%;
   height: 80px;

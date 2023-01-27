@@ -34,7 +34,7 @@ function ProductCard({ image, name, price, category: {name: categoryName}, id, s
             {/* <del>400</del> */}
           </p>
 
-          <p className="discount">14% off</p>
+          {/* <p className="discount">14% off</p> */}
           
         </div>
       </div>

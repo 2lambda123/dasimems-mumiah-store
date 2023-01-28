@@ -3,31 +3,21 @@ import { Row, Col } from "antd";
 import { Outlet } from "react-router-dom";
 
 import { AccountHeaderNav, Error, Loading } from "../components";
-import { GetData } from "../utils/helpers";
+import { useProductsContext } from "../contexts/products_context";
 
 const Account = () => {
-  const [data, setData] = useState([]);
-  const [dataLoading, setDataLoading] = useState(true);
-  const [dataFetchErr, setDataFetchErr] = useState(false);
+  const {
+    user_details: data,
+    user_details_loading: loading,
+    user_details_error: error,
+  } = useProductsContext();
 
-  useEffect(() => {
-    const item = GetData("/account");
-    item
-      .then((res) => {
-        setData(res?.data);
-        setDataLoading(false)
-      })
-      .catch((err) => {
-        setDataFetchErr(true)
-      });
-  }, []);
-
-  if(dataLoading){
-    return <Loading />
+  if (loading) {
+    return <Loading />;
   }
 
-  if(dataFetchErr){
-    return <Error />
+  if (error) {
+    return <Error />;
   }
 
   return (

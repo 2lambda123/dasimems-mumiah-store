@@ -3,10 +3,26 @@ import { accountLinks, routeName } from "../../../utils/constant";
 import { Link, useNavigate } from "react-router-dom";
 import { RiLogoutCircleLine } from "react-icons/ri";
 
+import Error from "../../Error";
+import Loading from "../../Loading";
+import { useProductsContext } from "../../../contexts/products_context";
+
 const AccountLinks = () => {
   const navigate = useNavigate();
-  const name = localStorage.getItem("userName");
-  const email = localStorage.getItem("userEmail");
+
+  const {
+    user_details: data,
+    user_details_loading: loading,
+    user_details_error: error,
+  } = useProductsContext();
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <Error />;
+  }
 
   return (
     <div className="pop-up account-pop-up">
@@ -14,8 +30,8 @@ const AccountLinks = () => {
         <div className="account-image"></div>
 
         <div className="account-details">
-          <h2>{name}</h2>
-          <p>{email}</p>
+          <h2>{data.name}</h2>
+          <p>{data.email}</p>
         </div>
       </div>
 

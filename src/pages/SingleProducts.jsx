@@ -59,20 +59,20 @@ function SingleProducts(props) {
     {
       label: "Home",
       link: routeName.home,
-      type: "link"
+      type: "link",
     },
 
     {
       label: "Products",
       link: routeName.products,
-      type: "link"
+      type: "link",
     },
 
     {
       label: product?.name,
-      type: "text"
-    }
-  ]
+      type: "text",
+    },
+  ];
 
   if (loading) {
     return <Loading />;

@@ -2214,6 +2214,10 @@ body .main-body .checkout .checkout-content .checkout-inner-content .order-summa
   padding-left: 40px;
   border-left: 1px solid rgba(0, 0, 0, 0.2);
 }
+body .main-body .checkout .checkout-content .checkout-inner-content .order-summary .order-summary-title {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
 @media only screen and (max-width: 991px) {
   body .main-body .checkout .checkout-content .checkout-inner-content .order-summary {
     border-left: none;

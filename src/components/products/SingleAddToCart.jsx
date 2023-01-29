@@ -64,9 +64,9 @@ function SingleAddToCart({ product }) {
         Add to cart
       </Link>
 
-      <Button className="add-to-favorite">
+      {/* <Button className="add-to-favorite">
         <BsHeart />
-      </Button>
+      </Button> */}
     </>
   );
 }

@@ -1863,6 +1863,35 @@ body{
 
                 .single-product-details{
 
+                    .extra-details{
+
+                            &:not(:first-child){
+                                margin-top: 10px;
+                            }
+                            
+                            .title{
+                                width: 150px;
+                                font-weight: 600;
+
+                            }
+
+                            .value{
+
+                                .inner-value{
+                                    font-weight: 600;
+                                    &:not(:first-child){
+                                        margin-left: 10px;
+                                    }
+                                }
+
+                            }
+
+                            .unavailable{
+                                color: red;
+                            }
+
+                        }
+
                     p{
                         margin: 0px;
                         padding: 0px;
@@ -1906,6 +1935,7 @@ body{
 
                             .product-size{
                                 width: 100%;
+                                margin-top: 20px;
 
 
                                 .title{
@@ -2025,30 +2055,7 @@ body{
                         padding: 40px 0px;
                         border-top: 1px solid rgba(0, 0, 0, .2);
 
-                        .extra-details{
-
-                            &:not(:first-child){
-                                margin-top: 10px;
-                            }
-                            
-                            .title{
-                                width: 150px;
-                                font-weight: 600;
-
-                            }
-
-                            .value{
-
-                                .inner-value{
-                                    font-weight: 600;
-                                    &:not(:first-child){
-                                        margin-left: 10px;
-                                    }
-                                }
-
-                            }
-
-                        }
+                        
                     }
 
                 }

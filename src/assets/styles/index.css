@@ -1848,6 +1848,22 @@ body .main-body .single-product-items .product-content .single-product-image .sm
     display: none;
   }
 }
+body .main-body .single-product-items .product-content .single-product-details .extra-details:not(:first-child) {
+  margin-top: 10px;
+}
+body .main-body .single-product-items .product-content .single-product-details .extra-details .title {
+  width: 150px;
+  font-weight: 600;
+}
+body .main-body .single-product-items .product-content .single-product-details .extra-details .value .inner-value {
+  font-weight: 600;
+}
+body .main-body .single-product-items .product-content .single-product-details .extra-details .value .inner-value:not(:first-child) {
+  margin-left: 10px;
+}
+body .main-body .single-product-items .product-content .single-product-details .extra-details .unavailable {
+  color: red;
+}
 body .main-body .single-product-items .product-content .single-product-details p {
   margin: 0px;
   padding: 0px;
@@ -1875,6 +1891,7 @@ body .main-body .single-product-items .product-content .single-product-details .
 }
 body .main-body .single-product-items .product-content .single-product-details .single-product-actions .quantity-container .product-size {
   width: 100%;
+  margin-top: 20px;
 }
 body .main-body .single-product-items .product-content .single-product-details .single-product-actions .quantity-container .product-size .title {
   font-weight: bold;
@@ -1968,19 +1985,6 @@ body .main-body .single-product-items .product-content .single-product-details .
   margin-top: 50px;
   padding: 40px 0px;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
-}
-body .main-body .single-product-items .product-content .single-product-details .extra-details-container .extra-details:not(:first-child) {
-  margin-top: 10px;
-}
-body .main-body .single-product-items .product-content .single-product-details .extra-details-container .extra-details .title {
-  width: 150px;
-  font-weight: 600;
-}
-body .main-body .single-product-items .product-content .single-product-details .extra-details-container .extra-details .value .inner-value {
-  font-weight: 600;
-}
-body .main-body .single-product-items .product-content .single-product-details .extra-details-container .extra-details .value .inner-value:not(:first-child) {
-  margin-left: 10px;
 }
 body .main-body .single-product-items .full-details {
   margin: 30px 0px;

@@ -47,6 +47,11 @@ const ProductContent = ({ details }) => {
                 : `${product?.description.substring(0, 180)}..`}{" "}
             </p>
 
+            <div className="extra-details flex-container">
+                <p className="title">Availability:</p>
+                <p className={`Value ${product?.stock < 1? "unavailable" : ""}`}>{product?.stock > 0? "In stock" : "Out of stock"}</p>
+              </div>
+
             <div className="single-product-actions  flex-container">
               <div className="quantity-container flex-container wrap space-between">
                 {product?.stock > 0 && <SingleAddToCart product={product} />}
@@ -54,12 +59,9 @@ const ProductContent = ({ details }) => {
             </div>
 
             <div className="extra-details-container">
-              <div className="extra-details flex-container">
-                <p className="title">Availability:</p>
-                <p className="Value">{product?.stock} In stock</p>
-              </div>
+              
 
-              <div className="extra-details flex-container">
+              {/* <div className="extra-details flex-container">
                 <p className="title">Available sizes:</p>
                 <p className="value">
                   {product?.sizes.map((size, index) => {
@@ -70,7 +72,8 @@ const ProductContent = ({ details }) => {
                     );
                   })}
                 </p>
-              </div>
+              </div> */}
+              
             </div>
           </Col>
         </Row>

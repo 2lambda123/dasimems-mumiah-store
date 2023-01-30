@@ -28,7 +28,7 @@ const Checkout = () => {
 
         <Row justify="center" className="checkout-content">
           <Col span={21} className="checkout-inner-content">
-            <Row justify="space-between">
+            <Row justify="space-between" className="align-start">
               <PaymentDetails />
               <CheckoutSummary />
             </Row>

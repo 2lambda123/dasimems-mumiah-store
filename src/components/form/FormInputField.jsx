@@ -18,6 +18,7 @@ const FormInputField = React.forwardRef(
       id,
       selectOptions,
       value,
+      defaultValue,
       ...props
     },
     ref
@@ -79,7 +80,7 @@ const FormInputField = React.forwardRef(
                     ref={ref}
                     onChange={onChange}
                     {...props}
-                    defaultValue=""
+                    defaultValue={defaultValue? defaultValue: ""}
 
                     style={{
                       width: "100%",

@@ -291,6 +291,7 @@ const PaymentDetails = () => {
                 })}
                 label="State"
                 type="select"
+                defaultValue={getValues("state")}
                 selectOptions={stateList.map((country) => ({
                   label: country?.name,
                   value: country?.name,

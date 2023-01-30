@@ -84,11 +84,12 @@ function Navbar(props) {
                 className="side-link"
                 onClick={() => {
                   if (!localStorage.getItem("user_token")) {
-                    clearCart();
+                    // clearCart();
                     navigate(routeName.login);
                     return;
                   }
                   setAccountPop((prevState) => !prevState);
+                  setCartPop(false)
                 }}
               >
                 {localStorage.getItem("user_token") ? (
@@ -104,6 +105,7 @@ function Navbar(props) {
                 className="side-link desktop-side-link"
                 onClick={() => {
                   setCartPop((prevState) => !prevState);
+                  setAccountPop(false)
                 }}
               >
                 <AiOutlineShoppingCart />

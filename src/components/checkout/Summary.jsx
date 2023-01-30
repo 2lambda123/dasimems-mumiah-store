@@ -16,7 +16,7 @@ const Summary = () => {
         xs={{ span: 24, order: 1 }}
         className="order-summary"
       >
-        <h2 className="order-summary-title">Your Orders</h2>
+        <h2 className="order-summary-title">Your Items</h2>
         {cart.map((product, index) => (
           <OrderProductDetails type="cart" product={product} key={index} />
         ))}

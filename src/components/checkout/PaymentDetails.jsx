@@ -41,7 +41,7 @@ const PaymentDetails = () => {
       email: localStorage.getItem("userEmail")
         ? localStorage.getItem("userEmail")
         : "",
-      country: "",
+      country: "Nigeria",
       state: "",
       city: "",
       address: "",
@@ -148,13 +148,13 @@ const PaymentDetails = () => {
 
   useEffect(() => {
     const data = countryList.filter(
-      (country) => country.name === getValues("country")
+      (country) => country.name.toLowerCase() === "nigeria"
     );
 
     if (Array.isArray(data) && data.length > 0) {
       setStateList(data[0].states);
     }
-  }, []);
+  }, [countryList]);
 
   return (
     <>
@@ -181,45 +181,53 @@ const PaymentDetails = () => {
           </div>
 
           <div className="inner-details-form">
-            <FormInputField
-              {...register("phone", {
-                required: "Your phone number is required",
-                pattern: {
-                  value:
-                    /(^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$)/,
-                  message: "Invalid phone number detected",
-                },
-              })}
-              label="Your Phone Number"
-              type="tel"
-              errors={
-                errors.phone && (
-                  <p style={{ color: "red", fontSize: 12 }}>
-                    {errors.phone.message}
-                  </p>
-                )
-              }
-            />
 
-            <FormInputField
-              {...register("email", {
-                required: "Your email address is required",
-                pattern: {
-                  value:
-                    /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/,
-                  message: "Invalid email detected",
-                },
-              })}
-              label="Email address"
-              type="email"
-              errors={
-                errors.email && (
-                  <p style={{ color: "red", fontSize: 12 }}>
-                    {errors.email.message}
-                  </p>
-                )
-              }
-            />
+            
+
+            <div className="inner-details-form-split flex-container space-between align-center wrap">
+              <FormInputField
+                {...register("phone", {
+                  required: "Your phone number is required",
+                  pattern: {
+                    value:
+                      /(^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$)/,
+                    message: "Invalid phone number detected",
+                  },
+                })}
+                label="Your Phone Number"
+                type="tel"
+                errors={
+                  errors.phone && (
+                    <p style={{ color: "red", fontSize: 12 }}>
+                      {errors.phone.message}
+                    </p>
+                  )
+                }
+                className="half-width"
+              />
+
+              <FormInputField
+                {...register("email", {
+                  required: "Your email address is required",
+                  pattern: {
+                    value:
+                      /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/,
+                    message: "Invalid email detected",
+                  },
+                })}
+                label="Email address"
+                type="email"
+                errors={
+                  errors.email && (
+                    <p style={{ color: "red", fontSize: 12 }}>
+                      {errors.email.message}
+                    </p>
+                  )
+                }
+                className="half-width"
+              />
+
+            </div>
           </div>
 
           {/* <div className="inner-details-form-action flex-container align-center space-between wrap">
@@ -248,7 +256,7 @@ const PaymentDetails = () => {
           subtitleOne={getValues("address")}
         >
           <div className="inner-details-form">
-            <FormInputField
+            {/* <FormInputField
               {...register("country", {
                 required: "Please choose a country",
                 onChange: (e) => {
@@ -274,7 +282,7 @@ const PaymentDetails = () => {
                   </p>
                 )
               }
-            />
+            /> */}
 
             <div className="inner-details-form-split flex-container space-between align-center wrap">
               <FormInputField

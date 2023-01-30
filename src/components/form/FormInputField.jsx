@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, Select } from "antd";
 import React, { useCallback, useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -68,21 +68,40 @@ const FormInputField = React.forwardRef(
 
 
               {type === "select"? (
-                <select
-                  id={id}
-                  name={name}
-                  ref={ref}
-                  onChange={onChange}
-                  {...props}
-                >
-                  <option value="">--- Choose ---</option>
-                  {selectOptions.filter(opt => opt.value && opt.label).map((options, index) => {
-                    var {value, label} = options
-                    return(
-                      <option key={index} value={value}>{label}</option>
-                    )
-                  })}
-                </select>
+
+                <>
+
+                  <Select
+                    id={id}
+                    name={name}
+                    ref={ref}
+                    onChange={onChange}
+                    {...props}
+                    defaultValue=""
+
+                    style={{
+                      width: "100%",
+                    }}
+                    options={[{label: "--- Choose ---", value:""}, ...selectOptions]}
+                  />
+
+                  {/* <select
+                    id={id}
+                    name={name}
+                    ref={ref}
+                    onChange={onChange}
+                    {...props}
+                  >
+                    <option value="">--- Choose ---</option>
+                    {selectOptions.filter(opt => opt.value && opt.label).map((options, index) => {
+                      var {value, label} = options
+                      return(
+                        <option key={index} value={value}>{label}</option>
+                      )
+                    })}
+                  </select> */}
+                
+                </>
               ) : 
               (
                 <input

@@ -1,10 +1,11 @@
 import { Col, Row } from "antd";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { DisplayBanner, FormInputField, SubmitBtn } from "../components";
-import { images } from "../utils/constant";
+import { images, routeName } from "../utils/constant";
 import { AuthData } from "../utils/helpers";
 
 const ResetPassword = () => {
@@ -90,7 +91,12 @@ const ResetPassword = () => {
                 placeholder="Enter your email"
                 label="Password Reset Email"
                 type="email"
+                className="full-width"
               />
+
+              <div className="login-extra flex-container align-center justify-end full-width">
+                  <Link to={routeName.login}>Remember Password?</Link>
+                </div>
 
               <SubmitBtn
                 loading={loading}

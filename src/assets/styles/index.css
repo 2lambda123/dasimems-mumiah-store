@@ -426,6 +426,11 @@ button {
   margin-top: 0px;
 }
 
+.full-width {
+  width: 100%;
+  margin-top: 0px;
+}
+
 body {
   /********************
   ===== NAV BAR STYLES =====

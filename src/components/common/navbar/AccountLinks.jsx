@@ -27,7 +27,7 @@ const AccountLinks = () => {
   return (
     <div className="pop-up account-pop-up">
       <div className="account-pop-up-header flex-container align-center justify-start">
-        <div className="account-image"></div>
+        {/* <div className="account-image"></div> */}
 
         <div className="account-details">
           <h2>{data.name}</h2>

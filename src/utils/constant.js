@@ -43,10 +43,10 @@ export const accountHeaderLinks = [
         link: `${routeName.account}`
     },
 
-    {
-        label: "Wishlist",
-        link: `${routeName.account}/saved`
-    },
+    // {
+    //     label: "Wishlist",
+    //     link: `${routeName.account}/saved`
+    // },
 
     {
         label: "My order",
@@ -58,10 +58,10 @@ export const accountHeaderLinks = [
         link: `${routeName.account}/password`
     },
 
-    {
-        label: "Change billing",
-        link: `${routeName.account}/billing`
-    },
+    // {
+    //     label: "Change billing",
+    //     link: `${routeName.account}/billing`
+    // },
 ]
 
 export const contacts = {
@@ -215,12 +215,12 @@ export const accountLinks = [
     },
 
 
-    {
-        label: "Wishlist",
-        id: 3,
-        link: `${routeName.account}/saved`,
-        icon: <FiHeart />
-    },
+    // {
+    //     label: "Wishlist",
+    //     id: 3,
+    //     link: `${routeName.account}/saved`,
+    //     icon: <FiHeart />
+    // },
 
     {
         label: "Help",

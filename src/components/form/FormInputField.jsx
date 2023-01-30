@@ -17,6 +17,7 @@ const FormInputField = React.forwardRef(
       name,
       id,
       selectOptions,
+      value,
       ...props
     },
     ref
@@ -74,6 +75,7 @@ const FormInputField = React.forwardRef(
                   <Select
                     id={id}
                     name={name}
+                    className="select"
                     ref={ref}
                     onChange={onChange}
                     {...props}

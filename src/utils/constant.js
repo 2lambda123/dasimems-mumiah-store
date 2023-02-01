@@ -336,6 +336,13 @@ export const cartProducts = [
     }
 ]
 
+export const categoryColors = [
+    "#F5F3E0",
+    "#F4E9E9",
+    "#EFF6FF",
+
+]
+
 export const categories = [
 
     {

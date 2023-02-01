@@ -1,13 +1,15 @@
 import React from "react";
-import { categories } from "../../utils/constant";
 import { Row, Col, Button } from "antd";
 import { Link } from "react-router-dom";
 import SliderAnimation from "../common/SliderAnimation";
 import { useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { useProductsContext } from "../../contexts/products_context";
+import { categoryColors, routeName } from "../../utils/constant";
 
 const Categories = () => {
   var [slideRef, setSliderRef] = useState("");
+  const {category: categories} = useProductsContext();
 
   const nextSlide = () => {
     slideRef.slickNext();
@@ -41,7 +43,10 @@ const Categories = () => {
           className="categories-content"
         >
           {categories.map((cat, index) => {
-            var { image, colorScheme, smallText, bigText, link } = cat;
+            var { name, latest } = cat;
+            var {image} = latest;
+            var arrNum = (index % categoryColors.length)
+            var colorScheme = categoryColors[arrNum]
 
             return (
               <div key={index} className="">
@@ -50,19 +55,19 @@ const Categories = () => {
                   style={{ background: colorScheme }}
                 >
                   <div className="category-card-details">
-                    <p className="category-card-details-subtitle">
+                    {/* <p className="category-card-details-subtitle">
                       {smallText}
-                    </p>
+                    </p> */}
 
-                    <h1 className="category-card-details-title">{bigText}</h1>
+                    <h1 className="category-card-details-title">{name}</h1>
 
-                    <Link className="category-card-details-link" to={link}>
+                    <Link className="category-card-details-link" to={`${routeName.products}/${name}`}>
                       Show me all
                     </Link>
                   </div>
 
                   <div className="category-card-image">
-                    <img src={image} alt={smallText} />
+                    <img src={image} alt={name} />
                   </div>
                 </div>
               </div>

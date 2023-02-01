@@ -8,7 +8,7 @@ const Loader = () => {
         <>
 
             <section className="loader-container">
-                <div class="content">
+                <div className="content">
                     <h2>Mumiah</h2>
                     <h2>Mumiah</h2>
                 </div>

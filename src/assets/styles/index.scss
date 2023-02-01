@@ -1221,12 +1221,13 @@ body{
                         -moz-border-radius: 20px;
                         -ms-border-radius: 20px;
                         -o-border-radius: 20px;
-                        padding: 30px;
+                        padding: 0px 30px;
                         // border: 1px solid red;
                         display: flex;
                         flex-direction: row;
                         width: 90%;
-                        height: 250px;
+                        height: 170px;
+                        flex-shrink: 0;
 
                         @media only screen and (max-width: 737px){
                             width: 100%;

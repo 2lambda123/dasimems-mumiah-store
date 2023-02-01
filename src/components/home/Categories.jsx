@@ -13,7 +13,6 @@ const Categories = () => {
 
   const nextSlide = () => {
     slideRef.slickNext();
-    console.log("next");
   };
 
   const prevSlide = () => {

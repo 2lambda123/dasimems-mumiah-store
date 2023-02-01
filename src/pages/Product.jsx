@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Filter, ProductHeader, ProductList } from "../components";
 import { Col, Row } from "antd";
 import { useFilterContext } from "../contexts/filter_context";
+import { useParams } from "react-router-dom";
 
 function Product(props) {
-  const { filterOptionState } = useFilterContext();
+  const { filterOptionState, updateFilters } = useFilterContext();
+  const {category} = useParams();
+
+  useEffect(()=>{
+
+    if(category){
+
+      updateFilters({
+        target: {
+          name: "category",
+          textContent: category,
+        }
+      })
+
+    }
+
+  }, [category])
+
   return (
     <div>
       <ProductHeader />

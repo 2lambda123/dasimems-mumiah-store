@@ -54,7 +54,10 @@ function App(props) {
             <Route path={routeName.home} element={<Home />} />
             <Route path={routeName.about} element={<About />} />
             <Route path={routeName.contact} element={<Contact />} />
-            <Route path={routeName.products} element={<Product />} />
+            <Route path={routeName.products}>
+              <Route index  element={<Product />} />
+              <Route path=":category"  element={<Product />} />
+            </Route>
             <Route path={`${routeName.products}/:id`} element={<SingleProducts />} />
             <Route path={routeName.cart}element={<CartPage />} />
             {/* <Route path={routeName.checkout}element={<Checkout />} /> */}

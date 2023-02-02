@@ -17,7 +17,6 @@ const FormInputField = React.forwardRef(
       name,
       id,
       selectOptions,
-      value,
       defaultValue,
       ...props
     },
@@ -53,6 +52,7 @@ const FormInputField = React.forwardRef(
       setInputType(newType)
 
     }, [inputType])
+
 
     return (
 

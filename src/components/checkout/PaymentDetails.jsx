@@ -1,6 +1,7 @@
 import { Col } from "antd";
 import React, { useEffect, useState } from "react";
 import PaymentDetailsContent from "./inner/PaymentDetailsContent";
+import {BsFillExclamationTriangleFill} from "react-icons/bs"
 import { FaPlus, FaRegCreditCard, FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineCreditCard } from "react-icons/ai";
 import { RiDirectionLine } from "react-icons/ri";
@@ -15,25 +16,13 @@ import Modal from "../common/Modal";
 import { MdClose } from "react-icons/md";
 import { toast } from "react-toastify";
 
-import { usePaystackPayment } from "react-paystack";
-
-const onSuccess = (reference) => {
-  // Implementation for whatever you want to do with reference and after success call.
-  console.log(reference);
-};
-
-// you can call this function anything
-const onClose = () => {
-  // implementation for  whatever you want to do when the Paystack dialog closed.
-  console.log("closed");
-};
-
 const PaymentDetails = () => {
   const {
     reset,
     register,
     handleSubmit,
-    formState: { errors },
+    setValue,
+    formState: { errors, isDirty },
     getValues,
   } = useForm({
     defaultValue: {
@@ -51,26 +40,22 @@ const PaymentDetails = () => {
   });
   const [allAddress, setAllAddress] = useState([]);
   const [activeAddress, setActiveAddress] = useState("");
+  const [activeAddressDetails, setActiveAddressDetails] = useState(null);
+  const [deliveryStation, setDeliveryStation] = useState([]);
+  const [activeDeliveryStation, setActiveDeliveryStation] = useState("");
+  const [deliveryFoundErr, setDeliveryFoundErr] = useState("")
   const [activeContent, setActiveContent] = useState("contact");
   const [countryList, setCountryList] = useState([]);
+  const [cityList, setCityList] = useState([]);
   const [openContent, setOpenContent] = useState(true);
   const [stateList, setStateList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
 
-  const config = {
-    reference: new Date().getTime().toString(),
-    email: localStorage.getItem("userEmail"),
-    amount: 20000, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
-    publicKey: "pk_test_dsdfghuytfd2345678gvxxxxxxxxxx",
-  };
-
-  const initializePayment = usePaystackPayment(config);
-
   const name = localStorage.getItem("userName");
 
   const proceedToPayment = useCallback(() => {
-    initializePayment(onSuccess, onClose);
+
   }, [activeAddress]);
 
   const submitAddress = useCallback(
@@ -80,63 +65,109 @@ const PaymentDetails = () => {
       var newPhoneNumber = data.phone;
 
       newPhoneNumber = data.phone.replace("+234", "234");
-      console.log(newPhoneNumber);
       var sentData = { ...data, phone: newPhoneNumber };
 
-      if (activeAddress !== "") {
-        proceedToPayment();
-      } else {
-        AuthData("/addresses", sentData)
-          .then((res) => {
-            setAllAddress((prevAddress) => [...prevAddress, res.data]);
-            setActiveAddress(res.data.id);
+      if(deliveryFoundErr === ""){
 
-            toast.success("Address saved successfully", {
-              position: "top-right",
-              autoClose: 3000,
-              hideProgressBar: true,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
-            });
-            proceedToPayment();
-          })
-          .catch((err) => {
-            toast.error(
-              err?.response?.data?.message
-                ? err?.response?.data?.message
-                : "Something went wrong while saving your address",
-              {
-                position: "top-right",
-                autoClose: 3000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-              }
-            );
-          })
-          .finally(() => {
-            setLoading(false);
-          });
+        if (activeAddress !== "") {
+          proceedToPayment();
+        } else {
+          console.log("address changed")
+          // AuthData("/addresses", sentData)
+          //   .then((res) => {
+          //     setAllAddress((prevAddress) => [...prevAddress, res.data]);
+          //     setActiveAddress(res?.data?.id);
+  
+          //     toast.success("Address saved successfully", {
+          //       position: "top-right",
+          //       autoClose: 3000,
+          //       hideProgressBar: true,
+          //       closeOnClick: true,
+          //       pauseOnHover: true,
+          //       draggable: true,
+          //       progress: undefined,
+          //       theme: "colored",
+          //     });
+          //     proceedToPayment();
+          //   })
+          //   .catch((err) => {
+          //     toast.error(
+          //       err?.response?.data?.message
+          //         ? err?.response?.data?.message
+          //         : "Something went wrong while saving your address",
+          //       {
+          //         position: "top-right",
+          //         autoClose: 3000,
+          //         hideProgressBar: true,
+          //         closeOnClick: true,
+          //         pauseOnHover: true,
+          //         draggable: true,
+          //         progress: undefined,
+          //         theme: "colored",
+          //       }
+          //     );
+          //   })
+          //   .finally(() => {
+          //     setLoading(false);
+          //   });
+
+        }
+      }else{
+        toast.error(
+          "Please choose a different address",
+          {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          }
+        );
+
+        setLoading(false)
       }
+
     },
-    [activeAddress]
-  );
+    [activeAddress, deliveryFoundErr, proceedToPayment]);
+
+  const checkAddress = useCallback(()=>{
+
+    var city = getValues("city").toLowerCase()
+    var state = getValues("state").toLowerCase().replace("state", "").trim();
+
+
+    var availableDelivery = deliveryStation.filter(delivery => delivery.city.toLowerCase() === city && delivery.state.toLowerCase() === state);
+
+    if(availableDelivery.length > 0){
+      setDeliveryFoundErr("")
+    }else{
+      setDeliveryFoundErr("Sorry We don't deliver to the chosen address");
+    }
+
+
+  }, [getValues, deliveryStation]);
 
   useEffect(() => {
+
     GetData("/addresses").then((res) => {
       setAllAddress(res.data.addresses);
 
       if (res.data.addresses.length > 0) {
         reset(res.data.addresses[0]);
+        setActiveAddressDetails(res.data.addresses[0]);
         setActiveAddress(res.data.addresses[0].id);
+        checkAddress();
       }
     });
+
+    GetData("/delivery_stations").then(res => {
+
+      setDeliveryStation(res?.data?.stations);
+      setCityList(res?.data?.stations.map(station => ({label: station?.city, value: station?.city})))
+    })
 
     axios
       .get("https://countriesnow.space/api/v0.1/countries/states")
@@ -144,7 +175,8 @@ const PaymentDetails = () => {
         var countries = res.data;
         setCountryList(countries.data);
       });
-  }, []);
+
+  }, [reset]);
 
   useEffect(() => {
     const data = countryList.filter(
@@ -155,6 +187,29 @@ const PaymentDetails = () => {
       setStateList(data[0].states);
     }
   }, [countryList]);
+
+  useEffect(()=>{
+
+    var {email, phone, country, state, city, address, id} = activeAddressDetails || {};
+    var newEmail = getValues("email");
+    var newPhone = getValues("phone");
+    var newCountry = getValues("country");
+    var newState = getValues("state");
+    var newCity = getValues("city");
+    var newAddress = getValues("address");
+
+    if(email !== newEmail || phone !== newPhone || country !== newCountry || state !== newState || city !== newCity || address !== newAddress){
+
+      setActiveAddress("");
+      
+    }else{
+      
+      setActiveAddress(id);
+    }
+
+  }, [isDirty, setValue, activeAddressDetails])
+
+  console.log(activeAddress)
 
   return (
     <>
@@ -284,6 +339,14 @@ const PaymentDetails = () => {
               }
             /> */}
 
+            {deliveryFoundErr !== "" && <p>
+
+              <span className="icon"><BsFillExclamationTriangleFill /></span>
+
+              <span className="text">{deliveryFoundErr}</span>
+              
+            </p>}
+
             <div className="inner-details-form-split flex-container space-between align-center wrap">
               <FormInputField
                 {...register("state", {
@@ -291,6 +354,12 @@ const PaymentDetails = () => {
                 })}
                 label="State"
                 type="select"
+                value={getValues("state")}
+                onChange={(e)=>{
+                  setValue('state', e, { shouldValidate: true })
+                  checkAddress();
+
+                }}
                 defaultValue={getValues("state")}
                 selectOptions={stateList.map((country) => ({
                   label: country?.name,
@@ -311,8 +380,15 @@ const PaymentDetails = () => {
                   required: "Please enter your city",
                 })}
                 label="City"
-                type="text"
+                type="select"
+                value={getValues("city")}
+                onChange={(e)=>{
+                  setValue('city', e, { shouldValidate: true })
+                  checkAddress();
+
+                }}
                 className="half-width"
+                selectOptions={cityList}
                 errors={
                   errors.city && (
                     <p style={{ color: "red", fontSize: 12 }}>
@@ -361,7 +437,7 @@ const PaymentDetails = () => {
           <div className="change-address-container">
             <button
               className="cancel-change-address-container"
-              onCLick={() => {
+              onClick={() => {
                 setModalOpened(false);
               }}
             >
@@ -382,12 +458,14 @@ const PaymentDetails = () => {
                       </>
                     }
                     type="radio"
+                    key={index}
                     reversed
                     row
                     checked={activeAddress === id}
                     name="address"
                     onChange={() => {
                       reset(address);
+                      setActiveAddressDetails(address);
                       setActiveAddress(id);
                       setModalOpened(false);
                     }}

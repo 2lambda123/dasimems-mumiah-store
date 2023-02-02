@@ -15,6 +15,9 @@ import { useForm } from "react-hook-form";
 import Modal from "../common/Modal";
 import { MdClose } from "react-icons/md";
 import { toast } from "react-toastify";
+import { useCartContext } from "../../contexts/cart_context";
+import { useNavigate } from "react-router-dom";
+import { routeName } from "../../utils/constant";
 
 const PaymentDetails = () => {
   const {
@@ -41,6 +44,7 @@ const PaymentDetails = () => {
   const [allAddress, setAllAddress] = useState([]);
   const [activeAddress, setActiveAddress] = useState("");
   const [activeAddressDetails, setActiveAddressDetails] = useState(null);
+  const [paymentDetails, setPaymentDetails] = useState(null);
   const [deliveryStation, setDeliveryStation] = useState([]);
   const [activeDeliveryStation, setActiveDeliveryStation] = useState("");
   const [deliveryFoundErr, setDeliveryFoundErr] = useState("")
@@ -51,12 +55,52 @@ const PaymentDetails = () => {
   const [stateList, setStateList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
+  const [paymentModalOpened, setPaymentModalOpened] = useState(false);
+  const {cart} = useCartContext();
+  const navigate = useNavigate();
 
   const name = localStorage.getItem("userName");
 
+
   const proceedToPayment = useCallback(() => {
 
-  }, [activeAddress]);
+    const data = {
+      delivery_station: activeDeliveryStation,
+      items: cart.map((cartItem => ({quantity: cartItem.amount, size: cartItem.sizes, product: cartItem.id})))
+    }
+
+    
+
+    AuthData(`/carts/${activeAddress}`, data).then((res) => {
+
+      setPaymentDetails(res.data.invoice);
+      setPaymentModalOpened(true)
+
+
+    }).catch((err)=>{
+
+      toast.error(
+          err?.response?.data?.message
+          ? err?.response?.data?.message
+          : "Something went wrong while processing your request",
+          {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          }
+        );
+
+
+    }).finally(()=>{
+      setLoading(false)
+    })
+
+  }, [activeDeliveryStation, activeAddress, cart]);
 
   const submitAddress = useCallback(
     (data) => {
@@ -72,44 +116,41 @@ const PaymentDetails = () => {
         if (activeAddress !== "") {
           proceedToPayment();
         } else {
-          console.log("address changed")
-          // AuthData("/addresses", sentData)
-          //   .then((res) => {
-          //     setAllAddress((prevAddress) => [...prevAddress, res.data]);
-          //     setActiveAddress(res?.data?.id);
+          AuthData("/addresses", sentData)
+            .then((res) => {
+              setAllAddress((prevAddress) => [...prevAddress, res.data]);
+              setActiveAddress(res?.data?.id);
   
-          //     toast.success("Address saved successfully", {
-          //       position: "top-right",
-          //       autoClose: 3000,
-          //       hideProgressBar: true,
-          //       closeOnClick: true,
-          //       pauseOnHover: true,
-          //       draggable: true,
-          //       progress: undefined,
-          //       theme: "colored",
-          //     });
-          //     proceedToPayment();
-          //   })
-          //   .catch((err) => {
-          //     toast.error(
-          //       err?.response?.data?.message
-          //         ? err?.response?.data?.message
-          //         : "Something went wrong while saving your address",
-          //       {
-          //         position: "top-right",
-          //         autoClose: 3000,
-          //         hideProgressBar: true,
-          //         closeOnClick: true,
-          //         pauseOnHover: true,
-          //         draggable: true,
-          //         progress: undefined,
-          //         theme: "colored",
-          //       }
-          //     );
-          //   })
-          //   .finally(() => {
-          //     setLoading(false);
-          //   });
+              toast.success("Address saved successfully", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+              });
+              proceedToPayment();
+            })
+            .catch((err) => {
+              toast.error(
+                err?.response?.data?.message
+                  ? err?.response?.data?.message
+                  : "Something went wrong while saving your address",
+                {
+                  position: "top-right",
+                  autoClose: 3000,
+                  hideProgressBar: true,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "colored",
+                }
+              );
+              setLoading(false)
+            })
 
         }
       }else{
@@ -142,13 +183,16 @@ const PaymentDetails = () => {
     var availableDelivery = deliveryStation.filter(delivery => delivery.city.toLowerCase() === city && delivery.state.toLowerCase() === state);
 
     if(availableDelivery.length > 0){
-      setDeliveryFoundErr("")
+      setDeliveryFoundErr("");
+      setActiveDeliveryStation(availableDelivery[0].id)
     }else{
+      setActiveDeliveryStation("");
       setDeliveryFoundErr("Sorry We don't deliver to the chosen address");
     }
 
 
   }, [getValues, deliveryStation]);
+
 
   useEffect(() => {
 
@@ -188,9 +232,7 @@ const PaymentDetails = () => {
     }
   }, [countryList]);
 
-  useEffect(()=>{
-
-    var {email, phone, country, state, city, address, id} = activeAddressDetails || {};
+  const checkIfValueChanged = useCallback(()=>{
     var newEmail = getValues("email");
     var newPhone = getValues("phone");
     var newCountry = getValues("country");
@@ -198,18 +240,51 @@ const PaymentDetails = () => {
     var newCity = getValues("city");
     var newAddress = getValues("address");
 
-    if(email !== newEmail || phone !== newPhone || country !== newCountry || state !== newState || city !== newCity || address !== newAddress){
+    
 
-      setActiveAddress("");
+    var secondAddress = allAddress.filter(address => address.email === newEmail && address.phone === newPhone && address.country === newCountry && address.state === newState && address.city === newCity && address.address === newAddress)
+
+    console.log(secondAddress)
+
+    if(secondAddress.length > 0){
+
       
+      setActiveAddress(secondAddress[0].id);
+
     }else{
+
       
-      setActiveAddress(id);
+      setActiveAddress("");
+
     }
 
-  }, [isDirty, setValue, activeAddressDetails])
+  }, [getValues, allAddress])
 
-  console.log(activeAddress)
+  // useEffect(()=>{
+
+  //   var {email, phone, country, state, city, address, id} = activeAddressDetails || {};
+  //   var newEmail = getValues("email");
+  //   var newPhone = getValues("phone");
+  //   var newCountry = getValues("country");
+  //   var newState = getValues("state");
+  //   var newCity = getValues("city");
+  //   var newAddress = getValues("address");
+
+  //   console.log(getValues())
+  //   console.log(activeAddressDetails)
+
+  //   if(email !== newEmail || phone !== newPhone || country !== newCountry || state !== newState || city !== newCity || address !== newAddress){
+
+  //     setActiveAddress("");
+      
+  //   }else{
+      
+  //     setActiveAddress(id);
+  //   }
+
+  // }, [getValues, activeAddressDetails])
+
+  // console.log(activeAddress)
 
   return (
     <>
@@ -251,6 +326,9 @@ const PaymentDetails = () => {
                 })}
                 label="Your Phone Number"
                 type="tel"
+                onChange={()=>{
+                  checkIfValueChanged();
+                }}
                 errors={
                   errors.phone && (
                     <p style={{ color: "red", fontSize: 12 }}>
@@ -272,6 +350,9 @@ const PaymentDetails = () => {
                 })}
                 label="Email address"
                 type="email"
+                onChange={()=>{
+                  checkIfValueChanged();
+                }}
                 errors={
                   errors.email && (
                     <p style={{ color: "red", fontSize: 12 }}>
@@ -358,6 +439,7 @@ const PaymentDetails = () => {
                 onChange={(e)=>{
                   setValue('state', e, { shouldValidate: true })
                   checkAddress();
+                  checkIfValueChanged();
 
                 }}
                 defaultValue={getValues("state")}
@@ -385,6 +467,7 @@ const PaymentDetails = () => {
                 onChange={(e)=>{
                   setValue('city', e, { shouldValidate: true })
                   checkAddress();
+                  checkIfValueChanged();
 
                 }}
                 className="half-width"
@@ -405,6 +488,9 @@ const PaymentDetails = () => {
                 required: "Please enter your address",
               })}
               type="text"
+              onChange={()=>{
+                checkIfValueChanged();
+              }}
               errors={
                 errors.address && (
                   <p style={{ color: "red", fontSize: 12 }}>
@@ -468,6 +554,7 @@ const PaymentDetails = () => {
                       setActiveAddressDetails(address);
                       setActiveAddress(id);
                       setModalOpened(false);
+                      checkAddress()
                     }}
                   />
                 );
@@ -500,6 +587,20 @@ const PaymentDetails = () => {
               </button>
             </div>
           </div>
+        </Modal>
+
+        <Modal modalOpened={paymentModalOpened} className="change-address-modal">
+
+          {paymentDetails && <div className="change-address-container flex-container column align-center">
+
+            <p>Please Click the below link to complete your payment</p>
+
+            <a onClick={()=>{
+              navigate(`${routeName.account}/order`)
+            }} href={paymentDetails?.checkout} className="button proceed-top-payment-link" target="_blank" rel="noreferrer">Proceed to make payment</a>
+
+          </div>}
+
         </Modal>
       </Col>
     </>

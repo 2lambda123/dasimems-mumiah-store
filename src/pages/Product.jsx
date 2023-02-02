@@ -19,6 +19,15 @@ function Product(props) {
         }
       })
 
+    }else{
+
+      updateFilters({
+        target: {
+          name: "category",
+          textContent: "all",
+        }
+      })
+
     }
 
   }, [category])

@@ -58,7 +58,7 @@ function App(props) {
               <Route index  element={<Product />} />
               <Route path=":category"  element={<Product />} />
             </Route>
-            <Route path={`${routeName.products}/:id`} element={<SingleProducts />} />
+            <Route path={`${routeName.products}/items/:id`} element={<SingleProducts />} />
             <Route path={routeName.cart}element={<CartPage />} />
             {/* <Route path={routeName.checkout}element={<Checkout />} /> */}
             <Route path={routeName.login} element={<Login />} />

@@ -7,7 +7,7 @@ function ProductCard({ image, name, price, category: {name: categoryName}, id, s
   return (
     <div key={id} className="col-sm-12 col-md-12 col-lg-12 d-flex">
       <div className="product">
-        <Link to={`/products/${id}`} className="img-prod">
+        <Link to={`/products/items/${id}`} className="img-prod">
           <img className="img-fluid product-image" src={image} alt={name} />
         </Link>
 

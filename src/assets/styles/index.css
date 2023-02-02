@@ -476,6 +476,28 @@ body .change-address-modal .change-address-container {
   height: auto;
   margin-top: 3px;
   position: relative;
+  max-height: 100vh;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+}
+body .change-address-modal .change-address-container::-webkit-scrollbar {
+  width: 5px;
+}
+body .change-address-modal .change-address-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+body .change-address-modal .change-address-container .proceed-top-payment-link {
+  padding: 10px 20px;
+  background: #172133;
+  border: none;
+  color: white;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  font-size: 0.9rem;
 }
 body .change-address-modal .change-address-container .cancel-change-address-container {
   position: absolute;

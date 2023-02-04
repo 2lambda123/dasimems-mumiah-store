@@ -7,6 +7,7 @@ import { useCartContext } from "../../contexts/cart_context";
 import { Button } from "antd";
 
 function SingleAddToCart({ product }) {
+  console.log(product)
   const { addToCart } = useCartContext();
   const { id, stock, sizes } = product;
 

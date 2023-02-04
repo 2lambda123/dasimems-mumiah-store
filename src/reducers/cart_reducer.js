@@ -10,11 +10,11 @@ import {
 
     if(action.type === ADD_TO_CART) {
       const {id, sizes, amount, product} = action.payload;
-      const tempItem = state.cart.find((i) => i.id === id + sizes)
+      const tempItem = state.cart.find((i) => i.id === id)
 
       if(tempItem) {
         const tempCart = state.cart.map((cartItem) =>{
-          if(cartItem.id === id + sizes){
+          if(cartItem.id === id){
             let newAmount = cartItem.amount + amount;
             if(newAmount > cartItem.max) {
               newAmount = cartItem.max
@@ -30,7 +30,7 @@ import {
       } 
       else {
         const newItem = {
-          id: id + sizes,
+          id: id,
           name: product.name,
           sizes,
           amount,

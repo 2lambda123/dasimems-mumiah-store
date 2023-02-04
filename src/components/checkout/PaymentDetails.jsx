@@ -16,19 +16,11 @@ import Modal from "../common/Modal";
 import { MdClose } from "react-icons/md";
 import { toast } from "react-toastify";
 import { useCartContext } from "../../contexts/cart_context";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { routeName } from "../../utils/constant";
 
 const PaymentDetails = () => {
-  const {
-    reset,
-    register,
-    handleSubmit,
-    setValue,
-    formState: { errors, isDirty },
-    getValues,
-  } = useForm({
-    defaultValue: {
+  const initialFormValue = {
       phone: "",
       email: localStorage.getItem("userEmail")
         ? localStorage.getItem("userEmail")
@@ -38,7 +30,16 @@ const PaymentDetails = () => {
       city: "",
       address: "",
       optional_address: "",
-    },
+    }
+  const {
+    reset,
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors, isDirty },
+    getValues,
+  } = useForm({
+    defaultValue: initialFormValue,
     mode: "onChange",
   });
   const [allAddress, setAllAddress] = useState([]);
@@ -59,6 +60,8 @@ const PaymentDetails = () => {
   const {cart} = useCartContext();
   const navigate = useNavigate();
 
+  console.log(cart)
+
   const name = localStorage.getItem("userName");
 
 
@@ -68,8 +71,6 @@ const PaymentDetails = () => {
       delivery_station: activeDeliveryStation,
       items: cart.map((cartItem => ({quantity: cartItem.amount, size: cartItem.sizes, product: cartItem.id})))
     }
-
-    
 
     AuthData(`/carts/${activeAddress}`, data).then((res) => {
 
@@ -285,6 +286,10 @@ const PaymentDetails = () => {
   // }, [getValues, activeAddressDetails])
 
   // console.log(activeAddress)
+
+  if(cart.length < 1){
+    return <Navigate to={routeName.products} replace />
+  }
 
   return (
     <>
@@ -567,17 +572,7 @@ const PaymentDetails = () => {
                   setOpenContent(true);
                   setModalOpened(false);
                   setActiveAddress("");
-                  reset({
-                    phone: "",
-                    email: localStorage.getItem("userEmail")
-                      ? localStorage.getItem("userEmail")
-                      : "",
-                    country: "",
-                    state: "",
-                    city: "",
-                    address: "",
-                    optional_address: "",
-                  });
+                  reset(initialFormValue);
                 }}
               >
                 <span className="text">Add new address </span>
@@ -596,7 +591,7 @@ const PaymentDetails = () => {
             <p>Please Click the below link to complete your payment</p>
 
             <a onClick={()=>{
-              navigate(`${routeName.account}/order`)
+              navigate(`${routeName.account}/orders`)
             }} href={paymentDetails?.checkout} className="button proceed-top-payment-link" target="_blank" rel="noreferrer">Proceed to make payment</a>
 
           </div>}

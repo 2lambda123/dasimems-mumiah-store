@@ -8,7 +8,7 @@ import { Row, Col, Button } from "antd";
 const Hero = () => {
   const navigate = useNavigate();
   return (
-    <Row justify="center" className="banner align-center">
+    <Row justify="center" className="banner">
       <Col span={21} className="banner-container">
         <div className="ellipse ellipse-one"></div>
         <div className="ellipse ellipse-two"></div>

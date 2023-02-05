@@ -10,9 +10,7 @@ const FadeAnimation = ({ children, className }) => {
     animationContainer.current.style.position = "relative";
 
     animationChildren.forEach((element, index) => {
-      element.style.position = "absolute";
       element.style.width = "100%";
-      // element.style.transition = "0.5s ease all";
 
       if (index !== 0) {
         element.style.opacity = "0";

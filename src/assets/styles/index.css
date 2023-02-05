@@ -2425,6 +2425,9 @@ body .main-body .account .account-container .account-contents .orders .order-con
 }
 body .main-body .account .account-container .account-contents .orders .order-contents .order-card .order-card-header .order-action .order-action-button {
   margin-top: 0px;
+  background: #43B97F;
+  color: black;
+  font-weight: 600;
 }
 body .main-body .account .account-container .account-contents .orders .order-contents .order-card .order-card-header .order-details-content .divider {
   font-weight: 800;

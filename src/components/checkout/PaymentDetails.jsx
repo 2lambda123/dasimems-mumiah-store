@@ -60,8 +60,6 @@ const PaymentDetails = () => {
   const {cart} = useCartContext();
   const navigate = useNavigate();
 
-  console.log(cart)
-
   const name = localStorage.getItem("userName");
 
 
@@ -245,7 +243,6 @@ const PaymentDetails = () => {
 
     var secondAddress = allAddress.filter(address => address.email === newEmail && address.phone === newPhone && address.country === newCountry && address.state === newState && address.city === newCity && address.address === newAddress)
 
-    console.log(secondAddress)
 
     if(secondAddress.length > 0){
 
@@ -261,31 +258,6 @@ const PaymentDetails = () => {
 
   }, [getValues, allAddress])
 
-  // useEffect(()=>{
-
-  //   var {email, phone, country, state, city, address, id} = activeAddressDetails || {};
-  //   var newEmail = getValues("email");
-  //   var newPhone = getValues("phone");
-  //   var newCountry = getValues("country");
-  //   var newState = getValues("state");
-  //   var newCity = getValues("city");
-  //   var newAddress = getValues("address");
-
-  //   console.log(getValues())
-  //   console.log(activeAddressDetails)
-
-  //   if(email !== newEmail || phone !== newPhone || country !== newCountry || state !== newState || city !== newCity || address !== newAddress){
-
-  //     setActiveAddress("");
-      
-  //   }else{
-      
-  //     setActiveAddress(id);
-  //   }
-
-  // }, [getValues, activeAddressDetails])
-
-  // console.log(activeAddress)
 
   if(cart.length < 1){
     return <Navigate to={routeName.products} replace />
@@ -425,7 +397,7 @@ const PaymentDetails = () => {
               }
             /> */}
 
-            {deliveryFoundErr !== "" && <p>
+            {deliveryFoundErr !== "" && <p className="err-text">
 
               <span className="icon"><BsFillExclamationTriangleFill /></span>
 

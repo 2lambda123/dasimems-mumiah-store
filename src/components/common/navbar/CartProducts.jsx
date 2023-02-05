@@ -34,9 +34,9 @@ const CartProducts = () => {
             {cart.map((product) => {
               var { id, image, name, sizes, price, amount } = product;
               return (
-                <div className="cart-item flex-container" key={id}>
+                <div className="cart-item flex-container align-center" key={id}>
                   <div className="cart-item-image">
-                    <img className="img-fluid" src={image}  alt={name}/>
+                    <img src={image}  alt={name}/>
                   </div>
 
                   <div className="cart-item-details flex-container space-between column">

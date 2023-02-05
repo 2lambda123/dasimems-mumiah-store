@@ -40,7 +40,7 @@ const SearchBar = ({setSearchOpened}) => {
             setSearchValue(e.target.value);
             }}
             onKeyPress={(e) => {
-            console.log(e);
+                
             }}
         />
 

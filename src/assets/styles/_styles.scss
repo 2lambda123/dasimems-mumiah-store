@@ -328,13 +328,19 @@ button{
 
     .cart-item-image{
         width: 90px;
-        height: 110px;
+        height: unset;
+        max-height: 110px !important;
         border-radius: 10px;
         background: rgba(0, 0, 0, .04);
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         -ms-border-radius: 10px;
         -o-border-radius: 10px;
+        overflow: hidden;
+
+        img{
+            width: 100%;
+        }
     }
 
     .cart-item-details{
@@ -534,4 +540,12 @@ button{
 .full-width{
     width: 100%;
     margin-top: 0px;
+}
+
+.err-text{
+    color: rgb(255, 20, 45);
+
+    span{
+        margin: 0px;
+    }
 }

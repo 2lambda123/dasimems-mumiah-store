@@ -32,7 +32,7 @@ const initialState = {
   single_product_loading: true,
   single_product_error: false,
   single_product: {},
-  user_details: [],
+  user_details: null,
   user_details_loading: true,
   user_details_error: false,
 };
@@ -92,7 +92,6 @@ export const ProductsProvider = ({ children }) => {
         },
       });
       const user_details = response.data;
-      console.log(user_details);
       dispatch({ type: USER_DETAILS_SUCCESS, payload: user_details });
     } catch (error) {
       dispatch({ type: USER_DETAILS_ERROR });

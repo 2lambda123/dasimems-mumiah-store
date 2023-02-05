@@ -108,7 +108,7 @@ const PaymentDetails = () => {
       var newPhoneNumber = data.phone;
 
       newPhoneNumber = data.phone.replace("+234", "234");
-      var sentData = { ...data, phone: newPhoneNumber };
+      var sentData = { ...data, phone: newPhoneNumber, country: "Nigeria" };
 
       if(deliveryFoundErr === ""){
 

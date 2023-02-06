@@ -175,9 +175,8 @@ const PaymentDetails = () => {
 
   const checkAddress = useCallback(()=>{
 
-    var city = getValues("city").toLowerCase()
-    var state = getValues("state").toLowerCase().replace("state", "").trim();
-
+    var city = getValues("city")?.toLowerCase()
+    var state = getValues("state")?.toLowerCase().replace("state", "").trim();
 
     var availableDelivery = deliveryStation.filter(delivery => delivery.city.toLowerCase() === city && delivery.state.toLowerCase() === state);
 
@@ -195,6 +194,17 @@ const PaymentDetails = () => {
 
   useEffect(() => {
 
+    
+
+    GetData("/delivery_stations").then(res => {
+
+      setDeliveryStation(res?.data?.stations);
+      setCityList(res?.data?.stations.map(station => ({label: station?.city, value: station?.city})))
+
+      
+      
+    })
+
     GetData("/addresses").then((res) => {
       setAllAddress(res.data.addresses);
 
@@ -202,15 +212,12 @@ const PaymentDetails = () => {
         reset(res.data.addresses[0]);
         setActiveAddressDetails(res.data.addresses[0]);
         setActiveAddress(res.data.addresses[0].id);
+        
         checkAddress();
+
       }
+      
     });
-
-    GetData("/delivery_stations").then(res => {
-
-      setDeliveryStation(res?.data?.stations);
-      setCityList(res?.data?.stations.map(station => ({label: station?.city, value: station?.city})))
-    })
 
     axios
       .get("https://countriesnow.space/api/v0.1/countries/states")
@@ -219,7 +226,14 @@ const PaymentDetails = () => {
         setCountryList(countries.data);
       });
 
-  }, [reset]);
+
+  }, [reset, getValues]);
+
+  useEffect(()=>{
+
+    checkAddress();
+
+  }, [deliveryStation])
 
   useEffect(() => {
     const data = countryList.filter(

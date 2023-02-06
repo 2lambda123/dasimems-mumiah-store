@@ -179,8 +179,6 @@ const PaymentDetails = () => {
     var city = getValues("city")?.toLowerCase()
     var state = getValues("state")?.toLowerCase().replace("state", "").trim();
 
-    console.log(state,city)
-    console.log(deliveryStation)
     var availableDelivery = deliveryStation.filter(delivery => delivery.city.toLowerCase() === city && delivery.state.toLowerCase() === state);
 
     if(availableDelivery.length > 0){

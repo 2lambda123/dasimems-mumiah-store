@@ -8,7 +8,7 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 const OrderProductDetails = ({ product, type, ...props }) => {
   const { removeItem } = useCartContext();
   return (
-    <div {...props} className="cart-item flex-container" key={product?.id}>
+    <div {...props} className="cart-item flex-container align-center" key={product?.id}>
       <div className="cart-item-image">
         <img className="img-fluid" src={product?.image} alt={product?.name} />
       </div>

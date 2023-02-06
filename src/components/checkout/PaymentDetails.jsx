@@ -63,14 +63,22 @@ const PaymentDetails = () => {
   const name = localStorage.getItem("userName");
 
 
-  const proceedToPayment = useCallback(() => {
+  const proceedToPayment = useCallback((id) => {
 
     const data = {
       delivery_station: activeDeliveryStation,
       items: cart.map((cartItem => ({quantity: cartItem.amount, size: cartItem.sizes, product: cartItem.id})))
     }
 
-    AuthData(`/carts/${activeAddress}`, data).then((res) => {
+    var address= activeAddress
+
+    if(id){
+
+      address= id;
+
+    }
+
+    AuthData(`/carts/${address}`, data).then((res) => {
 
       setPaymentDetails(res.data.invoice);
       setPaymentModalOpened(true)
@@ -100,7 +108,7 @@ const PaymentDetails = () => {
       setLoading(false)
     })
 
-  }, [activeDeliveryStation, activeAddress, cart]);
+  }, [activeDeliveryStation, activeAddress, cart, clearCart]);
 
   const submitAddress = useCallback(
     (data) => {
@@ -131,7 +139,7 @@ const PaymentDetails = () => {
                 progress: undefined,
                 theme: "colored",
               });
-              proceedToPayment();
+              proceedToPayment(res?.data?.id);
             })
             .catch((err) => {
               toast.error(
@@ -318,8 +326,10 @@ const PaymentDetails = () => {
                 })}
                 label="Your Phone Number"
                 type="tel"
-                onChange={()=>{
+                onChange={(e)=>{
                   checkIfValueChanged();
+                  
+                setValue("phone", e.target.value, {shouldValidate: true})
                 }}
                 errors={
                   errors.phone && (
@@ -342,8 +352,10 @@ const PaymentDetails = () => {
                 })}
                 label="Email address"
                 type="email"
-                onChange={()=>{
+                onChange={(e)=>{
                   checkIfValueChanged();
+                  
+                  setValue("email", e.target.value, {shouldValidate: true})
                 }}
                 errors={
                   errors.email && (
@@ -480,8 +492,9 @@ const PaymentDetails = () => {
                 required: "Please enter your address",
               })}
               type="text"
-              onChange={()=>{
+              onChange={(e)=>{
                 checkIfValueChanged();
+                setValue("address", e.target.value, {shouldValidate: true})
               }}
               errors={
                 errors.address && (

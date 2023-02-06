@@ -57,7 +57,7 @@ const PaymentDetails = () => {
   const [loading, setLoading] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
   const [paymentModalOpened, setPaymentModalOpened] = useState(false);
-  const {cart} = useCartContext();
+  const {cart, clearCart} = useCartContext();
   const navigate = useNavigate();
 
   const name = localStorage.getItem("userName");
@@ -74,6 +74,7 @@ const PaymentDetails = () => {
 
       setPaymentDetails(res.data.invoice);
       setPaymentModalOpened(true)
+      clearCart()
 
 
     }).catch((err)=>{
@@ -173,11 +174,13 @@ const PaymentDetails = () => {
     },
     [activeAddress, deliveryFoundErr, proceedToPayment]);
 
-  const checkAddress = useCallback(()=>{
+  const checkAddress = ()=>{
 
     var city = getValues("city")?.toLowerCase()
     var state = getValues("state")?.toLowerCase().replace("state", "").trim();
 
+    console.log(state,city)
+    console.log(deliveryStation)
     var availableDelivery = deliveryStation.filter(delivery => delivery.city.toLowerCase() === city && delivery.state.toLowerCase() === state);
 
     if(availableDelivery.length > 0){
@@ -189,7 +192,7 @@ const PaymentDetails = () => {
     }
 
 
-  }, [getValues, deliveryStation]);
+  };
 
 
   useEffect(() => {
@@ -200,8 +203,8 @@ const PaymentDetails = () => {
 
       setDeliveryStation(res?.data?.stations);
       setCityList(res?.data?.stations.map(station => ({label: station?.city, value: station?.city})))
-
-      
+        
+        checkAddress();
       
     })
 
@@ -273,7 +276,7 @@ const PaymentDetails = () => {
   }, [getValues, allAddress])
 
 
-  if(cart.length < 1){
+  if(cart.length < 1 && !paymentModalOpened){
     return <Navigate to={routeName.products} replace />
   }
 
@@ -577,7 +580,8 @@ const PaymentDetails = () => {
             <p>Please Click the below link to complete your payment</p>
 
             <a onClick={()=>{
-              navigate(`${routeName.account}/orders`)
+              navigate(`${routeName.account}/orders`);
+
             }} href={paymentDetails?.checkout} className="button proceed-top-payment-link" target="_blank" rel="noreferrer">Proceed to make payment</a>
 
           </div>}

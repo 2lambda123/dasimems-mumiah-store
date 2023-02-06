@@ -64,9 +64,9 @@ const Order = ({ order, ...props }) => {
 
             <p className="divider"> - </p>
 
-            {orderTimeline.length > 0 && <p className={`order-status`}>
-              {orderTimeline[orderTimeline.length - 1]?.title}
-            </p>}
+            <p className={`order-status`}>
+              {orderTimeline.length > 0 ? orderTimeline[orderTimeline.length - 1]?.title: "Awaiting Payment"}
+            </p>
           </div>
         </div>
 

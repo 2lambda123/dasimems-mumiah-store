@@ -44,6 +44,7 @@ import FormSuccess from "./form/FormSuccess"
 import CheckoutSummary from "./checkout/Summary"
 import PaymentDetails from "./checkout/PaymentDetails"
 import ScrollToTop from "./common/ScrollToTop"
+import SelectBox from "./form/SelectBox"
 
 export {
   Loading,
@@ -85,6 +86,7 @@ export {
   FormSuccess,
   CheckoutSummary,
   PaymentDetails,
-  ScrollToTop
+  ScrollToTop,
+  SelectBox
 
 }

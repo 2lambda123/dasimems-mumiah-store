@@ -89,6 +89,133 @@ a{
     padding: 15px 25px;
 }
 
+.list-style-none{
+    list-style: none;
+}
+
+.select-input-field-container{
+    width: 100%;
+    position: relative;
+    min-height: 30px;
+
+    .select-input-field{
+        position: relative;
+        height: 100%;
+
+        input,
+        .input{
+            width: 100%;
+            height: 100%;
+            // background: red;
+            display: flex;
+            padding: 0px 10px;
+            align-items: center;
+
+        }
+
+        input{
+            opacity: 0;
+        }
+
+        .input{
+            position: absolute;
+            background: transparent;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+        }
+
+        .icon{
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            z-index: -1;
+            color: rgba(0, 0, 0, .6);
+        }
+
+        &:not(.search-enabled){
+
+            input{
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    .select-dropdown{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        background: white;
+        z-index: 999;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0,  .05);
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        top: calc(100% + 2px);
+        max-height: 200px;
+        overflow-y: scroll;
+        scrollbar-color: rgba(0, 0, 0, .3);
+        scrollbar-width: thin;
+        display: none;
+        opacity: 0;
+
+        &::-webkit-scrollbar{
+            width: 7px;
+            
+        }
+
+        &::-webkit-scrollbar-thumb{
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px;
+            -o-border-radius: 20px;
+            background: rgba(0, 0, 0, .3);
+        }
+
+        li{
+
+            &:first-child{
+                padding-top: 0px;
+            }
+
+            &:last-child{
+                padding-bottom: 0px;
+            }
+
+            padding: 5px 0px;
+            cursor: pointer;
+        }
+
+        &.dropdown-shown{
+            display: block;
+            animation: 1s showDrop ease forwards;
+            -webkit-animation: 1s showDrop ease forwards;
+
+            @keyframes showDrop {
+
+                0%{
+                    opacity: 0;
+                }
+
+                100%{
+                    opacity: 1;
+                }
+                
+            }
+}
+    }
+}
+
 .form-container{
 
     .form-title{
@@ -120,7 +247,7 @@ a{
         width: 100%;
         position: relative;
         margin-top: 10px;
-        overflow: hidden;
+        // overflow: hidden;
 
         .show-password-btn{
             position: absolute;
@@ -168,7 +295,7 @@ a{
 
     .select{
         padding: 0px;
-        overflow: hidden;
+        // overflow: hidden;
         
         .ant-select-selector{
             width: 100%;

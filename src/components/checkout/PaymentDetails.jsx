@@ -80,7 +80,11 @@ const PaymentDetails = () => {
 
     AuthData(`/carts/${address}`, data).then((res) => {
 
-      setPaymentDetails(res.data.invoice);
+      if(res.data){
+
+        setPaymentDetails(res.data.invoice);
+      }
+
       setPaymentModalOpened(true)
       clearCart()
 
@@ -187,9 +191,9 @@ const PaymentDetails = () => {
     var city = getValues("city")?.toLowerCase()
     var state = getValues("state")?.toLowerCase().replace("state", "").trim();
 
-    var availableDelivery = deliveryStation.filter(delivery => delivery.city.toLowerCase() === city && delivery.state.toLowerCase() === state);
+    var availableDelivery = deliveryStation?.filter(delivery => delivery.city.toLowerCase() === city && delivery.state.toLowerCase() === state);
 
-    if(availableDelivery.length > 0){
+    if(availableDelivery?.length > 0){
       setDeliveryFoundErr("");
       setActiveDeliveryStation(availableDelivery[0].id)
     }else{
@@ -215,12 +219,12 @@ const PaymentDetails = () => {
     })
 
     GetData("/addresses").then((res) => {
-      setAllAddress(res.data.addresses);
+      setAllAddress(res?.data?.addresses);
 
-      if (res.data.addresses.length > 0) {
-        reset(res.data.addresses[0]);
-        setActiveAddressDetails(res.data.addresses[0]);
-        setActiveAddress(res.data.addresses[0].id);
+      if (res?.data?.addresses?.length && res?.data?.addresses?.length > 0) {
+        reset(res?.data?.addresses[0]);
+        setActiveAddressDetails(res?.data?.addresses[0]);
+        setActiveAddress(res?.data?.addresses[0]?.id);
         
         checkAddress();
 
@@ -231,8 +235,14 @@ const PaymentDetails = () => {
     axios
       .get("https://countriesnow.space/api/v0.1/countries/states")
       .then((res) => {
-        var countries = res.data;
-        setCountryList(countries.data);
+
+        if(res.data){
+
+          var countries = res.data;
+          setCountryList(countries.data);
+        }
+      }).catch((err) => {
+        console.log(err)
       });
 
 
@@ -301,7 +311,7 @@ const PaymentDetails = () => {
           title="Contact Info"
           subtitleOne={name}
           subtitleTwo={getValues("phone")}
-          buttonActionText={allAddress.length > 0 ? "Change Address" : null}
+          buttonActionText={allAddress?.length > 0 ? "Change Address" : null}
           buttonAction={() => {
             setModalOpened(true);
           }}
@@ -538,7 +548,7 @@ const PaymentDetails = () => {
             <h2>Choose Your preferred address</h2>
 
             <div className="change-address-form">
-              {allAddress.map((address, index) => {
+              {allAddress?.map((address, index) => {
                 var { address: addressName, id } = address;
                 return (
                   <FormInputField

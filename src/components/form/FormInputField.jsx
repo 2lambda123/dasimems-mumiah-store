@@ -1,6 +1,7 @@
-import { Button, Select } from "antd";
+import { Button} from "antd";
 import React, { useCallback, useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import SelectBox from "./SelectBox";
 
 const FormInputField = React.forwardRef(
   (
@@ -73,7 +74,7 @@ const FormInputField = React.forwardRef(
 
                 <>
 
-                  <Select
+                  <SelectBox 
                     id={id}
                     name={name}
                     className="select"
@@ -86,23 +87,11 @@ const FormInputField = React.forwardRef(
                       width: "100%",
                     }}
                     options={[{label: "--- Choose ---", value:""}, ...selectOptions]}
+
                   />
 
-                  {/* <select
-                    id={id}
-                    name={name}
-                    ref={ref}
-                    onChange={onChange}
-                    {...props}
-                  >
-                    <option value="">--- Choose ---</option>
-                    {selectOptions.filter(opt => opt.value && opt.label).map((options, index) => {
-                      var {value, label} = options
-                      return(
-                        <option key={index} value={value}>{label}</option>
-                      )
-                    })}
-                  </select> */}
+                  
+
                 
                 </>
               ) : 

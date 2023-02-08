@@ -2581,7 +2581,10 @@ body .main-body .contact-content .contact-content-details .details-container:not
   margin-top: 50px;
 }
 body .main-body .contact-content .contact-content-details .form-content:not(:first-child) {
-  margin-top: 25px;
+  margin-top: 20px;
+}
+body .main-body .contact-content .contact-content-details .form-content .form-field-parent {
+  margin-top: 0px;
 }
 body .main-body .contact-content .contact-content-details .form-content label {
   font-weight: 600;
@@ -2628,7 +2631,16 @@ body .main-body .contact-content .contact-content-details .form-content input {
 }
 body .main-body .contact-content .contact-content-details .form-content textarea {
   height: 150px;
+  width: 100%;
   padding: 15px;
+}
+@media only screen and (max-width: 566px) {
+  body .main-body .contact-content .contact-content-details .form-content .half-width {
+    width: 100%;
+  }
+  body .main-body .contact-content .contact-content-details .form-content .half-width:not(:first-child) {
+    margin-top: 20px;
+  }
 }
 body .footer {
   padding: 70px 0px;

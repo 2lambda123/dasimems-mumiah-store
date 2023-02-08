@@ -116,6 +116,8 @@ function Register(props) {
                   }
                 />
 
+                
+
                 <FormInputField
                   {...register("password", {
                     required: "Password is required",
@@ -160,7 +162,7 @@ function Register(props) {
 
                 <FormInputField
                   {...register("accept_terms", {
-                    required: "This feild is required",
+                    required: "This field is required",
                   })}
                   label="Accept our terms and conditions"
                   type="checkbox"

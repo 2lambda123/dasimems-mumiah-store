@@ -45,6 +45,8 @@ import CheckoutSummary from "./checkout/Summary"
 import PaymentDetails from "./checkout/PaymentDetails"
 import ScrollToTop from "./common/ScrollToTop"
 import SelectBox from "./form/SelectBox"
+import ContactForm from "./contact/ContactForm"
+import ContactDDetails from "./contact/ContactDDetails"
 
 export {
   Loading,
@@ -87,6 +89,8 @@ export {
   CheckoutSummary,
   PaymentDetails,
   ScrollToTop,
-  SelectBox
+  SelectBox,
+  ContactForm,
+  ContactDDetails
 
 }

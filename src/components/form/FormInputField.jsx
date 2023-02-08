@@ -16,6 +16,7 @@ const FormInputField = React.forwardRef(
       register,
       className,
       name,
+      textarea,
       id,
       selectOptions,
       defaultValue,
@@ -96,18 +97,38 @@ const FormInputField = React.forwardRef(
                 </>
               ) : 
               (
-                <input
-                  id={id}
-                  name={name}
-                  ref={ref}
-                  type={inputType}
-                  placeholder={placeholder}
-                  onChange={onChange}
-                  {...props}
-                />
+
+                textarea? (
+                  <textarea
+                      id={id}
+                      name={name}
+                      ref={ref}
+                      type={inputType}
+                      placeholder={placeholder}
+                      onChange={onChange}
+                      {...props}>
+
+                  </textarea>
+                ): (
+
+                  <>
+                  
+                    <input
+                      id={id}
+                      name={name}
+                      ref={ref}
+                      type={inputType}
+                      placeholder={placeholder}
+                      onChange={onChange}
+                      {...props}
+                      />
+
+                      {type === "password" && <Button onClick={setType} className="show-password-btn">{inputType === "password"? <FaEye />: <FaEyeSlash />}</Button>}
+                  </>
+
+                )
               )}
 
-              {type === "password" && <Button onClick={setType} className="show-password-btn">{inputType === "password"? <FaEye />: <FaEyeSlash />}</Button>}
 
             </div>
 

@@ -48,6 +48,8 @@ const ContactForm = () => {
                 }
               );
 
+            reset(initialFormValue)
+
         }).catch((err)=>{
             toast.error(
                 err?.response?.data?.message

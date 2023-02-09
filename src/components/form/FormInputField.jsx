@@ -65,7 +65,7 @@ const FormInputField = React.forwardRef(
               reversed ? "reversed-field" : null
             }`}
           >
-            <label htmlFor={id}>{label}</label>
+            {label && <label htmlFor={id}>{label}</label>}
 
             <div className="form-input-field-input">
 

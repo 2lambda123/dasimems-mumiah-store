@@ -32,6 +32,7 @@ export const routeName = {
     checkout: "/checkout",
     login: "/login",
     signUp: "/register",
+    blog: "/blog",
     account: "/account",
     forgotPassword: "/password-reset",
 }
@@ -149,6 +150,60 @@ export const pageLinks = [
         label: "Contact",
         link: routeName.contact,
         id: 4,
+    },
+
+    {
+        label: "Blog",
+        link: routeName.blog,
+        id: 5,
+    }
+]
+
+export const blogCategories = {
+    news: "News",
+    music: "Music",
+    food: "Food"
+}
+
+export const blog = [
+    {
+        title: "This is blog 1",
+        content: "Ipsum labore id et fugiat deserunt anim laboris Lorem consectetur eiusmod eu adipisicing ex. Reprehenderit ut officia non occaecat veniam consectetur aliquip laboris velit amet mollit. Ex quis tempor ea fugiat non aliqua magna minim enim exercitation. Nisi laborum et duis elit laboris duis excepteur sunt occaecat exercitation reprehenderit aute amet est.Labore consectetur officia exercitation ipsum exercitation in enim nulla exercitation sint veniam consequat proident. Quis laborum aliquip do qui culpa ad exercitation consectetur. Esse exercitation labore non aliqua laborum do. Cupidatat irure aliquip pariatur commodo laboris officia ullamco et labore deserunt ex velit. Aliqua non elit reprehenderit aute non dolore irure reprehenderit nulla dolor do eu aliqua nulla.Veniam deserunt tempor aliqua ut quis velit laboris nostrud aute ut cillum reprehenderit commodo sunt. Quis irure laboris fugiat commodo magna nulla aute ut sunt. In et aliquip velit nulla non. Nulla id exercitation reprehenderit irure ea labore mollit Lorem esse occaecat sit excepteur magna. Do pariatur sint minim enim.Amet adipisicing ex ea exercitation dolore qui minim irure reprehenderit commodo occaecat. Laborum cillum fugiat esse dolore aute fugiat. Aliquip irure incididunt Lorem quis dolor. Aute tempor amet aliqua duis pariatur ipsum eu incididunt eiusmod. Laborum nisi pariatur minim adipisicing do consequat veniam fugiat. Consequat voluptate est qui reprehenderit sit.Ea ex incididunt quis veniam qui veniam aute reprehenderit. Aute qui occaecat duis non nostrud proident. Officia et ex reprehenderit do nisi ex quis duis ut. Et magna non dolor minim proident cillum eiusmod ex ex dolor cillum adipisicing ut ex. Labore occaecat ut mollit sunt. Dolor dolor sint ad ipsum minim excepteur deserunt culpa eu non laborum amet.",
+        category: blogCategories.news,
+        image: "",
+        date: "Aug, 10 2023",
+        id: 1
+
+    },
+
+    {
+        title: "This is blog 2",
+        content: "Ipsum labore id et fugiat deserunt anim laboris Lorem consectetur eiusmod eu adipisicing ex. Reprehenderit ut officia non occaecat veniam consectetur aliquip laboris velit amet mollit. Ex quis tempor ea fugiat non aliqua magna minim enim exercitation. Nisi laborum et duis elit laboris duis excepteur sunt occaecat exercitation reprehenderit aute amet est.Labore consectetur officia exercitation ipsum exercitation in enim nulla exercitation sint veniam consequat proident. Quis laborum aliquip do qui culpa ad exercitation consectetur. Esse exercitation labore non aliqua laborum do. Cupidatat irure aliquip pariatur commodo laboris officia ullamco et labore deserunt ex velit. Aliqua non elit reprehenderit aute non dolore irure reprehenderit nulla dolor do eu aliqua nulla.Veniam deserunt tempor aliqua ut quis velit laboris nostrud aute ut cillum reprehenderit commodo sunt. Quis irure laboris fugiat commodo magna nulla aute ut sunt. In et aliquip velit nulla non. Nulla id exercitation reprehenderit irure ea labore mollit Lorem esse occaecat sit excepteur magna. Do pariatur sint minim enim.Amet adipisicing ex ea exercitation dolore qui minim irure reprehenderit commodo occaecat. Laborum cillum fugiat esse dolore aute fugiat. Aliquip irure incididunt Lorem quis dolor. Aute tempor amet aliqua duis pariatur ipsum eu incididunt eiusmod. Laborum nisi pariatur minim adipisicing do consequat veniam fugiat. Consequat voluptate est qui reprehenderit sit.Ea ex incididunt quis veniam qui veniam aute reprehenderit. Aute qui occaecat duis non nostrud proident. Officia et ex reprehenderit do nisi ex quis duis ut. Et magna non dolor minim proident cillum eiusmod ex ex dolor cillum adipisicing ut ex. Labore occaecat ut mollit sunt. Dolor dolor sint ad ipsum minim excepteur deserunt culpa eu non laborum amet.",
+        category: blogCategories.food,
+        image: "",
+        date: "Aug, 10 2023",
+        id: 2
+
+    },
+
+    {
+        title: "This is blog 3",
+        content: "Ipsum labore id et fugiat deserunt anim laboris Lorem consectetur eiusmod eu adipisicing ex. Reprehenderit ut officia non occaecat veniam consectetur aliquip laboris velit amet mollit. Ex quis tempor ea fugiat non aliqua magna minim enim exercitation. Nisi laborum et duis elit laboris duis excepteur sunt occaecat exercitation reprehenderit aute amet est.Labore consectetur officia exercitation ipsum exercitation in enim nulla exercitation sint veniam consequat proident. Quis laborum aliquip do qui culpa ad exercitation consectetur. Esse exercitation labore non aliqua laborum do. Cupidatat irure aliquip pariatur commodo laboris officia ullamco et labore deserunt ex velit. Aliqua non elit reprehenderit aute non dolore irure reprehenderit nulla dolor do eu aliqua nulla.Veniam deserunt tempor aliqua ut quis velit laboris nostrud aute ut cillum reprehenderit commodo sunt. Quis irure laboris fugiat commodo magna nulla aute ut sunt. In et aliquip velit nulla non. Nulla id exercitation reprehenderit irure ea labore mollit Lorem esse occaecat sit excepteur magna. Do pariatur sint minim enim.Amet adipisicing ex ea exercitation dolore qui minim irure reprehenderit commodo occaecat. Laborum cillum fugiat esse dolore aute fugiat. Aliquip irure incididunt Lorem quis dolor. Aute tempor amet aliqua duis pariatur ipsum eu incididunt eiusmod. Laborum nisi pariatur minim adipisicing do consequat veniam fugiat. Consequat voluptate est qui reprehenderit sit.Ea ex incididunt quis veniam qui veniam aute reprehenderit. Aute qui occaecat duis non nostrud proident. Officia et ex reprehenderit do nisi ex quis duis ut. Et magna non dolor minim proident cillum eiusmod ex ex dolor cillum adipisicing ut ex. Labore occaecat ut mollit sunt. Dolor dolor sint ad ipsum minim excepteur deserunt culpa eu non laborum amet.",
+        category: blogCategories.music,
+        image: "",
+        date: "Aug, 10 2023",
+        id: 3
+
+    },
+
+    {
+        title: "This is blog 4",
+        content: "Ipsum labore id et fugiat deserunt anim laboris Lorem consectetur eiusmod eu adipisicing ex. Reprehenderit ut officia non occaecat veniam consectetur aliquip laboris velit amet mollit. Ex quis tempor ea fugiat non aliqua magna minim enim exercitation. Nisi laborum et duis elit laboris duis excepteur sunt occaecat exercitation reprehenderit aute amet est.Labore consectetur officia exercitation ipsum exercitation in enim nulla exercitation sint veniam consequat proident. Quis laborum aliquip do qui culpa ad exercitation consectetur. Esse exercitation labore non aliqua laborum do. Cupidatat irure aliquip pariatur commodo laboris officia ullamco et labore deserunt ex velit. Aliqua non elit reprehenderit aute non dolore irure reprehenderit nulla dolor do eu aliqua nulla.Veniam deserunt tempor aliqua ut quis velit laboris nostrud aute ut cillum reprehenderit commodo sunt. Quis irure laboris fugiat commodo magna nulla aute ut sunt. In et aliquip velit nulla non. Nulla id exercitation reprehenderit irure ea labore mollit Lorem esse occaecat sit excepteur magna. Do pariatur sint minim enim.Amet adipisicing ex ea exercitation dolore qui minim irure reprehenderit commodo occaecat. Laborum cillum fugiat esse dolore aute fugiat. Aliquip irure incididunt Lorem quis dolor. Aute tempor amet aliqua duis pariatur ipsum eu incididunt eiusmod. Laborum nisi pariatur minim adipisicing do consequat veniam fugiat. Consequat voluptate est qui reprehenderit sit.Ea ex incididunt quis veniam qui veniam aute reprehenderit. Aute qui occaecat duis non nostrud proident. Officia et ex reprehenderit do nisi ex quis duis ut. Et magna non dolor minim proident cillum eiusmod ex ex dolor cillum adipisicing ut ex. Labore occaecat ut mollit sunt. Dolor dolor sint ad ipsum minim excepteur deserunt culpa eu non laborum amet.",
+        category: blogCategories.food,
+        image: "",
+        date: "Aug, 10 2023",
+        id: 4
+
     }
 ]
 

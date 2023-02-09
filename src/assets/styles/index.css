@@ -175,14 +175,6 @@ a {
   animation: 1s showDrop ease forwards;
   -webkit-animation: 1s showDrop ease forwards;
 }
-@-webkit-keyframes showDrop {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 @keyframes showDrop {
   0% {
     opacity: 0;
@@ -565,6 +557,47 @@ button {
 }
 .err-text span {
   margin: 0px;
+}
+
+.blog-card {
+  width: 100%;
+  height: auto;
+  gap: 30px;
+}
+.blog-card .blog-card-image {
+  width: 40%;
+  min-width: 300px;
+  background: rgba(0, 0, 0, 0.04);
+}
+.blog-card .blog-card-content {
+  flex: 1;
+}
+.blog-card .blog-card-content h1 {
+  font-weight: 600;
+  font-size: clamp(1rem, 4vw, 2rem);
+}
+.blog-card .blog-card-content .blog-content-text {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+.blog-card .blog-card-content .blog-card-content-details .details-one p {
+  font-weight: 700;
+}
+.blog-card .blog-card-content .blog-card-content-details .details-one p.light {
+  font-weight: 500;
+  margin-left: 10px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.blog-card .blog-card-content .blog-card-content-details .read-more-link {
+  color: #172133;
+  font-weight: 600;
+}
+.blog-card .blog-card-content .blog-card-content-details .read-more-link .icon {
+  margin-left: 5px;
+  transform: rotateZ(45deg);
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
 }
 
 body {
@@ -1044,6 +1077,9 @@ body .main-body {
    ===== SINGLE PRODUCT PAGE =====
   *********************/
   /********************
+  ===== BLOG PAGE =====
+  *********************/
+  /********************
   ===== LOGIN PAGE =====
   *********************/
   /********************
@@ -1225,7 +1261,7 @@ body .main-body .banner .banner-container .active-animation .banner-image {
     height: auto;
   }
   body .main-body .banner .banner-container .ellipse-three,
-body .main-body .banner .banner-container .ellipse-four {
+  body .main-body .banner .banner-container .ellipse-four {
     display: none;
   }
   body .main-body .banner .banner-container .banner-animation {
@@ -1720,7 +1756,6 @@ body .main-body .product-list .product-list-container .product-list-content .tra
 body .main-body .product-list .product-list-container .product-list-content .product-filter-container {
   width: 28%;
   top: 95px;
-  position: -webkit-sticky;
   position: sticky;
   height: calc(100vh - 80px - 30px);
   overflow-y: scroll;
@@ -2114,6 +2149,58 @@ body .main-body .single-product-items .related-products .related-product-contain
   font-size: 1.3rem;
   margin-bottom: 30px;
 }
+body .main-body .blog .blog-banner {
+  padding: 100px 0px;
+  gap: 20px;
+}
+body .main-body .blog .blog-banner h1 {
+  font-weight: 600;
+  font-size: clamp(1rem, 4vw, 2rem);
+}
+body .main-body .blog .blog-banner p {
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+}
+body .main-body .blog .blog-banner .subscribe-form {
+  width: 100%;
+  max-width: 500px;
+}
+body .main-body .blog .blog-banner .subscribe-form .subscribe-input,
+body .main-body .blog .blog-banner .subscribe-form .submit-subscribe {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 0px;
+  margin-top: 0px;
+}
+body .main-body .blog .blog-banner .subscribe-form .subscribe-input input,
+body .main-body .blog .blog-banner .subscribe-form .submit-subscribe input {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background: transparent;
+  margin-top: 0px;
+}
+body .main-body .blog .blog-banner .subscribe-form .subscribe-input .form-input-field-input,
+body .main-body .blog .blog-banner .subscribe-form .submit-subscribe .form-input-field-input {
+  margin-top: 0px;
+}
+body .main-body .blog .blog-banner .subscribe-form .subscribe-input {
+  width: calc(100% - 130px);
+}
+body .main-body .blog .blog-banner .subscribe-form .submit-subscribe {
+  width: 110px;
+  background: #172133;
+  color: white;
+  margin-top: 0px;
+}
+body .main-body .blog .blog-content {
+  gap: 30px;
+  margin-bottom: 100px;
+}
 body .main-body .login .login-container {
   padding: 50px 0px;
 }
@@ -2175,7 +2262,7 @@ body .main-body .forgot-password-page .login-container .login-content .login-for
 }
 @media only screen and (max-width: 767px) {
   body .main-body .forgot-password-page .login-container .login-content .login-banner,
-body .main-body .forgot-password-page .login-container .login-content .login-form {
+  body .main-body .forgot-password-page .login-container .login-content .login-form {
     min-height: 200px;
   }
 }
@@ -2757,27 +2844,27 @@ body .footer .footer-content .footer-links li a .text {
     margin-bottom: 0px;
   }
   body .advertisement .advertisement-container .advertisement-inner-content,
-body .advertisement-two .advertisement-container .advertisement-inner-content {
+  body .advertisement-two .advertisement-container .advertisement-inner-content {
     height: auto !important;
     padding: 30px 0px;
     padding-bottom: 0px;
   }
   body .advertisement .advertisement-container .advertisement-inner-content .advertisement-details,
-body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-details {
+  body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-details {
     padding: 0px 30px;
   }
   body .advertisement .advertisement-container .advertisement-inner-content .advertisement-details .advertisement-title,
-body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-details .advertisement-title {
+  body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-details .advertisement-title {
     max-width: unset;
   }
   body .advertisement .advertisement-container .advertisement-inner-content .advertisement-image,
-body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-image {
+  body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-image {
     position: relative;
     height: 100%;
     margin-top: 30px;
   }
   body .advertisement .advertisement-container .advertisement-inner-content .advertisement-image img,
-body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-image img {
+  body .advertisement-two .advertisement-container .advertisement-inner-content .advertisement-image img {
     width: 100%;
     max-width: 500px;
     position: relative !important;

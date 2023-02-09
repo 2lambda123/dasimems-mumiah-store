@@ -15,6 +15,7 @@ import Billing from "./account/Billing";
 import AccountDetails from "./account/Details";
 import ResetPassword from "./ResetPassword";
 import Checkout from "./Checkout";
+import Blog from "./Blog";
 
 export {
     Home,
@@ -33,5 +34,6 @@ export {
     Billing,
     AccountDetails,
     ResetPassword,
-    Checkout
+    Checkout,
+    Blog
 }

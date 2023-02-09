@@ -2,6 +2,67 @@
 @import "./styles";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap%27');
 
+.blog-card{
+
+    width: 100%;
+    height: auto;
+    gap: 30px;
+
+    .blog-card-image{
+        width: 40%;
+        min-width: 300px;
+        background: rgba(0, 0, 0,  .04);
+
+    }
+    .blog-card-content{
+        flex: 1;
+
+        h1{
+            font-weight: 600;
+            font-size: clamp(1rem, 4vw, 2rem);
+
+        }
+
+        .blog-content-text{
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+
+        }
+
+        .blog-card-content-details{
+
+            .details-one{
+
+                p{
+                    font-weight: 700;
+
+                    &.light{
+                        font-weight: 500;
+                        margin-left: 10px;
+                        color: rgba(0, 0, 0,  .7);
+                    }
+                }
+
+            }
+
+            .read-more-link{
+                color: #172133;
+                font-weight: 600;
+
+                .icon{
+                    margin-left: 5px;
+                    transform: rotateZ(45deg);
+                    -webkit-transform: rotateZ(45deg);
+                    -moz-transform: rotateZ(45deg);
+                    -ms-transform: rotateZ(45deg);
+                    -o-transform: rotateZ(45deg);
+                }
+            }
+
+        }
+    }
+
+}
+
 body{
     /********************
     ===== NAV BAR STYLES =====
@@ -2045,6 +2106,80 @@ body{
                         margin-bottom: 30px;
                     }
                 }
+            }
+        }
+
+        
+
+        /********************
+        ===== BLOG PAGE =====
+        *********************/
+
+        .blog{
+
+            .blog-banner{
+                padding: 100px 0px;
+                gap: 20px;
+
+                h1{
+                    font-weight: 600;
+                    font-size: clamp(1rem, 4vw, 2rem);
+                }
+
+                p{
+                    font-size: clamp(0.8rem, 2vw, 1.2rem);
+                }
+
+                .subscribe-form{
+                    width: 100%;
+                    max-width: 500px;
+
+                    .subscribe-input,
+                    .submit-subscribe{
+                        border-radius: 5px;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        -ms-border-radius: 5px;
+                        -o-border-radius: 5px;
+                        padding: 0px;
+                        margin-top: 0px;
+                        
+
+                        input{
+                            border-radius: 5px;
+                            -webkit-border-radius: 5px;
+                            -moz-border-radius: 5px;
+                            -ms-border-radius: 5px;
+                            -o-border-radius: 5px;
+                            background: transparent;
+                            margin-top: 0px;
+                        }
+
+                        
+
+                        .form-input-field-input{
+                            margin-top: 0px;
+                        }
+
+                        
+                    }
+                    
+                    .subscribe-input{
+                        width: calc(100% - 130px);
+                    }
+
+                    .submit-subscribe{
+                        width: 110px;
+                        background: #172133;
+                        color: white;
+                        margin-top: 0px;
+                    }
+                }
+            }
+
+            .blog-content{
+                gap: 30px;
+                margin-bottom: 100px;
             }
         }
 

@@ -16,6 +16,7 @@ import AccountDetails from "./account/Details";
 import ResetPassword from "./ResetPassword";
 import Checkout from "./Checkout";
 import Blog from "./Blog";
+import SingleBlog from "./SingleBlog";
 
 export {
     Home,
@@ -35,5 +36,6 @@ export {
     AccountDetails,
     ResetPassword,
     Checkout,
-    Blog
+    Blog,
+    SingleBlog
 }

@@ -568,6 +568,10 @@ button {
   width: 40%;
   min-width: 300px;
   background: rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+.blog-card .blog-card-image img {
+  width: 100%;
 }
 .blog-card .blog-card-content {
   flex: 1;
@@ -598,6 +602,36 @@ button {
   -moz-transform: rotateZ(45deg);
   -ms-transform: rotateZ(45deg);
   -o-transform: rotateZ(45deg);
+}
+.blog-card.column .blog-card-image {
+  width: 100%;
+  max-width: unset;
+}
+
+.blog-categories {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 70px;
+  padding: 0px;
+}
+.blog-categories li {
+  padding: 0px 20px;
+}
+.blog-categories li:first-child {
+  padding-left: 0px;
+}
+.blog-categories li:last-child {
+  padding-right: 0px;
+}
+.blog-categories li a {
+  display: inline-flex;
+  padding: 20px 0px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+}
+.blog-categories li a.active {
+  color: black;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
 }
 
 body {
@@ -1078,6 +1112,9 @@ body .main-body {
   *********************/
   /********************
   ===== BLOG PAGE =====
+  *********************/
+  /********************
+  ===== Single Blog PAGE =====
   *********************/
   /********************
   ===== LOGIN PAGE =====
@@ -2149,6 +2186,13 @@ body .main-body .single-product-items .related-products .related-product-contain
   font-size: 1.3rem;
   margin-bottom: 30px;
 }
+body .main-body .blog-content {
+  gap: 30px;
+  margin-bottom: 100px;
+}
+body .main-body .blog .blog-banner-parent {
+  background: rgba(0, 0, 0, 0.02);
+}
 body .main-body .blog .blog-banner {
   padding: 100px 0px;
   gap: 20px;
@@ -2197,9 +2241,68 @@ body .main-body .blog .blog-banner .subscribe-form .submit-subscribe {
   color: white;
   margin-top: 0px;
 }
-body .main-body .blog .blog-content {
-  gap: 30px;
-  margin-bottom: 100px;
+body .main-body .single-blog img {
+  width: 100%;
+}
+body .main-body .single-blog .tag {
+  background: #e8eff9;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  font-size: 0.9rem;
+}
+body .main-body .single-blog .tag p {
+  margin: 0px;
+}
+body .main-body .single-blog .single-blog-banner {
+  padding: 50px 0px;
+}
+body .main-body .single-blog .single-blog-banner h1 {
+  font-size: clamp(1.1rem, 5vw, 3rem);
+}
+body .main-body .single-blog .single-blog-banner .single-blog-banner-details {
+  margin-top: 20px;
+  gap: 20px;
+}
+body .main-body .single-blog .single-blog-banner .single-blog-banner-details .author-details {
+  gap: 20px;
+}
+body .main-body .single-blog .single-blog-banner .single-blog-banner-details .author-details .author-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background: rgba(0, 0, 0, 0.04);
+}
+body .main-body .single-blog .single-blog-banner .single-blog-banner-details .author-details .author-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0px;
+}
+body .main-body .single-blog .single-blog-image {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.04);
+  min-height: 100px;
+}
+body .main-body .single-blog .single-blog-details {
+  margin-top: 20px;
+  width: 100%;
+}
+body .main-body .single-blog .single-blog-details li {
+  margin-left: 20px;
+}
+body .main-body .single-blog .related-tags,
+body .main-body .single-blog .related-blog {
+  margin-top: 40px;
 }
 body .main-body .login .login-container {
   padding: 50px 0px;

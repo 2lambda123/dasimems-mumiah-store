@@ -3,18 +3,18 @@ import { routeName } from '../../utils/constant'
 import { Link } from 'react-router-dom'
 import { FaLongArrowAltUp } from 'react-icons/fa'
 
-const BlogCard = ({title, content, id, category, date, image, ...props}) => {
+const BlogCard = ({title, content, id, category, date, image, columnList, ...props}) => {
   return (
-    <div className='blog-card flex-container'>
+    <div className={`blog-card flex-container ${columnList? "column" : ""}`}>
 
         <div className="blog-card-image">
-            <img src={image} alt="" />
+            <img src={image} alt={title} />
         </div>
 
         <div className="blog-card-content">
 
             <h1>{title}</h1>
-            <p className='blog-content-text'>{content.slice(0, 200)}...</p>
+            <p className='blog-content-text'>{columnList? content.slice(0, 50):content.slice(0, 200)}...</p>
 
             <div className='blog-card-content-details flex-container space-between '>
 
@@ -23,7 +23,7 @@ const BlogCard = ({title, content, id, category, date, image, ...props}) => {
                     <p className='light'>{date}</p>
                 </div>
 
-                <Link className="read-more-link flex-container align-center" to={`${routeName.blog}/read/${id}`}>
+                <Link className="read-more-link flex-container align-center" to={`${routeName.blog}/${category}/${id}`}>
                     <span className='text'>Read More</span>
                     <span className='icon'><FaLongArrowAltUp /></span>
                 </Link>

@@ -50,6 +50,7 @@ import ContactDDetails from "./contact/ContactDDetails"
 import BlogBanner from "./Blog/Banner"
 import BlogContentList from "./Blog/BlogContentList"
 import BlogCard from "./Blog/BlogCard"
+import BlogCategories from "./Blog/BlogCategories"
 
 export {
   Loading,
@@ -97,6 +98,7 @@ export {
   ContactDDetails,
   BlogBanner,
   BlogContentList,
-  BlogCard
+  BlogCard,
+  BlogCategories
 
 }

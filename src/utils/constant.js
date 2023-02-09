@@ -165,6 +165,20 @@ export const blogCategories = {
     food: "Food"
 }
 
+export const blogCategoriesArr = [
+    {
+        label: blogCategories.news
+    },
+
+    {
+        label: blogCategories.music
+    },
+
+    {
+        label: blogCategories.food
+    }
+]
+
 export const blog = [
     {
         title: "This is blog 1",

@@ -13,6 +13,10 @@ import {
   USER_DETAILS,
   USER_DETAILS_SUCCESS,
   USER_DETAILS_ERROR,
+  BLOG_ERROR,
+  BLOG_LOADED,
+  BLOG_CATEGORY_ERROR,
+  BLOG_CATEGORY_LOADED,
 } from "../_actions";
 
 const products_reducer = (state, action) => {
@@ -35,6 +39,22 @@ const products_reducer = (state, action) => {
   }
   if (action.type === GET_PRODUCTS_ERROR) {
     return { ...state, products_loading: false, products_error: true };
+  }
+
+  if (action.type === BLOG_ERROR) {
+    return { ...state, blog_loading: false, blog_error: true };
+  }
+
+  if (action.type === BLOG_LOADED) {
+    return { ...state, blog_loading: false, blog_content: action.payload || [] };
+  }
+
+  if (action.type === BLOG_CATEGORY_ERROR) {
+    return { ...state, blog_category_loading: false, blog_category_error: true };
+  }
+
+  if (action.type === BLOG_CATEGORY_LOADED) {
+    return { ...state, blog_category_loading: false, blog_category_content: action.payload || [] };
   }
 
   if (action.type === GET_CAT_BEGIN) {

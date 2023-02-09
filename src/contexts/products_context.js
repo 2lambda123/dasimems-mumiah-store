@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useContext, useReducer, useEffect } from "react";
 
 import reducer from "../reducers/product_reducer";
-import { productUrl as url, baseUrl } from "../utils/constant";
+import { productUrl as url, baseUrl, blogUrl } from "../utils/constant";
 
 import {
   SIDEBAR_OPEN,
@@ -19,6 +19,10 @@ import {
   USER_DETAILS,
   USER_DETAILS_SUCCESS,
   USER_DETAILS_ERROR,
+  BLOG_LOADED,
+  BLOG_ERROR,
+  BLOG_CATEGORY_LOADED,
+  BLOG_CATEGORY_ERROR,
 } from "../_actions";
 
 const initialState = {
@@ -35,6 +39,12 @@ const initialState = {
   user_details: null,
   user_details_loading: true,
   user_details_error: false,
+  blog_loading: true,
+  blog_error: false,
+  blog_contents: [],
+  blog_category_loading: true,
+  blog_category_error: false,
+  blog_category_contents: []
 };
 
 const ProductsContext = React.createContext();
@@ -83,6 +93,26 @@ export const ProductsProvider = ({ children }) => {
     }
   };
 
+  const fetchBlogs = async (blogUrl) => {
+    try {
+      const response = await axios.get(blogUrl);
+      const data = response.data;
+      dispatch({ type: BLOG_LOADED, payload: data.posts });
+    } catch (error) {
+      dispatch({ type: BLOG_ERROR });
+    }
+  };
+
+  const fetchBlogsCategories = async (blogUrl) => {
+    try {
+      const response = await axios.get(`${blogUrl}/categories`);
+      const data = response.data;
+      dispatch({ type: BLOG_CATEGORY_LOADED, payload: data });
+    } catch (error) {
+      dispatch({ type: BLOG_CATEGORY_ERROR });
+    }
+  };
+
   const fetchUserDetails = async (baseUrl) => {
     dispatch({ type: USER_DETAILS });
     try {
@@ -102,6 +132,8 @@ export const ProductsProvider = ({ children }) => {
     fetchProducts(url);
     fetchCategories(url);
     fetchUserDetails(baseUrl);
+    fetchBlogs(blogUrl);
+    fetchBlogsCategories(blogUrl)
   }, []);
 
   return (

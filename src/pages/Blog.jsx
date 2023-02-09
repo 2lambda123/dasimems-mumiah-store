@@ -3,11 +3,21 @@ import { BlogBanner, BlogCategories, BlogContentList } from '../components'
 import { Col, Row } from 'antd'
 import { useParams } from 'react-router-dom'
 import { blog } from '../utils/constant'
+import { useProductsContext } from '../contexts/products_context'
 
 const Blog = () => {
 
     const [activePage, setActivePage] = useState("all")
     const [blogContent, setBlogContent] = useState([])
+    const {blog_loading,
+                blog_error,
+                blog_contents,
+                blog_category_loading,
+                blog_category_error,
+                blog_category_contents
+            } = useProductsContext();
+
+            console.log(blog_contents, blog_category_contents)
     
     const params = useParams();
     const {category} = params;

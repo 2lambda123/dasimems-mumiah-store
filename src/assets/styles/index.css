@@ -578,13 +578,21 @@ button {
 }
 .blog-card .blog-card-content h1 {
   font-weight: 600;
-  font-size: clamp(1rem, 4vw, 2rem);
+  font-size: clamp(1rem, 3vw, 2rem);
 }
 .blog-card .blog-card-content .blog-content-text {
   font-size: clamp(0.9rem, 2vw, 1.1rem);
 }
+.blog-card .blog-card-content .blog-card-content-details {
+  gap: 20px;
+}
+.blog-card .blog-card-content .blog-card-content-details .details-one {
+  flex: 1;
+}
 .blog-card .blog-card-content .blog-card-content-details .details-one p {
   font-weight: 700;
+  margin: 0px;
+  white-space: nowrap;
 }
 .blog-card .blog-card-content .blog-card-content-details .details-one p.light {
   font-weight: 500;
@@ -594,6 +602,11 @@ button {
 .blog-card .blog-card-content .blog-card-content-details .read-more-link {
   color: #172133;
   font-weight: 600;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.blog-card .blog-card-content .blog-card-content-details .read-more-link span {
+  margin: 0px;
 }
 .blog-card .blog-card-content .blog-card-content-details .read-more-link .icon {
   margin-left: 5px;
@@ -603,9 +616,24 @@ button {
   -ms-transform: rotateZ(45deg);
   -o-transform: rotateZ(45deg);
 }
+.blog-card.column {
+  margin-bottom: 30px;
+}
 .blog-card.column .blog-card-image {
   width: 100%;
   max-width: unset;
+}
+.blog-card.column .blog-card-content h1 {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+@media only screen and (max-width: 673px) {
+  .blog-card {
+    flex-direction: column;
+  }
+  .blog-card .blog-card-image {
+    width: 100%;
+    max-width: unset;
+  }
 }
 
 .blog-categories {
@@ -2189,6 +2217,7 @@ body .main-body .single-product-items .related-products .related-product-contain
 body .main-body .blog-content {
   gap: 30px;
   margin-bottom: 100px;
+  padding-top: 20px;
 }
 body .main-body .blog .blog-banner-parent {
   background: rgba(0, 0, 0, 0.02);

@@ -5,7 +5,7 @@ import { FaLongArrowAltUp } from 'react-icons/fa'
 
 const BlogCard = ({title, content, id, category, date, image, columnList, ...props}) => {
   return (
-    <div className={`blog-card flex-container ${columnList? "column" : ""}`}>
+    <div className={`blog-card flex-container ${columnList? "column" : ""}`} {...props}>
 
         <div className="blog-card-image">
             <img src={image} alt={title} />
@@ -16,7 +16,7 @@ const BlogCard = ({title, content, id, category, date, image, columnList, ...pro
             <h1>{title}</h1>
             <p className='blog-content-text'>{columnList? content.slice(0, 50):content.slice(0, 200)}...</p>
 
-            <div className='blog-card-content-details flex-container space-between '>
+            <div className='blog-card-content-details flex-container space-between wrap'>
 
                 <div className='details-one flex-container align-center'>
                     <p>{category}</p>

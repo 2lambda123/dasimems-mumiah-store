@@ -19,7 +19,7 @@ const BlogContentList = ({blogs, columnList}) => {
 
                 {blogs.map((blogContent, index)=>(
 
-                    <Col span={5}>
+                    <Col span={5} lg={{span: 5}} md={{span: 5}} sm={{span: 11}} xs={{span: 24}}>
 
                         <BlogCard columnList={columnList} {...blogContent} key={index} />
 

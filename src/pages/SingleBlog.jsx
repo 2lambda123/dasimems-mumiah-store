@@ -13,15 +13,35 @@ const SingleBlog = () => {
         blog_error: blogError,
         blog_contents: blogs,
         blog_category_loading: blogCategoryLoading,
-        blog_category_error: blogCategoryError,
-        blog_category_contents: categories
+        blog_category_error: blogCategoryError
     } = useProductsContext();
     const [postErr, setPostErr] = useState(false)
     const [postLoading, setPostLoading] = useState(true)
     const [blogDetails, setBlogDetails] = useState(null)
+    const [relatedPost, setRelatedPost] = useState([])
 
     const params = useParams();
     const {id} = params;
+
+    useEffect(()=>{
+
+        if(blogDetails && blogDetails.tags){
+
+            const filteredObjects = blogs.filter(object => {
+
+                return object.tags.some(tag => blogDetails.tags.includes(tag));
+
+            });
+
+            setRelatedPost(filteredObjects);
+        }
+
+
+
+
+    }, [blogs, blogDetails])
+
+    
     
     useEffect(()=>{
 
@@ -111,7 +131,11 @@ const SingleBlog = () => {
 
                 <h3>Related Blogs</h3>
 
-                <BlogContentList columnList />
+                <BlogContentList blogs={blogs.map(blog => ({
+                    ...blog,
+                    category: blog?.category?.name,
+
+                }))} columnList />
 
             </div>
         </Col>

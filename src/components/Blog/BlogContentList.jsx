@@ -15,7 +15,10 @@ const BlogContentList = ({blogs, columnList}) => {
 
         {columnList? (
 
-            <Row justify="space-between">
+            <Row style={{
+                gap: "30px"
+
+            }}>
 
                 {blogs.map((blogContent, index)=>(
 

@@ -3,13 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap%27');
 
 .blog-card{
-
     width: 100%;
     height: auto;
     gap: 30px;
 
 
     .blog-card-image{
+        overflow: hidden;
         width: 40%;
         min-width: 300px;
         max-height: 250px;
@@ -24,10 +24,10 @@
     .blog-card-content{
         flex: 1;
 
-        h1{
+        .h1{
             font-weight: 600;
+            color: black;
             font-size: clamp(1rem, 3vw, 2rem);
-
         }
 
         .blog-content-text{
@@ -81,19 +81,26 @@
 
     
     &.column{
-        
+        background: rgba(0, 0, 0,  .02);
         margin-bottom: 30px;
+        height: 100%;
 
         .blog-card-image{
             width: 100%;
             max-width: unset;
+            min-width: unset;
+            max-height: 150px;
 
         }
 
         .blog-card-content{
+            padding: 15px;
+            padding-top: 0px;
+            flex: 1;
+            justify-content: space-between;
 
-            h1{
-                font-size: clamp(1rem, 2vw, 1.5rem);
+            .h1{
+                font-size: clamp(0.9rem, 2vw, 1.2rem);
             }
         }
     }

@@ -12,10 +12,15 @@ const BlogCard = ({title, content, id, category, date, image, columnList, ...pro
             <img src={image} alt={title} />
         </div>
 
-        <div className="blog-card-content">
+        <div className="blog-card-content flex-container column">
 
-            <h1>{title}</h1>
-            <p className='blog-content-text'>{columnList? stripHTMLTags(content).slice(0, 50):stripHTMLTags(content).slice(0, 200)}...</p>
+            <div>
+
+                <Link className="h1" to={`${routeName.blog}/${category}/${id}`}>{columnList? title.length> 18? title.slice(0, 18)+ "..." : title : title}</Link>
+                <p className='blog-content-text'>{columnList? stripHTMLTags(content).slice(0, 50):stripHTMLTags(content).slice(0, 200)}...</p>
+
+            </div>
+
 
             <div className='blog-card-content-details flex-container space-between wrap'>
 

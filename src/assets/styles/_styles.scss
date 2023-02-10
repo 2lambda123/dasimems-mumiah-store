@@ -233,8 +233,8 @@ a{
 .form-field-parent{
     
 
-    &:not(:first-child){
-        margin-top: 20px;
+    &:not(:last-child){
+        margin-bottom: 20px;
     }
 }
 
@@ -292,6 +292,20 @@ a{
         background: rgba(0, 0, 0, .1);
         padding: 0px 10px;
     }
+
+    textarea{
+        width: 100%;
+        min-height: 150px;
+        padding: 10px;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, .1);
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, .2);
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+}
 
     .select{
         padding: 0px;
@@ -356,6 +370,14 @@ a{
         order: 1;
         margin-left: 0px;
     }
+}
+
+.form-err{
+    margin: 0px;
+    padding: 0px;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: rgb(255, 40, 20);
 }
 
 .submit-form-btn{
@@ -655,12 +677,18 @@ button{
 
 }
 
+
+
+.upper-element{
+    z-index: 9999;
+}
+
 .display-none{
     display: none;
 }
 
 .half-width{
-    width: 45%;
+    width: 48%;
     margin-top: 0px;
 }
 

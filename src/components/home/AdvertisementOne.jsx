@@ -1,9 +1,10 @@
 import React from "react";
 import { images } from "../../utils/constant";
-import { Link } from "react-router-dom";
-import { Row, Col } from "antd";
+import { Row, Col, Button } from "antd";
+import { useProductsContext } from "../../contexts/products_context";
 
 const AdvertisementOne = () => {
+  const {openCustomForm} = useProductsContext()
   return (
     <Row justify="center" className="advertisement">
       <Col span={21} className="advertisement-container">
@@ -45,9 +46,9 @@ const AdvertisementOne = () => {
               period and place.
             </p>
 
-            <Link to="" className="button advertisement-call-to-action">
-              Discover More
-            </Link>
+            <Button onClick={openCustomForm} className="button advertisement-call-to-action">
+              Request Custom Product
+            </Button>
           </Col>
         </Row>
       </Col>

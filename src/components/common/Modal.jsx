@@ -29,16 +29,20 @@ const Modal = ({ modalOpened, children, className, style }) => {
           width: "100vw",
           height: "100vh",
           position: "fixed",
-          zIndex: 9999,
+          zIndex: 999,
           top: "0px",
           left: "0px",
           transition: "0.5s ease all",
           opacity: modalOpacity,
           display: modalDisplay,
+          backdropFilter: "blur(2px)"
         }}
       >
 
-        <div className={`modal-content ${className? className : ""}`}>
+        <div style={{
+          width: "100%",
+          height: "100%"
+        }} className={`modal-content ${className? className : ""}`}>
 
           {children}
 

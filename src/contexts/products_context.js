@@ -23,10 +23,13 @@ import {
   BLOG_ERROR,
   BLOG_CATEGORY_LOADED,
   BLOG_CATEGORY_ERROR,
+  CUSTOM_FORM_CLOSE,
+  CUSTOM_FORM_OPEN,
 } from "../_actions";
 
 const initialState = {
   isSidebarOpen: false,
+  customFormActive: false,
   products_loading: true,
   products_error: false,
   products: [],
@@ -58,6 +61,14 @@ export const ProductsProvider = ({ children }) => {
 
   const closeSidebar = () => {
     dispatch({ type: SIDEBAR_CLOSE });
+  };
+
+  const openCustomForm = () => {
+    dispatch({ type: CUSTOM_FORM_OPEN });
+  };
+
+  const closeCustomForm = () => {
+    dispatch({ type: CUSTOM_FORM_CLOSE });
   };
 
   const fetchProducts = async (url) => {
@@ -144,6 +155,8 @@ export const ProductsProvider = ({ children }) => {
         closeSidebar,
         fetchSingleProduct,
         fetchUserDetails,
+        openCustomForm,
+        closeCustomForm
       }}
     >
       {children}

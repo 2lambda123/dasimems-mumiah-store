@@ -17,6 +17,8 @@ import {
   BLOG_LOADED,
   BLOG_CATEGORY_ERROR,
   BLOG_CATEGORY_LOADED,
+  CUSTOM_FORM_CLOSE,
+  CUSTOM_FORM_OPEN,
 } from "../_actions";
 
 const products_reducer = (state, action) => {
@@ -25,6 +27,13 @@ const products_reducer = (state, action) => {
   }
   if (action.type === SIDEBAR_CLOSE) {
     return { ...state, isSidebarOpen: false };
+  }
+
+  if (action.type === CUSTOM_FORM_OPEN) {
+    return { ...state, customFormActive: true };
+  }
+  if (action.type === CUSTOM_FORM_CLOSE) {
+    return { ...state, customFormActive: false };
   }
 
   if (action.type === GET_PRODUCTS_BEGIN) {

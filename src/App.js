@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Footer, Navbar, Loader, ScrollToTop} from './components';
+import { Footer, Navbar, Loader, ScrollToTop, Modal, CustomForm} from './components';
 import PrivateRoute from './utils/PrivateRoute';
 import useIdle from './utils/useIdleTimer';
 import { 
@@ -28,10 +28,12 @@ import {
   SingleBlog
 } from "./pages"
 import { routeName } from './utils/constant';
+import { useProductsContext } from './contexts/products_context';
 
 function App(props) {
 
   const auth = localStorage.getItem('user_token');
+  const {customFormActive} = useProductsContext();
 
   const logout = () => {
     if(!auth){
@@ -97,6 +99,12 @@ function App(props) {
           <ScrollToTop />
         </main>
         <Footer />
+
+        <Modal className="custom-form-modal flex-container align-center justify-center" modalOpened={customFormActive}>
+
+            <CustomForm />
+
+        </Modal>
 
    </Router>
   );

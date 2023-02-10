@@ -7,8 +7,10 @@ import {
   socialLinks,
 } from "../../utils/constant";
 import { Link } from "react-router-dom";
+import { useProductsContext } from "../../contexts/products_context";
 
 const Footer = () => {
+  const {openCustomForm} = useProductsContext();
   return (
     <>
       <Row justify="center" className="footer">
@@ -77,6 +79,10 @@ const Footer = () => {
                     </li>
                   );
                 })}
+
+                <li>
+                  <Link onClick={openCustomForm}>Request custom product</Link>
+                </li>
               </ul>
             </Col>
 

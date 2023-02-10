@@ -51,6 +51,8 @@ import BlogBanner from "./Blog/Banner"
 import BlogContentList from "./Blog/BlogContentList"
 import BlogCard from "./Blog/BlogCard"
 import BlogCategories from "./Blog/BlogCategories"
+import Modal from "./common/Modal"
+import CustomForm from "./CustomForm"
 
 export {
   Loading,
@@ -99,6 +101,8 @@ export {
   BlogBanner,
   BlogContentList,
   BlogCard,
-  BlogCategories
+  BlogCategories,
+  Modal,
+  CustomForm
 
 }

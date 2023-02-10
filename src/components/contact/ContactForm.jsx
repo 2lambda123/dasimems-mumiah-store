@@ -7,7 +7,7 @@ import { toast } from 'react-toastify'
 
 const ContactForm = () => {
 
-    const initialFormValue = useMemo(() => ()=>{
+    const initialFormValue = useMemo(()=>{
         return {
             name: "",
             phone: "",

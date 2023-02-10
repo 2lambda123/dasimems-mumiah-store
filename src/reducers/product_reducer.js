@@ -55,7 +55,7 @@ const products_reducer = (state, action) => {
   }
 
   if (action.type === BLOG_LOADED) {
-    return { ...state, blog_loading: false, blog_content: action.payload || [] };
+    return { ...state, blog_loading: false, blog_contents: action.payload || [] };
   }
 
   if (action.type === BLOG_CATEGORY_ERROR) {
@@ -63,7 +63,7 @@ const products_reducer = (state, action) => {
   }
 
   if (action.type === BLOG_CATEGORY_LOADED) {
-    return { ...state, blog_category_loading: false, blog_category_content: action.payload || [] };
+    return { ...state, blog_category_loading: false, blog_category_contents: action.payload || [] };
   }
 
   if (action.type === GET_CAT_BEGIN) {

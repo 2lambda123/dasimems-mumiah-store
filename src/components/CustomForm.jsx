@@ -56,6 +56,8 @@ const CustomForm = () => {
         }
       );
 
+      closeCustomForm();
+
       reset(initialValue)
 
     }).catch((err)=>{

@@ -12,6 +12,7 @@
     .blog-card-image{
         width: 40%;
         min-width: 300px;
+        max-height: 250px;
         background: rgba(0, 0, 0,  .04);
         overflow: hidden;
 
@@ -30,6 +31,7 @@
         }
 
         .blog-content-text{
+            margin-top: 15px;
             font-size: clamp(0.9rem, 2vw, 1.1rem);
 
         }

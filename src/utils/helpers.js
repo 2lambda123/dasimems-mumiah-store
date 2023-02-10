@@ -8,6 +8,15 @@ export const formatPrice = (number) => {
     }).format(number)
 }
 
+export const stripHTMLTags = (text, replacement) =>{
+
+    if(!replacement){
+        replacement = " ";
+    }
+  var tagRegex = /<\/?[^>]+>/g;
+  return text.replace(tagRegex, replacement);
+}
+
 export const getUniqueValues = (data, type) => {
     let unique = data.map((item) => item[type])
     if(type === 'sizes') {

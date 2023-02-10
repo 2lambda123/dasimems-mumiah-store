@@ -55,6 +55,7 @@ const ProductsContext = React.createContext();
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+
   const openSidebar = () => {
     dispatch({ type: SIDEBAR_OPEN });
   };
@@ -118,6 +119,7 @@ export const ProductsProvider = ({ children }) => {
     try {
       const response = await axios.get(`${blogUrl}/categories`);
       const data = response.data;
+      
       dispatch({ type: BLOG_CATEGORY_LOADED, payload: data });
     } catch (error) {
       dispatch({ type: BLOG_CATEGORY_ERROR });

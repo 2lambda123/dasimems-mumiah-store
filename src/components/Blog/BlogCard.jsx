@@ -2,6 +2,7 @@ import React from 'react'
 import { routeName } from '../../utils/constant'
 import { Link } from 'react-router-dom'
 import { FaLongArrowAltUp } from 'react-icons/fa'
+import { stripHTMLTags } from '../../utils/helpers'
 
 const BlogCard = ({title, content, id, category, date, image, columnList, ...props}) => {
   return (
@@ -14,7 +15,7 @@ const BlogCard = ({title, content, id, category, date, image, columnList, ...pro
         <div className="blog-card-content">
 
             <h1>{title}</h1>
-            <p className='blog-content-text'>{columnList? content.slice(0, 50):content.slice(0, 200)}...</p>
+            <p className='blog-content-text'>{columnList? stripHTMLTags(content).slice(0, 50):stripHTMLTags(content).slice(0, 200)}...</p>
 
             <div className='blog-card-content-details flex-container space-between wrap'>
 

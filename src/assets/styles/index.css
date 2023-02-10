@@ -592,6 +592,7 @@ button {
 .blog-card .blog-card-image {
   width: 40%;
   min-width: 300px;
+  max-height: 250px;
   background: rgba(0, 0, 0, 0.04);
   overflow: hidden;
 }
@@ -606,6 +607,7 @@ button {
   font-size: clamp(1rem, 3vw, 2rem);
 }
 .blog-card .blog-card-content .blog-content-text {
+  margin-top: 15px;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
 }
 .blog-card .blog-card-content .blog-card-content-details {

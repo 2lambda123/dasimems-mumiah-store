@@ -1,5 +1,5 @@
 import { Button, Col } from 'antd'
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import FormInputField from '../form/FormInputField'
 import { AuthData } from '../../utils/helpers'
@@ -7,13 +7,16 @@ import { toast } from 'react-toastify'
 
 const ContactForm = () => {
 
-    const initialFormValue = {
-        name: "",
-        phone: "",
-        email: "",
-        subject: "",
-        content: ""
-    }
+    const initialFormValue = useMemo(() => ()=>{
+        return {
+            name: "",
+            phone: "",
+            email: "",
+            subject: "",
+            content: ""
+        }
+    }, [])
+
     const {
         register,
         handleSubmit,
@@ -70,7 +73,7 @@ const ContactForm = () => {
             setSubmitLoading(false)
         })
 
-    }, [])
+    }, [initialFormValue, reset])
 
   return (
     <Col

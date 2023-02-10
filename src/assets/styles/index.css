@@ -2390,7 +2390,9 @@ body .main-body .single-blog .tag p {
   margin: 0px;
 }
 body .main-body .single-blog .single-blog-banner {
+  width: 100%;
   padding: 50px 0px;
+  background: rgba(0, 0, 0, 0.02);
 }
 body .main-body .single-blog .single-blog-banner h1 {
   font-size: clamp(1.1rem, 5vw, 3rem);
@@ -2419,12 +2421,17 @@ body .main-body .single-blog .single-blog-banner .single-blog-banner-details .au
   margin: 0px;
 }
 body .main-body .single-blog .single-blog-image {
+  margin-top: 30px;
   width: 100%;
   background: rgba(0, 0, 0, 0.04);
   min-height: 100px;
+  max-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 body .main-body .single-blog .single-blog-details {
-  margin-top: 20px;
+  margin-top: 50px;
   width: 100%;
 }
 body .main-body .single-blog .single-blog-details li {
@@ -2433,6 +2440,15 @@ body .main-body .single-blog .single-blog-details li {
 body .main-body .single-blog .related-tags,
 body .main-body .single-blog .related-blog {
   margin-top: 40px;
+}
+body .main-body .single-blog .related-tags .related-blog-title,
+body .main-body .single-blog .related-blog .related-blog-title {
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+}
+body .main-body .single-blog .tag-contents {
+  gap: 10px;
 }
 body .main-body .login .login-container {
   padding: 50px 0px;

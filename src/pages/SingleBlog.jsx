@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd'
+import { Col, Divider, Row } from 'antd'
 import React, { useEffect } from 'react'
 import { BlogContentList, Error, Loading } from '../components'
 import { useProductsContext } from '../contexts/products_context';
@@ -40,18 +40,14 @@ const SingleBlog = () => {
 
 
     }, [blogs, blogDetails])
-
-    
     
     useEffect(()=>{
 
         GetData(`/posts/${id}`).then((res)=>{
 
-            setBlogDetails(res?.data);
+            setBlogDetails(res?.data?.post);
 
         }).catch((err)=>{
-
-            console.log("unable to fetch post")
 
             setPostErr(true)
 
@@ -74,31 +70,37 @@ const SingleBlog = () => {
 
   return (
     <Row justify="center" className="single-blog">
+            <div className="single-blog-banner">
+
+                <Row justify="center">
+                    <Col span={21}>
+
+                        <h1>{blogDetails && blogDetails.title? blogDetails?.title :"This is the blog title"}</h1>
+                        <div className='flex-container single-blog-banner-details align-center'>
+                            <div className='tag flex-container align-center justify-center'>
+                                <p>
+
+                                    {blogDetails && blogDetails.category && blogDetails?.category.name? blogDetails?.category?.name: "Category"}
+
+                                </p>
+                                
+                            </div>
+
+                            <div className="author-details flex-container align-center">
+                                <div className='author-image'>
+
+                                    <img src={blogDetails?.author_avatar} alt={blogDetails && blogDetails.author_name? blogDetails?.author_name : "author name"} />
+
+                                </div>
+
+                                <p className="author-name">{blogDetails && blogDetails.author_name? blogDetails?.author_name : "Author Name"}</p>
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+            </div>
 
         <Col span={21}>
-            <div className="single-blog-banner">
-                <h1>{blogDetails && blogDetails.title? blogDetails?.title :"This is the blog title"}</h1>
-                <div className='flex-container single-blog-banner-details align-center'>
-                    <div className='tag flex-container align-center justify-center'>
-                        <p>
-
-                            {blogDetails && blogDetails.category && blogDetails?.category.name? blogDetails?.category?.name: "Category"}
-
-                        </p>
-                        
-                    </div>
-
-                    <div className="author-details flex-container align-center">
-                        <div className='author-image'>
-
-                            <img src={blogDetails?.author_avatar} alt={blogDetails && blogDetails.author_name? blogDetails?.author_name : "author name"} />
-
-                        </div>
-
-                        <p className="author-name">{blogDetails && blogDetails.author_name? blogDetails?.author_name : "Author Name"}</p>
-                    </div>
-                </div>
-            </div>
 
             <div className="single-blog-image">
 
@@ -111,27 +113,36 @@ const SingleBlog = () => {
             </div>
 
             <div className="related-tags">
-                <h3>Related Tags</h3>
+                {/* <h3>Related Tags</h3> */}
 
                 <div className='tag-contents flex-container align-center'>
 
-                    <div className='tag flex-container align-center justify-center'>
+                    {blogDetails && blogDetails.tags && blogDetails.tags.map((tag, index)=>(
+                    <div className='tag flex-container align-center justify-center' key={index}>
                         <p>
 
-                            Food
+                            {tag}
 
                         </p>
                         
                     </div>
+
+                    ))}
+
 
                 </div>
             </div>
 
             <div className="related-blog">
 
-                <h3>Related Blogs</h3>
+                <Divider>
 
-                <BlogContentList blogs={blogs.map(blog => ({
+                    <h3>Related Blogs</h3>
+                    
+                </Divider>
+
+
+                <BlogContentList blogs={relatedPost.map(blog => ({
                     ...blog,
                     category: blog?.category?.name,
 

@@ -17,12 +17,12 @@ const CustomForm = () => {
   const initialValue = useMemo(() => {
 
     return {
-              name: "",
-              email: "",
-              custom: "",
-              brief: ""
+      name: "",
+      email: "",
+      custom: "",
+      brief: ""
 
-          }
+    }
     
   }, [])
 

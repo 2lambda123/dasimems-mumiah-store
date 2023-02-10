@@ -2372,6 +2372,7 @@ body{
         *********************/
 
         .single-blog{
+
             img{
                 width: 100%;
             }
@@ -2396,7 +2397,9 @@ body{
             }
 
             .single-blog-banner{
+                width: 100%;
                 padding: 50px 0px;
+                background: rgba(0, 0, 0,  .02);
 
                 h1{
                     font-size: clamp(1.1rem, 5vw, 3rem);
@@ -2433,13 +2436,18 @@ body{
             }
 
             .single-blog-image{
+                margin-top: 30px;
                 width: 100%;
                 background: rgba(0, 0, 0,  .04);
                 min-height: 100px;
+                max-height: 500px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
             }
 
             .single-blog-details{
-                margin-top: 20px;
+                margin-top: 50px;
                 width: 100%;
 
                 li{
@@ -2450,6 +2458,16 @@ body{
             .related-tags,
             .related-blog{
                 margin-top: 40px;
+
+                .related-blog-title{
+                    font-size: clamp(0.9rem, 2vw, 1.3rem);
+                    font-weight: 600;
+                    color: rgba(0, 0, 0,  .7);
+                }
+            }
+
+            .tag-contents{
+                gap: 10px;
             }
         }
 

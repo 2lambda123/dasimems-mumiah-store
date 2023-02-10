@@ -1,19 +1,68 @@
 import { Col, Row } from 'antd'
-import React from 'react'
-import { BlogContentList } from '../components'
+import React, { useEffect } from 'react'
+import { BlogContentList, Error, Loading } from '../components'
+import { useProductsContext } from '../contexts/products_context';
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { GetData } from '../utils/helpers';
 
 const SingleBlog = () => {
+    
+    const {
+        blog_loading: blogLoading,
+        blog_error: blogError,
+        blog_contents: blogs,
+        blog_category_loading: blogCategoryLoading,
+        blog_category_error: blogCategoryError,
+        blog_category_contents: categories
+    } = useProductsContext();
+    const [postErr, setPostErr] = useState(false)
+    const [postLoading, setPostLoading] = useState(true)
+    const [blogDetails, setBlogDetails] = useState(null)
+
+    const params = useParams();
+    const {id} = params;
+    
+    useEffect(()=>{
+
+        GetData(`/posts/${id}`).then((res)=>{
+
+            setBlogDetails(res?.data);
+
+        }).catch((err)=>{
+
+            console.log("unable to fetch post")
+
+            setPostErr(true)
+
+        }).finally(()=>{
+
+            setPostLoading(false)
+        })
+
+    }, [id])
+
+    if(blogLoading || blogCategoryLoading || postLoading){
+        return <Loading />
+
+    }
+
+    if(blogError || blogCategoryError || postErr){
+        return <Error />
+    }
+
+
   return (
     <Row justify="center" className="single-blog">
 
         <Col span={21}>
             <div className="single-blog-banner">
-                <h1>This is the blog title</h1>
+                <h1>{blogDetails && blogDetails.title? blogDetails?.title :"This is the blog title"}</h1>
                 <div className='flex-container single-blog-banner-details align-center'>
                     <div className='tag flex-container align-center justify-center'>
                         <p>
 
-                            Food
+                            {blogDetails && blogDetails.category && blogDetails?.category.name? blogDetails?.category?.name: "Category"}
 
                         </p>
                         
@@ -22,20 +71,22 @@ const SingleBlog = () => {
                     <div className="author-details flex-container align-center">
                         <div className='author-image'>
 
+                            <img src={blogDetails?.author_avatar} alt={blogDetails && blogDetails.author_name? blogDetails?.author_name : "author name"} />
+
                         </div>
 
-                        <p className="author-name">Author Name</p>
+                        <p className="author-name">{blogDetails && blogDetails.author_name? blogDetails?.author_name : "Author Name"}</p>
                     </div>
                 </div>
             </div>
 
             <div className="single-blog-image">
 
-                <img src={""} alt="blog title" />
+                <img src={blogDetails?.image} alt={blogDetails && blogDetails.title? blogDetails?.title : "blog title"} />
 
             </div>
 
-            <div className='single-blog-details'>
+            <div className='single-blog-details' dangerouslySetInnerHTML={{__html: blogDetails && blogDetails.content? blogDetails.content: ""}}>
 
             </div>
 

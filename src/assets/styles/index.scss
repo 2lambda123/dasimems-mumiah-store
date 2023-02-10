@@ -1951,6 +1951,14 @@ body{
         *********************/
 
         .single-product-items{
+
+            
+
+                    img{
+                        width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                    }
             
 
             .product-content{
@@ -1961,7 +1969,7 @@ body{
                     margin-bottom: 20px;
                     
                     .image-container{
-                        background: rgba(0, 0, 0, .05);
+                        // background: rgba(0, 0, 0, .05);
                         border-radius: 10px;
                         -webkit-border-radius: 10px;
                         -moz-border-radius: 10px;
@@ -2014,9 +2022,8 @@ body{
                         }
 
                         .image-slide-container{
-                            max-height: 500px;
-
-
+                            height: 400px;
+                            overflow: hidden;
                            
                         }
 
@@ -2034,12 +2041,6 @@ body{
 
 
                     
-
-                    img{
-                        width: 100%;
-                        max-width: 100%;
-                        max-height: 100%;
-                    }
 
                     .small-image{
                         height: 150px;

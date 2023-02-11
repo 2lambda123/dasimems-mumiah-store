@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { BlogBanner, BlogCategories, BlogContentList, Error, Loading } from '../components'
+import React, { useCallback, useEffect, useState } from 'react'
+import { BlogBanner, BlogCategories, BlogContentList, Error, Loading, Pagination } from '../components'
 import { Col, Row } from 'antd'
 import { useParams } from 'react-router-dom'
 import { useProductsContext } from '../contexts/products_context'
@@ -16,10 +16,28 @@ const Blog = () => {
         blog_category_error: blogCategoryError,
         blog_category_contents: categories
     } = useProductsContext();
-
     
+  const [activePageNum, setActivePageNum] = useState(1)
+  const [maxContent] = useState(12)
+  const [blogToShow, setBlogToShow] = useState([])
+
+  
     const params = useParams();
     const {category} = params;
+
+    const setPageNum = useCallback((page) => {
+
+    // console.log(page)
+
+    setActivePageNum(page)
+    window.scrollTo({
+        top: 0,
+        left: 0
+    })
+
+    }, [])
+
+    
 
     useEffect(()=>{
 
@@ -42,6 +60,18 @@ const Blog = () => {
         }
 
     }, [category, blogs])
+
+    
+    useEffect(()=>{
+
+    var start = ((activePageNum - 1) * maxContent);
+    var end = (activePageNum * maxContent)
+
+    setBlogToShow(blogContent.slice(start, end))
+
+    }, [activePageNum, blogContent, maxContent])
+
+
 
     if(blogLoading || blogCategoryLoading){
         return <Loading />
@@ -85,11 +115,14 @@ const Blog = () => {
 
             <Col span={21}>
 
-                <BlogContentList blogs={blogContent.map(blog => ({
+                <BlogContentList blogs={blogToShow.map(blog => ({
                     ...blog,
                     category: blog?.category?.name,
 
                 }))} />
+
+                
+                <Pagination activePage={activePage} onChange={setPageNum} maxContent={maxContent} totalNumOfContent={blogContent.length} />
 
             </Col>
         </Row>

@@ -53,6 +53,7 @@ import BlogCard from "./Blog/BlogCard"
 import BlogCategories from "./Blog/BlogCategories"
 import Modal from "./common/Modal"
 import CustomForm from "./CustomForm"
+import Pagination from "./common/Pagination"
 
 export {
   Loading,
@@ -103,6 +104,6 @@ export {
   BlogCard,
   BlogCategories,
   Modal,
-  CustomForm
-
+  CustomForm,
+  Pagination
 }

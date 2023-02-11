@@ -57,6 +57,7 @@ function Product(props) {
               }
             >
               <ProductList min />
+
             </div>
           </Row>
         </Col>

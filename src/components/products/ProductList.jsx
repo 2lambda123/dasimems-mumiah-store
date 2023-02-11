@@ -12,7 +12,6 @@ function ProductList({min}) {
 
 const setPageNum = useCallback((page) => {
 
-  // console.log(page)
 
   setActivePage(page)
   window.scrollTo({

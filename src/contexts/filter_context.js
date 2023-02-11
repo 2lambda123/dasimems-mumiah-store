@@ -61,11 +61,12 @@ const FilterContext = React.createContext()
         value = Number(value)
       }
       if(name === 'sizes') {
-        value = e.target.checked
+        value = e.target.value
       }
       if(name === 'shipping') {
         value = e.target.checked
       }
+      
       dispatch({type: UPDATE_FILTERS, payload: {name, value}})
     }
   

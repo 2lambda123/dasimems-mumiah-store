@@ -86,6 +86,7 @@ const filter_reducer = (state, action) => {
       if(brand !== 'all') {
         tempProducts = tempProducts.filter(products => products.brand === brand)
       }
+
       // sizes
       // if(sizes !== 'all') {
       //   tempProducts = tempProducts.filter((products) => {

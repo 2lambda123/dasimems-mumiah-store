@@ -93,6 +93,7 @@ function Filter(props) {
                   <label>
                     <input
                       name="sizes"
+                      // checked={size && size.toLowerCase() === s.toLowerCase()}
                       className="filter-sizes"
                       onChange={updateFilters}
                       type="checkbox"

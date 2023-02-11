@@ -27,7 +27,6 @@ const Blog = () => {
 
     const setPageNum = useCallback((page) => {
 
-    // console.log(page)
 
     setActivePageNum(page)
     window.scrollTo({

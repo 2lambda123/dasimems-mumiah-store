@@ -3,6 +3,7 @@ import {
     CLEAR_CART,
     COUNT_CART_TOTALS,
     REMOVE_CART_ITEM,
+    SET_SHIPPING_FEE,
     TOGGLE_CART_ITEM_AMOUNT,
   } from '../_actions'
   
@@ -71,6 +72,12 @@ import {
         return item
       })
       return { ...state, cart: tempCart }
+    }
+
+    if(action.type === SET_SHIPPING_FEE){
+
+      return {...state, shipping_fee: action.payload}
+
     }
   
     if(action.type === COUNT_CART_TOTALS) {

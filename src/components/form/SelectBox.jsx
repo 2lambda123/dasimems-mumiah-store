@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaAngleDown } from 'react-icons/fa';
 
-const SelectBox = ({onChange, value, options, searchEnabled, className, onBlur, ...props}) => {
+const SelectBox = ({onChange, value, options, searchEnabled, className, onBlur, defaultValue, ...props}) => {
 
     const [fieldLabel, setFieldLabel] = useState("");
     const [dropdownEnabled, setDropdownEnabled] = useState(false);
@@ -9,6 +9,19 @@ const SelectBox = ({onChange, value, options, searchEnabled, className, onBlur, 
     if(!options || !Array.isArray(options)){
         options = [];
     }
+
+    useEffect(()=>{
+
+         var val = options.filter(val => val.value === defaultValue);
+
+          if(val.length > 0){
+            setFieldLabel(val[0].label)
+        }else{
+            setFieldLabel("-- Choose --");
+
+        }
+
+    }, [defaultValue, options])
 
     useEffect(() => {
         var defValueLabel = options.filter(val => val.value === value);

@@ -57,7 +57,7 @@ const PaymentDetails = () => {
   const [loading, setLoading] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
   const [paymentModalOpened, setPaymentModalOpened] = useState(false);
-  const {cart, clearCart} = useCartContext();
+  const {cart, clearCart, changeShippingFee} = useCartContext();
   const navigate = useNavigate();
 
   const name = localStorage.getItem("userName");
@@ -194,6 +194,7 @@ const PaymentDetails = () => {
     var availableDelivery = deliveryStation?.filter(delivery => delivery.city.toLowerCase() === city && delivery.state.toLowerCase() === state);
 
     if(availableDelivery?.length > 0){
+      changeShippingFee(availableDelivery[0].fee)
       setDeliveryFoundErr("");
       setActiveDeliveryStation(availableDelivery[0].id)
     }else{
@@ -223,8 +224,8 @@ const PaymentDetails = () => {
 
       if (res?.data?.addresses?.length && res?.data?.addresses?.length > 0) {
         reset(res?.data?.addresses[0]);
-        setActiveAddressDetails(res?.data?.addresses[0]);
         setActiveAddress(res?.data?.addresses[0]?.id);
+        setActiveAddressDetails(res?.data?.addresses[0]);
         
         checkAddress();
 
@@ -324,7 +325,7 @@ const PaymentDetails = () => {
 
             
 
-            <div className="inner-details-form-split flex-container space-between align-center wrap">
+            <div className="inner-details-form-split flex-container space-between wrap">
               <FormInputField
                 {...register("phone", {
                   required: "Your phone number is required",
@@ -442,7 +443,7 @@ const PaymentDetails = () => {
               
             </p>}
 
-            <div className="inner-details-form-split flex-container space-between align-center wrap">
+            <div className="inner-details-form-split flex-container space-between wrap">
               <FormInputField
                 {...register("state", {
                   required: "Please choose a state",

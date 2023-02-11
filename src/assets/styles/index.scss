@@ -2728,9 +2728,7 @@ body{
                                         height: 20px;
                                     }
 
-                                    .half-width{
-                                        margin-top: 0px;
-                                    }
+                                    
 
                                     .inner-details-form-split{
                                         margin-top: 20px;
@@ -2828,6 +2826,26 @@ body{
                         .order-summary-title{
                             font-weight: 500;
                             font-size: 1.5rem;
+                        }
+
+                        .cart-stat{
+                            margin-top: 20px;
+
+                            .stat-details{
+                                font-size: 1.1rem;
+                                span{
+                                    display: inline-flex;
+                                }
+
+                                .title{
+                                    font-weight: 600;
+                                    width: 100px;
+                                }
+
+                                .value{
+                                    margin-left: 10px;
+                                }
+                            }
                         }
 
                         @media only screen and (max-width: 991px){

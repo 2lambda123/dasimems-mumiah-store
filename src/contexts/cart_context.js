@@ -6,6 +6,7 @@ import {
   TOGGLE_CART_ITEM_AMOUNT,
   CLEAR_CART,
   COUNT_CART_TOTALS,
+  SET_SHIPPING_FEE,
 } from '../_actions'
 
 const getLocalStorage = () => {
@@ -18,7 +19,7 @@ const getLocalStorage = () => {
 }
 
 const initialState = {
-  cart: getLocalStorage(),
+  cart: getLocalStorage("cart") || [],
   total_items:0,
   total_amount: 0,
   shipping_fee: 1500
@@ -48,6 +49,26 @@ export const CartProvider = ({ children }) => {
     dispatch({type: CLEAR_CART})
   }
 
+  const changeShippingFee = (fee) =>{
+
+    if(fee && isFinite(fee)){
+
+      fee = parseInt(fee)
+
+      dispatch({type: SET_SHIPPING_FEE, payload: fee})
+
+      setTimeout(()=>{
+
+        dispatch({type: COUNT_CART_TOTALS});
+
+      })
+
+
+    }
+
+
+  }
+
   useEffect(() => {
     dispatch({type: COUNT_CART_TOTALS})
     localStorage.setItem('cart', JSON.stringify(state.cart))
@@ -60,7 +81,8 @@ export const CartProvider = ({ children }) => {
         addToCart, 
         removeItem, 
         toggleAmount, 
-        clearCart
+        clearCart,
+        changeShippingFee
       }}>
       {children}
     </CartContext.Provider>

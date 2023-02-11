@@ -2,10 +2,10 @@ import { Col } from "antd";
 import React from "react";
 import { useCartContext } from "../../contexts/cart_context";
 import OrderProductDetails from "../account/order/OrderProductDetails";
-import { cartProducts } from "../../utils/constant";
+import { formatPrice } from "../../utils/helpers";
 
 const Summary = () => {
-  const { cart } = useCartContext();
+  const { cart, total_amount, shipping_fee } = useCartContext();
 
   return (
     <>
@@ -20,6 +20,23 @@ const Summary = () => {
         {cart.map((product, index) => (
           <OrderProductDetails type="cart" product={product} key={index} />
         ))}
+
+        <div className="cart-stat">
+          <p className="stat-details">
+            <span className="title">Subtotal: </span>
+            <span className="value">{formatPrice(total_amount)}</span>
+          </p>
+
+          <p className="stat-details">
+            <span className="title">Shipping: </span>
+            <span className="value">{formatPrice(shipping_fee)}</span>
+          </p>
+
+          <p className="stat-details">
+            <span className="title">Total: </span>
+            <span className="value">{formatPrice(parseInt(shipping_fee) + parseInt(total_amount))}</span>
+          </p>
+        </div>
       </Col>
     </>
   );

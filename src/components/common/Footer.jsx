@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { useProductsContext } from "../../contexts/products_context";
 
 const Footer = () => {
-  const {openCustomForm} = useProductsContext();
+  const { openCustomForm } = useProductsContext();
   return (
     <>
       <Row justify="center" className="footer">
@@ -26,7 +26,7 @@ const Footer = () => {
             >
               <img
                 className="footer-image"
-                alt="mumiah logo"
+                alt="Myre logo"
                 src={images.logoTwo}
               />
 

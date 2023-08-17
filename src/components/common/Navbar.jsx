@@ -60,7 +60,7 @@ function Navbar(props) {
             </button>
 
             <div className="nav-bar-logo">
-              <img src={images.logo} alt="mumiah logo" />
+              <img src={images.logo} alt="Myre logo" />
             </div>
 
             {searchOpened && <SearchBar setSearchOpened={setSearchOpened} />}
@@ -89,7 +89,7 @@ function Navbar(props) {
                     return;
                   }
                   setAccountPop((prevState) => !prevState);
-                  setCartPop(false)
+                  setCartPop(false);
                 }}
               >
                 {localStorage.getItem("user_token") ? (
@@ -105,7 +105,7 @@ function Navbar(props) {
                 className="side-link desktop-side-link"
                 onClick={() => {
                   setCartPop((prevState) => !prevState);
-                  setAccountPop(false)
+                  setAccountPop(false);
                 }}
               >
                 <AiOutlineShoppingCart />

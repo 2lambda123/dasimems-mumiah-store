@@ -1,13 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const Banner = ({title, subtitle}) => {
+const Banner = ({ title, subtitle }) => {
   return (
     <div className="blog-banner flex-container align-center justify-center column">
+      <h1>{title ? title : "Our Blog"}</h1>
+      <p>{subtitle ? subtitle : "Learn more about Myre with our blog."}</p>
 
-        <h1>{title? title : "Our Blog"}</h1>
-        <p>{subtitle? subtitle : "Learn more about Mumiah with our blog."}</p>
-
-        {/* <form className='subscribe-form flex-container align-center space-between'>
+      {/* <form className='subscribe-form flex-container align-center space-between'>
 
             <FormInputField
                 placeholder="example@example.com"
@@ -18,11 +17,8 @@ const Banner = ({title, subtitle}) => {
 
             <SubmitBtn type="submit" className="submit-subscribe" text="Subscribe" />
         </form> */}
-
-
-      
     </div>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;

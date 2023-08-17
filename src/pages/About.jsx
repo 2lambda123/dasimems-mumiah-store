@@ -14,7 +14,7 @@ function About(props) {
       >
         <div>
           <Helmet>
-            <title>About Us | Mumiah Stores</title>
+            <title>About Us | Myre Stores</title>
           </Helmet>
           <div className="container">
             <div className="row mt-5">

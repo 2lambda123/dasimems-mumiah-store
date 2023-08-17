@@ -4,7 +4,7 @@ import { Row, Col, Button } from "antd";
 import { useProductsContext } from "../../contexts/products_context";
 
 const AdvertisementOne = () => {
-  const {openCustomForm} = useProductsContext()
+  const { openCustomForm } = useProductsContext();
   return (
     <Row justify="center" className="advertisement">
       <Col span={21} className="advertisement-container">
@@ -33,7 +33,7 @@ const AdvertisementOne = () => {
           >
             <img
               src={images.logo}
-              alt="mumiah logo"
+              alt="Myre logo"
               className="advertisement-logo"
             />
 
@@ -46,7 +46,10 @@ const AdvertisementOne = () => {
               period and place.
             </p>
 
-            <Button onClick={openCustomForm} className="button advertisement-call-to-action">
+            <Button
+              onClick={openCustomForm}
+              className="button advertisement-call-to-action"
+            >
               Request Custom Product
             </Button>
           </Col>

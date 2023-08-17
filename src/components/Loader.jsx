@@ -9,8 +9,8 @@ const Loader = () => {
 
             <section className="loader-container">
                 <div className="content">
-                    <h2>Mumiah</h2>
-                    <h2>Mumiah</h2>
+                    <h2>Myre</h2>
+                    <h2>Myre</h2>
                 </div>
             </section>
         

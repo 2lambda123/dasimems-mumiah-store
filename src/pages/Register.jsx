@@ -116,8 +116,6 @@ function Register(props) {
                   }
                 />
 
-                
-
                 <FormInputField
                   {...register("password", {
                     required: "Password is required",
@@ -195,7 +193,7 @@ function Register(props) {
             >
               <DisplayBanner
                 link={{ linkLabel: "Login", link: routeName.login }}
-                title="Welcome to Mumiah"
+                title="Welcome to Myre"
                 text="Already have an account?"
               />
             </Col>

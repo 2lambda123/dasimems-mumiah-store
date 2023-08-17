@@ -23,7 +23,7 @@ const Hero = () => {
                 justify="space-between"
                 className="banner-main-content align-center"
               >
-                <img src={image} alt="mumiah banner" className="banner-image" />
+                <img src={image} alt="myre banner" className="banner-image" />
 
                 <Col
                   span={15}

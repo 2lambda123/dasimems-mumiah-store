@@ -4,11 +4,10 @@ import { Helmet } from "react-helmet";
 import { ContactDDetails, ContactForm } from "../components";
 
 function Contact(props) {
-
   return (
     <>
       <Helmet>
-        <title>Contact | Mumiah Stores</title>
+        <title>Contact | Myre Stores</title>
       </Helmet>
 
       <Row justify="center" className="contact-banner">

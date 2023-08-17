@@ -170,7 +170,7 @@ function Register(props) {
             >
               <DisplayBanner
                 link={{ linkLabel: "Register", link: routeName.signUp }}
-                title="Welcome to Mumiah"
+                title="Welcome to Myre"
                 text="DOn't have an account?"
               />
             </Col>

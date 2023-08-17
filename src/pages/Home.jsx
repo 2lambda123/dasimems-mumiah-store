@@ -13,19 +13,16 @@ import {
 import { useProductsContext } from "../contexts/products_context";
 
 function Home(props) {
-  
+  const { products_loading, cat_loading } = useProductsContext();
 
-  const {products_loading, cat_loading} = useProductsContext();
-
-  if(products_loading || cat_loading){
-    return <Loader />
+  if (products_loading || cat_loading) {
+    return <Loader />;
   }
 
   return (
-
     <>
       <Helmet>
-        <title>Home | Mumiah Stores</title>
+        <title>Home | Myre Stores</title>
       </Helmet>
 
       <Hero />
@@ -39,7 +36,6 @@ function Home(props) {
       <Products />
 
       <AdvertisementTwo />
-
     </>
   );
 }
